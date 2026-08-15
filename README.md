@@ -14,20 +14,6 @@ Each skill works independently. `PRODUCT.md` and `DESIGN.md` are useful context 
 
 The collection intentionally contains no installer, hooks, background processes, live-mode runtime, critique history, or required command sequence.
 
-## Derivation map
-
-Each skill is a deliberate extraction rather than a generic rewrite:
-
-| Skill | Impeccable 4.1.1 sources | Substantive guidance retained | Framework coupling removed |
-| --- | --- | --- | --- |
-| `project-context` | `init`, `document` | inspect-before-interview, confirmed product truth, refresh safety, token extraction, canonical `DESIGN.md` structure | `context.mjs`, `.impeccable` config and sidecar, live-mode setup, command continuation |
-| `ui-review` | `critique`, `audit` | unanchored experience pass, technical evidence pass, Nielsen scoring, cognitive load, personas, specificity, severity, implementation integrity | required detector, browser overlay, mandatory subagents, snapshots, trends, command routing |
-| `ui-polish` | `polish`, `layout`, `typeset`, `colorize`, `clarify`, `distill`, `bolder`, `quieter` | preservation boundary, causal triage, whole-path refinement, spatial/type/color/copy lenses, intensity control, bounded verification | detector commands, live-mode parameters, stored critique dependency, command handoffs |
-| `ui-harden` | `harden`, `adapt`, `optimize` | edge-case matrix, recovery, localization, structural adaptation, accessibility resilience, measurement-first performance work | bundled tooling, platform routing, prescribed libraries, command handoffs |
-| `ui-onboarding` | `onboard` | activation goal, shortest path to value, contextual patterns, empty-state taxonomy, returning-user lifecycle, measurement | prescribed tour libraries, storage recipes, command handoffs |
-
-The removed parts are integration mechanics, not replacements for the design and engineering judgment retained here.
-
 ## Install
 
 ```bash
