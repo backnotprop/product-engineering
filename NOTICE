@@ -1,0 +1,10 @@
+UI Skills
+
+This project includes modified portions of Impeccable:
+https://github.com/pbakaus/impeccable
+
+Impeccable copyright 2025 Paul Bakaus.
+
+The material has been reorganized into standalone skills, rewritten for use
+outside the Impeccable framework, and stripped of Impeccable-specific hooks,
+runtime services, persistence, command routing, and mandatory workflow steps.

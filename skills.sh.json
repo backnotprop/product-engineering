@@ -1,0 +1,17 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Standalone UI Workflows",
+      "description": "Independent skills for product context, UI review, refinement, resilience, and onboarding.",
+      "skills": [
+        "project-context",
+        "ui-review",
+        "ui-polish",
+        "ui-harden",
+        "ui-onboarding"
+      ]
+    }
+  ]
+}
