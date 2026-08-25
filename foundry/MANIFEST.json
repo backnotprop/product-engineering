@@ -1,0 +1,87 @@
+{
+  "manifest_version": 1,
+  "comment": "Source of truth for file provenance and integrity. Every file under skills/*/references/ must have an entry. Classes: verbatim (hash-locked lift), verbatim-minus (pristine + patch), distilled (authored from recorded sources), authored (ours). Managed by foundry/scripts/lift.sh \u2014 do not hand-edit entries for verbatim files.",
+  "upstreams": {
+    "emilkowalski/skills": {
+      "url": "https://github.com/emilkowalski/skills.git",
+      "license": "MIT"
+    },
+    "jakubkrehel/skills": {
+      "url": "https://github.com/jakubkrehel/skills.git",
+      "license": "MIT"
+    },
+    "ibelick/ui-skills": {
+      "url": "https://github.com/ibelick/ui-skills.git",
+      "license": "MIT"
+    },
+    "plannotator/effective-html": {
+      "url": "https://github.com/plannotator/effective-html.git",
+      "license": "MIT"
+    },
+    "vercel-labs/web-interface-guidelines": {
+      "url": "https://github.com/vercel-labs/web-interface-guidelines.git",
+      "license": "MIT"
+    },
+    "vercel-labs/agent-skills": {
+      "url": "https://github.com/vercel-labs/agent-skills.git",
+      "license": "MIT"
+    },
+    "steveruizok/product-description": {
+      "url": "https://gist.github.com/83ae5c53f2784ebf8f5fe0a3fb94480f.git",
+      "license": "permission-granted",
+      "license_note": "No license file; author granted reuse permission via Twitter \u2014 see NOTICE."
+    },
+    "animationsdev": {
+      "url": null,
+      "license": "UNLICENSED-PRIVATE",
+      "license_note": "Purchased course pack. No remote. Files never enter this repository; private drop-in only (class private)."
+    }
+  },
+  "files": {
+    "skills/project-context/references/design-format.md": {
+      "class": "authored",
+      "skill": "project-context",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/project-context/references/templates.md": {
+      "class": "authored",
+      "skill": "project-context",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-harden/references/adaptation-patterns.md": {
+      "class": "authored",
+      "skill": "ui-harden",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-harden/references/performance-diagnostics.md": {
+      "class": "authored",
+      "skill": "ui-harden",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-harden/references/resilience-matrix.md": {
+      "class": "authored",
+      "skill": "ui-harden",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-onboarding/references/onboarding-patterns.md": {
+      "class": "authored",
+      "skill": "ui-onboarding",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-polish/references/polish-lenses.md": {
+      "class": "authored",
+      "skill": "ui-polish",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-review/references/experience-rubric.md": {
+      "class": "authored",
+      "skill": "ui-review",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/ui-review/references/technical-rubric.md": {
+      "class": "authored",
+      "skill": "ui-review",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    }
+  }
+}

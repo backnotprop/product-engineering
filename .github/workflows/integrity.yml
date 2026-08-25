@@ -1,0 +1,17 @@
+name: integrity
+# The gate. Recomputes every vendored file's hash against foundry/MANIFEST.json,
+# re-applies every verbatim-minus patch against its pristine copy, and verifies
+# coverage (no unclassified file under skills/*/references/). Any drift — one
+# reworded character in a byte-for-byte file — fails the build. See AGENTS.md.
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify vendored-file integrity
+        run: |
+          chmod +x foundry/scripts/check-integrity.sh
+          foundry/scripts/check-integrity.sh

@@ -1,0 +1,9 @@
+# foundry: local clone cache for lift.sh — never committed
+.foundry-cache/
+
+# foundry: private course drop-in (purchased animations.dev content — NEVER commit).
+# The README inside each course folder is the one tracked exception.
+skills/*/references/course/*
+!skills/*/references/course/README.md
+
+.DS_Store
