@@ -1,4 +1,31 @@
-UI Skills
+product-engineering
+Copyright (c) 2026 backnotprop
+
+== Vendored work ==
+
+This repository vendors, byte-for-byte, work by the following authors. Exact file
+provenance (upstream repository, path, pinned commit, content hash) is recorded per
+file in foundry/MANIFEST.json; recorded cuts are stored as patches in
+foundry/pristine/.
+
+- Emil Kowalski — https://github.com/emilkowalski/skills (MIT)
+- Jakub Krehel — https://github.com/jakubkrehel/skills (MIT)
+- Julien Thibeaut (ibelick) — https://github.com/ibelick/ui-skills (MIT)
+- plannotator — https://github.com/plannotator/effective-html (MIT)
+- Vercel — https://github.com/vercel-labs/web-interface-guidelines and
+  https://github.com/vercel-labs/agent-skills (MIT)
+- Leon (Leonxlnx) — https://github.com/Leonxlnx/taste-skill (MIT)
+- Steve Ruiz — the product-description skill, vendored whole from
+  https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f.
+  The gist carries no license file; the author granted reuse permission directly
+  (via Twitter, August 2026). If this permission record needs correcting, open an
+  issue.
+
+The animations.dev course pack is NOT distributed in this repository in any form.
+Purchasers install it locally via foundry/scripts/course-dropin.sh into gitignored
+folders.
+
+== Impeccable derivation (retained from this repository's ui-skills era) ==
 
 This project includes modified portions of Impeccable:
 https://github.com/pbakaus/impeccable
@@ -8,3 +35,5 @@ Impeccable copyright 2025 Paul Bakaus.
 The material has been reorganized into standalone skills, rewritten for use
 outside the Impeccable framework, and stripped of Impeccable-specific hooks,
 runtime services, persistence, command routing, and mandatory workflow steps.
+See DERIVATION.md. Those texts now live as authored references inside the
+design, build, and review skills.
