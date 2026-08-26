@@ -42,505 +42,505 @@
     }
   },
   "files": {
-    "skills/review/references/engine.md": {
+    "skills/pe-review/references/engine.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-interface/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "dbbbc18aeed16cc5819c233c6847a36f2da4e1580e0fee1834ac2075513d7d41",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/review-format.md": {
+    "skills/pe-review/references/review-format.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-interface/review-format.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/change-review.md": {
+    "skills/pe-review/references/change-review.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/interface-review/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "f995063c2ff623781cfc2a797d29203bbdec0d17e52b2ae14cee7829053897dd",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/scope-resolution.md": {
+    "skills/pe-review/references/scope-resolution.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/interface-review/scope-resolution.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "c3ca6c8c605d8f321995c935fc5bcc5173d7d3a46541de0b580f7394d6e121b7",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/removed-signals.md": {
+    "skills/pe-review/references/removed-signals.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/interface-review/removed-signals.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "9e2d2d0c555dce408e241a9179c04f743c76459b6bd9add0904d03163ff61af0",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/stress.md": {
+    "skills/pe-review/references/stress.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/break/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "32085787b925ec2c00b362837cdbf5d26c0427b2d2fa0a6553bfbf820991a491",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/stress-scenarios.md": {
+    "skills/pe-review/references/stress-scenarios.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/break/scenarios.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "5aacf085d5eca87b7b5e4f1b0a7412bfd532c8eaa574f455a5b1ffb00cdf86e9",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/motion-review.md": {
+    "skills/pe-review/references/motion-review.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/review-animations/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "61cf8ac0c4c8e1f63385298c546b16c65ca9aec34abddcd04e821c16712d671d",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/motion-standards.md": {
+    "skills/pe-review/references/motion-standards.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/review-animations/STANDARDS.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "e7d3605034acda54ca13e43aec9e64d65b53de20f75b11b8d694e373012fbe07",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/plan-template.md": {
+    "skills/pe-review/references/plan-template.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/improve-animations/PLAN-TEMPLATE.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "0a08ac8e23fd2082d7ffb86aeed7b789de77328c3cf874b16f1a755f2ef0a6ad",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/audit-method.md": {
+    "skills/pe-review/references/audit-method.md": {
       "class": "verbatim-minus",
       "upstream": "ibelick/ui-skills",
       "upstream_path": "skills/improve-ui/SKILL.md",
       "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
       "sha256": "6022988fcc0d2e29276c44f4ae45fb7f7594e373b4f04561fcc973718c51a13d",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": [],
       "pristine": "foundry/pristine/skills__review__references__audit-method.md",
       "patch": "foundry/pristine/skills__review__references__audit-method.md.patch"
     },
-    "skills/review/references/web-interface-guidelines.md": {
+    "skills/pe-review/references/web-interface-guidelines.md": {
       "class": "verbatim-minus",
       "upstream": "vercel-labs/web-interface-guidelines",
       "upstream_path": "command.md",
       "pinned_sha": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
       "sha256": "07f341254dc9b7f88c25bf3aa4624d060e0bc6f1a1ea58d025ab53e377ce43e1",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": [],
       "pristine": "foundry/pristine/skills__review__references__web-interface-guidelines.md",
       "patch": "foundry/pristine/skills__review__references__web-interface-guidelines.md.patch"
     },
-    "skills/review/references/a11y-audit.md": {
+    "skills/pe-review/references/a11y-audit.md": {
       "class": "distilled",
       "upstream": "ibelick/ui-skills",
       "upstream_path": "skills/fixing-accessibility/SKILL.md",
       "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "d5bfaa76a708d98c1fc054ba876e36a822305ee84bccf12085c054ae2b3af0bd",
+      "sha256": "ca8b3ce9c6ceacb52ea3f34648847f676636b985de97457bad2c7fedb2a01df6",
       "updated": "2026-08-25"
     },
-    "skills/review/references/experience-rubric.md": {
+    "skills/pe-review/references/experience-rubric.md": {
       "class": "authored",
-      "skill": "review",
+      "skill": "pe-review",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/review/references/technical-rubric.md": {
+    "skills/pe-review/references/technical-rubric.md": {
       "class": "authored",
-      "skill": "review",
+      "skill": "pe-review",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/review/references/screen-review.md": {
+    "skills/pe-review/references/screen-review.md": {
       "class": "authored",
-      "skill": "review",
+      "skill": "pe-review",
       "note": "legacy ui-review SKILL.md converted to the screen-mode reference; ours (Impeccable-derived)"
     },
-    "skills/review/references/motion-audit.md": {
+    "skills/pe-review/references/motion-audit.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/improve-animations/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "68f17bbc4671593d2f43dba26a679243e2153ba5f26965fb7d59df52842534ff",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/motion-audit-signals.md": {
+    "skills/pe-review/references/motion-audit-signals.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/improve-animations/AUDIT.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "551c8473e20e5f4774680bc24d45e1c68e50992582720905c6b077756b7b5a55",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/review/references/motion-opportunities.md": {
+    "skills/pe-review/references/motion-opportunities.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/find-animation-opportunities/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "91c1243164057fbf824088d12faea937878a757a7ac653e8288b775e8b27b882",
       "lifted": "2026-08-25",
-      "skill": "review",
+      "skill": "pe-review",
       "rulings": []
     },
-    "skills/build/references/craft/ui/index.md": {
+    "skills/pe-build/references/craft/ui/index.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "21cf641dc53e926eccaf523f2f834e970058bd59af4617d8bdd3393f10641553",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/ui/animations.md": {
+    "skills/pe-build/references/craft/ui/animations.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/animations.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/ui/enter-exit.md": {
+    "skills/pe-build/references/craft/ui/enter-exit.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/enter-exit.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/ui/icon-transitions.md": {
+    "skills/pe-build/references/craft/ui/icon-transitions.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/icon-transitions.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "60098242d33133a35a675719c447129b8931aecfbf05d58a6e2aa01e7894694e",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/ui/icons.md": {
+    "skills/pe-build/references/craft/ui/icons.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/icons.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/ui/performance.md": {
+    "skills/pe-build/references/craft/ui/performance.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/performance.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/ui/surfaces.md": {
+    "skills/pe-build/references/craft/ui/surfaces.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-ui/surfaces.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/layout/index.md": {
+    "skills/pe-build/references/craft/layout/index.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-layout/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "658f42ba16a656be37ec7b8e337ba94ae50e123815f264e68319d07943e05737",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/layout/grouping-and-alignment.md": {
+    "skills/pe-build/references/craft/layout/grouping-and-alignment.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-layout/grouping-and-alignment.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/layout/spacing-and-adaptivity.md": {
+    "skills/pe-build/references/craft/layout/spacing-and-adaptivity.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-layout/spacing-and-adaptivity.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/index.md": {
+    "skills/pe-build/references/craft/typography/index.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "a5d9e3560ee84087f65443aad266e62bfd9c9d4143c48424c5046624ac5b631d",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/choosing-fonts.md": {
+    "skills/pe-build/references/craft/typography/choosing-fonts.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/choosing-fonts.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/css-cheat-sheet.md": {
+    "skills/pe-build/references/craft/typography/css-cheat-sheet.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/css-cheat-sheet.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/details-and-accessibility.md": {
+    "skills/pe-build/references/craft/typography/details-and-accessibility.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/details-and-accessibility.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/spacing-and-sizing.md": {
+    "skills/pe-build/references/craft/typography/spacing-and-sizing.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/spacing-and-sizing.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/variable-fonts-and-opentype.md": {
+    "skills/pe-build/references/craft/typography/variable-fonts-and-opentype.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/variable-fonts-and-opentype.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/typography/wrapping-and-punctuation.md": {
+    "skills/pe-build/references/craft/typography/wrapping-and-punctuation.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-typography/wrapping-and-punctuation.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/index.md": {
+    "skills/pe-build/references/craft/colors/index.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "765d1dc6ff9bdd82b130c81c77095df21150f2c3fc8467ae429638a52e995f6d",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/color-formats.md": {
+    "skills/pe-build/references/craft/colors/color-formats.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/color-formats.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "e68fffec8f7b8e1036c295fce8d65785764f33aead5d292389c47451e79d7129",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/color-usage.md": {
+    "skills/pe-build/references/craft/colors/color-usage.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/color-usage.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "dbaa4a4cb10b8118165fca4531b3c35b409c79185f15a2812a34f118293dba9f",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/contrast.md": {
+    "skills/pe-build/references/craft/colors/contrast.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/contrast.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "f9a2f8ca2fd7966ea0002a9dd58b9d392fbb14fc6f4365534c488046337e5971",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/palette-generation.md": {
+    "skills/pe-build/references/craft/colors/palette-generation.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/palette-generation.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "f3e3f9fc84fd834cfffd9e0c951f28c3f24c3c4a4492d86b697d3258f500fb85",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/palette-structure.md": {
+    "skills/pe-build/references/craft/colors/palette-structure.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/palette-structure.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "82b22d74ead2a551a2a505347273025020d84dcde4a0170ea2fd14290dc10387",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/colors/token-naming.md": {
+    "skills/pe-build/references/craft/colors/token-naming.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-colors/token-naming.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/writing/index.md": {
+    "skills/pe-build/references/craft/writing/index.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-writing/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "344a18f178634b5004277f45b7e817f89fb42025cd646d44d71d3ba7a929fd28",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/index.md": {
+    "skills/pe-build/references/a11y/index.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "d59f56116485ea09f6c94f86ad2dc0adfa98aefbace52df56c9ee4ac0c3ddf17",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/focus-and-keyboard.md": {
+    "skills/pe-build/references/a11y/focus-and-keyboard.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/focus-and-keyboard.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "9ba63027fa8f1b53e4947ee3341e0580347121f3ccb7698f2936d33563ffa4ba",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/forms.md": {
+    "skills/pe-build/references/a11y/forms.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/forms.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "b08451ee17861cae49553ba71a122be80c21197087efcc43137862a1db2c5c34",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/hit-areas.md": {
+    "skills/pe-build/references/a11y/hit-areas.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/hit-areas.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "8c0982229cc01aee419e9c80a4085d5c59a0e7b2b16a4f616a12e9fa0fa094f5",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/motion-and-zoom.md": {
+    "skills/pe-build/references/a11y/motion-and-zoom.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/motion-and-zoom.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "3efc88394bc958a6e88ecbc8c8e37999df7de0e19730e5784d0e9e5efda696ee",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/screen-readers.md": {
+    "skills/pe-build/references/a11y/screen-readers.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/screen-readers.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "a35b69db4568e74351a28606328505773f9a1e9ec370e92fbfb2117543c3637a",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/a11y/semantics-and-aria.md": {
+    "skills/pe-build/references/a11y/semantics-and-aria.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/better-accessibility/semantics-and-aria.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
     "foundry/ownership-matrix.md": {
@@ -553,709 +553,711 @@
       "skill": "build",
       "rulings": []
     },
-    "skills/build/references/craft/emil-craft.md": {
+    "skills/pe-build/references/craft/emil-craft.md": {
       "class": "verbatim-minus",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/emil-design-eng/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "c1218fab384f3798952e7f7846e9681573b2bb36d9fbca48496b66ccb57d3f5d",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": [],
       "pristine": "foundry/pristine/skills__build__references__craft__emil-craft.md",
       "patch": "foundry/pristine/skills__build__references__craft__emil-craft.md.patch"
     },
-    "skills/build/references/craft/library-choices.md": {
+    "skills/pe-build/references/craft/library-choices.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/pick-ui-library/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "4b889bd6c08358499ac4a7202b8af71ffbd3485d2468f7b09d0613bbe7b24bf4",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/build.md": {
+    "skills/pe-build/references/motion/build.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/animate/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "f6317335da2662e92270dc0a6128bea95d7216cd751f86628e3ac6b72804e805",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/recipes.md": {
+    "skills/pe-build/references/motion/recipes.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/animate/RECIPES.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "21ff63d84391db8d96ecdf9170095f55a42c836ccc36fd3269c4772bab031ba2",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/apple-design.md": {
+    "skills/pe-build/references/motion/apple-design.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/apple-design/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "11840b24a11d7f94f39c6aaab074750ae4e4de4ef54ee4b1dd97e16ebd485e61",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/vocabulary.md": {
+    "skills/pe-build/references/motion/vocabulary.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/animation-vocabulary/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "d718b48fe3c7898804d588f050a2e266d82c9f5ef51da256c8cb8b5951527757",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/generation-guardrails.md": {
+    "skills/pe-build/references/craft/generation-guardrails.md": {
       "class": "verbatim",
       "upstream": "ibelick/ui-skills",
       "upstream_path": "skills/baseline-ui/SKILL.md",
       "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
       "sha256": "fea3322f36d58fdafafce2aef56e4556dd2ac7b20876b7dff7d8be7f25fa597f",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/harden/metadata.md": {
+    "skills/pe-build/references/harden/metadata.md": {
       "class": "verbatim",
       "upstream": "ibelick/ui-skills",
       "upstream_path": "skills/fixing-metadata/SKILL.md",
       "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
       "sha256": "b8315ff95a92dcfa48c33e2b4838a31d9448bd46252aab45726549ce865d6547",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/perf-additions.md": {
+    "skills/pe-build/references/motion/perf-additions.md": {
       "class": "distilled",
       "upstream": "ibelick/ui-skills",
       "upstream_path": "skills/fixing-motion-performance/SKILL.md",
       "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
       "sha256": "13737c2651b2b7af366878f0cebc9208e8bb585c61b6f736389e9d66b9de7d3e",
       "updated": "2026-08-25"
     },
-    "skills/build/references/motion/view-transitions/index.md": {
+    "skills/pe-build/references/motion/view-transitions/index.md": {
       "class": "verbatim",
       "upstream": "vercel-labs/agent-skills",
       "upstream_path": "skills/react-view-transitions/SKILL.md",
       "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
       "sha256": "d596c05e53b96a3475a9ab303a7a23f13f1153cb169c1d1b3b882094f58570bc",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/view-transitions/css-recipes.md": {
+    "skills/pe-build/references/motion/view-transitions/css-recipes.md": {
       "class": "verbatim",
       "upstream": "vercel-labs/agent-skills",
       "upstream_path": "skills/react-view-transitions/references/css-recipes.md",
       "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
       "sha256": "41f880f3a62b53b46f1ccc540401e4bc19522dfbd1ecd65d18d0b72fec44e829",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/view-transitions/implementation.md": {
+    "skills/pe-build/references/motion/view-transitions/implementation.md": {
       "class": "verbatim",
       "upstream": "vercel-labs/agent-skills",
       "upstream_path": "skills/react-view-transitions/references/implementation.md",
       "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
       "sha256": "f36958ff58ed3b8b7da008df5a59e99a67f46b3a6f590274fdc44b89f017f05d",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/view-transitions/nextjs.md": {
+    "skills/pe-build/references/motion/view-transitions/nextjs.md": {
       "class": "verbatim",
       "upstream": "vercel-labs/agent-skills",
       "upstream_path": "skills/react-view-transitions/references/nextjs.md",
       "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
       "sha256": "1d595c3a9d5270d958db9f2924013ac0602d024d0473582b68c61363b06f7856",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/motion/view-transitions/patterns.md": {
+    "skills/pe-build/references/motion/view-transitions/patterns.md": {
       "class": "verbatim",
       "upstream": "vercel-labs/agent-skills",
       "upstream_path": "skills/react-view-transitions/references/patterns.md",
       "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
       "sha256": "970f94c2afb086b8b3ffafd05d223ba71595f20ecd6db671b458db88b247e627",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": []
     },
-    "skills/build/references/craft/deslop-audit.md": {
+    "skills/pe-build/references/craft/deslop-audit.md": {
       "class": "verbatim-minus",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/redesign-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "sha256": "82c6cd959e0869fb1de92e806b7e8eea622fea988d8cdfaf048fb72a489846e8",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "pe-build",
       "rulings": [],
       "pristine": "foundry/pristine/skills__build__references__craft__deslop-audit.md",
       "patch": "foundry/pristine/skills__build__references__craft__deslop-audit.md.patch"
     },
-    "skills/build/references/craft/polish-lenses.md": {
+    "skills/pe-build/references/craft/polish-lenses.md": {
       "class": "authored",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/build/references/harden/adaptation-patterns.md": {
+    "skills/pe-build/references/harden/adaptation-patterns.md": {
       "class": "authored",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/build/references/harden/performance-diagnostics.md": {
+    "skills/pe-build/references/harden/performance-diagnostics.md": {
       "class": "authored",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/build/references/harden/resilience-matrix.md": {
+    "skills/pe-build/references/harden/resilience-matrix.md": {
       "class": "authored",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/build/references/harden/index.md": {
+    "skills/pe-build/references/harden/index.md": {
       "class": "authored",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "legacy ui-harden SKILL.md converted to the harden-mode reference; ours (Impeccable-derived)"
     },
-    "skills/build/references/course/craft-design-rules.md": {
+    "skills/pe-build/references/course/craft-design-rules.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/emil-design-engineering/design-rules.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "f42e43fa9ab241a37b059d86c4e2839a642109403a34f1906b2ae3a33b09ffa0",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/craft-forms-controls.md": {
+    "skills/pe-build/references/course/craft-forms-controls.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/emil-design-engineering/forms-controls.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/craft-touch-accessibility.md": {
+    "skills/pe-build/references/course/craft-touch-accessibility.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/emil-design-engineering/touch-accessibility.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/craft-ui-polish.md": {
+    "skills/pe-build/references/course/craft-ui-polish.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/emil-design-engineering/ui-polish.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/craft-marketing.md": {
+    "skills/pe-build/references/course/craft-marketing.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/emil-design-engineering/marketing.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-animate.md": {
+    "skills/pe-build/references/course/motion-animate.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animate/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "8f195581404211b3fdfecf66780f029c55ff910682e701705c2657189f82da0e",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-css-techniques.md": {
+    "skills/pe-build/references/course/motion-css-techniques.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animate/css-techniques.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "e162d662c680f5cac4b989297901f27b695f2f3f3aa055d425f298aea845992f",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-framer-motion.md": {
+    "skills/pe-build/references/course/motion-framer-motion.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animate/framer-motion.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "ae4bedfbac45c5ca3b2cd5f0cee135a7fbb4031912773a69187b32fa7114ec11",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-svg-animation.md": {
+    "skills/pe-build/references/course/motion-svg-animation.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animate/svg-animation.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "708ef19f84b3ce1dd2eefd59dee4dd1398cfaf3d9141ac37bb2ca88eb1adbede",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-css-animations.md": {
+    "skills/pe-build/references/course/motion-css-animations.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/css-animations/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-css-recipes.md": {
+    "skills/pe-build/references/course/motion-css-recipes.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/css-animations/RECIPES.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-react.md": {
+    "skills/pe-build/references/course/motion-react.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/motion-react/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-react-recipes.md": {
+    "skills/pe-build/references/course/motion-react-recipes.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/motion-react/RECIPES.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-gesture-ui.md": {
+    "skills/pe-build/references/course/motion-gesture-ui.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/gesture-ui/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-scroll-animations.md": {
+    "skills/pe-build/references/course/motion-scroll-animations.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/scroll-animations/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-debug.md": {
+    "skills/pe-build/references/course/motion-debug.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/debug-animation/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-performance.md": {
+    "skills/pe-build/references/course/motion-performance.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animation-performance/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "a52de3775834ab6e88210d29586cac7534c3511d34e709ec21cd800c1ec62e09",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-accessibility.md": {
+    "skills/pe-build/references/course/motion-accessibility.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animation-accessibility/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-a11y-snippets.md": {
+    "skills/pe-build/references/course/motion-a11y-snippets.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/animation-accessibility/SNIPPETS.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1",
       "lifted": "2026-08-25"
     },
-    "skills/build/references/course/motion-brief.md": {
+    "skills/pe-build/references/course/motion-brief.md": {
       "class": "verbatim",
       "private": true,
       "upstream": "animationsdev",
       "upstream_path": ".claude/skills/motion-brief/SKILL.md",
-      "skill": "build",
+      "skill": "pe-build",
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0",
       "lifted": "2026-08-25"
     },
-    "skills/design/references/direct/index.md": {
+    "skills/pe-design/references/direct/index.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/design-artifact/SKILL.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "c8314b66fb907a5acd3aa10efe4b5adb86d352808f5b84824cadfa6e6c9d38bb",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/index.md": {
+    "skills/pe-design/references/mock/index.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html/SKILL.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "d99612ae158cd9c18574eb4f3cd11b79475311d27bb3d4c79d68088b1e96d875",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/wireframe.md": {
+    "skills/pe-design/references/mock/wireframe.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html-wireframe/SKILL.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "b1d649ef9052f2ed8baabaf483ed527208a2e481281ed3925ec8b84ba641d4c1",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/prototype.md": {
+    "skills/pe-design/references/mock/prototype.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html-prototype/SKILL.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "8987dda45224350254af30cafa72e721c6d91e1972e794e8e839406f77814368",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/diagram.md": {
+    "skills/pe-design/references/mock/diagram.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html-diagram/SKILL.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "a3641a37be2f50df620cda273fe4c97295df93e6c6b3c9ba44f566945ed4f532",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/plan.md": {
+    "skills/pe-design/references/mock/plan.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html-plan/SKILL.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "8e315b5f775d4fe3233cf593b9ba6103845a43c6d6b4b34f56d6bf3535cb9ee2",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/charts-and-data.md": {
+    "skills/pe-design/references/mock/charts-and-data.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html/references/charts-and-data.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "c9bc9e002d2fc6f2a31b3698e6d828e755b4673fbf2ab0e036eb6c7ffbd5a4f3",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/diagrams.md": {
+    "skills/pe-design/references/mock/diagrams.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html/references/diagrams.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "5139d248ec08b7501c6aeeec7586c664dbbf6de4a5f2e6d792dc1c6b452948a3",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/documents-and-presentations.md": {
+    "skills/pe-design/references/mock/documents-and-presentations.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html/references/documents-and-presentations.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "b62a4d6a93ed2abe0b7eb49d93f6cc9a00379512268a186a1927d072926d5a54",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/mock/interfaces.md": {
+    "skills/pe-design/references/mock/interfaces.md": {
       "class": "verbatim",
       "upstream": "plannotator/effective-html",
       "upstream_path": "skills/html/references/interfaces.md",
       "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
       "sha256": "a01ab662dc268442e94cd84310c06e6585e8b2e540ec729b2e99826df6a2733b",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/vary/index.md": {
+    "skills/pe-design/references/vary/index.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/prototype/SKILL.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "2ad8401c4deaddb54947fb65247f790e7b3d8784e35312bcbedbfb1d59cd89ce",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/vary/picker.md": {
+    "skills/pe-design/references/vary/picker.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
       "upstream_path": "skills/prototype/PICKER.md",
       "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
       "sha256": "31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/direct/presets/minimalist.md": {
+    "skills/pe-design/references/direct/presets/minimalist.md": {
       "class": "verbatim",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/minimalist-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "sha256": "36bc7328f085405f43b476938e62460fa573bf7e984e949e072bcf014831a44c",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/direct/presets/brutalist.md": {
+    "skills/pe-design/references/direct/presets/brutalist.md": {
       "class": "verbatim",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/brutalist-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "sha256": "fffbaac8597f07679e9d87145533567658aedba3b5eca6f16a7075a333048caa",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": []
     },
-    "skills/design/references/direct/presets/premium-dark-glass.md": {
+    "skills/pe-design/references/direct/presets/premium-dark-glass.md": {
       "class": "verbatim-minus",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/soft-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "sha256": "b1ac05a171eb6505e33ca9ff3211bf44a6dc1c3490c588adb78abfabc887dc1c",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": [],
       "pristine": "foundry/pristine/skills__design__references__direct__presets__premium-dark-glass.md",
       "patch": "foundry/pristine/skills__design__references__direct__presets__premium-dark-glass.md.patch"
     },
-    "skills/design/references/direct/slop-tells.md": {
+    "skills/pe-design/references/direct/slop-tells.md": {
       "class": "verbatim-minus",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/taste-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "sha256": "472536696e1422d7d4f9072d417117ea9737a61b26e5e3f27f0438e1d02cf2cd",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": [],
       "pristine": "foundry/pristine/skills__design__references__direct__slop-tells.md",
       "patch": "foundry/pristine/skills__design__references__direct__slop-tells.md.patch"
     },
-    "skills/design/references/understand/url-and-validation.md": {
+    "skills/pe-design/references/understand/url-and-validation.md": {
       "class": "distilled",
       "upstream": "ibelick/ui-skills",
       "upstream_path": "skills/create-design-md/SKILL.md",
       "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
       "sha256": "0dbae416acb2e8e1105810acbda158145e91128738f5bcd471b2d3f001b45cc9",
       "updated": "2026-08-25"
     },
-    "skills/design/references/understand/generated-mode.md": {
+    "skills/pe-design/references/understand/generated-mode.md": {
       "class": "distilled",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/stitch-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
       "sha256": "68126de8fab04a5fd24fada66736372f31da7e4e16f201a3cd527984a5d69abb",
       "updated": "2026-08-25"
     },
-    "skills/design/references/vary/axes.md": {
+    "skills/pe-design/references/vary/axes.md": {
       "class": "distilled",
       "upstream": "jakubkrehel/skills",
       "upstream_path": "skills/variant/SKILL.md",
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "lifted": "2026-08-25",
-      "skill": "design",
+      "skill": "pe-design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "f18ddcfbc8d769d6fe425be725483189e337801fd662f569fdf331430ea0dfa9",
+      "sha256": "c2daa54eec53b7750f9d8fe4eed43c47c647146d84a7a81096c879252caffb3c",
       "updated": "2026-08-25"
     },
-    "skills/design/references/understand/design-format.md": {
+    "skills/pe-design/references/understand/design-format.md": {
       "class": "authored",
-      "skill": "design",
+      "skill": "pe-design",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/design/references/understand/templates.md": {
+    "skills/pe-design/references/understand/templates.md": {
       "class": "authored",
-      "skill": "design",
+      "skill": "pe-design",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/design/references/onboard/patterns.md": {
+    "skills/pe-design/references/onboard/patterns.md": {
       "class": "authored",
-      "skill": "design",
+      "skill": "pe-design",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/design/references/understand/index.md": {
+    "skills/pe-design/references/understand/index.md": {
       "class": "authored",
-      "skill": "design",
+      "skill": "pe-design",
       "note": "legacy project-context SKILL.md converted to the understand-mode reference; ours"
     },
-    "skills/design/references/onboard/index.md": {
+    "skills/pe-design/references/onboard/index.md": {
       "class": "authored",
-      "skill": "design",
+      "skill": "pe-design",
       "note": "legacy ui-onboarding SKILL.md converted to the onboard-mode reference; ours"
     },
-    "skills/product-description/SKILL.md": {
-      "class": "verbatim",
+    "skills/pe-product-description/SKILL.md": {
+      "class": "verbatim-minus",
       "upstream": "steveruizok/product-description",
       "upstream_path": "SKILL.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-      "sha256": "1771a81a429d888f2de971e168026667a4f2ab7573efb70ea3e854c7b3ffd7b2",
+      "sha256": "cfa717115dbd319dc1b512c5e59391326f3caf4771c06b7667e22c5b8ec1a9ae",
       "lifted": "2026-08-25",
-      "skill": "product-description",
-      "rulings": []
+      "skill": "pe-product-description",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__pe-product-description__SKILL.md",
+      "patch": "foundry/pristine/skills__pe-product-description__SKILL.md.patch"
     },
-    "skills/product-description/references/README-template.md": {
+    "skills/pe-product-description/references/README-template.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "README-template.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/bug-triage-template.md": {
+    "skills/pe-product-description/references/bug-triage-template.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "bug-triage-template.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/document-template.md": {
+    "skills/pe-product-description/references/document-template.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "document-template.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "d099e7e15f1287e758cd8e732d1959eaf266ed214fb7ad3ee80098e5ca8a5d88",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/glossary-guide.md": {
+    "skills/pe-product-description/references/glossary-guide.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "glossary-guide.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "1ee3581be11a5254b0736f8ea09c795aaa78922d5051707a506abfb19794d9da",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/goal-template.md": {
+    "skills/pe-product-description/references/goal-template.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "goal-template.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/product-kinds.md": {
+    "skills/pe-product-description/references/product-kinds.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "product-kinds.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/verification-template.md": {
+    "skills/pe-product-description/references/verification-template.md": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "verification-template.md",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/product-description/references/check-links.py": {
+    "skills/pe-product-description/references/check-links.py": {
       "class": "verbatim",
       "upstream": "steveruizok/product-description",
       "upstream_path": "check-links.py",
       "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
       "sha256": "2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b",
       "lifted": "2026-08-25",
-      "skill": "product-description",
+      "skill": "pe-product-description",
       "rulings": []
     },
-    "skills/brand-assets/references/identity-method.md": {
+    "skills/pe-brand-assets/references/identity-method.md": {
       "class": "distilled",
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/brandkit/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
       "lifted": "2026-08-25",
-      "skill": "brand-assets",
+      "skill": "pe-brand-assets",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
       "sha256": "7b2d80d38d6f87618ade6ba73c53253a89adc682597b95ee2978ad9f69d194b7",

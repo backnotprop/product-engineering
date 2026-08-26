@@ -1,5 +1,5 @@
 ---
-name: build
+name: pe-build
 description: Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on build, implement, polish, refine, tighten, "feels off", animate, transition, gesture, drawer, make accessible, keyboard navigation, production-ready, edge cases, empty states. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).
 license: Apache-2.0
 metadata:
@@ -51,7 +51,7 @@ install; never copy from them into tracked files.
   forbidden unless the user explicitly asked for a redesign. Only then load
   `craft/deslop-audit.md` and work audit-first within the existing stack.
 - **Read-only requests are not this skill.** "Review/audit/critique" → hand to
-  **review**. Findings received from review are implemented here at their stated
+  **pe-review**. Findings received from pe-review are implemented here at their stated
   file:line.
 
 ## House rules (bind every mode)
@@ -73,10 +73,10 @@ install; never copy from them into tracked files.
 References that route to `better-*` skills by name resolve inside this skill:
 better-ui → `craft/ui/` · better-layout → `craft/layout/` · better-typography →
 `craft/typography/` · better-colors → `craft/colors/` · better-writing →
-`craft/writing/` · better-accessibility → `a11y/` · better-interface → the review
+`craft/writing/` · better-accessibility → `a11y/` · better-interface → the pe-review
 skill.
 
 ## Handoffs
 
-Verdicts and audits → **review**. Direction, mockups, variations → **design**. Standalone brand assets → **brand-assets**. Documenting the
-system you built → **design**, understand mode.
+Verdicts and audits → **pe-review**. Direction, mockups, variations → **pe-design**. Standalone brand assets → **pe-brand-assets**. Documenting the
+system you built → **pe-design**, understand mode.

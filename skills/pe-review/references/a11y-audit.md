@@ -1,7 +1,7 @@
 # A11y audit order
 
 Deep accessibility judgment — focus mechanics, screen-reader behavior, hit-area
-geometry, form-error routing — lives in the build skill's accessibility references;
+geometry, form-error routing — lives in the pe-build skill's accessibility references;
 this file only orders the audit and bounds the tooling. Severity and reporting follow
 engine.md (escalation triggers apply; several name a11y failures directly).
 

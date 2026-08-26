@@ -1,6 +1,6 @@
 # Understand (product & design context)
 
-The understand mode of the design skill: capture durable product context in
+The understand mode of the pe-design skill: capture durable product context in
 PRODUCT.md and document a visual system in DESIGN.md. For URL-mode extraction and
 machine validation see `url-and-validation.md`; for greenfield generated systems
 see `generated-mode.md`.

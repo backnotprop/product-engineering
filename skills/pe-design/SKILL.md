@@ -1,6 +1,6 @@
 ---
-name: design
-description: Design-process work before production code. Use to capture product and design-system context (PRODUCT.md / DESIGN.md), set creative direction and taste, build wireframes / mockups / prototypes / diagrams / plans as self-contained HTML, render competing variations of a UI piece behind a picker, or design onboarding and first-run flows. Triggers on design, direction, "how should this look/feel", wireframe, mockup, prototype, mock this up, diagram, "document our design system", DESIGN.md, "show me versions/variations", onboarding, empty states, first-run. The deliverable is a document or artifact — not production code (build) and not a verdict on existing UI (review).
+name: pe-design
+description: Design-process work before production code. Use to capture product and design-system context (PRODUCT.md / DESIGN.md), set creative direction and taste, build wireframes / mockups / prototypes / diagrams / plans as self-contained HTML, render competing variations of a UI piece behind a picker, or design onboarding and first-run flows. Triggers on design, direction, "how should this look/feel", wireframe, mockup, prototype, mock this up, diagram, "document our design system", DESIGN.md, "show me versions/variations", onboarding, empty states, first-run. The deliverable is a document or artifact — not production code (pe-build) and not a verdict on existing UI (pe-review).
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/design.md in the source repository
@@ -36,8 +36,8 @@ reference files — load only what the mode needs.
 | **onboard** | First-run, activation, setup, empty states, tours | `onboard/index.md` + `onboard/patterns.md` |
 
 Disambiguation: a mockup of something new is **mock**; N takes on one existing piece
-is **vary**. "Make it look better" on shipped UI is not this skill (build). A named
-diff/branch/PR is never this skill (review).
+is **vary**. "Make it look better" on shipped UI is not this skill (pe-build). A named
+diff/branch/PR is never this skill (pe-review).
 
 ## Name mapping
 
@@ -50,7 +50,7 @@ fallback resolves to `direct/index.md`.
 
 ## Handoffs
 
-Implementing a chosen direction, mock, or winning variant → **build** (with the
-DESIGN.md and any chosen preset named). Judging existing UI → **review**. Behavior
-specs beyond PRODUCT.md's scope → **product-description**. On-brand
-standalone assets → **brand-assets**.
+Implementing a chosen direction, mock, or winning variant → **pe-build** (with the
+DESIGN.md and any chosen preset named). Judging existing UI → **pe-review**. Behavior
+specs beyond PRODUCT.md's scope → **pe-product-description**. On-brand
+standalone assets → **pe-brand-assets**.

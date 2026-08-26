@@ -6,11 +6,11 @@
       "title": "Converged Skills",
       "description": "The product-engineering kit: five converged skills, each a thin router over byte-preserved references from graded sources.",
       "skills": [
-        "design",
-        "build",
-        "review",
-        "product-description",
-        "brand-assets"
+        "pe-design",
+        "pe-build",
+        "pe-review",
+        "pe-product-description",
+        "pe-brand-assets"
       ]
     }
   ]

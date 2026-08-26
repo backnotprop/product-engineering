@@ -1,6 +1,6 @@
 # Screen review (two-pass flow)
 
-The screen mode of the review skill: full assessment of a concrete UI target.
+The screen mode of the pe-review skill: full assessment of a concrete UI target.
 Severity here uses P0–P3; map to the engine's scale as P0+P1 → HIGH,
 P2 → MEDIUM, P3 → LOW.
 

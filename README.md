@@ -6,11 +6,11 @@ best published design-engineering skill work — with the source prose preserved
 
 | Skill | The deliverable | Modes |
 | --- | --- | --- |
-| `design` | documents & artifacts, before code | understand · direct · mock · vary · onboard |
-| `build` | production UI code | craft · motion · a11y · harden |
-| `review` | read-only findings & verdicts | change · screen · plans · guidelines · stress · motion · opportunities · a11y |
-| `product-description` | a behavior-spec repo | (Steve Ruiz's skill, vendored whole) |
-| `brand-assets` | standalone on-brand assets (SVG-first) | — |
+| `pe-design` | documents & artifacts, before code | understand · direct · mock · vary · onboard |
+| `pe-build` | production UI code | craft · motion · a11y · harden |
+| `pe-review` | read-only findings & verdicts | change · screen · plans · guidelines · stress · motion · opportunities · a11y |
+| `pe-product-description` | a behavior-spec repo | (Steve Ruiz's skill, vendored whole) |
+| `pe-brand-assets` | standalone on-brand assets (SVG-first) | — |
 
 Each skill is a thin router over reference files preserved from graded sources —
 Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, plannotator, Steve Ruiz,
@@ -20,7 +20,7 @@ Impeccable (see NOTICE).
 
 ```bash
 npx skills add backnotprop/product-engineering            # all five
-npx skills add backnotprop/product-engineering --skill review
+npx skills add backnotprop/product-engineering --skill pe-review
 ```
 
 ## Using the skills
@@ -30,44 +30,44 @@ skill routes your request to the right mode from your words — the map below is
 product-development journey end to end.
 
 **Starting something, or taming an existing codebase**
-- "Document our product and design system" → `design` writes `PRODUCT.md` and
+- "Document our product and design system" → `pe-design` writes `PRODUCT.md` and
   `DESIGN.md` from repo evidence (or from a public URL). Greenfield with no system
   yet? It generates one and labels it chosen, not observed.
-- "How should this look and feel?" → `design` derives a creative direction from your
+- "How should this look and feel?" → `pe-design` derives a creative direction from your
   subject — palette, type, register — and checks it against the AI-slop tells.
 
 **Shaping the thing before code**
-- "Wireframe the settings flow" / "mock up the dashboard" → `design` builds
+- "Wireframe the settings flow" / "mock up the dashboard" → `pe-design` builds
   self-contained HTML at the right fidelity: wireframe → mockup → prototype
   (plus diagrams and plans).
-- "Show me three takes on this card" → `design` renders genuinely different variants
+- "Show me three takes on this card" → `pe-design` renders genuinely different variants
   behind a picker in your real page; promote the winner, the harness deletes itself.
-- "Users bail during setup" → `design` works the activation flow: empty states,
+- "Users bail during setup" → `pe-design` works the activation flow: empty states,
   checklists, the lightest pattern that teaches.
 
 **Writing the code**
-- "Build the pricing card" / "polish this, it feels off" → `build` at the craft bar:
+- "Build the pricing card" / "polish this, it feels off" → `pe-build` at the craft bar:
   spacing, type, color, copy, icons, interaction states.
-- "Animate the drawer" / "this feels janky" → `build`'s motion mode.
-- "Make this table keyboard-accessible" → `build`'s a11y mode.
-- "Get this ready for production" → `build`'s harden mode: real data extremes,
+- "Animate the drawer" / "this feels janky" → `pe-build`'s motion mode.
+- "Make this table keyboard-accessible" → `pe-build`'s a11y mode.
+- "Get this ready for production" → `pe-build`'s harden mode: real data extremes,
   failure states, devices, languages, offline, shipping metadata.
 
 **Judging what exists** (read-only — findings, never edits)
-- "Review my PR" → `review` scopes to the diff and classifies introduced vs
+- "Review my PR" → `pe-review` scopes to the diff and classifies introduced vs
   pre-existing.
 - "Review this screen" → the full two-pass critique with scored rubrics.
 - "Audit the app, give me a roadmap" → prioritized findings as self-contained plans
   another agent can execute.
 - "Check against best practices" / "will this component survive real data?" /
-  "review the animations" / "is this accessible?" → each a mode of `review`.
+  "review the animations" / "is this accessible?" → each a mode of `pe-review`.
 
 **The two specialists**
-- "Write a product description for the editor" → `product-description` builds a
+- "Write a product description for the editor" → `pe-product-description` builds a
   behavior-spec repo: what users see, what they can do, what exactly happens —
   verified against the running product.
 - "Make an SVG header image for this post" / "repo social image" / "logo concepts"
-  → `brand-assets` reads your brand truth first (it refuses to invent it) and
+  → `pe-brand-assets` reads your brand truth first (it refuses to invent it) and
   authors on-brand SVG, exporting PNG where destinations require it.
 
 The skills hand off to each other by name — a review's findings go to build, a
