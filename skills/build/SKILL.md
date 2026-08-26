@@ -82,5 +82,5 @@ skill. Domain ownership (who decides vs who measures) follows
 
 ## Handoffs
 
-Verdicts and audits → **review**. Direction, mockups, variations → **design**. Standalone brand assets → **brand-assets** (once present). Documenting the
+Verdicts and audits → **review**. Direction, mockups, variations → **design**. Standalone brand assets → **brand-assets**. Documenting the
 system you built → **design**, understand mode.

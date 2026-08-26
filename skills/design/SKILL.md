@@ -60,5 +60,5 @@ files here — see its patch.
 
 Implementing a chosen direction, mock, or winning variant → **build** (with the
 DESIGN.md and any chosen preset named). Judging existing UI → **review**. Behavior
-specs beyond PRODUCT.md's scope → **product-description** (once present). On-brand
-standalone assets → **brand-assets** (once present).
+specs beyond PRODUCT.md's scope → **product-description**. On-brand
+standalone assets → **brand-assets**.

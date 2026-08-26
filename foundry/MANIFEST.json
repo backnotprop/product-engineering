@@ -1248,6 +1248,18 @@
       "lifted": "2026-08-25",
       "skill": "product-description",
       "rulings": []
+    },
+    "skills/brand-assets/references/identity-method.md": {
+      "class": "distilled",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/brandkit/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "lifted": "2026-08-25",
+      "skill": "brand-assets",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "5d6ab7971d565083aee6bd5c0631b75d4f94ae893fdd2225e8664f8d71ea9cba",
+      "updated": "2026-08-25"
     }
   }
 }
