@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "pe-verify/report.schema.json",
+  "title": "pe-verify report",
+  "description": "The one file an agent produces after a verification run. render-report.py validates it against this schema, then renders report.html beside it. Media paths are relative to this file's directory.",
+  "type": "object",
+  "required": ["schema_version", "title", "mode", "ran_at", "items"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+    "repo": { "type": "string" },
+    "commit": { "type": "string" },
+    "ran_at": { "type": "string", "description": "ISO 8601 date-time" },
+    "mode": { "enum": ["feature", "list"], "description": "feature = one item, rendered as the first-look viewer; list = the QA ledger" },
+    "list_source": { "type": ["string", "null"], "description": "Path of the QA list used, for list runs" },
+    "notes": { "type": "string", "description": "Optional run-level notes: what could not be checked, environment caveats" },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "check_type", "status", "summary"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$", "description": "Stable within the run; used for anchors and jump navigation" },
+          "title": { "type": "string", "minLength": 1, "maxLength": 200 },
+          "check_type": { "enum": ["code", "browser", "mixed"] },
+          "status": { "enum": ["pass", "fail", "flag", "skipped"] },
+          "summary": { "type": "string", "minLength": 1, "description": "One to three plain sentences: what was checked and the outcome" },
+          "findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["severity", "text"],
+              "additionalProperties": false,
+              "properties": {
+                "severity": { "enum": ["high", "medium", "low", "info"] },
+                "text": { "type": "string", "minLength": 1 },
+                "evidence": { "type": "string", "description": "file:line, a recording timestamp, or a command" }
+              }
+            }
+          },
+          "media": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "video": { "type": "string", "description": "Relative path to the recording (mp4 or webm)" },
+              "checkpoints": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["t", "label", "screenshot"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "t": { "type": "number", "minimum": 0, "description": "Seconds into the recording" },
+                    "label": { "type": "string", "minLength": 1, "maxLength": 80 },
+                    "narration": { "type": "string" },
+                    "screenshot": { "type": "string", "description": "Relative path to the still at this moment" }
+                  }
+                }
+              },
+              "screenshots": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["path"],
+                  "additionalProperties": false,
+                  "properties": { "path": { "type": "string" }, "caption": { "type": "string" } }
+                }
+              }
+            }
+          },
+          "checked_by": { "type": "string", "description": "Who ran it, e.g. 'opus · browser' or 'sonnet · code'" }
+        }
+      }
+    }
+  }
+}
