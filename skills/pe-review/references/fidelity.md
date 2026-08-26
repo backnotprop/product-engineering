@@ -1,23 +1,25 @@
 # Fidelity review
 
 The fidelity mode of the pe-review skill: the implementation measured against the
-artifact the user approved. This file adds only what is specific to comparing against
-a record.
+artifact the user approved.
 
 ## Locate the record
 
 - Read `.product/approved/`. Each folder is one record: the approved artifact
   byte-for-byte, plus `approval.md`. Match the folder to the feature, route, or
   component under review by slug; when two could match, ask which, naming both.
-- A folder name carrying a date suffix is a superseded record. Review against the
-  undated one only.
-- No matching record: say so in one line, then run screen or change mode. Never review
-  against a mock that was not stamped.
+- A folder named `<slug>--YYYY-MM-DD` is superseded (the pe-design skill's Approval
+  rule). Review against the undated one only.
+- No matching record: say so in one line, then run screen or change mode. When the user
+  points at a mock that was never stamped, hand to the pe-design skill's Approval step
+  first; review once the record exists.
 - Where `approval.md` and the artifact disagree, `approval.md` wins. Its approved-state
   section names the layout, toggles, and filters chosen; put the artifact into that state
   before comparing, not its default state.
-- Nothing listed under the record's out-of-scope section is a finding.
-- The verdict header names the record path and the artifact file.
+- Nothing listed under the record's out-of-scope section is a fidelity finding; engine
+  escalation triggers still fire.
+- The Scope and coverage block names the record path, the artifact file, and the
+  deviation count by severity.
 
 ## Compare
 
@@ -35,13 +37,13 @@ Walk the surface in this order and record every difference as it appears:
 4. **Copy** — headings, labels, buttons, empty-state and error text, compared verbatim,
    casing and punctuation included.
 5. **Spacing** — measured, not eyeballed: gaps, padding, alignment, column widths against
-   the artifact's values. Tolerance is a stated number (for example ±2px) or none.
+   the artifact's value, exact, unless the record states a tolerance.
 6. **Behavior** — each interaction the artifact demonstrates or the record describes:
    keyboard shortcuts, navigation, filtering, seeking, persistence. Exercise it; a still
    frame proves nothing about behavior.
 
-A responsive behavior the artifact lacks is not a finding; one it shows and the build
-lacks is.
+A responsive behavior the artifact lacks is not a fidelity finding; engine escalation
+triggers still fire. One it shows and the build lacks is.
 
 ## Report
 
@@ -53,11 +55,10 @@ and the named change that restores fidelity.
   something else; copy whose meaning changed.
 - **MEDIUM** — hierarchy inverted or flattened; a state present but visibly different;
   a behavior that reaches the same result by another route.
-- **LOW** — spacing beyond tolerance; copy casing or punctuation; a visual detail with
-  no effect on reading order or use.
+- **LOW** — spacing off the artifact's value (or outside a stated tolerance); copy
+  casing or punctuation; a visual detail with no effect on reading order or use.
 
-Lead the verdict with the record path and the deviation count by severity. Zero
-deviations is a valid verdict: state it and stop. A deviation you judge to be an
+Zero deviations is a valid outcome: state it and stop. A deviation you judge to be an
 improvement is still a finding at its severity; the record stands until the user
 approves a new version.
 

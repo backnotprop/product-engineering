@@ -32,7 +32,7 @@ reference files — load only what the mode needs.
 | **understand** | "Document our product / design system", DESIGN.md work | `understand/index.md`; `understand/design-format.md` + `understand/templates.md` for the schema; `understand/url-and-validation.md` for public-URL extraction and the lint/export gates; `understand/generated-mode.md` for greenfield systems |
 | **brief** | "Write a brief for X", "spec this feature" — planning one feature, surface, or flow before code | `brief/index.md` (runs direct mode mid-flow when visual direction is materially unresolved) |
 | **direct** | "How should this look / feel", creative direction, a register or palette decision | `direct/index.md`; check every visual choice against `direct/slop-tells.md`; `direct/presets/` only on explicit match |
-| **mock** | Wireframe, mockup, prototype, diagram, or plan as an HTML artifact | `mock/index.md` (the router), then the fidelity file it names: `wireframe.md`, `prototype.md`, `diagram.md`, `plan.md`; shared craft in `charts-and-data.md`, `diagrams.md`, `documents-and-presentations.md`, `interfaces.md` |
+| **mock** | Wireframe, mockup, prototype, diagram, or plan as an HTML artifact | `mock/index.md` (the router), then the level file it names: `wireframe.md`, `prototype.md`, `diagram.md`, `plan.md`; shared craft in `charts-and-data.md`, `diagrams.md`, `documents-and-presentations.md`, `interfaces.md` |
 | **vary** | "Show me N versions", compare directions in the real page | `vary/index.md` + `vary/picker.md` (the engineered picker), governed by `vary/axes.md` (one primary axis; the accessibility floor; `?variant=name` URLs) |
 | **onboard** | First-run, activation, setup, empty states, tours | `onboard/index.md` + `onboard/patterns.md` |
 
@@ -44,16 +44,17 @@ diff/branch/PR is never this skill (pe-review).
 ## Approval
 
 Runs only on the user's explicit approval of a brief, direction, mock, or variant —
-"this is it", "ship this", "approved". Never inferred from silence or "looks good".
-In the same turn: confirm a slug, then write `.product/approved/<slug>/` holding the
-artifact byte-for-byte as approved plus `approval.md` — approved date and by whom, the
-exact state approved (layout, toggles, filters as chosen), the decisions on the way
-(what was rejected and why), and what is explicitly out of scope. Approving a newer
-version supersedes the older record: rename the old folder with its approval date,
-never delete it, and never edit a record except to mark it superseded. If `.product/`
-is absent, create it and tell the user the convention: product-level records live
-there, human-readable and diffable, owned by the user. Build implements against the
-record; review checks fidelity to it.
+"this is it", "ship this", "approved". Praise is not approval; if the words could mean
+either, ask one line before writing. In the same turn: confirm a slug, then write
+`.product/approved/<slug>/` holding the artifact byte-for-byte as approved (plus
+`source/` when it was rendered from source) and `approval.md` — approved date, by whom,
+from which conversation or variant, the exact state approved (layout, toggles, filters
+as chosen), the decisions on the way (what was rejected and why), and what is explicitly
+out of scope. A newer approval supersedes: rename the old folder `<slug>--YYYY-MM-DD`
+(its approval date; append `-2`, `-3` on a same-day collision), never delete it, and
+never edit a record except to mark it superseded. If `.product/` is absent, create it
+and tell the user the convention: product-level records live there, human-readable and
+diffable, owned by the user.
 
 ## Name mapping
 
@@ -66,7 +67,7 @@ fallback resolves to `direct/index.md`.
 
 ## Handoffs
 
-Implementing a confirmed brief, chosen direction, mock, or winning variant → **pe-build** (with the
-DESIGN.md, any chosen preset, and the approved record named). Judging existing UI → **pe-review**. Behavior
-specs beyond PRODUCT.md's scope → **pe-product-description**. On-brand
-standalone assets → **pe-brand-assets**.
+Implementing a confirmed brief, chosen direction, mock, or winning variant →
+**pe-build** (with the DESIGN.md, any chosen preset, and the approved record named).
+Judging existing UI → **pe-review**. Behavior specs beyond PRODUCT.md's scope →
+**pe-product-description**. On-brand standalone assets → **pe-brand-assets**.

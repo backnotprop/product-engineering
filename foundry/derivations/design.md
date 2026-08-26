@@ -65,9 +65,12 @@ the default; presets are commissions invoked by explicit direction match.
 Spine gains an **Approval** section (authored): on explicit user approval of a brief,
 direction, mock, or variant, the skill confirms a slug and writes
 `.product/approved/<slug>/` — the artifact byte-for-byte plus `approval.md` (approved
-date/by, exact approved state, decisions on the way, out of scope). Newer approvals
-supersede; superseded folders are renamed with their date, never deleted; records are
-never edited except to mark them superseded. `.product/` is created on first use with
+date/by, from which conversation or variant, exact approved state, decisions on the way,
+out of scope; `source/` when rendered from source). Praise is not approval — ambiguous
+words get one clarifying line first. Newer approvals supersede; superseded folders are
+renamed `<slug>--YYYY-MM-DD` (`-2`, `-3` on same-day collisions), never deleted; records
+are never edited except to mark them superseded. The superseded-folder form is stated
+here only; fidelity.md references it. `.product/` is created on first use with
 the convention stated to the user. The pe-build handoff now names the approved record.
 No reference files change; the step is spine-only glue. First record:
 `.product/approved/pe-verify-report/`.
