@@ -1,6 +1,6 @@
 ---
 name: pe-design
-description: Design-process work before production code. Use to capture product and design-system context (PRODUCT.md / DESIGN.md), write a design brief for one feature or flow, set creative direction and taste, build wireframes / mockups / prototypes / diagrams / plans as self-contained HTML, render competing variations of a UI piece behind a picker, or design onboarding and first-run flows. Triggers on design, design brief, "write a brief", "spec this feature", "shape this flow", direction, "how should this look/feel", wireframe, mockup, prototype, mock this up, diagram, "document our design system", DESIGN.md, "show me versions/variations", onboarding, empty states, first-run. The deliverable is a document or artifact — not production code (pe-build) and not a verdict on existing UI (pe-review).
+description: Design-process work before production code. Use to capture product and design-system context (PRODUCT.md / DESIGN.md), write a design brief for one feature or flow, set creative direction and taste, build wireframes / mockups / prototypes / diagrams / plans as self-contained HTML, render competing variations of a UI piece behind a picker, design onboarding and first-run flows, or record an approved artifact under .product/approved/. Triggers on design, design brief, "write a brief", "spec this feature", "shape this flow", direction, "how should this look/feel", wireframe, mockup, prototype, mock this up, diagram, "document our design system", DESIGN.md, "show me versions/variations", onboarding, empty states, first-run. The deliverable is a document or artifact — not production code (pe-build) and not a verdict on existing UI (pe-review).
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/design.md in the source repository
@@ -41,6 +41,20 @@ single feature or flow. A mockup of something new is **mock**; N takes on one ex
 is **vary**. "Make it look better" on shipped UI is not this skill (pe-build). A named
 diff/branch/PR is never this skill (pe-review).
 
+## Approval
+
+Runs only on the user's explicit approval of a brief, direction, mock, or variant —
+"this is it", "ship this", "approved". Never inferred from silence or "looks good".
+In the same turn: confirm a slug, then write `.product/approved/<slug>/` holding the
+artifact byte-for-byte as approved plus `approval.md` — approved date and by whom, the
+exact state approved (layout, toggles, filters as chosen), the decisions on the way
+(what was rejected and why), and what is explicitly out of scope. Approving a newer
+version supersedes the older record: rename the old folder with its approval date,
+never delete it, and never edit a record except to mark it superseded. If `.product/`
+is absent, create it and tell the user the convention: product-level records live
+there, human-readable and diffable, owned by the user. Build implements against the
+record; review checks fidelity to it.
+
 ## Name mapping
 
 The mock files route to skills by name (html-wireframe, html-prototype,
@@ -53,6 +67,6 @@ fallback resolves to `direct/index.md`.
 ## Handoffs
 
 Implementing a confirmed brief, chosen direction, mock, or winning variant → **pe-build** (with the
-DESIGN.md and any chosen preset named). Judging existing UI → **pe-review**. Behavior
+DESIGN.md, any chosen preset, and the approved record named). Judging existing UI → **pe-review**. Behavior
 specs beyond PRODUCT.md's scope → **pe-product-description**. On-brand
 standalone assets → **pe-brand-assets**.

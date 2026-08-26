@@ -38,6 +38,19 @@ references). This preserves bytes and keeps his routing semantics.
 | motion-audit.md | emilkowalski/skills · skills/improve-animations/SKILL.md | GOLD | verbatim | whole-codebase motion audit → plans (read-only, so it lives here not in build) |
 | motion-audit-signals.md | emilkowalski/skills · skills/improve-animations/AUDIT.md | GOLD | verbatim | hunt-for signal lists for the motion audit |
 | motion-opportunities.md | emilkowalski/skills · skills/find-animation-opportunities/SKILL.md | GOLD | verbatim | lowest-loss twin (~10% delta vs course); read-only proposer |
+| fidelity.md | ours (issue #38) | — | authored | fidelity mode: implementation vs the approved artifact in `.product/approved/` |
+
+## Approval stamp (#38)
+
+Spine gains a **fidelity** mode row ("did we stay true to the mock?"; implied whenever a
+reviewed surface has an approved record) loading `fidelity.md` — authored, no upstream
+source, registered in MANIFEST as authored. The reference covers locating the record
+(current vs date-suffixed superseded folders; `approval.md` wins over the artifact), the
+six-axis comparison (structure, hierarchy, states, copy, spacing, behavior), severity
+mapping for deviations, sanctioned deviations (stated in the build report with a reason),
+and the handoff (findings → pe-build; stale record → pe-design re-approval). The engine
+still governs evidence, triggers, and verdict format; the reference does not restate
+them. Router gains the "did we match the design?" → fidelity disambiguation.
 
 ## Rulings applied
 

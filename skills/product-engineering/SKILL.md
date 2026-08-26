@@ -19,7 +19,7 @@ Ask what should exist when the work is done:
 | --- | --- |
 | A document or design artifact — context docs, a design brief for one feature, a direction, wireframes, mockups, prototypes, variants, an onboarding flow | `pe-design` |
 | Working production code — a component built, polished, animated, made accessible, or hardened; a UI bug fixed | `pe-build` |
-| A judgment on what exists — a review, critique, audit, or stress test of a screen, diff, or PR | `pe-review` |
+| A judgment on what exists — a review, critique, audit, or stress test of a screen, diff, or PR; fidelity to an approved design | `pe-review` |
 | A behavior spec — documentation of what users see and do, verified against the product | `pe-product-description` |
 | A standalone asset — an illustration, social/OG image, or logo in the project's brand | `pe-brand-assets` |
 
@@ -34,6 +34,8 @@ Ask what should exist when the work is done:
   mode. **A spec of how the existing product behaves** → `pe-product-description`.
 - **A mockup of something new** → `pe-design`. **N takes on one existing piece** →
   `pe-design`, vary mode.
+- **"Did we match the design / mock?"** → `pe-review`, fidelity mode (checks against
+  the record in `.product/approved/`). **"Make it match the mock"** → `pe-build`.
 - Still ambiguous after that: ask one short question naming the two candidate
   skills, then proceed.
 
