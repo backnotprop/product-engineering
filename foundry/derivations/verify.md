@@ -12,7 +12,7 @@ reported pass/fail against the user's own list of concerns.
 - `.product/approved/pe-verify-report/` — the approved report prototype (ledger layout,
   show-all default, checkpoint player with hover previews). The shipped template is a
   surgery on that source: prototype chrome, Inspector and Dossier layouts, and the sample
-  data removed; nothing added to the approved viewer.
+  data removed; the only additions are the deviations recorded below.
 
 ## Files
 
@@ -25,7 +25,7 @@ reported pass/fail against the user's own list of concerns.
 | `assets/report.schema.json` | authored | the authoritative schema |
 | `assets/report-template.html` | authored | derived from the approved artifact |
 | `assets/sample/` | authored | a feature run with a recording and five checkpoints; the test fixture |
-| `scripts/validate_report_lib.py`, `validate-report.py`, `render-report.py`, `test-render.py` | authored | validate, render (webm→mp4, `--out` rebasing, error page), 51 tests, six of them in Chromium |
+| `scripts/validate_report_lib.py`, `validate-report.py`, `render-report.py`, `test-render.py` | authored | validate, render (webm→mp4, `--out` rebasing, error page); the test count is printed by `test-render.py` |
 
 ## Deviations from the approved artifact
 

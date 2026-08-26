@@ -40,10 +40,11 @@ to hand the problems back to you.
 **Run** — `schema_version` (always `1`) · `title` · `mode` (`feature` for one item
 rendered as the first-look viewer, `list` for the ledger) · `ran_at` (ISO 8601) ·
 optional `repo`, `commit`, `list_source` (path of the QA list used), `notes`
-(environment caveats, what could not be checked). List runs also carry `selection`:
+(environment caveats, what could not be checked). List runs require `selection`:
 `all` when every entry ran, `selective` when the agent chose entries from the change
-set; a selective run adds `selection_basis` (what it chose from: `diff main...HEAD,
-14 files`) and lists every unchosen entry as an item with status `not-run`.
+set; a selective run requires `selection_basis` (what it chose from: `diff
+main...HEAD, 14 files`) and lists every unchosen entry as an item with status
+`not-run`. Feature runs carry neither.
 
 **Item** — `id` (stable, `[A-Za-z0-9][A-Za-z0-9_-]*`, unique in the run) · `title` ·
 `check_type` (`code` · `browser` · `mixed`) · `status` (`pass` · `fail` · `flag` ·

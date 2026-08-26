@@ -54,6 +54,8 @@ check("quote in media path", "$.items[0].media.checkpoints[0].screenshot" in err
 check("dotdot in media path", "$.items[0].media.screenshots[0].path" in errs_of(lambda r: r["items"][0]["media"]["screenshots"][0].update(path="../cp-4.png")))
 check("bad ran_at", "$.ran_at" in errs_of(lambda r: r.update(ran_at="yesterday")))
 check("findings not a list → one error", [e for e in errs_of(lambda r: r["items"][0].update(findings="oops"))] == ["$.items[0].findings"])
+check("list run without selection", "$.selection" in errs_of(lambda r: r.update(mode="list")))
+check("selective run without basis", "$.selection_basis" in errs_of(lambda r: r.update(mode="list", selection="selective")))
 check("bad selection value", "$.selection" in errs_of(lambda r: (r.update(mode="list", selection="some"))))
 check("selection in feature mode", "$.selection" in errs_of(lambda r: r.update(selection="all")))
 check("basis without selective", "$.selection_basis" in errs_of(lambda r: r.update(mode="list", selection="all", selection_basis="diff")))
@@ -100,7 +102,7 @@ r = run([os.path.join(HERE, "render-report.py"), os.path.join(d, "broken.json"),
 check("unreadable → exit 2 and error page", r.returncode == 2 and "not valid JSON" in open(os.path.join(d, "broken.html")).read(), r.stdout)
 
 # list mode: 3 items from the fixture, one code item without media
-lst = copy.deepcopy(base); lst["mode"] = "list"; lst["title"] = "Release QA"; lst["list_source"] = ".product/qa-list.md"
+lst = copy.deepcopy(base); lst["mode"] = "list"; lst["selection"] = "all"; lst["title"] = "Release QA"; lst["list_source"] = ".product/qa-list.md"
 a = copy.deepcopy(base["items"][0]); a["id"] = "bun-version"; a["title"] = "Bun 1.3.11"; a["check_type"] = "code"; a["status"] = "flag"; a.pop("media")
 b = copy.deepcopy(base["items"][0]); b["id"] = "remote-urls"; b["status"] = "fail"; b.pop("media")
 c = copy.deepcopy(a); c["id"] = "install-paths"; c["title"] = "Install paths still diverge for Pi and OpenCode"; c["status"] = "not-run"; c["summary"] = "No change under install/ in this change set."; c.pop("findings", None)

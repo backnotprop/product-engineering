@@ -48,22 +48,20 @@ No required format. Each list item or heading is one check.
   pins the version, confirm it is unchanged since the last tag, cite the line.
 - Rich items (a 29-entry release list mixing browser behavior, install-path
   divergence, prompt-cache preservation, supply-chain version checks, doc staleness)
-  are run in full. Length is not a reason to sample.
+  are run in full; in a selective run the change set decides, never the length.
 
 Item ids in the report are slugs of the check titles (`bun-version`,
 `toolbar-buttons-present`), stable across runs so reports line up release to release.
 
 ## Choosing entries in a selective run
 
-Selection is from the change set, never from convenience. Read the diff (files, routes,
-scripts, dependencies, docs touched) and keep an entry when any of it can affect what
-the entry checks. Rules:
+Read the change set (files, routes, scripts, dependencies, docs touched) and keep an
+entry when any of it can affect what the entry checks. Rules:
 
 - Entries marked "always flag" run in every selective run.
 - An entry whose area is untouched is `not-run`, with the reason in its `summary`:
   "no change under `install/`", "dependencies unchanged since v0.17.5".
-- Unsure whether an entry is affected: run it. Cost is a check; the alternative is a
-  missed regression.
+- Unsure whether an entry is affected: run it.
 - The report's `selection_basis` names what was read: `diff main...HEAD, 14 files`,
   `v0.17.5..HEAD`.
 

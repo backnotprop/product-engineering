@@ -13,7 +13,6 @@ import json, os, re, sys
 
 STATUS = {"pass", "fail", "flag", "skipped", "not-run"}
 SELECTION = {"all", "selective"}
-SELECTION = {"all", "selective"}
 CHECK = {"code", "browser", "mixed"}
 SEV = {"high", "medium", "low", "info"}
 MODE = {"feature", "list"}
@@ -55,6 +54,8 @@ def validate(report, base_dir):
     sel = report.get("selection")
     if "selection" in report and sel not in SELECTION: E("$.selection", "must be 'all' or 'selective'")
     if "selection" in report and report.get("mode") == "feature": E("$.selection", "only list runs have a selection")
+    if report.get("mode") == "list" and "selection" not in report: E("$.selection", "list runs must say 'all' or 'selective'")
+    if sel == "selective" and "selection_basis" not in report: E("$.selection_basis", "a selective run names what it selected from")
     if "selection_basis" in report and not isinstance(report["selection_basis"], str): E("$.selection_basis", "must be a string")
     if "selection_basis" in report and sel != "selective": E("$.selection_basis", "only selective runs have a basis")
 
