@@ -160,3 +160,6 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · correction · claude · the previous docs entry was FALSE: PR #26 logged the routing-paragraph cut but the edit had silently failed (text mismatch) and only the log line shipped. The paragraph is actually removed in this change. Process note: the pipeline ran despite the failed edit — bash chains for record-touching changes must abort on edit failure
 - 2026-08-26 · docs · ramos · README intro set to user-dictated copy; "best published design-engineering skills" links to the provenance section with the credits card
 - 2026-08-26 · docs · ramos · collapsed sources table added to Provenance and integrity: all nine upstreams linked, the Steve Ruiz gist called out as such
+- 2026-08-25 · lift · ramos · skills/pe-design/references/brief/index.md ← pbakaus/impeccable:skill/reference/shape.md @ fcd7622cd · class=distilled · sha256=a55f016c046c…
+- 2026-08-25 · distill-update · ramos · skills/pe-design/references/brief/index.md · sha256=3f463bf8d86a…
+- 2026-08-26 · build-skill · claude+ramos · pe-design gains brief mode (issue #1): distilled from Impeccable shape.md @fcd7622 (+new-work authority states/job questions) against the issue's own spec as salvage contract; pbakaus/impeccable registered as a watcher-tracked upstream (Apache-2.0) — first pinned Impeccable source

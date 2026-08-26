@@ -39,6 +39,10 @@
     "Leonxlnx/taste-skill": {
       "url": "https://github.com/Leonxlnx/taste-skill.git",
       "license": "MIT"
+    },
+    "pbakaus/impeccable": {
+      "url": "https://github.com/pbakaus/impeccable.git",
+      "license": "Apache-2.0"
     }
   },
   "files": {
@@ -1261,6 +1265,18 @@
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
       "sha256": "7b2d80d38d6f87618ade6ba73c53253a89adc682597b95ee2978ad9f69d194b7",
+      "updated": "2026-08-25"
+    },
+    "skills/pe-design/references/brief/index.md": {
+      "class": "distilled",
+      "upstream": "pbakaus/impeccable",
+      "upstream_path": "skill/reference/shape.md",
+      "pinned_sha": "fcd7622cd2d8e2b09344ba8ede9fcac82cec4e70",
+      "lifted": "2026-08-25",
+      "skill": "pe-design",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "3f463bf8d86a16ff91c5bcb6b37d466ba1150faedb7beaf69b14d7c8ef2a659f",
       "updated": "2026-08-25"
     }
   }
