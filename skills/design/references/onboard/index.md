@@ -1,9 +1,7 @@
 # Onboard (activation & first-run design)
 
 The onboard mode of the design skill: first-use onboarding, activation, setup, empty
-states, contextual guidance, and feature discovery. Provenance: our legacy
-ui-onboarding skill (derived and substantially modified from Impeccable 4.1.1
-onboard), converted to a mode reference. Patterns catalog: `patterns.md`.
+states, contextual guidance, and feature discovery. Patterns catalog: `patterns.md`.
 
 Get users to real value quickly. Onboarding is not a tour of every feature.
 

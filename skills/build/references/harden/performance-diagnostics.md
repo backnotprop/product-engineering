@@ -1,6 +1,5 @@
 # Performance diagnostics
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `optimize`.
 
 Use this reference only when the task includes a measured or suspected performance problem.
 

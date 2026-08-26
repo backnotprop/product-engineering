@@ -45,7 +45,10 @@ local machines, never in a commit.
 - **Anti-slop gates on anything you author:** no restatement between spine and
   references (principle in the spine, recipe in the ref, never both) · every sentence
   must change an implementation choice · no adjective stacks, personas, or dial theater ·
-  skill activation load stays under ~500 lines.
+  skill activation load stays under ~500 lines · **no provenance in runtime text** —
+  MANIFEST, derivations, and NOTICE own provenance; skill prose states rules without
+  citing sources, patches, pins, or ledger ids (frontmatter carries only a one-line
+  derivations pointer).
 - **Plan first:** write `foundry/derivations/<skill>.md` (sources, classes, cuts,
   rulings applied) before running a single lift. The receipts precede the work.
 - **Verify:** `check-integrity.sh` green, `skills-ref validate` (or equivalent) clean,

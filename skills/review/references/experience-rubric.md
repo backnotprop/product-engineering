@@ -1,6 +1,5 @@
 # Experience review rubric
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `critique` and `audit`.
 
 ## Cognitive load
 

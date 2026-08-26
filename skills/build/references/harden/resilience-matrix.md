@@ -1,6 +1,5 @@
 # Frontend resilience matrix
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `harden`, `adapt`, and `optimize`.
 
 Select scenarios based on the product. Do not force irrelevant cases.
 

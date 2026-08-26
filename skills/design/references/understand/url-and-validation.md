@@ -1,10 +1,8 @@
 # URL extraction and validation
 
-Distilled from ibelick/ui-skills `create-design-md` (see MANIFEST for the pin).
-Salvage contract: the evidence pipeline, the URL-mode three-proof gate, the validation
-commands, and the frontmatter shape rules — each stated once. This extends
-`index.md` (the understand workflow) with its two machine-verified capabilities:
-documenting from a public URL, and validating DESIGN.md before it ships.
+Extends `index.md` (the understand workflow) with two machine-verified
+capabilities: documenting a design system from a public URL, and validating
+DESIGN.md before it ships.
 
 ## The evidence pipeline (both modes)
 

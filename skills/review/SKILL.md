@@ -3,13 +3,13 @@ name: review
 description: Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; or audit accessibility. Triggers on review, critique, audit, UX review, design review, interface review, "review my PR", "check accessibility", "will this survive", "review the animations". Produces findings and verdicts only — never edits code.
 license: Apache-2.0
 metadata:
-  provenance: Converged from jakubkrehel/skills (engine, change, stress), our legacy ui-review (screen), ibelick/ui-skills (audit method, a11y order), emilkowalski/skills (motion), and vercel-labs/web-interface-guidelines (guidelines) — see foundry/derivations/review.md
+  provenance: foundry/derivations/review.md in the source repository
 ---
 
 # Review
 
 Read-only judgment of existing UI. This spine routes; the judgment lives in the
-reference files, which are preserved from their authors — load only what the mode needs.
+reference files — load only what the mode needs.
 
 ## Contract (all modes)
 
@@ -19,7 +19,7 @@ reference files, which are preserved from their authors — load only what the m
   evidence bar, escalation triggers, cheaper-fix ladder, consolidation, and the
   verdict format in `references/review-format.md`.
 - **Severity** is HIGH / MEDIUM / LOW plus the engine's escalation triggers.
-  Accessibility findings are never discarded (ruling L-09).
+  Accessibility findings are never discarded.
 
 ## Modes
 
@@ -38,10 +38,10 @@ Disambiguation: **verb beats noun** — "review the animation" is motion mode he
 "fix the animation" is not this skill at all (build). A request that mixes modes runs
 the engine once and consolidates, never two parallel reviews.
 
-## Name mapping for lifted texts
+## Name mapping
 
-The engine and change references route to their author's `better-*` skills by name.
-In this kit those names resolve as follows — apply the mapping silently:
+Some references route to skills by name. Those names resolve as follows — apply the
+mapping silently:
 
 | Text says | Use |
 | --- | --- |
@@ -49,13 +49,9 @@ In this kit those names resolve as follows — apply the mapping silently:
 | better-ui, better-layout, better-typography, better-colors, better-writing | the build skill's `references/craft/{ui,layout,typography,colors,writing}/` |
 | better-interface | this skill's engine mode itself |
 
-## Rulings applied here
+## House rules
 
-- **L-09** — a11y findings are never discarded; `audit-method.md` ships with its
-  discard rule and finding cap cut (see its patch).
-- **L-11** — `web-interface-guidelines.md` ships with house-taste rows cut; the
-  autocomplete rule stands as: autocomplete on purposeful fields, `off` only for
-  non-auth-sensitive cases.
+- Autocomplete: on for purposeful fields; `off` only for non-auth-sensitive cases.
 - P0–P3 appears only inside screen mode's files; report severity as HIGH/MED/LOW
   (P0+P1 → HIGH, P2 → MEDIUM, P3 → LOW).
 

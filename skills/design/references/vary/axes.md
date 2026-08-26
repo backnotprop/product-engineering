@@ -1,7 +1,5 @@
 # Variation axes and the floor
 
-Distilled from jakubkrehel/skills `variant` (see MANIFEST for the pin). Salvage
-contract: the single-primary-axis rule, the accessibility floor, and named URL params.
 The picker implementation is `picker.md`; this file governs what enters it.
 
 ## One primary axis
