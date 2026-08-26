@@ -1,0 +1,23 @@
+--- /Users/ramos/oss/backnotprop/product-engineering/foundry/pristine/skills__review__references__web-interface-guidelines.md	2026-08-25 17:00:54
++++ /Users/ramos/oss/backnotprop/product-engineering/skills/review/references/web-interface-guidelines.md	2026-08-25 17:01:31
+@@ -45,7 +45,6 @@
+ - Submit button stays enabled until request starts; spinner during request
+ - Errors inline next to fields; focus first error on submit
+ - Placeholders end with `…` and show example pattern
+-- `autocomplete="off"` on non-auth fields to avoid password manager triggers
+ - Warn before navigation with unsaved changes (`beforeunload` or router guard)
+ 
+ ### Animation
+@@ -141,12 +140,10 @@
+ ### Content & Copy
+ 
+ - Active voice: "Install the CLI" not "The CLI will be installed"
+-- Title Case for headings/buttons (Chicago style)
+ - Numerals for counts: "8 deployments" not "eight"
+ - Specific button labels: "Save API Key" not "Continue"
+ - Error messages include fix/next step, not just problem
+ - Second person; avoid first person
+-- `&` over "and" where space-constrained
+ 
+ ### Anti-patterns (flag these)
+ 
