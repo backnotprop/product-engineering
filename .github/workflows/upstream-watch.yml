@@ -1,0 +1,43 @@
+name: upstream-watch
+# The watcher. Weekly: compare every vendored file's pinned upstream blob against
+# the same path at upstream HEAD (foundry/scripts/check-upstream.sh), and open ONE
+# summary issue when anything drifted. Classification and re-lifts are deliberately
+# NOT automated — a human (or an agent session following the re-lift runbook) acts
+# on the issue. LLMs propose, hashes verify, humans merge.
+on:
+  schedule:
+    - cron: "0 14 * * 1"   # Mondays 14:00 UTC
+  workflow_dispatch:
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare pinned blobs against upstream HEAD
+        id: check
+        run: |
+          chmod +x foundry/scripts/check-upstream.sh
+          foundry/scripts/check-upstream.sh | tee /tmp/upstream-report.txt
+          count=$(grep -c '^DRIFT\|^GONE' /tmp/upstream-report.txt || true)
+          echo "drift=$count" >> "$GITHUB_OUTPUT"
+      - name: Open drift issue
+        if: steps.check.outputs.drift != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          count="${{ steps.check.outputs.drift }}"
+          title="upstream drift: $(date -u +%F) — ${count} file(s)"
+          {
+            echo "The watcher found upstream changes to tracked files. Handle per the runbooks:"
+            echo '- touches a **verbatim/verbatim-minus** file → re-lift runbook (`.claude/skills/foundry/runbooks/re-lift.md`)'
+            echo '- touches a **distilled** file'"'"'s source → distill-refresh runbook'
+            echo '- conflicts with a **LEDGER ruling** → adjudicate (never auto-re-lift)'
+            echo
+            echo '```'
+            grep -v '^OK' /tmp/upstream-report.txt
+            echo '```'
+          } > /tmp/body.md
+          gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body-file /tmp/body.md

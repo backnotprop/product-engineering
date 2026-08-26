@@ -1,47 +1,51 @@
-# UI Skills
+# product-engineering
 
-Five standalone skills for understanding, reviewing, refining, hardening, and onboarding user interfaces.
+Five agent skills covering the end-to-end product design process, converged from the
+best published design-engineering skill work — with the source prose preserved
+**byte-for-byte** and proven by hashes.
 
-Each skill works independently. `PRODUCT.md` and `DESIGN.md` are useful context when they exist, but no review or implementation skill requires them.
+| Skill | The deliverable | Modes |
+| --- | --- | --- |
+| `design` | documents & artifacts, before code | understand · direct · mock · vary · onboard |
+| `build` | production UI code | craft · motion · a11y · harden |
+| `review` | read-only findings & verdicts | change · screen · plans · guidelines · stress · motion · opportunities · a11y |
+| `product-description` | a behavior-spec repo | (Steve Ruiz's skill, vendored whole) |
+| `brand-assets` | standalone on-brand assets (SVG-first) | — |
 
-| Skill | Purpose |
-| --- | --- |
-| `project-context` | Capture durable product context and document an existing visual system |
-| `ui-review` | Review a UI's design, usability, accessibility, responsiveness, and implementation |
-| `ui-polish` | Refine an existing UI without quietly redesigning it |
-| `ui-harden` | Make a UI resilient to real data, failures, devices, languages, and input methods |
-| `ui-onboarding` | Get new and returning users to useful product value quickly |
-
-The collection intentionally contains no installer, hooks, background processes, live-mode runtime, critique history, or required command sequence.
+Each skill is a thin authored router over reference files lifted verbatim from graded
+sources — Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, plannotator,
+Steve Ruiz (see NOTICE) — plus this repo's own Impeccable-derived texts.
 
 ## Install
 
 ```bash
-npx skills add backnotprop/ui-skills
+npx skills add backnotprop/product-engineering            # all five
+npx skills add backnotprop/product-engineering --skill review
 ```
 
-List the available skills:
+## How this repo works
 
-```bash
-npx skills add backnotprop/ui-skills --list
-```
+- **`foundry/MANIFEST.json`** records every non-authored file's upstream repo, path,
+  pinned commit, and sha256. CI (`integrity.yml`) recomputes every hash on every
+  push — a single reworded character in a vendored file fails the build.
+- **Cuts are recorded, never silent**: files trimmed from their source
+  (`verbatim-minus`) keep a pristine copy plus a `.patch` in `foundry/pristine/`;
+  CI proves pristine + patch reproduces the shipped file.
+- **`foundry/LEDGER.md`** holds the rulings where sources contradicted each other;
+  no text in the kit may disagree with an active ruling.
+- **`foundry/derivations/`** are the per-skill receipts: what was lifted, cut,
+  distilled, and why. **`foundry/LOG.md`** is the append-only history.
+- **`upstream-watch.yml`** runs weekly: it diffs every pinned upstream blob against
+  upstream HEAD and opens an issue when authors improve something we vendored.
+- Bytes enter this repo only through `foundry/scripts/lift.sh` — LLM agents working
+  here never retype vendored prose (see AGENTS.md, the fence).
 
-Install one skill:
+The animations.dev course pack is **not** in this repo — purchasers layer it locally
+via `foundry/scripts/course-dropin.sh` into gitignored folders, and the build skill
+prefers it when present.
 
-```bash
-npx skills add backnotprop/ui-skills --skill ui-review
-```
+## License
 
-The repository uses the portable multi-skill layout:
-
-```text
-skills/<skill-name>/SKILL.md
-```
-
-It can be consumed by any Agent Skills-compatible client or installer. `skills.sh.json` groups the five public skills for skills.sh discovery. No client-specific plugin runtime is required.
-
-## Provenance
-
-These skills are derivative works based on selected guidance from [Impeccable](https://github.com/pbakaus/impeccable), principally skill version 4.1.1. They preserve its useful review rubrics, decision rules, and implementation disciplines while removing Impeccable-specific orchestration, storage, hooks, command routing, and runtime assumptions.
-
-See `DERIVATION.md` for the source-by-source comparison, plus `NOTICE` and `LICENSE`.
+Apache-2.0 for this repository's own work; vendored files remain under their
+authors' licenses with provenance in `foundry/MANIFEST.json` and attribution in
+`NOTICE`.
