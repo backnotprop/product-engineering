@@ -57,8 +57,8 @@ ui-monospace stack for mono) and are designed to hold up in the fallback.
 ## Components
 
 The card is the one component. Pattern, top to bottom: mono skill name (faint) ·
-two-word verb headline (Geist 600) · one plain sentence (muted) · mode list in mono
-at the base (faint). Dark linear gradient ground `#1D1F24 → #121316`. 600×320 for
+a plain noun-phrase headline (Geist 600) · one factual sentence (muted) · mode list
+in mono at the base (faint). Dark linear gradient ground `#1D1F24 → #121316`. 600×320 for
 skill cards; heroes are 1200-wide.
 
 ## Do's and Don'ts
@@ -67,5 +67,6 @@ skill cards; heroes are 1200-wide.
 - Do keep gradients subtle enough to read as lighting.
 - Don't add decoration, icons, illustrations, or borders on dark cards.
 - Don't introduce an accent color into assets.
-- Don't let card copy go promotional; sentences state function
-  ("Findings, never edits.").
+- Don't let card copy go promotional or sloganeer; headlines are plain labels and
+  sentences state behavior ("Reports findings and makes no edits."). No "It's not X,
+  it's Y" contrasts, no stacked fragments, no "verb it." taglines.
