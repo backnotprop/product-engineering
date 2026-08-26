@@ -99,7 +99,7 @@ The animations.dev course pack is **not** in this repo — purchasers layer it l
 via `foundry/scripts/course-dropin.sh` into gitignored folders, and the build skill
 prefers it when present.
 
-<img src="brand/credits.svg" alt="Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, Steve Ruiz, Impeccable — preserved byte-for-byte, hash-verified" width="100%">
+<img src="brand/credits.svg" alt="Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Plannotator, Vercel, Leon, Steve Ruiz, Impeccable — preserved byte-for-byte, hash-verified" width="100%">
 
 ## License
 
