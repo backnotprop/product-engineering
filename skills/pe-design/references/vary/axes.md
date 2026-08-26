@@ -18,7 +18,7 @@ is a bug with a nice surface. Before a variant enters the picker: every control 
 accessible name, keyboard reaches everything a pointer does, focus is visible, nothing
 clips at 320px, and no meaning rides on color alone. The floor is identical across
 variants; it is not an axis and never trades against one. Where a direction can only
-work by breaking it, say so and drop the direction. (The review skill's engine
+work by breaking it, say so and drop the direction. (The pe-review skill's engine
 escalation triggers are the authoritative list.)
 
 ## Named URL params

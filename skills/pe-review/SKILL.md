@@ -1,5 +1,5 @@
 ---
-name: review
+name: pe-review
 description: Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; or audit accessibility. Triggers on review, critique, audit, UX review, design review, interface review, "review my PR", "check accessibility", "will this survive", "review the animations". Produces findings and verdicts only — never edits code.
 license: Apache-2.0
 metadata:
@@ -14,7 +14,7 @@ reference files — load only what the mode needs.
 ## Contract (all modes)
 
 - **Read-only.** Never edit product code, even for a one-character fix. Findings name
-  the change; applying it is the build skill's job — hand off by name.
+  the change; applying it is the pe-build skill's job — hand off by name.
 - **Engine rules govern every mode.** Read `references/engine.md` first, always: its
   evidence bar, escalation triggers, cheaper-fix ladder, consolidation, and the
   verdict format in `references/review-format.md`.
@@ -35,7 +35,7 @@ reference files — load only what the mode needs.
 | **a11y** | "Is this accessible?" — audit, not implementation. | `a11y-audit.md` (+ engine triggers) |
 
 Disambiguation: **verb beats noun** — "review the animation" is motion mode here;
-"fix the animation" is not this skill at all (build). A request that mixes modes runs
+"fix the animation" is not this skill at all (pe-build). A request that mixes modes runs
 the engine once and consolidates, never two parallel reviews.
 
 ## Name mapping
@@ -45,8 +45,8 @@ mapping silently:
 
 | Text says | Use |
 | --- | --- |
-| better-accessibility | `a11y-audit.md` for ordering; the engine's own triggers for severity; the build skill's `references/a11y/` for depth |
-| better-ui, better-layout, better-typography, better-colors, better-writing | the build skill's `references/craft/{ui,layout,typography,colors,writing}/` |
+| better-accessibility | `a11y-audit.md` for ordering; the engine's own triggers for severity; the pe-build skill's `references/a11y/` for depth |
+| better-ui, better-layout, better-typography, better-colors, better-writing | the pe-build skill's `references/craft/{ui,layout,typography,colors,writing}/` |
 | better-interface | this skill's engine mode itself |
 
 ## House rules
@@ -57,6 +57,6 @@ mapping silently:
 
 ## Handoffs
 
-Fixes → **build** (findings include exact file:line and the named change).
-Documenting the system a review revealed → **design**, understand mode.
+Fixes → **pe-build** (findings include exact file:line and the named change).
+Documenting the system a review revealed → **pe-design**, understand mode.
 Never resolve a finding by editing anything yourself.

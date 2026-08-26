@@ -9,7 +9,7 @@ license: Apache-2.0
 # Foundry
 
 This repo converges 84 upstream design-engineering skills into five
-(`design`, `build`, `review`, `product-description`, `brand-assets`), preserving the
+(`pe-design`, `pe-build`, `pe-review`, `pe-product-description`, `pe-brand-assets`), preserving the
 best source prose **byte-for-byte** and proving it with hashes. You are operating a
 factory with strict rules, not editing a normal repo. AGENTS.md is the fence; this
 skill is the manual.

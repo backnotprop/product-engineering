@@ -1,6 +1,6 @@
 # Harden (production resilience)
 
-The harden mode of the build skill: make an existing frontend resilient to real data,
+The harden mode of the pe-build skill: make an existing frontend resilient to real data,
 failures, devices, languages, and performance constraints before shipping. For
 shipping metadata (SEO, OG, canonical, JSON-LD) see `metadata.md` in this folder.
 Accessibility verification gates below hand off to the a11y mode's references for

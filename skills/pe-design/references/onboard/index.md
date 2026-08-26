@@ -1,6 +1,6 @@
 # Onboard (activation & first-run design)
 
-The onboard mode of the design skill: first-use onboarding, activation, setup, empty
+The onboard mode of the pe-design skill: first-use onboarding, activation, setup, empty
 states, contextual guidance, and feature discovery. Patterns catalog: `patterns.md`.
 
 Get users to real value quickly. Onboarding is not a tour of every feature.
