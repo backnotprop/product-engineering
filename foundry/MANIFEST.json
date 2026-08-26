@@ -1158,6 +1158,96 @@
       "class": "authored",
       "skill": "design",
       "note": "legacy ui-onboarding SKILL.md converted to the onboard-mode reference; ours"
+    },
+    "skills/product-description/SKILL.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "SKILL.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "1771a81a429d888f2de971e168026667a4f2ab7573efb70ea3e854c7b3ffd7b2",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/README-template.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "README-template.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "97929b08347ca18d62bc786f450626def0e5512f97fddd06a9a8b6faf0673167",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/bug-triage-template.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "bug-triage-template.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "d1a91b699e2b81ef0568cc57a23da078b3a57b3d75e88bc686d573e2653bf9e4",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/document-template.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "document-template.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "d099e7e15f1287e758cd8e732d1959eaf266ed214fb7ad3ee80098e5ca8a5d88",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/glossary-guide.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "glossary-guide.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "1ee3581be11a5254b0736f8ea09c795aaa78922d5051707a506abfb19794d9da",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/goal-template.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "goal-template.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "dd47600dc4629b2d7964a1137e9fad2cf9096ad4e741f4894c566cf105406a67",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/product-kinds.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "product-kinds.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "710ed644295352a69121d8d5b5aab3538f677aca94a911f9932452774c85a079",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/verification-template.md": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "verification-template.md",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "39447bb851fb8cecb3a023f6db1e9e5e2d36ff1a7086bc7cbee2e1b2befa09d6",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
+    },
+    "skills/product-description/references/check-links.py": {
+      "class": "verbatim",
+      "upstream": "steveruizok/product-description",
+      "upstream_path": "check-links.py",
+      "pinned_sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+      "sha256": "2cff940703ccc50a2ac19de68d07fd77be9cf463be7c5421eed7905f0f76a68b",
+      "lifted": "2026-08-25",
+      "skill": "product-description",
+      "rulings": []
     }
   }
 }
