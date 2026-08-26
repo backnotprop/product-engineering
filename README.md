@@ -23,7 +23,7 @@ npx skills add backnotprop/product-engineering
 </p>
 <p>
   <a href="skills/pe-brand-assets"><img src="brand/cards/pe-brand-assets.svg" width="49%" alt="pe-brand-assets — Brand it. Illustrations, social images, and logos in your brand."></a>
-  <a href="skills/product-engineering"><img src="brand/cards/product-engineering.svg" width="49%" alt="product-engineering — Say it. Any request in, the right skill takes over. Routes to design, build, review, describe, brand."></a>
+  <a href="skills/product-engineering"><img src="brand/cards/product-engineering.svg" width="49%" alt="product-engineering — Lazy mode. Any request in, the right skill takes over. Routes to design, build, review, describe, brand."></a>
 </p>
 
 Say what you need — the right skill triggers on your words and routes itself to the
