@@ -166,3 +166,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-25 · distill-update · ramos · skills/pe-design/references/brief/index.md · sha256=d583774250b9…
 - 2026-08-26 · adversarial-review · claude · brief-mode fixes: Redesign authority state restored with its preservation duties (had been dissolved into no-authority — derivation claim was false), understand now states its side of the boundary with a pointer to brief mode, spine sequence corrected (direct runs mid-flow, not first), handoff restatement removed from the reference (spine owns handoffs and now names the confirmed brief)
 - 2026-08-26 · brand · ramos · pe-design card mode line updated for brief mode (six modes); camo cache busted
+- 2026-08-26 · docs · ramos · router gains the brief deliverable + the new-vs-existing spec disambiguation (pe-design brief vs pe-product-description); README examples gain a brief row
