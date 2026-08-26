@@ -3,11 +3,17 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Standalone UI Workflows",
-      "description": "Independent skills for product context, UI review, refinement, resilience, and onboarding.",
+      "title": "Converged Skills",
+      "description": "The five-skill product-engineering kit (in progress). Each is a thin router over byte-preserved references from graded sources.",
+      "skills": [
+        "review"
+      ]
+    },
+    {
+      "title": "Legacy Standalone UI Workflows",
+      "description": "Original standalone skills, live until superseded by the converged five.",
       "skills": [
         "project-context",
-        "ui-review",
         "ui-polish",
         "ui-harden",
         "ui-onboarding"

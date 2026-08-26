@@ -1,0 +1,20 @@
+--- /Users/ramos/oss/backnotprop/product-engineering/foundry/pristine/skills__review__references__audit-method.md	2026-08-25 17:00:50
++++ /Users/ramos/oss/backnotprop/product-engineering/skills/review/references/audit-method.md	2026-08-25 17:01:26
+@@ -56,7 +56,7 @@
+ 
+ Source can prove token, typography, color, spacing, layout, copy, component-variant, responsive-presentation, and explicit design-contract violations. It cannot turn functional behavior, state management, or interaction correctness into design findings. Hierarchy, prominence, density, clarity, discoverability, usability, and perceived coherence require rendered or user evidence.
+ 
+-Discard accessibility and HTML/ARIA semantic findings unless the user explicitly requests them. Discard broken routes, redirects, data wiring, action failures, metadata, package API, performance, architecture, and code-quality findings unless the user requested them or a product-specific design contract governs them.
++Discard broken routes, redirects, data wiring, action failures, metadata, package API, performance, architecture, and code-quality findings unless the user requested them or a product-specific design contract governs them.
+ 
+ Assign confidence only after all proofs pass. Reuse an existing owner when the evidence supports it; do not create a shared primitive from repetition alone.
+ 
+@@ -75,7 +75,7 @@
+ 
+ ## 5. Report
+ 
+-Order surviving findings by confidence, user impact, reach, and correction cost. Stop at three.
++Order surviving findings by confidence, user impact, reach, and correction cost.
+ 
+ Use this structure:
+ 

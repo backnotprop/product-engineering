@@ -73,15 +73,156 @@
       "skill": "ui-polish",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/ui-review/references/experience-rubric.md": {
+    "skills/review/references/engine.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-interface/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "dbbbc18aeed16cc5819c233c6847a36f2da4e1580e0fee1834ac2075513d7d41",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/review-format.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-interface/review-format.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "99bf274b4a382d89fc281482c688127d1d82e3a5a5c84d2662ebfc9946dc8108",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/change-review.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/interface-review/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "f995063c2ff623781cfc2a797d29203bbdec0d17e52b2ae14cee7829053897dd",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/scope-resolution.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/interface-review/scope-resolution.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "c3ca6c8c605d8f321995c935fc5bcc5173d7d3a46541de0b580f7394d6e121b7",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/removed-signals.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/interface-review/removed-signals.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "9e2d2d0c555dce408e241a9179c04f743c76459b6bd9add0904d03163ff61af0",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/stress.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/break/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "32085787b925ec2c00b362837cdbf5d26c0427b2d2fa0a6553bfbf820991a491",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/stress-scenarios.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/break/scenarios.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "5aacf085d5eca87b7b5e4f1b0a7412bfd532c8eaa574f455a5b1ffb00cdf86e9",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/motion-review.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/review-animations/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "61cf8ac0c4c8e1f63385298c546b16c65ca9aec34abddcd04e821c16712d671d",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/motion-standards.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/review-animations/STANDARDS.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "e7d3605034acda54ca13e43aec9e64d65b53de20f75b11b8d694e373012fbe07",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/plan-template.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/improve-animations/PLAN-TEMPLATE.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "0a08ac8e23fd2082d7ffb86aeed7b789de77328c3cf874b16f1a755f2ef0a6ad",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": []
+    },
+    "skills/review/references/audit-method.md": {
+      "class": "verbatim-minus",
+      "upstream": "ibelick/ui-skills",
+      "upstream_path": "skills/improve-ui/SKILL.md",
+      "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+      "sha256": "6022988fcc0d2e29276c44f4ae45fb7f7594e373b4f04561fcc973718c51a13d",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__review__references__audit-method.md",
+      "patch": "foundry/pristine/skills__review__references__audit-method.md.patch"
+    },
+    "skills/review/references/web-interface-guidelines.md": {
+      "class": "verbatim-minus",
+      "upstream": "vercel-labs/web-interface-guidelines",
+      "upstream_path": "command.md",
+      "pinned_sha": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "sha256": "07f341254dc9b7f88c25bf3aa4624d060e0bc6f1a1ea58d025ab53e377ce43e1",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__review__references__web-interface-guidelines.md",
+      "patch": "foundry/pristine/skills__review__references__web-interface-guidelines.md.patch"
+    },
+    "skills/review/references/a11y-audit.md": {
+      "class": "distilled",
+      "upstream": "ibelick/ui-skills",
+      "upstream_path": "skills/fixing-accessibility/SKILL.md",
+      "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+      "lifted": "2026-08-25",
+      "skill": "review",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "f75ffbf4e9b5063a0fb2e37bcd408a21e244c888ad35af64640ebeab67f30756",
+      "updated": "2026-08-25"
+    },
+    "skills/review/references/experience-rubric.md": {
       "class": "authored",
-      "skill": "ui-review",
+      "skill": "review",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/ui-review/references/technical-rubric.md": {
+    "skills/review/references/technical-rubric.md": {
       "class": "authored",
-      "skill": "ui-review",
+      "skill": "review",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/review/references/screen-review.md": {
+      "class": "authored",
+      "skill": "review",
+      "note": "legacy ui-review SKILL.md converted to the screen-mode reference; ours (Impeccable-derived)"
     }
   }
 }

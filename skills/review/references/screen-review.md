@@ -1,12 +1,9 @@
----
-name: ui-review
-description: Review an existing UI and produce prioritized, actionable findings across design, usability, cognitive load, accessibility, responsiveness, theming, performance, and implementation integrity. Use when asked for a UI critique, frontend audit, pre-release review, screenshot or URL evaluation, or an explanation of what is confusing, generic, inaccessible, fragile, or unfinished. Keep the review read-only unless the user separately asks for fixes.
-license: Apache-2.0
-metadata:
-  provenance: Derived and substantially modified from Impeccable 4.1.1 critique and audit
----
+# Screen review (two-pass flow)
 
-# UI Review
+The screen mode of the review skill: full assessment of a concrete UI target.
+Provenance: our legacy ui-review skill (derived and substantially modified from
+Impeccable 4.1.1 critique + audit), converted to a mode reference. Severity here uses
+P0–P3; map to the engine's scale as P0+P1 → HIGH, P2 → MEDIUM, P3 → LOW.
 
 Review any concrete UI target without requiring project context files, a detector, persistence, or a larger workflow.
 
