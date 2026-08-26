@@ -1,12 +1,9 @@
----
-name: ui-onboarding
-description: Design, review, or improve first-use onboarding, activation, setup, empty states, contextual guidance, and feature discovery so users reach meaningful product value quickly. Use when users are confused at first run, abandon setup, miss an aha moment, need progressive guidance, or when building tours, templates, checklists, empty states, or returning-user education. Do not use for generic documentation or marketing pages.
-license: Apache-2.0
-metadata:
-  provenance: Derived and substantially modified from Impeccable 4.1.1 onboard
----
+# Onboard (activation & first-run design)
 
-# UI Onboarding
+The onboard mode of the design skill: first-use onboarding, activation, setup, empty
+states, contextual guidance, and feature discovery. Provenance: our legacy
+ui-onboarding skill (derived and substantially modified from Impeccable 4.1.1
+onboard), converted to a mode reference. Patterns catalog: `patterns.md`.
 
 Get users to real value quickly. Onboarding is not a tour of every feature.
 
@@ -24,7 +21,7 @@ Determine:
 
 Infer what the product and existing evidence make clear. If the value moment or user experience level is genuinely unknown, ask before designing the flow.
 
-Read `references/onboarding-patterns.md` before choosing a pattern.
+Read `patterns.md` before choosing a pattern.
 
 ## Map the shortest path
 

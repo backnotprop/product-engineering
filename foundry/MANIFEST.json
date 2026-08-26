@@ -42,21 +42,6 @@
     }
   },
   "files": {
-    "skills/project-context/references/design-format.md": {
-      "class": "authored",
-      "skill": "project-context",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
-    "skills/project-context/references/templates.md": {
-      "class": "authored",
-      "skill": "project-context",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
-    "skills/ui-onboarding/references/onboarding-patterns.md": {
-      "class": "authored",
-      "skill": "ui-onboarding",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
     "skills/review/references/engine.md": {
       "class": "verbatim",
       "upstream": "jakubkrehel/skills",
@@ -948,6 +933,231 @@
       "note": "purchased course content \u2014 local drop-in only, never committed",
       "sha256": "a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0",
       "lifted": "2026-08-25"
+    },
+    "skills/design/references/direct/index.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/design-artifact/SKILL.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "c8314b66fb907a5acd3aa10efe4b5adb86d352808f5b84824cadfa6e6c9d38bb",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/index.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html/SKILL.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "d99612ae158cd9c18574eb4f3cd11b79475311d27bb3d4c79d68088b1e96d875",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/wireframe.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html-wireframe/SKILL.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "b1d649ef9052f2ed8baabaf483ed527208a2e481281ed3925ec8b84ba641d4c1",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/prototype.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html-prototype/SKILL.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "8987dda45224350254af30cafa72e721c6d91e1972e794e8e839406f77814368",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/diagram.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html-diagram/SKILL.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "a3641a37be2f50df620cda273fe4c97295df93e6c6b3c9ba44f566945ed4f532",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/plan.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html-plan/SKILL.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "8e315b5f775d4fe3233cf593b9ba6103845a43c6d6b4b34f56d6bf3535cb9ee2",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/charts-and-data.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html/references/charts-and-data.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "c9bc9e002d2fc6f2a31b3698e6d828e755b4673fbf2ab0e036eb6c7ffbd5a4f3",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/diagrams.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html/references/diagrams.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "5139d248ec08b7501c6aeeec7586c664dbbf6de4a5f2e6d792dc1c6b452948a3",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/documents-and-presentations.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html/references/documents-and-presentations.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "b62a4d6a93ed2abe0b7eb49d93f6cc9a00379512268a186a1927d072926d5a54",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/mock/interfaces.md": {
+      "class": "verbatim",
+      "upstream": "plannotator/effective-html",
+      "upstream_path": "skills/html/references/interfaces.md",
+      "pinned_sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+      "sha256": "a01ab662dc268442e94cd84310c06e6585e8b2e540ec729b2e99826df6a2733b",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/vary/index.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/prototype/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "2ad8401c4deaddb54947fb65247f790e7b3d8784e35312bcbedbfb1d59cd89ce",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/vary/picker.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/prototype/PICKER.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "31a55eec94715cc79942e91e172e539e3031dcd5e2e5ee7c1446cf2caee960a6",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/direct/presets/minimalist.md": {
+      "class": "verbatim",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/minimalist-skill/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "sha256": "36bc7328f085405f43b476938e62460fa573bf7e984e949e072bcf014831a44c",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/direct/presets/brutalist.md": {
+      "class": "verbatim",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/brutalist-skill/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "sha256": "fffbaac8597f07679e9d87145533567658aedba3b5eca6f16a7075a333048caa",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": []
+    },
+    "skills/design/references/direct/presets/premium-dark-glass.md": {
+      "class": "verbatim-minus",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/soft-skill/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "sha256": "b1ac05a171eb6505e33ca9ff3211bf44a6dc1c3490c588adb78abfabc887dc1c",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__design__references__direct__presets__premium-dark-glass.md",
+      "patch": "foundry/pristine/skills__design__references__direct__presets__premium-dark-glass.md.patch"
+    },
+    "skills/design/references/direct/slop-tells.md": {
+      "class": "verbatim-minus",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/taste-skill/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "sha256": "472536696e1422d7d4f9072d417117ea9737a61b26e5e3f27f0438e1d02cf2cd",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__design__references__direct__slop-tells.md",
+      "patch": "foundry/pristine/skills__design__references__direct__slop-tells.md.patch"
+    },
+    "skills/design/references/understand/url-and-validation.md": {
+      "class": "distilled",
+      "upstream": "ibelick/ui-skills",
+      "upstream_path": "skills/create-design-md/SKILL.md",
+      "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "e9660f14740050707062cf9194b6e9c9b701081c77a57b46c44d60f31069e4ab",
+      "updated": "2026-08-25"
+    },
+    "skills/design/references/understand/generated-mode.md": {
+      "class": "distilled",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/stitch-skill/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "5dbb34de0c3c80dc917eacbba82e8dcca82e39cb80c07607f4c09a6e5042b7d7",
+      "updated": "2026-08-25"
+    },
+    "skills/design/references/vary/axes.md": {
+      "class": "distilled",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/variant/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "lifted": "2026-08-25",
+      "skill": "design",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "c97e09cdc7fed42ad0d6ce16c4de882f54f63b5638aa6c1eb9d0866523bc0df7",
+      "updated": "2026-08-25"
+    },
+    "skills/design/references/understand/design-format.md": {
+      "class": "authored",
+      "skill": "design",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/design/references/understand/templates.md": {
+      "class": "authored",
+      "skill": "design",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/design/references/onboard/patterns.md": {
+      "class": "authored",
+      "skill": "design",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/design/references/understand/index.md": {
+      "class": "authored",
+      "skill": "design",
+      "note": "legacy project-context SKILL.md converted to the understand-mode reference; ours"
+    },
+    "skills/design/references/onboard/index.md": {
+      "class": "authored",
+      "skill": "design",
+      "note": "legacy ui-onboarding SKILL.md converted to the onboard-mode reference; ours"
     }
   }
 }
