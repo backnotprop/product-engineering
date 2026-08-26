@@ -22,8 +22,8 @@ engine.md (escalation triggers apply; several name a11y failures directly).
 | 9 | tool boundaries | critical |
 
 Work down the table; do not report category-7 polish while a category-1 control has
-no accessible name. Findings still need the engine's evidence bar — a check you
-cannot run is Not verified, never a finding.
+no accessible name. Findings still pass through the engine's evidence bar
+(engine.md) before they are reported.
 
 ## Tool boundaries (apply to proposed fixes)
 

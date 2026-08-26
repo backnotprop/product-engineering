@@ -31,4 +31,5 @@ new skill/upstream). Load it before doing any convergence or maintenance work.
 Verify before any PR: `foundry/scripts/check-integrity.sh` must pass.
 
 Never commit anything under `skills/*/references/course/` — purchased content,
-gitignored by design.
+gitignored by design. The one tracked exception is each course folder's `README.md`,
+which documents the drop-in.

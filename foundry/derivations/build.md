@@ -8,8 +8,9 @@ intact as reference sets (`SKILL.md` → `index.md`, bytes unchanged), reversibl
 
 `skills/build/SKILL.md` — authored. Basis: our legacy ui-polish workflow (boundary →
 evidence → triage → implement → verify → report), generalized as the shared loop for all
-modes; mode router; rulings block (L-01..L-07); the explicit-redesign gate; course-folder
-preference; better-* name mapping (same convention as review).
+modes; mode router; rulings block (L-01..L-08 — L-08 belongs here because build
+implements forms); the explicit-redesign gate; course-folder preference; better-* name
+mapping (same convention as review).
 
 ## Files (all under skills/build/references/)
 
@@ -34,7 +35,7 @@ preference; better-* name mapping (same convention as review).
 | recipes.md | emilkowalski/skills · skills/animate/RECIPES.md | GOLD | verbatim | |
 | apple-design.md | emilkowalski/skills · skills/apple-design/SKILL.md | GOLD | verbatim | momentum/rubberband math unique in corpus; §16 drift noted, not cut (whole-section cut not warranted) |
 | vocabulary.md | emilkowalski/skills · skills/animation-vocabulary/SKILL.md | GOLD | verbatim | name-the-effect lookup, MIT glossary (~115 terms) |
-| view-transitions/index.md + css-recipes, implementation, nextjs, patterns | vercel-labs/agent-skills · skills/react-view-transitions/* | GOLD | verbatim ×5 | complementary to everything else. Its css-recipes use ease-in on entering snapshots — handled by a spine note (L-04 family), not by editing |
+| view-transitions/index.md + css-recipes, implementation, nextjs, patterns | vercel-labs/agent-skills · skills/react-view-transitions/* | GOLD | verbatim ×5 | complementary to everything else. Its css-recipes use ease-in on several `::view-transition-old` (exit) snapshots — an L-04 conflict handled by a spine note, not by editing; one recipe also eases-in on enter (craft-bar conflict, same note) |
 | perf-additions.md | ibelick/ui-skills · skills/fixing-motion-performance/SKILL.md | SOLID | distilled | SALVAGE LIST (contract): layout read/write interleaving + FLIP; pause/stop off-screen animations (IntersectionObserver); blur ≤ 8px; view-transition boundaries; don't-migrate-animation-libraries. Everything else retired (subsumed by course-pack perf material or thin) |
 
 ### a11y/
@@ -64,9 +65,10 @@ animate refs). `upstream_path` is relative to the local pack install.
 ## Rulings applied
 
 L-01 (0.96 exact), L-02 (bounce 0 default), L-03 (reduced motion gentler-not-zero),
-L-04 (ease-out exits; + spine note on view-transitions enter easing), L-05 (reactive
-will-change), L-06 (named curves yes / novel curves no), L-07 (stagger units) — all
-stated once in the spine's rulings block. L-10 doctrine motivates the deslop-audit cut.
+L-04 (ease-out exits; + spine note on view-transitions exit easing), L-05 (reactive
+will-change), L-06 (named curves yes / novel curves no), L-07 (stagger units),
+L-08 (never disable submit — build implements forms) — all stated once in the spine's
+rulings block. L-10 doctrine motivates the deslop-audit cut.
 
 ## Retirements
 

@@ -60,9 +60,11 @@ install; never copy from them into tracked files.
 - L-01: press scale is exactly `0.96`.
 - L-02: spring bounce `0` unless the design direction's register is explicitly playful.
 - L-03: reduced motion means gentler-not-zero — keep opacity/color transitions.
-- L-04: exits use ease-out; accelerate-away only as a stated deliberate choice. The
-  `ease-in`-on-enter snippets in `motion/view-transitions/css-recipes.md` are upstream
-  taste — use ease-out per this ruling.
+- L-04: exits use ease-out; accelerate-away only as a stated deliberate choice.
+  `motion/view-transitions/css-recipes.md` uses `ease-in` on several
+  `::view-transition-old` (exit) snippets — upstream taste; apply ease-out per this
+  ruling. (Its slide-up recipe also eases-in on enter, which the craft bar rejects
+  independently of L-04.)
 - L-05: `will-change` only on observed first-frame stutter, never prophylactically.
 - L-06: custom easing from the named curves in the motion references — never invent
   novel curves ad hoc.
@@ -80,6 +82,6 @@ skill. Domain ownership (who decides vs who measures) follows
 
 ## Handoffs
 
-Verdicts and audits → **review**. Direction, mockups, variations → **design**.
-Standalone brand assets → **brand-assets**. Documenting the system you built →
-**design**, understand mode.
+Verdicts and audits → **review**. Direction, mockups, variations → **design** (once
+present). Standalone brand assets → **brand-assets** (once present). Documenting the
+system you built → **design**, understand mode.
