@@ -35,6 +35,9 @@ references). This preserves bytes and keeps his routing semantics.
 | experience-rubric.md | ours (legacy skills/ui-review) | GOLD | authored | moved from legacy ui-review; Impeccable-derived, ours |
 | technical-rubric.md | ours (legacy skills/ui-review) | GOLD | authored | moved from legacy ui-review |
 | screen-review.md | ours (legacy skills/ui-review/SKILL.md) | GOLD | authored | the two-pass screen flow + Nielsen 0–4 scoring, converted from skill to reference; frontmatter dropped, body kept |
+| motion-audit.md | emilkowalski/skills · skills/improve-animations/SKILL.md | GOLD | verbatim | whole-codebase motion audit → plans (read-only, so it lives here not in build) |
+| motion-audit-signals.md | emilkowalski/skills · skills/improve-animations/AUDIT.md | GOLD | verbatim | hunt-for signal lists for the motion audit |
+| motion-opportunities.md | emilkowalski/skills · skills/find-animation-opportunities/SKILL.md | GOLD | verbatim | lowest-loss twin (~10% delta vs course); read-only proposer |
 
 ## Rulings applied
 
