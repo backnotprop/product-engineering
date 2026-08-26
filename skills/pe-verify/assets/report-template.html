@@ -40,8 +40,9 @@
 
   .dot { display:inline-block; width:8px; height:8px; border-radius:50%; flex:none; margin-top:1px; }
   .st { font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
-  .s-pass .dot{background:var(--pass);} .s-fail .dot{background:var(--fail);} .s-flag .dot{background:var(--flag);} .s-skipped .dot{background:var(--skip);}
-  .s-pass .st{color:var(--pass);} .s-fail .st{color:var(--fail);} .s-flag .st{color:var(--flag);} .s-skipped .st{color:var(--skip);}
+  .s-pass .dot{background:var(--pass);} .s-fail .dot{background:var(--fail);} .s-flag .dot{background:var(--flag);} .s-skipped .dot{background:var(--skip);} .s-not-run .dot{background:transparent; box-shadow:inset 0 0 0 1px var(--faint);}
+  .s-pass .st{color:var(--pass);} .s-fail .st{color:var(--fail);} .s-flag .st{color:var(--flag);} .s-skipped .st{color:var(--skip);} .s-not-run .st{color:var(--faint);}
+  .row.s-not-run .title { color:var(--mut); }
   .type { font-family:var(--mono); font-size:11px; color:var(--faint); }
 
   /* findings */
@@ -175,6 +176,7 @@ const REPORT = window.__REPORT__ || { __errors: [{ path: "$", message: "no repor
 // ---------- renderer ----------
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;
+const sname = s => s === "not-run" ? "not run" : s;
 const when = s => { const d = new Date(s); return isNaN(d) ? (s||"") : d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }); };
 const statusLine = it => `<span class="dot"></span><span class="st">${esc(it.status)}</span>`;
 
@@ -213,13 +215,13 @@ function summaryHTML(run) {
   const attention = run.items.filter(i => i.status==="fail" || i.status==="flag");
   const isList = run.mode === "list";
   const p = (s, cls="") => isList
-    ? `<button class="pill ${cls}" data-f="status" data-v="${s}" aria-pressed="${state.status.has(s)}"><b>${n(s)}</b> ${s}</button>`
-    : `<span class="pill ${cls}"><b>${n(s)}</b> ${s}</span>`;
+    ? `<button class="pill ${cls}" data-f="status" data-v="${s}" aria-pressed="${state.status.has(s)}"><b>${n(s)}</b> ${sname(s)}</button>`
+    : `<span class="pill ${cls}"><b>${n(s)}</b> ${sname(s)}</span>`;
   const pills = `<div class="summary" role="group" aria-label="Status filters">
     ${isList ? `<button class="pill" data-clear aria-pressed="${!state.status.size}"><b>${run.items.length}</b> all</button>` : `<span class="pill"><b>${run.items.length}</b> checks</span>`}
-    ${p("fail","s-fail")}${p("flag","s-flag")}${p("pass","s-pass")}${p("skipped","s-skipped")}</div>`;
+    ${p("fail","s-fail")}${p("flag","s-flag")}${p("pass","s-pass")}${p("skipped","s-skipped")}${run.selection === "selective" ? p("not-run","s-not-run") : ""}</div>`;
   const att = attention.length ? `<div class="attention"><h2>Needs attention</h2><ul>${attention.map(i => `<li class="s-${i.status}"><span class="dot"></span><a href="#${i.id}" data-jump="${i.id}">${esc(i.title)}</a><span class="type">${esc((i.findings||[])[0]?.text||"")}</span></li>`).join("")}</ul></div>` : "";
-  return `<header class="run"><div><h1>${esc(run.title)}</h1><div class="meta">${[run.repo && run.commit ? `${esc(run.repo)} @ ${esc(run.commit)}` : esc(run.repo||run.commit||""), esc(when(run.ran_at)), run.list_source ? esc(run.list_source) : ""].filter(Boolean).join(" · ")}</div></div>${pills}</header>${att}`;
+  return `<header class="run"><div><h1>${esc(run.title)}</h1><div class="meta">${[run.repo && run.commit ? `${esc(run.repo)} @ ${esc(run.commit)}` : esc(run.repo||run.commit||""), esc(when(run.ran_at)), run.list_source ? esc(run.list_source) : "", run.selection === "selective" ? "selective run" + (run.selection_basis ? " · " + esc(run.selection_basis) : "") : run.selection === "all" ? "every entry selected" : ""].filter(Boolean).join(" · ")}</div></div>${pills}</header>${att}`;
 }
 
 // layouts
@@ -227,7 +229,7 @@ function renderLedger(run) {
   const items = visible(run);
   return summaryHTML(run) + filtersHTML(run) + (items.length ? `<div class="ledger">${items.map(it => `
     <div class="row s-${it.status}" id="${it.id}">
-      <div class="head" role="button" tabindex="0" aria-expanded="false"><span class="dot"></span><span class="st">${esc(it.status)}</span><span class="title">${esc(it.title)}</span><span class="type">${esc(it.check_type)}</span><span class="chev">▶</span></div>
+      <div class="head" role="button" tabindex="0" aria-expanded="false"><span class="dot"></span><span class="st">${sname(it.status)}</span><span class="title">${esc(it.title)}</span><span class="type">${esc(it.check_type)}</span><span class="chev">▶</span></div>
       ${detailHTML(it, it.id)}
     </div>`).join("")}</div>` : `<div class="empty">no checks match these filters</div>`);
 }
@@ -335,10 +337,10 @@ const pal = document.getElementById("palette"), pq = document.getElementById("pq
 let pIdx = 0; let pStatus = new Set();
 function paletteRender() {
   const run = currentRun(); const q = pq.value.toLowerCase();
-  const items = run.items.filter(i => (!pStatus.size || pStatus.has(i.status)) && (!q || (i.title + " " + i.status + " " + i.check_type).toLowerCase().includes(q)));
+  const items = run.items.filter(i => (!pStatus.size || pStatus.has(i.status)) && (!q || (i.title + " " + sname(i.status) + " " + i.check_type).toLowerCase().includes(q)));
   const n = s => run.items.filter(i => i.status===s).length;
   document.getElementById("pfilters").innerHTML = `<button class="pill" data-pv="" aria-pressed="${!pStatus.size}"><b>${run.items.length}</b> all</button>` +
-    ["fail","flag","pass","skipped"].map(s => `<button class="pill s-${s}" data-pv="${s}" aria-pressed="${pStatus.has(s)}"><b>${n(s)}</b> ${s}</button>`).join("");
+    ["fail","flag","pass","skipped"].concat(run.selection === "selective" ? ["not-run"] : []).map(s => `<button class="pill s-${s}" data-pv="${s}" aria-pressed="${pStatus.has(s)}"><b>${n(s)}</b> ${sname(s)}</button>`).join("");
   document.querySelectorAll("#pfilters .pill").forEach(b => b.addEventListener("click", () => { const v = b.dataset.pv; if (!v) pStatus.clear(); else pStatus.has(v) ? pStatus.delete(v) : pStatus.add(v); pIdx = 0; paletteRender(); pq.focus(); }));
   pIdx = Math.min(pIdx, Math.max(0, items.length-1));
   plist.innerHTML = items.map((it,i) => `<li class="s-${it.status} ${i===pIdx?"on":""}" data-id="${it.id}"><span class="dot"></span><span>${esc(it.title)}</span><small>${esc(it.check_type)} · ${esc(it.status)}</small></li>`).join("") || `<li><span></span><span style="color:var(--faint)">no matches</span></li>`;

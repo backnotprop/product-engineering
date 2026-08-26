@@ -1,6 +1,6 @@
 ---
 name: pe-verify
-description: Prove that behavior works, with evidence. Use after a feature is built ("verify this", "create a verification for the toolbar") or to re-run the project's QA list before a release ("run the QA list", "release check"). Classifies each check as code, browser, or mixed; drives the product with Playwright, recording video and checkpoint screenshots; writes one report.json and renders it into a branded HTML report with a checkpoint video player. Triggers on verify, verification, "does it work", "prove it works", QA, QA list, release check, smoke test, regression check. Read-only toward product code — reports pass, fail, flag, or skipped; fixes go to pe-build, and judgment of design quality is pe-review.
+description: Prove that behavior works, with evidence. Use after a feature is built ("verify this", "create a verification for the toolbar") or to re-run the project's QA list before a release ("run the QA list", "release check"). Classifies each check as code, browser, or mixed; drives the product with Playwright, recording video and checkpoint screenshots; writes one report.json and renders it into a branded HTML report with a checkpoint video player. Triggers on verify, verification, "does it work", "prove it works", QA, QA list, release check, smoke test, regression check. Read-only toward product code — reports pass, fail, flag, skipped, or not-run; fixes go to pe-build, and judgment of design quality is pe-review.
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/verify.md in the source repository
@@ -35,7 +35,15 @@ conventions, and the capture method live in `references/` — load what the run 
 | Mode | When | Load |
 | --- | --- | --- |
 | **feature** | "Verify this", "create a verification for X", or the last step after a build. The checks come from the change and the conversation: what was built, what the user said it must do, what it must not break. | `report-schema.md`, `evidence.md` |
-| **list** | "Run the QA list", "release check", "QA". The user's own markdown list, found under `.product/`; one report item per list entry. | `qa-list.md`, `report-schema.md`, `evidence.md` |
+| **list** | "Run the QA list", "release check", "QA". The user's own markdown list, found under `.product/`; one report item per list entry, every entry present. | `qa-list.md`, `report-schema.md`, `evidence.md` |
+
+A list run is **selective** or **all**, and the report says which (`selection` is
+required for list runs). Selective: the agent chooses the entries the change set can
+affect, names the basis (`selection_basis`), and reports every other entry as
+`not-run` with its reason. All: every entry runs. Precedence: "all", "everything",
+"every check" from the user → all; otherwise a named change set ("against this PR",
+"since v0.17") → selective; otherwise → all. Say which in the chat report, and switch
+when asked. An entry is never left out of the report.
 
 A feature run is one item: the feature, with its checks as checkpoints (browser) and
 findings (code), and one verdict. When the derived checks need separate verdicts —
@@ -53,8 +61,10 @@ Decide per item, at run time. A list entry may carry a hint ("— browser"); mos
   headlessly", "every toolbar button is present", "the diff loads on a 2MB file".
 - **mixed** — both: a behavior in the browser plus the code path behind it.
 
-Bias is liberal: run any check plausibly relevant to the change. Skip only for a
-reason, and put the reason in the item's `summary`.
+In feature mode and when selecting, bias is liberal: run any check the change can
+plausibly affect. `skipped` means the check could not be run (no browser, no
+fixture, no access) and its `summary` says why; choosing not to run an entry is
+`not-run`, which exists only in selective runs.
 
 ## Orchestrate with what exists
 
@@ -80,8 +90,8 @@ fragment shaped by the contract; the orchestrator assembles `report.json`, sets
    installed folder and `<run>` as the run folder:
    `python3 <skill>/scripts/validate-report.py <run>/report.json` — fix every listed
    problem — then `python3 <skill>/scripts/render-report.py <run>/report.json --open`.
-5. **Report in chat:** the path, counts by status, and one line per fail or flag. Fails
-   go to **pe-build** with their evidence.
+5. **Report in chat:** the path, the selection and its basis for list runs, counts by
+   status, and one line per fail or flag. Fails go to **pe-build** with their evidence.
 
 ## Handoffs
 
