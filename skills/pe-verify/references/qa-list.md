@@ -1,7 +1,7 @@
 # The QA list
 
 A markdown file the user keeps in the repo: the things they want checked, re-run on
-demand. The list is theirs. It stays in the repo; nothing else this skill produces does.
+demand. It stays in the repo; nothing else this skill produces does.
 
 ## Finding it
 
@@ -36,8 +36,7 @@ user answers the question above; replace it when they move the list.
 
 ## Reading the list
 
-No required format. Each list item or heading is one check. Read it the way a careful
-colleague would:
+No required format. Each list item or heading is one check.
 
 - A nested bullet is detail for its parent check, not a separate check.
 - A heading with bullets under it groups checks; the heading is context, the bullets
@@ -59,5 +58,4 @@ Item ids in the report are slugs of the check titles (`bun-version`,
 Only when the user asks. Draft it from repo evidence — routes and pages, install and
 build scripts, the package manager and runtime pins, CI steps, the README's claims —
 as a flat list of checks with one line each. Write it to `.product/qa-list.md`, then
-hand it to the user to prune. The seed is a starting point; the list they keep is the
-list that counts.
+hand it to the user to prune.

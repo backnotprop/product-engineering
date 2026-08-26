@@ -16,16 +16,19 @@ conventions, and the capture method live in `references/` — load what the run 
 - **Read-only toward product code.** A failed check is reported, never fixed here; hand
   it to the pe-build skill by name. The only repo write this skill ever makes is the
   user's QA list, and only when the user asks to seed or edit it.
-- **Everything a run produces lands in a temp folder**, `$TMPDIR/pe-verify/<repo>/<YYYY-MM-DD-HHMM>/`
-  — JSON, HTML, recordings, screenshots. Never inside the repo, never committed. Copy
+- **Everything a run produces lands in a temp folder**: `pe-verify/<repo>/<YYYY-MM-DD-HHMM>/`
+  under the system temp directory (`$TMPDIR`, else `/tmp`) — JSON, HTML, recordings,
+  screenshots. Never inside the repo, never committed. Copy
   `report.json` into `.product/runs/` only on an explicit request.
-- **One JSON file is the deliverable.** Never write HTML. `scripts/render-report.py`
-  turns `report.json` into `report.html` beside it; validate first, render, then open
-  it (`--open`) and print the path. The contract is `references/report-schema.md`.
+- **One JSON file is the deliverable.** Never write HTML. This skill's
+  `scripts/render-report.py` turns `report.json` into `report.html` beside it; validate
+  first, render, then open it (`--open`) and print the path. The contract is
+  `references/report-schema.md`.
 - **Evidence or it is not a finding.** Every fail and flag carries a `file:line`, a
   recording timestamp, or the command that showed it.
-- **A missing browser skips, never blocks.** Browser items report `skipped` with the
-  reason; code items still run.
+- **A missing browser skips, never blocks.** The orchestrator checks for a browser once,
+  in Scope, and may offer the install there; workers never prompt. Browser items without
+  a browser report `skipped` with the reason; code items still run.
 
 ## Modes
 
@@ -66,13 +69,17 @@ fragment shaped by the contract; the orchestrator assembles `report.json`, sets
 
 1. **Scope.** Name the mode, the target (a feature, or the list and its path), the
    commit, and how the product will be reached (local server, built artifact, CLI).
+   Check that Playwright has a browser; when it does not, offer
+   `npx playwright install chromium` in one line and continue with whatever answer
+   comes — no answer means browser items skip.
 2. **Classify** each check as above.
 3. **Run.** Browser items per `references/evidence.md`: a recording, three to six
    checkpoints with stills, one-line narration each. Code items: the command or the
    trace, captured as evidence.
-4. **Assemble** `report.json` in the run folder, then
-   `python3 scripts/validate-report.py report.json` — fix every listed problem — then
-   `python3 scripts/render-report.py report.json --open`.
+4. **Assemble** `report.json` in the run folder, then, with `<skill>` as this skill's
+   installed folder and `<run>` as the run folder:
+   `python3 <skill>/scripts/validate-report.py <run>/report.json` — fix every listed
+   problem — then `python3 <skill>/scripts/render-report.py <run>/report.json --open`.
 5. **Report in chat:** the path, counts by status, and one line per fail or flag. Fails
    go to **pe-build** with their evidence.
 
