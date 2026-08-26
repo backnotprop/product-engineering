@@ -4,18 +4,11 @@
   "groupings": [
     {
       "title": "Converged Skills",
-      "description": "The five-skill product-engineering kit (in progress). Each is a thin router over byte-preserved references from graded sources.",
+      "description": "The five-skill product-engineering kit. Each is a thin router over byte-preserved references from graded sources.",
       "skills": [
-        "review",
-        "build"
-      ]
-    },
-    {
-      "title": "Legacy Standalone UI Workflows",
-      "description": "Original standalone skills, live until superseded by the converged five.",
-      "skills": [
-        "project-context",
-        "ui-onboarding"
+        "design",
+        "build",
+        "review"
       ]
     }
   ]

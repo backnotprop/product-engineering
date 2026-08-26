@@ -45,8 +45,8 @@ In this kit those names resolve as follows — apply the mapping silently:
 
 | Text says | Use |
 | --- | --- |
-| better-accessibility | `a11y-audit.md` for ordering; the engine's own triggers for severity; the build skill's accessibility references for depth, once present |
-| better-ui, better-layout, better-typography, better-colors, better-writing | the build skill's craft references once present; until then, engine judgment plus `web-interface-guidelines.md` |
+| better-accessibility | `a11y-audit.md` for ordering; the engine's own triggers for severity; the build skill's `references/a11y/` for depth |
+| better-ui, better-layout, better-typography, better-colors, better-writing | the build skill's `references/craft/{ui,layout,typography,colors,writing}/` |
 | better-interface | this skill's engine mode itself |
 
 ## Rulings applied here

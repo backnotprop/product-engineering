@@ -1,12 +1,11 @@
----
-name: project-context
-description: Capture or refresh durable product context in PRODUCT.md and document an existing visual system in DESIGN.md. Use when a user wants to initialize project context, explain a product to future agents, document the current design system, extract visual rules from an existing interface, or update stale product/design documentation. Do not use merely because either file is absent.
-license: Apache-2.0
-metadata:
-  provenance: Derived and substantially modified from Impeccable 4.1.1 init and document
----
+# Understand (product & design context)
 
-# Project Context
+The understand mode of the design skill: capture durable product context in
+PRODUCT.md and document a visual system in DESIGN.md. Provenance: our legacy
+project-context skill (derived and substantially modified from Impeccable 4.1.1
+init + document), converted to a mode reference. For URL-mode extraction and
+machine validation see `url-and-validation.md`; for greenfield generated systems
+see `generated-mode.md`.
 
 Create durable context without making other skills depend on it.
 
