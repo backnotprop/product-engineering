@@ -10,6 +10,8 @@ source prose preserved.
 npx skills add backnotprop/product-engineering
 ```
 
+Docs: [peskills.dev](https://peskills.dev) — one page per skill, what to say and what you get, setup, and a receipt for every vendored file.
+
 ## The skills
 
 <p>
