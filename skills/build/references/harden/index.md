@@ -1,12 +1,11 @@
----
-name: ui-harden
-description: Make an existing frontend resilient to real data, failures, devices, languages, accessibility needs, and performance constraints. Use when preparing UI for production, testing edge cases, fixing fragile responsive behavior, handling loading/error/permission/offline states, supporting localization or RTL, preventing lost work, or addressing measured frontend performance problems. Do not use for visual polish alone.
-license: Apache-2.0
-metadata:
-  provenance: Derived and substantially modified from Impeccable 4.1.1 harden, adapt, and optimize
----
+# Harden (production resilience)
 
-# UI Harden
+The harden mode of the build skill: make an existing frontend resilient to real data,
+failures, devices, languages, and performance constraints before shipping.
+Provenance: our legacy ui-harden skill (derived and substantially modified from
+Impeccable 4.1.1 harden, adapt, optimize), converted to a mode reference. For shipping
+metadata (SEO, OG, canonical, JSON-LD) see `metadata.md` in this folder. Accessibility
+verification gates below hand off to the a11y mode's references for depth.
 
 Make the interface survive reality, not only the ideal demo.
 

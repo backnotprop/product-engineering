@@ -15,12 +15,11 @@ reference files, which are preserved from their authors — load only what the m
 
 - **Read-only.** Never edit product code, even for a one-character fix. Findings name
   the change; applying it is the build skill's job — hand off by name.
-- **Engine rules govern every mode.** Read `references/engine.md` first, always: the
-  evidence bar ("a check you cannot run is Not verified, never a finding"), the
-  escalation triggers, the cheaper-fix ladder, consolidation, and the verdict format
-  in `references/review-format.md`.
+- **Engine rules govern every mode.** Read `references/engine.md` first, always: its
+  evidence bar, escalation triggers, cheaper-fix ladder, consolidation, and the
+  verdict format in `references/review-format.md`.
 - **Severity** is HIGH / MEDIUM / LOW plus the engine's escalation triggers.
-  Accessibility findings are never discarded or deferred (ruling L-09).
+  Accessibility findings are never discarded (ruling L-09).
 
 ## Modes
 
@@ -57,11 +56,11 @@ In this kit those names resolve as follows — apply the mapping silently:
 - **L-11** — `web-interface-guidelines.md` ships with house-taste rows cut; the
   autocomplete rule stands as: autocomplete on purposeful fields, `off` only for
   non-auth-sensitive cases.
-- P0–P3 appears only inside screen mode's rubrics; report severity as HIGH/MED/LOW
+- P0–P3 appears only inside screen mode's files; report severity as HIGH/MED/LOW
   (P0+P1 → HIGH, P2 → MEDIUM, P3 → LOW).
 
 ## Handoffs
 
 Fixes → **build** (findings include exact file:line and the named change).
-Documenting the system a review revealed → **design**, understand mode.
+Documenting the system a review revealed → **design**, understand mode (once present).
 Never resolve a finding by editing anything yourself.
