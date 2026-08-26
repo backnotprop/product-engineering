@@ -149,3 +149,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · brand · claude · scope correction: the de-slogan pass overreached — the approved verb headlines (Design it. / Build it. / Judge it.) were replaced without instruction; restored. Sentence fixes stand. DESIGN.md records the boundary: headlines are the chosen voice, the writing bar governs sentences
 - 2026-08-26 · brand · claude · redundancy pass: Describe it./Documents… verb repetition removed from the pe-product-description card; headline+sentence pairs verified non-overlapping across all five
 - 2026-08-26 · brand · claude+ramos · Plannotator added to the credits card (was in NOTICE and MANIFEST but omitted from the card; card now matches the record)
+- 2026-08-26 · docs · claude+ramos · README redesigned: skill cards as the linked index (paired 49% grid), say/get examples folded into a collapsible, machinery detail moved to foundry/README.md, prose cut to the SEO-and-comprehension minimum
