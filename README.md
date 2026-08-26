@@ -25,54 +25,56 @@ npx skills add backnotprop/product-engineering --skill pe-review
 
 ## Using the skills
 
-Install once; the skills trigger on what you ask for, or invoke one by name. Each
-skill routes your request to the right mode from your words — the map below is the
-product-development journey end to end.
+Install once. Say what you need — the right skill triggers on your words and routes
+itself to the right mode. The kit follows the product journey:
+**understand → shape → build → review**, plus two specialists.
 
-**Starting something, or taming an existing codebase**
-- "Document our product and design system" → `pe-design` writes `PRODUCT.md` and
-  `DESIGN.md` from repo evidence (or from a public URL). Greenfield with no system
-  yet? It generates one and labels it chosen, not observed.
-- "How should this look and feel?" → `pe-design` derives a creative direction from your
-  subject — palette, type, register — and checks it against the AI-slop tells.
+### 1 · Understand the product, set the direction
 
-**Shaping the thing before code**
-- "Wireframe the settings flow" / "mock up the dashboard" → `pe-design` builds
-  self-contained HTML at the right fidelity: wireframe → mockup → prototype
-  (plus diagrams and plans).
-- "Show me three takes on this card" → `pe-design` renders genuinely different variants
-  behind a picker in your real page; promote the winner, the harness deletes itself.
-- "Users bail during setup" → `pe-design` works the activation flow: empty states,
-  checklists, the lightest pattern that teaches.
+| Say | Skill · mode | You get |
+| --- | --- | --- |
+| "Document our product and design system" | `pe-design` · understand | `PRODUCT.md` + `DESIGN.md` from repo evidence — or extracted from a public URL |
+| "We're greenfield — generate a design system" | `pe-design` · understand | A generated system, labeled chosen-not-observed |
+| "How should this look and feel?" | `pe-design` · direct | A creative direction derived from your subject, checked against the AI-slop tells |
 
-**Writing the code**
-- "Build the pricing card" / "polish this, it feels off" → `pe-build` at the craft bar:
-  spacing, type, color, copy, icons, interaction states.
-- "Animate the drawer" / "this feels janky" → `pe-build`'s motion mode.
-- "Make this table keyboard-accessible" → `pe-build`'s a11y mode.
-- "Get this ready for production" → `pe-build`'s harden mode: real data extremes,
-  failure states, devices, languages, offline, shipping metadata.
+### 2 · Shape it before code
 
-**Judging what exists** (read-only — findings, never edits)
-- "Review my PR" → `pe-review` scopes to the diff and classifies introduced vs
-  pre-existing.
-- "Review this screen" → the full two-pass critique with scored rubrics.
-- "Audit the app, give me a roadmap" → prioritized findings as self-contained plans
-  another agent can execute.
-- "Check against best practices" / "will this component survive real data?" /
-  "review the animations" / "is this accessible?" → each a mode of `pe-review`.
+| Say | Skill · mode | You get |
+| --- | --- | --- |
+| "Wireframe the settings flow" | `pe-design` · mock | Self-contained HTML at the right fidelity: wireframe → mockup → prototype |
+| "Show me three takes on this card" | `pe-design` · vary | Genuinely different variants behind a picker in your real page; promote the winner |
+| "Users bail during setup" | `pe-design` · onboard | An activation flow: empty states, checklists, the lightest pattern that teaches |
 
-**The two specialists**
-- "Write a product description for the editor" → `pe-product-description` builds a
-  behavior-spec repo: what users see, what they can do, what exactly happens —
-  verified against the running product.
-- "Make an SVG header image for this post" / "repo social image" / "logo concepts"
-  → `pe-brand-assets` reads your brand truth first (it refuses to invent it) and
-  authors on-brand SVG, exporting PNG where destinations require it.
+### 3 · Build it
 
-The skills hand off to each other by name — a review's findings go to build, a
-winning variant goes to build, build's hardening gates verify through review — so
-you can enter the loop at any stage.
+| Say | Skill · mode | You get |
+| --- | --- | --- |
+| "Build the pricing card" · "polish this" | `pe-build` · craft | Production code at the craft bar: spacing, type, color, copy, states |
+| "Animate the drawer" · "this feels janky" | `pe-build` · motion | Motion built to exact values, gestures included |
+| "Make this table keyboard-accessible" | `pe-build` · a11y | Implemented accessibility: keyboard, screen readers, focus, forms |
+| "Get this ready for production" | `pe-build` · harden | Data extremes, failure states, devices, languages, offline, metadata |
+
+### 4 · Judge it — read-only, findings never edits
+
+| Say | Skill · mode | You get |
+| --- | --- | --- |
+| "Review my PR" | `pe-review` · change | Diff-scoped review; introduced vs pre-existing, classified |
+| "Review this screen" | `pe-review` · screen | The full two-pass critique with scored rubrics |
+| "Audit the app, give me a roadmap" | `pe-review` · plans | Findings as self-contained plans another agent can execute |
+| "Will this survive real data?" | `pe-review` · stress | The component rendered in every hostile state |
+
+Also modes of `pe-review`: guidelines check ("check against best practices"),
+animation review, a11y audit.
+
+### Anytime · the specialists
+
+| Say | Skill | You get |
+| --- | --- | --- |
+| "Write a product description for the editor" | `pe-product-description` | A behavior-spec repo — what users see, can do, and what exactly happens — verified against the running product |
+| "Make an SVG header image for this post" | `pe-brand-assets` | On-brand SVG (PNG exported where destinations need it); it reads your brand truth first and refuses to invent it |
+
+**Skills hand off by name.** A review's findings go to pe-build. A winning variant
+goes to pe-build. Hardening verifies through pe-review. Enter the loop at any stage.
 
 ## How this repo works
 
