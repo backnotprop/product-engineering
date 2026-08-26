@@ -26,12 +26,6 @@ npx skills add backnotprop/product-engineering
   <a href="skills/product-engineering"><img src="brand/cards/product-engineering.svg" width="49%" alt="product-engineering — Lazy mode. Any request in, the right skill takes over. Routes to design, build, review, describe, brand."></a>
 </p>
 
-Say what you need — the right skill triggers on your words and routes itself to the
-right mode. Or use the lazy entry: start any request with "product engineering" and
-the `product-engineering` router picks the skill for you. The skills hand off to each other by name: a finding from `pe-review`
-goes to `pe-build`; a winning variant from `pe-design` goes to `pe-build`. Enter the
-loop at any stage.
-
 <details>
 <summary><b>Examples — what to say, what you get</b></summary>
 <br>
