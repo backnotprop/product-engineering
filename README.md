@@ -23,6 +23,57 @@ npx skills add backnotprop/product-engineering            # all five
 npx skills add backnotprop/product-engineering --skill review
 ```
 
+## Using the skills
+
+Install once; the skills trigger on what you ask for, or invoke one by name. Each
+skill routes your request to the right mode from your words — the map below is the
+product-development journey end to end.
+
+**Starting something, or taming an existing codebase**
+- "Document our product and design system" → `design` writes `PRODUCT.md` and
+  `DESIGN.md` from repo evidence (or from a public URL). Greenfield with no system
+  yet? It generates one and labels it chosen, not observed.
+- "How should this look and feel?" → `design` derives a creative direction from your
+  subject — palette, type, register — and checks it against the AI-slop tells.
+
+**Shaping the thing before code**
+- "Wireframe the settings flow" / "mock up the dashboard" → `design` builds
+  self-contained HTML at the right fidelity: wireframe → mockup → prototype
+  (plus diagrams and plans).
+- "Show me three takes on this card" → `design` renders genuinely different variants
+  behind a picker in your real page; promote the winner, the harness deletes itself.
+- "Users bail during setup" → `design` works the activation flow: empty states,
+  checklists, the lightest pattern that teaches.
+
+**Writing the code**
+- "Build the pricing card" / "polish this, it feels off" → `build` at the craft bar:
+  spacing, type, color, copy, icons, interaction states.
+- "Animate the drawer" / "this feels janky" → `build`'s motion mode.
+- "Make this table keyboard-accessible" → `build`'s a11y mode.
+- "Get this ready for production" → `build`'s harden mode: real data extremes,
+  failure states, devices, languages, offline, shipping metadata.
+
+**Judging what exists** (read-only — findings, never edits)
+- "Review my PR" → `review` scopes to the diff and classifies introduced vs
+  pre-existing.
+- "Review this screen" → the full two-pass critique with scored rubrics.
+- "Audit the app, give me a roadmap" → prioritized findings as self-contained plans
+  another agent can execute.
+- "Check against best practices" / "will this component survive real data?" /
+  "review the animations" / "is this accessible?" → each a mode of `review`.
+
+**The two specialists**
+- "Write a product description for the editor" → `product-description` builds a
+  behavior-spec repo: what users see, what they can do, what exactly happens —
+  verified against the running product.
+- "Make an SVG header image for this post" / "repo social image" / "logo concepts"
+  → `brand-assets` reads your brand truth first (it refuses to invent it) and
+  authors on-brand SVG, exporting PNG where destinations require it.
+
+The skills hand off to each other by name — a review's findings go to build, a
+winning variant goes to build, build's hardening gates verify through review — so
+you can enter the loop at any stage.
+
 ## How this repo works
 
 - **`foundry/MANIFEST.json`** records every non-authored file's upstream repo, path,
