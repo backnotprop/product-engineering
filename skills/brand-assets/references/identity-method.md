@@ -1,17 +1,31 @@
 # Identity method
 
 Distilled from Leonxlnx/taste-skill `brandkit` (see MANIFEST for the pin). Salvage
-contract: the five logo-concepting methods, the meaning-first direction questions, the
-board/panel system with its rhythm rule, and the tagline discipline. The source's
-image-generation plumbing and "Visual Modes" moodboards were retired; this method is
-medium-neutral and here drives SVG authored in code.
+contract: the five logo-concepting methods, the meaning-first direction questions with
+the category→symbol table, the panel/board system (the six-panel rhythm and the
+default 3×3) and the tagline discipline. The source's image-generation plumbing and
+"Visual Modes" moodboards were retired; this method is medium-neutral and here drives
+SVG authored in code.
 
 ## Direction comes from meaning
 
 Before any mark or asset, answer from the brand truth (never invent): category,
 audience, product function, emotional promise, cultural position, trust level, visual
 world, symbolic metaphor, and what the brand should avoid. The visual system is based
-on meaning — an asset that can't name its metaphor is decoration.
+on meaning — an asset that can't name its metaphor is decoration. Do not pick symbols
+randomly:
+
+| Category | Core Ideas | Possible Symbol Logic |
+|---|---|---|
+| Developer tool | building, speed, precision, control | cursor, frame, bolt, scaffold, grid |
+| AI assistant | delegation, intelligence, clarity | spark, orbit, signal, path, node |
+| Security | protection, vigilance, boundary | shield, eye, seal, protected core |
+| Gaming / betting | chance, reward, tension, speed | dice, gem, card, signal, trophy |
+| Voice AI | sound, rhythm, command, flow | waveform, mic, orb, speech path |
+| Compliance | trust, order, rules, protection | seal, dog, badge, document, shield |
+| Drone / robotics | flight, control, vision, mission | wing, owl, crosshair, path, zone |
+| Luxury / editorial | taste, material, ritual, restraint | monogram, seal, paper, emboss, mark |
+| Productivity | focus, momentum, clarity | path, check, block, calendar, light |
 
 ## Logo-concepting methods (use one; combine two maximum)
 
@@ -35,8 +49,16 @@ A brand board (or any multi-asset set) is a curated sequence, not a grid of equa
 a large calm cover panel · a digital application panel · an image-led atmosphere
 panel · a system/construction panel · a physical or icon application panel · a quiet
 tagline panel. Don't make every panel equally loud — the set has rhythm: quiet /
-functional / emotional / technical / atmospheric / detailed. The same rhythm governs
-smaller sets (an article header + inline figures: one atmospheric, the rest quiet).
+functional / emotional / technical / atmospheric / detailed.
+
+When no layout is specified, the default 3×3 board is: 1 Logo Cover (large mark,
+strong negative space) · 2 Logo Construction (grid, geometry, or negative-space
+logic — show why the mark exists) · 3 Digital Application (browser chrome, app
+header, terminal, app icon) · 4 Brand Essence (one short tagline, large type,
+sparse) · 5 Color System (swatches, strips, chips) · 6 Typography (specimen or
+pairing) · 7 Physical Application (card, badge, poster, packaging) · 8 Image
+Direction (cinematic crop, texture, editorial scene) · 9 System Detail (UI chips,
+icon row, component strip, pattern detail).
 
 ## Tagline discipline
 

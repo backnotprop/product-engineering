@@ -8,8 +8,8 @@ metadata:
 
 # Brand Assets
 
-Standalone assets that belong to the brand, authored as SVG in code. The lookup you
-used to do by hand is step one here, and it is not skippable.
+Standalone assets that belong to the brand, authored as SVG in code and exported to
+raster where the destination requires it.
 
 ## The workflow
 
@@ -21,34 +21,41 @@ used to do by hand is step one here, and it is not skippable.
    values the user supplies in the conversation, labeled as provisional.
 2. **Derive the asset's rules.** Colors come only from the brand palette (cite the
    token names). Type in the asset is the brand's faces. Shapes follow the recorded
-   shape language. The metaphor comes from the identity method (`references/
-   identity-method.md`) — an asset that can't name its meaning doesn't ship.
-3. **Author the SVG.** Quality rules:
-   - a real `viewBox`; no fixed pixel width/height on the root — the consumer sizes it;
-   - `currentColor` or CSS-variable fills for anything that must survive theming;
-     hard-coded brand hexes only for elements that must not re-theme (the logo mark);
-   - named `<g>` groups for logical parts; no editor cruft (empty groups, default ids);
-   - text converted to paths only for logo-grade marks; live `<text>` otherwise, with
-     the font named and a fallback stated;
-   - decorative assets get `aria-hidden="true"` guidance; informative ones get a
-     `<title>` — say which applies in the report;
-   - static by default (ruling L-10); animation only on explicit request, and the
-     craft then comes from build·motion.
-4. **Verify against the brand.** Every color in the file maps to a cited token; the
-   asset reads at its intended size (check small: an OG image is seen at thumbnail
-   size); it sits correctly on both light and dark grounds or names its required
-   ground; it doesn't collide with the anti-generic bans in design's
-   `direct/slop-tells.md`.
-5. **Report.** The tokens and motifs used, the metaphor and method chosen, the
-   intended placement and sizes, and anything provisional that should graduate into
+   shape language. The metaphor comes from the identity method
+   (`references/identity-method.md`).
+3. **Author the SVG — rules split by how it will be consumed.**
+   Always: a real `viewBox`; named `<g>` groups for logical parts; no editor cruft
+   (empty groups, default ids).
+   *Inline in a page's DOM* (site illustrations, in-app art): `currentColor` or
+   CSS-variable fills so it themes with the page; hard-coded brand hexes only for
+   elements that must not re-theme (the logo mark); live `<text>` with the font named
+   and a fallback stated; omit fixed root width/height and let layout size it;
+   decorative → `aria-hidden="true"`, informative → `role="img"` + `<title>` wired
+   via `aria-labelledby` — say which applies in the report.
+   *Consumed as a file* (`<img>` src, README, anywhere external): `currentColor` and
+   CSS variables do not resolve and webfonts do not load — use hard-coded brand hexes,
+   convert text to paths, and set root width/height for intrinsic sizing.
+   Static by default — this skill's own bar, stricter than L-10's motivated-motion
+   rule: animate only on explicit request, with the craft from build·motion.
+4. **Export where SVG can't go.** OG/social endpoints and GitHub's social preview
+   accept raster only: render the SVG to PNG at the destination size (1200×630 for
+   standard OG tags; 1280×640 for GitHub's social preview) and deliver both files,
+   the SVG as the editable source of truth.
+5. **Verify against the brand.** Every color maps to a cited token; the asset reads
+   at its real display size (an OG image is judged at thumbnail size); it sits
+   correctly on both light and dark grounds or names its required ground; it doesn't
+   collide with the anti-generic bans in the design skill's
+   `references/direct/slop-tells.md`.
+6. **Report.** The tokens and motifs used, the metaphor and method chosen, placement,
+   sizes and exported formats, and anything provisional that should graduate into
    DESIGN.md or the `brand/` folder.
 
 ## Asset-type notes
 
 - **Article/blog illustrations:** one atmospheric asset per piece at most; supporting
-  figures stay quiet (the panel-rhythm rule in the identity method).
-- **Repo / social / OG images:** design at display size (1200×630 for OG), verify at
-  thumbnail size; text must survive the small render or be removed.
+  figures stay quiet — the identity method's panel rhythm, applied to a page.
+- **Repo / social / OG images:** authored as SVG, delivered as PNG per step 4; text
+  must survive the thumbnail render or be removed.
 - **Logo and identity work:** the identity method governs; concepts come with the
   method named (e.g. "Negative Space: cutout initial") and two–three genuinely
   different candidates, not variations of one.
