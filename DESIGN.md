@@ -67,6 +67,7 @@ skill cards; heroes are 1200-wide.
 - Do keep gradients subtle enough to read as lighting.
 - Don't add decoration, icons, illustrations, or borders on dark cards.
 - Don't introduce an accent color into assets.
-- The verb headlines ("Design it.") are the chosen voice and stay. The writing bar
-  applies to the sentences: they state behavior plainly ("Reports findings and makes
-  no edits.") — no "It's not X, it's Y" contrasts, no stacked fragments.
+- The verb headlines ("Design it.") are the chosen voice and stay. Sentences state
+  what the skill delivers, positively ("Prioritized findings on any screen, diff,
+  or PR.") — no caveats, no negative definitions, no contrasts, no stacked
+  fragments. Boundaries live in the skills, never in the copy.

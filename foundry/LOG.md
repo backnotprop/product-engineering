@@ -152,3 +152,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · docs · claude+ramos · README redesigned: skill cards as the linked index (paired 49% grid), say/get examples folded into a collapsible, machinery detail moved to foundry/README.md, prose cut to the SEO-and-comprehension minimum
 - 2026-08-26 · docs · claude+ramos · virtue-framing removed: 'How it stays honest' → 'Provenance and integrity'; foundry README's promise/prove line replaced with a factual description
 - 2026-08-26 · docs · claude+ramos · crawlable skill index added under the examples: linked names + one-line keyword-bearing definitions (SVG cards are weak search signal; the table is the indexable record)
+- 2026-08-26 · brand · claude+ramos · card sentences rewritten as positive deliverable statements (every sentence had been a caveat or negative definition); DESIGN.md rule updated: boundaries live in the skills, never in the copy
