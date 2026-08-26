@@ -1,9 +1,8 @@
 # Motion performance additions
 
-Distilled from ibelick/ui-skills `fixing-motion-performance` (see MANIFEST for the pin).
-Salvage contract: the five rules below, which the rest of the motion references don't
-carry. General frame-budget craft lives in `build.md`/`recipes.md` (and the course
-performance lane where installed); these are the additions only.
+Five rules the rest of the motion references don't carry. General frame-budget
+craft lives in `build.md`/`recipes.md` (and the course performance lane where
+installed); these are the additions only.
 
 - **Never interleave layout reads and writes in the same frame.** Batch measurement,
   then batch writes. For layout-like effects (position/size changes), prefer

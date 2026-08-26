@@ -1,6 +1,5 @@
 # Polish lenses
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 polishing and refinement guidance.
 
 Use the lenses relevant to the target. They are not separate mandatory phases.
 

@@ -1,11 +1,7 @@
 # Identity method
 
-Distilled from Leonxlnx/taste-skill `brandkit` (see MANIFEST for the pin). Salvage
-contract: the five logo-concepting methods, the meaning-first direction questions with
-the category→symbol table, the panel/board system (the six-panel rhythm and the
-default 3×3) and the tagline discipline. The source's image-generation plumbing and
-"Visual Modes" moodboards were retired; this method is medium-neutral and here drives
-SVG authored in code.
+The identity craft behind every asset this skill makes: meaning-first direction,
+five logo-concepting methods, board composition, and tagline discipline.
 
 ## Direction comes from meaning
 

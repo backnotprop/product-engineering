@@ -12,9 +12,9 @@ best published design-engineering skill work — with the source prose preserved
 | `product-description` | a behavior-spec repo | (Steve Ruiz's skill, vendored whole) |
 | `brand-assets` | standalone on-brand assets (SVG-first) | — |
 
-Each skill is a thin authored router over reference files lifted verbatim from graded
-sources — Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, plannotator,
-Steve Ruiz (see NOTICE) — plus this repo's own Impeccable-derived texts.
+Each skill is a thin router over reference files preserved from graded sources —
+Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, plannotator, Steve Ruiz,
+Impeccable (see NOTICE).
 
 ## Install
 

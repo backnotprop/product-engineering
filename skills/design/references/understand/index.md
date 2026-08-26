@@ -1,9 +1,7 @@
 # Understand (product & design context)
 
 The understand mode of the design skill: capture durable product context in
-PRODUCT.md and document a visual system in DESIGN.md. Provenance: our legacy
-project-context skill (derived and substantially modified from Impeccable 4.1.1
-init + document), converted to a mode reference. For URL-mode extraction and
+PRODUCT.md and document a visual system in DESIGN.md. For URL-mode extraction and
 machine validation see `url-and-validation.md`; for greenfield generated systems
 see `generated-mode.md`.
 
@@ -83,7 +81,7 @@ Refresh context only when durable truth changed:
 - Do not replace factual copy or brand commitments without confirmation.
 - Do not turn a descriptive document into a redesign proposal.
 - Do not create a design brief; this skill records durable context, not a temporary implementation plan.
-- Do not create Impeccable sidecars or config files. The portable output is `PRODUCT.md`, `DESIGN.md`, or both.
+- Do not create sidecar or config files. The portable output is `PRODUCT.md`, `DESIGN.md`, or both.
 
 ## Completion
 

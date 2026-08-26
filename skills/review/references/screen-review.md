@@ -1,9 +1,8 @@
 # Screen review (two-pass flow)
 
 The screen mode of the review skill: full assessment of a concrete UI target.
-Provenance: our legacy ui-review skill (derived and substantially modified from
-Impeccable 4.1.1 critique + audit), converted to a mode reference. Severity here uses
-P0–P3; map to the engine's scale as P0+P1 → HIGH, P2 → MEDIUM, P3 → LOW.
+Severity here uses P0–P3; map to the engine's scale as P0+P1 → HIGH,
+P2 → MEDIUM, P3 → LOW.
 
 Review any concrete UI target without requiring project context files, a detector, persistence, or a larger workflow.
 

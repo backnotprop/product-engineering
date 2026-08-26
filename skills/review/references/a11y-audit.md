@@ -1,7 +1,5 @@
 # A11y audit order
 
-Distilled from ibelick/ui-skills `fixing-accessibility` (see MANIFEST for the pin).
-Salvage contract: the priority-ordered audit table and the tool-boundaries discipline.
 Deep accessibility judgment — focus mechanics, screen-reader behavior, hit-area
 geometry, form-error routing — lives in the build skill's accessibility references;
 this file only orders the audit and bounds the tooling. Severity and reporting follow

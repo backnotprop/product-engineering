@@ -1,11 +1,10 @@
 # Harden (production resilience)
 
 The harden mode of the build skill: make an existing frontend resilient to real data,
-failures, devices, languages, and performance constraints before shipping.
-Provenance: our legacy ui-harden skill (derived and substantially modified from
-Impeccable 4.1.1 harden, adapt, optimize), converted to a mode reference. For shipping
-metadata (SEO, OG, canonical, JSON-LD) see `metadata.md` in this folder. Accessibility
-verification gates below hand off to the a11y mode's references for depth.
+failures, devices, languages, and performance constraints before shipping. For
+shipping metadata (SEO, OG, canonical, JSON-LD) see `metadata.md` in this folder.
+Accessibility verification gates below hand off to the a11y mode's references for
+depth.
 
 Make the interface survive reality, not only the ideal demo.
 

@@ -1,6 +1,5 @@
 # Technical UI review rubric
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `audit`.
 
 For a full web review with adequate evidence, score each applicable dimension from 0 to 4. For a screenshot-only or scoped review, use `not assessed` rather than inferring implementation quality. Verify findings in context.
 

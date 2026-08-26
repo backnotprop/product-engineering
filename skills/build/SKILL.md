@@ -3,14 +3,13 @@ name: build
 description: Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on build, implement, polish, refine, tighten, "feels off", animate, transition, gesture, drawer, make accessible, keyboard navigation, production-ready, edge cases, empty states. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).
 license: Apache-2.0
 metadata:
-  provenance: Converged from emilkowalski/skills, jakubkrehel/skills (better-* domain fold), ibelick/ui-skills, vercel-labs/agent-skills, Leonxlnx/taste-skill, and our legacy ui-polish/ui-harden — see foundry/derivations/build.md
+  provenance: foundry/derivations/build.md in the source repository
 ---
 
 # Build
 
 Production UI to the craft bar. This spine routes and carries the shared loop; the
-craft itself lives in the reference files, preserved from their authors — load only
-what the mode needs.
+craft itself lives in the reference files — load only what the mode needs.
 
 ## The loop (every mode)
 
@@ -55,30 +54,27 @@ install; never copy from them into tracked files.
   **review**. Findings received from review are implemented here at their stated
   file:line.
 
-## Rulings (bind every mode — full text in foundry/LEDGER.md)
+## House rules (bind every mode)
 
-- L-01: press scale is exactly `0.96`.
-- L-02: spring bounce `0` unless the design direction's register is explicitly playful.
-- L-03: reduced motion means gentler-not-zero — keep opacity/color transitions.
-- L-04: exits use ease-out; accelerate-away only as a stated deliberate choice.
+- Press scale is exactly `0.96`.
+- Spring bounce `0` unless the design direction's register is explicitly playful.
+- Reduced motion means gentler-not-zero — keep opacity/color transitions.
+- Exits use ease-out; accelerate-away only as a stated deliberate choice.
   `motion/view-transitions/css-recipes.md` uses `ease-in` on several
-  `::view-transition-old` (exit) snippets — upstream taste; apply ease-out per this
-  ruling. (Its slide-up recipe also eases-in on enter, which the craft bar rejects
-  independently of L-04.)
-- L-05: `will-change` only on observed first-frame stutter, never prophylactically.
-- L-06: custom easing from the named curves in the motion references — never invent
+  `::view-transition-old` (exit) snippets and one enter — apply ease-out instead.
+- `will-change` only on observed first-frame stutter, never prophylactically.
+- Custom easing from the named curves in the motion references — never invent
   novel curves ad hoc.
-- L-07: stagger ~30–80ms between list items, ~100ms between semantic groups.
-- L-08: never disable submit buttons; validate on submit.
+- Stagger ~30–80ms between list items, ~100ms between semantic groups.
+- Never disable submit buttons; validate on submit.
 
-## Name mapping for lifted texts
+## Name mapping
 
 References that route to `better-*` skills by name resolve inside this skill:
 better-ui → `craft/ui/` · better-layout → `craft/layout/` · better-typography →
 `craft/typography/` · better-colors → `craft/colors/` · better-writing →
 `craft/writing/` · better-accessibility → `a11y/` · better-interface → the review
-skill. Domain ownership (who decides vs who measures) follows
-`foundry/ownership-matrix.md`.
+skill.
 
 ## Handoffs
 

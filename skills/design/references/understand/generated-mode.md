@@ -1,11 +1,9 @@
 # Generated-system mode
 
-Distilled from Leonxlnx/taste-skill `stitch-skill` (see MANIFEST for the pin).
-Salvage contract: the taste dials as Overview fields, the anti-pattern ban list, and
-the chosen-not-observed discipline. Use this mode when a greenfield project has no
-system to document and the user wants a DESIGN.md generated from a chosen direction.
-The schema and validation gates from `index.md` and `url-and-validation.md` apply
-unchanged — this mode changes only where values come from.
+Use this mode when a greenfield project has no system to document and the user
+wants a DESIGN.md generated from a chosen direction. The schema and validation
+gates from `index.md` and `url-and-validation.md` apply unchanged — this mode
+changes only where values come from.
 
 ## Chosen, never observed
 

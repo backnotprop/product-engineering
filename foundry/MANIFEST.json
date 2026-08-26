@@ -175,7 +175,7 @@
       "skill": "review",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "196d9400c34e29203bdc84cfdfd3af7b39cddae8f516d0524022ed9fc0e01d71",
+      "sha256": "d5bfaa76a708d98c1fc054ba876e36a822305ee84bccf12085c054ae2b3af0bd",
       "updated": "2026-08-25"
     },
     "skills/review/references/experience-rubric.md": {
@@ -644,7 +644,7 @@
       "skill": "build",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "b266d753567b3889128786ee9074daa68a6fa3b54c432cd994bc27b941fe0858",
+      "sha256": "13737c2651b2b7af366878f0cebc9208e8bb585c61b6f736389e9d66b9de7d3e",
       "updated": "2026-08-25"
     },
     "skills/build/references/motion/view-transitions/index.md": {
@@ -1107,7 +1107,7 @@
       "skill": "design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "e9660f14740050707062cf9194b6e9c9b701081c77a57b46c44d60f31069e4ab",
+      "sha256": "0dbae416acb2e8e1105810acbda158145e91128738f5bcd471b2d3f001b45cc9",
       "updated": "2026-08-25"
     },
     "skills/design/references/understand/generated-mode.md": {
@@ -1119,7 +1119,7 @@
       "skill": "design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "5dbb34de0c3c80dc917eacbba82e8dcca82e39cb80c07607f4c09a6e5042b7d7",
+      "sha256": "68126de8fab04a5fd24fada66736372f31da7e4e16f201a3cd527984a5d69abb",
       "updated": "2026-08-25"
     },
     "skills/design/references/vary/axes.md": {
@@ -1131,7 +1131,7 @@
       "skill": "design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "c97e09cdc7fed42ad0d6ce16c4de882f54f63b5638aa6c1eb9d0866523bc0df7",
+      "sha256": "f18ddcfbc8d769d6fe425be725483189e337801fd662f569fdf331430ea0dfa9",
       "updated": "2026-08-25"
     },
     "skills/design/references/understand/design-format.md": {
@@ -1258,7 +1258,7 @@
       "skill": "brand-assets",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "5d6ab7971d565083aee6bd5c0631b75d4f94ae893fdd2225e8664f8d71ea9cba",
+      "sha256": "7b2d80d38d6f87618ade6ba73c53253a89adc682597b95ee2978ad9f69d194b7",
       "updated": "2026-08-25"
     }
   }

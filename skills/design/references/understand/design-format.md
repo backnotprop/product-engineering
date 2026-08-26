@@ -1,6 +1,5 @@
 # Portable DESIGN.md format
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `document`.
 
 Use this format when documenting an implemented visual system. It follows the [DESIGN.md format specification](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md): optional machine-readable YAML frontmatter followed by canonical prose sections.
 

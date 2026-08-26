@@ -1,6 +1,5 @@
 # Context templates
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `init` and `document`.
 
 Use only the sections supported by real information. Omit empty sections.
 

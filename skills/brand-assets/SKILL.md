@@ -3,7 +3,7 @@ name: brand-assets
 description: Create standalone visual assets that stay on brand — SVG illustrations for articles and blog posts, repo and social/OG images, logo and identity work, on-brand concept images for features. Authors SVG in code. Reads the project's brand truth (DESIGN.md, style guides, a brand/ folder) first and refuses to invent brand values. Triggers on brand asset, on-brand, SVG illustration, article image, header image, og image, social card, repo image, logo, brand kit, identity, tagline panel. Not for UI mockups (design), production components (build), or judging existing assets (review).
 license: Apache-2.0
 metadata:
-  provenance: New spine; identity method distilled from Leonxlnx/taste-skill brandkit — see foundry/derivations/brand-assets.md
+  provenance: foundry/derivations/brand-assets.md in the source repository
 ---
 
 # Brand Assets
@@ -35,8 +35,8 @@ raster where the destination requires it.
    *Consumed as a file* (`<img>` src, README, anywhere external): `currentColor` and
    CSS variables do not resolve and webfonts do not load — use hard-coded brand hexes,
    convert text to paths, and set root width/height for intrinsic sizing.
-   Static by default — this skill's own bar, stricter than L-10's motivated-motion
-   rule: animate only on explicit request, with the craft from build·motion.
+   Static by default: animate only on explicit request, with the craft from
+   build·motion.
 4. **Export where SVG can't go.** OG/social endpoints and GitHub's social preview
    accept raster only: render the SVG to PNG at the destination size (1200×630 for
    standard OG tags; 1280×640 for GitHub's social preview) and deliver both files,

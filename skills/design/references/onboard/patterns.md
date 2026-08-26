@@ -1,6 +1,5 @@
 # Onboarding patterns
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `onboard`.
 
 Choose the smallest pattern that gets users to value.
 

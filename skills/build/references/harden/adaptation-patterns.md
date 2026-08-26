@@ -1,6 +1,5 @@
 # Adaptation patterns
 
-> Derivative work adapted and substantially modified from Impeccable 4.1.1 `adapt`.
 
 Use this reference only when a UI must work in a different device, viewport, input, platform, or delivery context.
 
