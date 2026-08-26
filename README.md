@@ -67,6 +67,8 @@ The machinery, runbooks, and per-skill receipts live in [`foundry/`](foundry/).
 Attribution is in [`NOTICE`](NOTICE). The animations.dev course pack is not
 distributed here — owners layer it in locally via `foundry/scripts/course-dropin.sh`.
 
+<img src="brand/credits.svg" alt="Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Plannotator, Vercel, Leon, Steve Ruiz, Impeccable — preserved byte-for-byte, hash-verified" width="100%">
+
 <details>
 <summary><b>Sources</b></summary>
 <br>
@@ -87,7 +89,6 @@ Exact per-file pins and hashes: `foundry/MANIFEST.json`.
 
 </details>
 
-<img src="brand/credits.svg" alt="Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Plannotator, Vercel, Leon, Steve Ruiz, Impeccable — preserved byte-for-byte, hash-verified" width="100%">
 
 ## License
 
