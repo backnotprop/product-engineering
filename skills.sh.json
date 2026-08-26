@@ -4,12 +4,13 @@
   "groupings": [
     {
       "title": "Converged Skills",
-      "description": "The product-engineering kit: converged skills, each a thin router over byte-preserved references from graded sources. Five when complete.",
+      "description": "The product-engineering kit: five converged skills, each a thin router over byte-preserved references from graded sources.",
       "skills": [
         "design",
         "build",
         "review",
-        "product-description"
+        "product-description",
+        "brand-assets"
       ]
     }
   ]
