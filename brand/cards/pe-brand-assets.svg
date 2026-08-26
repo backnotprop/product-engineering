@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="320" viewBox="0 0 600 320" role="img" aria-labelledby="t">
-  <title id="t">pe-brand-assets: On-brand assets</title>
+  <title id="t">pe-brand-assets: Brand it.</title>
   <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1D1F24"/><stop offset="100%" stop-color="#121316"/></linearGradient></defs>
   <g id="ground"><rect width="600" height="320" fill="url(#g)"/></g>
   <g id="type">
     <text x="48" y="92" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#5C5E66">pe-brand-assets</text>
-    <text x="48" y="150" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="30" letter-spacing="-0.6" fill="#F5F5F4">On-brand assets</text>
+    <text x="48" y="150" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="30" letter-spacing="-0.6" fill="#F5F5F4">Brand it.</text>
     <text x="48" y="184" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#8B8D94">Authors SVG from recorded brand values, not guesses.</text>
     <text x="48" y="262" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="11.5" fill="#494B52">svg &#183; og images &#183; logos &#183; concepts</text>
   </g>
