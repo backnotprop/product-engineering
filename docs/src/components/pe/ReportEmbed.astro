@@ -1,0 +1,49 @@
+---
+/**
+ * An embedded example page (a rendered pe-verify report, an approved artifact) with
+ * a full-screen lightbox and an open-in-new-tab link. The iframe is lazy; the
+ * lightbox is a native <dialog> that loads the same URL.
+ */
+interface Props { src: string; title: string; height?: number }
+const { src, title, height = 560 } = Astro.props;
+const id = "embed-" + src.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "");
+---
+<figure class="pe-embed not-prose my-6" data-embed>
+  <div class="pe-embed-bar">
+    <span class="font-mono text-[0.75rem] text-faint truncate">{title}</span>
+    <span class="flex items-center gap-1">
+      <a href={src} target="_blank" rel="noopener" class="pe-embed-btn no-underline">Open in a new tab</a>
+      <button type="button" class="pe-embed-btn" data-embed-open aria-haspopup="dialog" aria-controls={id}>Full screen</button>
+    </span>
+  </div>
+  <iframe src={src} title={title} loading="lazy" style={`height:${height}px`}></iframe>
+  <dialog id={id} class="pe-embed-dialog" aria-label={title}>
+    <div class="pe-embed-bar">
+      <span class="font-mono text-[0.75rem] text-faint truncate">{title}</span>
+      <span class="flex items-center gap-1">
+        <a href={src} target="_blank" rel="noopener" class="pe-embed-btn no-underline">Open in a new tab</a>
+        <button type="button" class="pe-embed-btn" data-embed-close>Close <kbd>Esc</kbd></button>
+      </span>
+    </div>
+    <iframe data-src={src} title={title}></iframe>
+  </dialog>
+</figure>
+
+<script>
+  const wire = () => {
+    document.querySelectorAll<HTMLElement>("[data-embed]").forEach((fig) => {
+      if (fig.dataset.wired) return;
+      fig.dataset.wired = "1";
+      const dialog = fig.querySelector<HTMLDialogElement>("dialog")!;
+      const frame = dialog.querySelector<HTMLIFrameElement>("iframe")!;
+      fig.querySelector("[data-embed-open]")?.addEventListener("click", () => {
+        if (!frame.src) frame.src = frame.dataset.src || "";
+        dialog.showModal();
+      });
+      dialog.querySelector("[data-embed-close]")?.addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (e) => { if (e.target === dialog) dialog.close(); });
+    });
+  };
+  wire();
+  document.addEventListener("astro:after-swap", wire);
+</script>

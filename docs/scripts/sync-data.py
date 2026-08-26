@@ -15,7 +15,7 @@ Writes:
   docs/src/content/docs/people/<slug>.md      one generated page per author
   docs/src/content/docs/reference/<name>.md   reference files copied with a provenance line
   docs/src/content/docs/skills/<name>.mdx     the sync regions (modes table, provenance) filled in place
-  docs/public/examples/                       a rendered pe-verify report and the approved concept
+  docs/public/examples/                       rendered pe-verify reports (the sample feature run, a QA-list run) and the approved concept
 
 Run from anywhere: python3 docs/scripts/sync-data.py. CI runs it and fails if the
 generated files differ from what is committed (--check).
@@ -267,10 +267,19 @@ def main(argv):
     # ---- examples: a rendered report and the approved concept ----
     ex = os.path.join(DOCS, "public", "examples")
     sample = os.path.join(ROOT, "skills", "pe-verify", "assets", "sample")
-    vr = os.path.join(ex, "verify-report"); os.makedirs(vr, exist_ok=True)
     import shutil, subprocess
+    render = os.path.join(ROOT, "skills", "pe-verify", "scripts", "render-report.py")
+    # the feature run: the skill's own sample, as-is
+    vr = os.path.join(ex, "verify-report"); os.makedirs(vr, exist_ok=True)
     for f in os.listdir(sample): shutil.copy(os.path.join(sample, f), vr)
-    subprocess.run([sys.executable, os.path.join(ROOT, "skills", "pe-verify", "scripts", "render-report.py"), os.path.join(vr, "report.json"), "--no-convert"], check=True, capture_output=True)
+    subprocess.run([sys.executable, render, os.path.join(vr, "report.json"), "--no-convert"], check=True, capture_output=True)
+    # the list run: docs/examples/qa-list-report.json, with the sample's media beside it
+    ql = os.path.join(ex, "verify-report-list"); os.makedirs(ql, exist_ok=True)
+    for f in os.listdir(sample):
+        if f != "report.json": shutil.copy(os.path.join(sample, f), ql)
+    shutil.copy(os.path.join(DOCS, "examples", "qa-list-report.json"), os.path.join(ql, "report.json"))
+    r = subprocess.run([sys.executable, render, os.path.join(ql, "report.json"), "--no-convert"], capture_output=True, text=True)
+    if r.returncode != 0: sys.exit("qa-list example does not render:\n" + r.stdout + r.stderr)
     ar = os.path.join(ex, "approved-record"); os.makedirs(ar, exist_ok=True)
     shutil.copy(os.path.join(ROOT, ".product", "approved", "docs-site-concept", "docs-concept.html"), ar)
 

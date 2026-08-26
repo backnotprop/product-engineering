@@ -33,7 +33,7 @@ const markdownUrl = Astro.site ? new URL("/index.md", Astro.site).href : "/index
   entryId="index"
 >
   <Fragment slot="page-title">
-    <h1 class="text-foreground mb-0 leading-none mt-8 text-[2.5rem] font-semibold tracking-[-0.03em]">{config.title}</h1>
+    <h1 class="text-foreground mb-0 leading-none mt-8 text-[2.5rem] font-semibold tracking-[-0.03em]">{config.title}<span class="pe-dot pe-dot-lg" aria-hidden="true"></span><span class="pe-suffix">agent skills</span></h1>
     <p class="text-[1.0625rem] text-muted-foreground leading-relaxed mt-3 mb-8 max-w-[56ch] [text-wrap:pretty]">{entry.data.description}</p>
   </Fragment>
   <Content components={components} />
