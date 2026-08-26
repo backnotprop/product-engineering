@@ -11,7 +11,9 @@ run has exactly one item. Agents run this on their own JSON before rendering.
 """
 import json, os, re, sys
 
-STATUS = {"pass", "fail", "flag", "skipped"}
+STATUS = {"pass", "fail", "flag", "skipped", "not-run"}
+SELECTION = {"all", "selective"}
+SELECTION = {"all", "selective"}
 CHECK = {"code", "browser", "mixed"}
 SEV = {"high", "medium", "low", "info"}
 MODE = {"feature", "list"}
@@ -36,7 +38,7 @@ def validate(report, base_dir):
     if not isinstance(report, dict):
         return [{"path": "$", "message": "report must be a JSON object"}]
 
-    allowed_top = {"schema_version", "title", "repo", "commit", "ran_at", "mode", "list_source", "notes", "items"}
+    allowed_top = {"schema_version", "title", "repo", "commit", "ran_at", "mode", "list_source", "selection", "selection_basis", "notes", "items"}
     for k in report:
         if k not in allowed_top: E(f"$.{k}", "unknown field")
     for k in ("schema_version", "title", "mode", "ran_at", "items"):
@@ -50,6 +52,11 @@ def validate(report, base_dir):
         if k in report and not isinstance(report[k], str): E(f"$.{k}", "must be a string")
     if "list_source" in report and report["list_source"] is not None and not isinstance(report["list_source"], str):
         E("$.list_source", "must be a string or null")
+    sel = report.get("selection")
+    if "selection" in report and sel not in SELECTION: E("$.selection", "must be 'all' or 'selective'")
+    if "selection" in report and report.get("mode") == "feature": E("$.selection", "only list runs have a selection")
+    if "selection_basis" in report and not isinstance(report["selection_basis"], str): E("$.selection_basis", "must be a string")
+    if "selection_basis" in report and sel != "selective": E("$.selection_basis", "only selective runs have a basis")
 
     items = report.get("items")
     if not isinstance(items, list) or not items:
@@ -74,6 +81,9 @@ def validate(report, base_dir):
         elif "title" in it and len(it["title"]) > 200: E(f"{p}.title", "must be at most 200 characters")
         if "check_type" in it and it["check_type"] not in CHECK: E(f"{p}.check_type", f"must be one of {sorted(CHECK)}")
         if "status" in it and it["status"] not in STATUS: E(f"{p}.status", f"must be one of {sorted(STATUS)}")
+        if it.get("status") == "not-run":
+            if sel != "selective": E(f"{p}.status", "not-run is only valid in a selective run (set $.selection)")
+            if "media" in it: E(f"{p}.media", "a not-run item has no media")
         if "summary" in it and (not isinstance(it["summary"], str) or not it["summary"].strip()): E(f"{p}.summary", "must be a non-empty string")
         if "checked_by" in it and not isinstance(it["checked_by"], str): E(f"{p}.checked_by", "must be a string")
 

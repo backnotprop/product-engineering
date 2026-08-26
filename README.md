@@ -47,7 +47,7 @@ npx skills add backnotprop/product-engineering
 | "Did we stay true to the mock?" | `pe-review`, fidelity mode: every deviation from the approved record, with severity |
 | "This is it — ship it" | `pe-design` stamps the artifact under `.product/approved/<slug>/` for build and review to hold to |
 | "Verify this" · "prove the toolbar works" | `pe-verify` drives the feature in Playwright and opens a report with the recording, checkpoint stills, and a verdict |
-| "Run the QA list" · "release check" | `pe-verify` re-runs your `.product/` list, one pass/fail/flag per entry, with evidence |
+| "Run the QA list" · "release check" | `pe-verify` re-runs your `.product/` list, every entry or only those the change set touches, one pass/fail/flag per entry with evidence |
 | "Write a product description for the editor" | `pe-product-description` builds a verified behavior spec |
 | "Make an SVG header image for this post" | `pe-brand-assets` authors it from your recorded brand values |
 

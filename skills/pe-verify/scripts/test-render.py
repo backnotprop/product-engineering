@@ -54,6 +54,12 @@ check("quote in media path", "$.items[0].media.checkpoints[0].screenshot" in err
 check("dotdot in media path", "$.items[0].media.screenshots[0].path" in errs_of(lambda r: r["items"][0]["media"]["screenshots"][0].update(path="../cp-4.png")))
 check("bad ran_at", "$.ran_at" in errs_of(lambda r: r.update(ran_at="yesterday")))
 check("findings not a list → one error", [e for e in errs_of(lambda r: r["items"][0].update(findings="oops"))] == ["$.items[0].findings"])
+check("bad selection value", "$.selection" in errs_of(lambda r: (r.update(mode="list", selection="some"))))
+check("selection in feature mode", "$.selection" in errs_of(lambda r: r.update(selection="all")))
+check("basis without selective", "$.selection_basis" in errs_of(lambda r: r.update(mode="list", selection="all", selection_basis="diff")))
+check("not-run outside a selective run", "$.items[0].status" in errs_of(lambda r: (r.update(mode="list"), r["items"][0].update(status="not-run"), r["items"][0].pop("media"))))
+check("not-run with media", "$.items[0].media" in errs_of(lambda r: (r.update(mode="list", selection="selective"), r["items"][0].update(status="not-run"))))
+check("selective run with not-run item is valid", validate((lambda r: (r.update(mode="list", selection="selective", selection_basis="diff main...HEAD, 3 files"), r["items"][0].update(status="not-run"), r["items"][0].pop("media"), r)[3])(copy.deepcopy(base)), SAMPLE) == [])
 check("code item without media is valid", validate((lambda r: (r["items"][0].pop("media"), r["items"][0].update(check_type="code"), r)[2])(copy.deepcopy(base)), SAMPLE) == [])
 
 print("validate-report.py CLI")
@@ -97,10 +103,11 @@ check("unreadable → exit 2 and error page", r.returncode == 2 and "not valid J
 lst = copy.deepcopy(base); lst["mode"] = "list"; lst["title"] = "Release QA"; lst["list_source"] = ".product/qa-list.md"
 a = copy.deepcopy(base["items"][0]); a["id"] = "bun-version"; a["title"] = "Bun 1.3.11"; a["check_type"] = "code"; a["status"] = "flag"; a.pop("media")
 b = copy.deepcopy(base["items"][0]); b["id"] = "remote-urls"; b["status"] = "fail"; b.pop("media")
-lst["items"] += [a, b]; json.dump(lst, open(os.path.join(d, "list.json"), "w"))
+c = copy.deepcopy(a); c["id"] = "install-paths"; c["title"] = "Install paths still diverge for Pi and OpenCode"; c["status"] = "not-run"; c["summary"] = "No change under install/ in this change set."; c.pop("findings", None)
+lst["items"] += [a, b, c]; lst["selection"] = "selective"; lst["selection_basis"] = "diff main...HEAD, 14 files"; json.dump(lst, open(os.path.join(d, "list.json"), "w"))
 r = run([os.path.join(HERE, "render-report.py"), os.path.join(d, "list.json"), "--no-convert", "--out", os.path.join(d, "list.html")])
 lhtml = open(os.path.join(d, "list.html")).read()
-check("list run renders", r.returncode == 0 and '"mode": "list"' in lhtml.replace('"mode":"list"', '"mode": "list"'))
+check("list run renders", r.returncode == 0 and '"mode": "list"' in lhtml.replace('"mode":"list"', '"mode": "list"'), r.stdout)
 
 # sparse items: optional fields absent everywhere the template reads them
 sparse = copy.deepcopy(base); it = sparse["items"][0]; it["status"] = "fail"; it.pop("findings"); it.pop("checked_by"); it["media"].pop("checkpoints"); it["media"].pop("screenshots")
@@ -125,6 +132,10 @@ def browser_checks():
         load("list.html")
         pg.click('.pill[data-f="status"][data-v="pass"]'); pg.wait_for_timeout(50)
         results["list: filtering out failed rows raises nothing"] = not errors and pg.locator(".row").count() >= 1
+        pg.click('.pill[data-clear]'); pg.wait_for_timeout(50)
+        results["list: selective run shows the not-run pill and meta"] = pg.locator('.pill[data-v="not-run"]').count() == 1 and "selective run · diff main...HEAD, 14 files" in pg.inner_text("header.run .meta")
+        pg.click('.pill[data-f="status"][data-v="not-run"]'); pg.wait_for_timeout(50)
+        results["list: not-run filter isolates the deselected row"] = not errors and pg.locator(".row").count() == 1 and "not run" in pg.inner_text(".row .st").lower()
         pg.click('.pill[data-clear]'); pg.fill("#q", "bun"); pg.wait_for_timeout(50)
         results["list: search that hides the fail row raises nothing"] = not errors and pg.locator(".row").count() == 1
         r = run([os.path.join(HERE, "render-report.py"), os.path.join(d, "bad.json"), "--no-convert", "--out", os.path.join(d, "err.html")])

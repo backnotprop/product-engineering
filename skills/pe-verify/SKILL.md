@@ -35,7 +35,14 @@ conventions, and the capture method live in `references/` — load what the run 
 | Mode | When | Load |
 | --- | --- | --- |
 | **feature** | "Verify this", "create a verification for X", or the last step after a build. The checks come from the change and the conversation: what was built, what the user said it must do, what it must not break. | `report-schema.md`, `evidence.md` |
-| **list** | "Run the QA list", "release check", "QA". The user's own markdown list, found under `.product/`; one report item per list entry. | `qa-list.md`, `report-schema.md`, `evidence.md` |
+| **list** | "Run the QA list", "release check", "QA". The user's own markdown list, found under `.product/`; one report item per list entry, every entry present. | `qa-list.md`, `report-schema.md`, `evidence.md` |
+
+A list run is **selective** or **all**. Selective: the agent chooses the entries the
+change set can affect and reports the rest as `not-run`, each with its reason; the
+report records `selection: "selective"` and the basis. All: every entry runs;
+`selection: "all"`. Selective when the user names a change set ("against this PR",
+"since v0.17"); all when they say "release check", "everything", or name no change
+set. Say which in the chat report, and switch when asked.
 
 A feature run is one item: the feature, with its checks as checkpoints (browser) and
 findings (code), and one verdict. When the derived checks need separate verdicts —

@@ -27,6 +27,13 @@ reported pass/fail against the user's own list of concerns.
 | `assets/sample/` | authored | a feature run with a recording and five checkpoints; the test fixture |
 | `scripts/validate_report_lib.py`, `validate-report.py`, `render-report.py`, `test-render.py` | authored | validate, render (webm→mp4, `--out` rebasing, error page), 51 tests, six of them in Chromium |
 
+## Deviations from the approved artifact
+
+- Status `not-run` and the "selective run · basis" meta line (user direction, after
+  approval): a list run is `selective` or `all`; unchosen entries stay in the ledger,
+  muted, with their reason, and get their own count pill and filter. The record in
+  `.product/approved/pe-verify-report/` predates this; the user's words rank above it.
+
 ## Rulings applied
 
 - L-09 by analogy: a console error during a browser check is never dropped — `low`

@@ -40,11 +40,14 @@ to hand the problems back to you.
 **Run** — `schema_version` (always `1`) · `title` · `mode` (`feature` for one item
 rendered as the first-look viewer, `list` for the ledger) · `ran_at` (ISO 8601) ·
 optional `repo`, `commit`, `list_source` (path of the QA list used), `notes`
-(environment caveats, what could not be checked).
+(environment caveats, what could not be checked). List runs also carry `selection`:
+`all` when every entry ran, `selective` when the agent chose entries from the change
+set; a selective run adds `selection_basis` (what it chose from: `diff main...HEAD,
+14 files`) and lists every unchosen entry as an item with status `not-run`.
 
 **Item** — `id` (stable, `[A-Za-z0-9][A-Za-z0-9_-]*`, unique in the run) · `title` ·
 `check_type` (`code` · `browser` · `mixed`) · `status` (`pass` · `fail` · `flag` ·
-`skipped`) · `summary` (one to three plain sentences: what was checked, the outcome) ·
+`skipped` · `not-run`) · `summary` (one to three plain sentences: what was checked, the outcome) ·
 optional `findings`, `media`, `checked_by`.
 
 **Finding** — `severity` (`high` · `medium` · `low` · `info`) · `text` · optional
@@ -60,7 +63,9 @@ the `media` key entirely (not `null`). Paths are relative, stay inside the run f
 
 - `status` is the verdict: `pass` (verified), `fail` (verified broken), `flag`
   (needs a human decision — a suspected regression, a policy question, a risky
-  change), `skipped` (could not be checked; say why in `summary`).
+  change), `skipped` (could not be checked; say why in `summary`), `not-run` (not
+  chosen in a selective run; `summary` says why in one line — "no change touches the
+  install scripts"; selective runs only, no media).
 - `summary` states what was checked and what happened. Findings carry the specifics;
   `summary` never repeats them.
 - A checkpoint is a moment worth jumping to: the thing rendered, the action landed,

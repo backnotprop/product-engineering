@@ -14,6 +14,8 @@
     "ran_at": { "type": "string", "description": "ISO 8601 date-time" },
     "mode": { "enum": ["feature", "list"], "description": "feature = one item, rendered as the first-look viewer; list = the QA ledger" },
     "list_source": { "type": ["string", "null"], "description": "Path of the QA list used, for list runs" },
+    "selection": { "enum": ["all", "selective"], "description": "List runs only. all = every list entry ran; selective = the agent chose entries from the change set, and the rest appear as not-run" },
+    "selection_basis": { "type": "string", "description": "What the selection was made from, e.g. 'diff main...HEAD, 14 files'. Selective runs only" },
     "notes": { "type": "string", "description": "Optional run-level notes: what could not be checked, environment caveats" },
     "items": {
       "type": "array",
@@ -26,7 +28,7 @@
           "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]*$", "description": "Stable within the run; used for anchors and jump navigation" },
           "title": { "type": "string", "minLength": 1, "maxLength": 200 },
           "check_type": { "enum": ["code", "browser", "mixed"] },
-          "status": { "enum": ["pass", "fail", "flag", "skipped"] },
+          "status": { "enum": ["pass", "fail", "flag", "skipped", "not-run"], "description": "not-run = deselected in a selective run; summary says why" },
           "summary": { "type": "string", "minLength": 1, "description": "One to three plain sentences: what was checked and the outcome" },
           "findings": {
             "type": "array",

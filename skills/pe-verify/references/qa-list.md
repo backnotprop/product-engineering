@@ -53,6 +53,20 @@ No required format. Each list item or heading is one check.
 Item ids in the report are slugs of the check titles (`bun-version`,
 `toolbar-buttons-present`), stable across runs so reports line up release to release.
 
+## Choosing entries in a selective run
+
+Selection is from the change set, never from convenience. Read the diff (files, routes,
+scripts, dependencies, docs touched) and keep an entry when any of it can affect what
+the entry checks. Rules:
+
+- Entries marked "always flag" run in every selective run.
+- An entry whose area is untouched is `not-run`, with the reason in its `summary`:
+  "no change under `install/`", "dependencies unchanged since v0.17.5".
+- Unsure whether an entry is affected: run it. Cost is a check; the alternative is a
+  missed regression.
+- The report's `selection_basis` names what was read: `diff main...HEAD, 14 files`,
+  `v0.17.5..HEAD`.
+
 ## Seeding a list
 
 Only when the user asks. Draft it from repo evidence — routes and pages, install and
