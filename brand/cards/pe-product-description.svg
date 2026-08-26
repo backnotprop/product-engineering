@@ -5,7 +5,7 @@
   <g id="type">
     <text x="48" y="92" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#5C5E66">pe-product-description</text>
     <text x="48" y="150" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="30" letter-spacing="-0.6" fill="#F5F5F4">Describe it.</text>
-    <text x="48" y="184" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#8B8D94">Documents what users see and do, verified against the running product.</text>
+    <text x="48" y="184" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#8B8D94">What users see and do, verified against the running product.</text>
     <text x="48" y="262" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="11.5" fill="#494B52">behavior specs &#183; verified against the product</text>
   </g>
 </svg>
