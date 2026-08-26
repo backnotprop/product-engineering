@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="320" viewBox="0 0 600 320" role="img" aria-labelledby="t">
-  <title id="t">pe-design: Design it.</title>
+  <title id="t">pe-design: Design, before code</title>
   <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1D1F24"/><stop offset="100%" stop-color="#121316"/></linearGradient></defs>
   <g id="ground"><rect width="600" height="320" fill="url(#g)"/></g>
   <g id="type">
     <text x="48" y="92" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#5C5E66">pe-design</text>
-    <text x="48" y="150" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="30" letter-spacing="-0.6" fill="#F5F5F4">Design it.</text>
-    <text x="48" y="184" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#8B8D94">Documents and artifacts, before code.</text>
+    <text x="48" y="150" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="30" letter-spacing="-0.6" fill="#F5F5F4">Design, before code</text>
+    <text x="48" y="184" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="15" fill="#8B8D94">Produces documents and artifacts, not production code.</text>
     <text x="48" y="262" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="11.5" fill="#494B52">understand &#183; direct &#183; mock &#183; vary &#183; onboard</text>
   </g>
 </svg>
