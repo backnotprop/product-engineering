@@ -1,0 +1,501 @@
+<title>Verify Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  /* Brand: DESIGN.md — dark radial ground read as light, Geist, no accent; status colors in their own lane. */
+  :root {
+    --g0:#101114; --g1:#23252B; --panel:#1B1D22; --panel-2:#22252B; --line:#2A2D34;
+    --ink:#F5F5F4; --mut:#8B8D94; --faint:#5C5E66;
+    --pass:#3FB950; --fail:#F0616B; --flag:#E2B53E; --skip:#6B7078;
+    --sans:"Geist",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { background:var(--g0); }
+  body { margin:0; color:var(--ink); font-family:var(--sans); font-size:14.5px; line-height:1.55;
+    background:radial-gradient(120% 120% at 18% 0%, var(--g1) 0%, #17181C 55%, var(--g0) 100%) fixed; min-height:100vh; }
+  a { color:inherit; }
+  .mono { font-family:var(--mono); }
+
+  /* ---- prototype chrome (not part of the report) ---- */
+  .proto { position:sticky; top:0; z-index:20; background:rgba(16,17,20,.86); backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line); padding:10px 24px; display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .proto .lbl { font-family:var(--mono); font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint); margin-right:4px; }
+  .pb { appearance:none; border:1px solid var(--line); background:transparent; color:var(--mut); font:inherit; font-size:12.5px;
+    font-weight:500; padding:6px 12px; border-radius:6px; cursor:pointer; }
+  .pb[aria-pressed="true"] { background:var(--ink); color:var(--g0); border-color:var(--ink); }
+  .pb:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .proto .sep { width:1px; height:20px; background:var(--line); margin:0 6px; }
+  .proto .hint { margin-left:auto; font-family:var(--mono); font-size:11px; color:var(--faint); }
+  @media (max-width:700px){ .proto .hint{display:none;} }
+
+  /* ---- report ---- */
+  .wrap { max-width:1120px; margin:0 auto; padding:40px 24px 100px; }
+  header.run { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
+  header.run h1 { margin:0 0 4px; font-size:22px; font-weight:600; letter-spacing:-.02em; }
+  header.run .meta { font-family:var(--mono); font-size:12px; color:var(--faint); }
+  .summary { display:flex; gap:8px; flex-wrap:wrap; }
+  .pill { font-family:var(--mono); font-size:12px; padding:5px 11px; border-radius:6px; border:1px solid var(--line); color:var(--mut); font-variant-numeric:tabular-nums; background:transparent; font:inherit; font-family:var(--mono); font-size:12px; }
+  button.pill { cursor:pointer; }
+  button.pill:hover { border-color:#3A3E47; }
+  button.pill[aria-pressed="true"] { background:var(--panel-2); color:var(--ink); border-color:#3A3E47; }
+  button.pill:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .pill b { color:var(--ink); font-weight:500; }
+  .pill.s-fail b { color:var(--fail); } .pill.s-flag b { color:var(--flag); } .pill.s-pass b { color:var(--pass); }
+
+  .attention { margin:0 0 26px; border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:14px 18px; }
+  .attention h2 { margin:0 0 8px; font-size:12px; font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
+  .attention ul { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
+  .attention li { display:flex; gap:10px; align-items:baseline; font-size:14px; }
+  .attention li a { text-decoration:none; color:var(--ink); }
+  .attention li a:hover { text-decoration:underline; }
+
+  .dot { display:inline-block; width:8px; height:8px; border-radius:50%; flex:none; margin-top:1px; }
+  .st { font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  .s-pass .dot{background:var(--pass);} .s-fail .dot{background:var(--fail);} .s-flag .dot{background:var(--flag);} .s-skipped .dot{background:var(--skip);}
+  .s-pass .st{color:var(--pass);} .s-fail .st{color:var(--fail);} .s-flag .st{color:var(--flag);} .s-skipped .st{color:var(--skip);}
+  .type { font-family:var(--mono); font-size:11px; color:var(--faint); }
+
+  /* findings */
+  .findings { margin:0; padding:0; list-style:none; display:grid; gap:8px; }
+  .findings li { display:grid; grid-template-columns:auto 1fr; gap:10px; font-size:13.5px; color:#C9CBD0; }
+  .findings .sev { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding-top:3px; }
+  .sev-high{color:var(--fail);} .sev-medium{color:var(--flag);} .sev-low{color:var(--mut);} .sev-info{color:var(--faint);}
+  .findings .ev { display:block; font-family:var(--mono); font-size:12px; color:var(--faint); margin-top:2px; }
+  .detail .summ { color:var(--mut); margin:0 0 12px; max-width:70ch; }
+  .detail h4 { margin:16px 0 8px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
+  .by { font-family:var(--mono); font-size:11px; color:var(--faint); }
+
+  /* ---- player ---- */
+  .player { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#0C0D10; }
+  .player video { display:block; width:100%; height:auto; background:#000; }
+  .ctl { display:flex; align-items:center; gap:12px; padding:10px 12px; background:var(--panel); }
+  .ctl button { appearance:none; border:1px solid var(--line); background:transparent; color:var(--ink); width:34px; height:30px; border-radius:6px; cursor:pointer; font-size:12px; }
+  .ctl button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .ctl .t { font-family:var(--mono); font-size:11.5px; color:var(--mut); font-variant-numeric:tabular-nums; min-width:86px; }
+  .bar { position:relative; flex:1; height:30px; cursor:pointer; }
+  .bar .track { position:absolute; left:0; right:0; top:13px; height:4px; background:#2E3139; border-radius:2px; }
+  .bar .fill { position:absolute; left:0; top:13px; height:4px; background:var(--ink); border-radius:2px; width:0; }
+  .bar .tick { position:absolute; top:8px; width:2px; height:14px; background:var(--mut); border-radius:1px; transform:translateX(-1px); transition:background .12s ease; }
+  .bar .tick.on { background:var(--ink); }
+  .bar .tick.pass { background:var(--pass); }
+  .tip { position:absolute; bottom:38px; transform:translateX(-50%); width:200px; background:#0C0D10; border:1px solid var(--line); border-radius:8px;
+    padding:6px; opacity:0; visibility:hidden; transition:opacity .12s ease; pointer-events:none; z-index:5; }
+  .tip.show { opacity:1; visibility:visible; }
+  .tip img { display:block; width:100%; height:auto; border-radius:4px; }
+  .tip .tl { display:flex; justify-content:space-between; gap:8px; margin-top:6px; font-family:var(--mono); font-size:10.5px; color:var(--mut); }
+  .tip .tl b { color:var(--ink); font-weight:500; font-family:var(--sans); font-size:12px; }
+  .cps { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+  .cps li { display:grid; grid-template-columns:52px 1fr; gap:12px; padding:9px 12px; border-bottom:1px solid var(--line); cursor:pointer; }
+  .cps li:last-child { border-bottom:none; }
+  .cps li:hover { background:var(--panel-2); }
+  .cps li.on { background:var(--panel-2); box-shadow:inset 2px 0 0 var(--ink); }
+  .cps .ct { font-family:var(--mono); font-size:11.5px; color:var(--faint); padding-top:2px; font-variant-numeric:tabular-nums; }
+  .cps .cl { font-weight:500; font-size:13.5px; }
+  .cps .cn { color:var(--mut); font-size:12.5px; }
+  .narr { padding:12px 14px; color:var(--mut); font-size:13.5px; border-top:1px solid var(--line); background:var(--panel); }
+  .shots { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:8px; margin-top:10px; }
+  .shots figure { margin:0; } .shots img { width:100%; border-radius:6px; border:1px solid var(--line); display:block; }
+  .shots figcaption { font-family:var(--mono); font-size:11px; color:var(--faint); margin-top:4px; }
+
+  /* ---- layout: ledger ---- */
+  .ledger .row { border-top:1px solid var(--line); }
+  .ledger .row:last-child { border-bottom:1px solid var(--line); }
+  .ledger .head { display:grid; grid-template-columns:20px 60px 1fr 70px 24px; gap:12px; align-items:center; padding:11px 8px; cursor:pointer; }
+  .ledger .head:hover { background:rgba(255,255,255,.025); }
+  .ledger .head .title { font-weight:500; }
+  .ledger .head .chev { color:var(--faint); font-size:12px; text-align:right; transition:transform .15s ease; }
+  .ledger .row.open .chev { transform:rotate(90deg); }
+  .ledger .detail { display:none; padding:6px 8px 22px 100px; }
+  .ledger .row.open .detail { display:block; }
+  @media (max-width:700px){ .ledger .head{grid-template-columns:16px 1fr 24px;} .ledger .head .st,.ledger .head .type{display:none;} .ledger .detail{padding-left:8px;} }
+
+  /* ---- layout: inspector ---- */
+  .inspector { display:grid; grid-template-columns:320px 1fr; gap:18px; align-items:start; }
+  .inspector nav { position:sticky; top:64px; border:1px solid var(--line); border-radius:10px; background:var(--panel); overflow:hidden; max-height:calc(100vh - 90px); overflow-y:auto; }
+  .inspector nav .n { display:grid; grid-template-columns:16px 1fr; gap:10px; align-items:baseline; padding:9px 12px; border-bottom:1px solid var(--line); cursor:pointer; font-size:13.5px; }
+  .inspector nav .n:last-child { border-bottom:none; }
+  .inspector nav .n:hover { background:var(--panel-2); }
+  .inspector nav .n.on { background:var(--panel-2); box-shadow:inset 2px 0 0 var(--ink); }
+  .inspector nav .n small { display:block; font-family:var(--mono); font-size:10.5px; color:var(--faint); margin-top:1px; }
+  .inspector .pane { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:20px 22px; min-height:300px; }
+  .inspector .pane h3 { margin:0 0 2px; font-size:18px; font-weight:600; letter-spacing:-.01em; }
+  .inspector .pane .stl { display:flex; gap:10px; align-items:center; margin-bottom:14px; }
+  @media (max-width:800px){ .inspector{grid-template-columns:1fr;} .inspector nav{position:static; max-height:none;} }
+
+  /* ---- layout: dossier ---- */
+  .dossier .toc { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:4px 18px; margin:0 0 30px; padding:0; list-style:none; font-size:13px; }
+  .dossier .toc li { display:flex; gap:8px; align-items:baseline; } .dossier .toc a { text-decoration:none; color:var(--mut); } .dossier .toc a:hover { color:var(--ink); }
+  .dossier section { border-top:1px solid var(--line); padding:22px 0 26px; }
+  .dossier section h3 { margin:0 0 2px; font-size:18px; font-weight:600; letter-spacing:-.01em; }
+  .dossier section .stl { display:flex; gap:10px; align-items:center; margin-bottom:12px; }
+  .dossier .body { display:grid; grid-template-columns:1fr; gap:14px; }
+  @media (min-width:900px){ .dossier .has-media .body { grid-template-columns:1fr 1fr; } }
+
+  /* feature mode: single item */
+  .feature .hero { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:22px 24px; margin-bottom:16px; }
+  .feature .hero h3 { margin:0 0 4px; font-size:22px; font-weight:600; letter-spacing:-.02em; }
+  .feature .hero .stl { display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+  .feature .grid { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:900px){ .feature .grid { grid-template-columns:1.25fr 1fr; align-items:start; } }
+  .card { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:16px 18px; }
+  .card h4 { margin:0 0 10px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
+
+  /* ---- filter bar ---- */
+  .filters { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:0 0 18px; }
+  .fchip { appearance:none; border:1px solid var(--line); background:transparent; color:var(--mut); font:inherit; font-family:var(--mono); font-size:11.5px;
+    padding:5px 10px; border-radius:6px; cursor:pointer; display:inline-flex; gap:7px; align-items:center; font-variant-numeric:tabular-nums; }
+  .fchip .dot { width:7px; height:7px; margin:0; }
+  .fchip[aria-pressed="true"] { background:var(--panel-2); color:var(--ink); border-color:#3A3E47; }
+  .fchip:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .filters .gap { width:1px; height:18px; background:var(--line); margin:0 4px; }
+  .search { margin-left:auto; display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:6px; padding:0 10px; background:var(--panel); }
+  .search input { background:transparent; border:none; color:var(--ink); font:inherit; font-size:13px; padding:6px 0; width:200px; outline:none; }
+  .search input::placeholder { color:var(--faint); }
+  .search kbd { font-family:var(--mono); font-size:10px; color:var(--faint); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+  .showing { font-family:var(--mono); font-size:11.5px; color:var(--faint); margin:-8px 0 14px; }
+  .empty { padding:40px 0; text-align:center; color:var(--faint); font-family:var(--mono); font-size:12.5px; }
+
+  /* ---- jump palette + next/prev ---- */
+  .jump-btn { position:fixed; right:22px; bottom:22px; z-index:30; display:flex; gap:8px; }
+  .jump-btn button { appearance:none; border:1px solid var(--line); background:rgba(27,29,34,.92); backdrop-filter:blur(8px); color:var(--ink); font:inherit; font-size:12.5px;
+    font-weight:500; padding:8px 12px; border-radius:8px; cursor:pointer; display:inline-flex; gap:8px; align-items:center; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+  .jump-btn button kbd { font-family:var(--mono); font-size:10px; color:var(--faint); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+  .jump-btn button:hover { border-color:#3A3E47; }
+  .jump-btn button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .palette { position:fixed; inset:0; z-index:40; background:rgba(16,17,20,.55); display:none; align-items:flex-start; justify-content:center; padding:10vh 16px 0; }
+  .palette.open { display:flex; }
+  .palette .box { width:min(680px,100%); background:var(--panel); border:1px solid #3A3E47; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.5); overflow:hidden; }
+  .palette input { width:100%; background:transparent; border:none; border-bottom:1px solid var(--line); color:var(--ink); font:inherit; font-size:15px; padding:14px 16px; outline:none; }
+  .palette input::placeholder { color:var(--faint); }
+  .palette .pfilters { display:flex; gap:6px; padding:8px 10px; border-bottom:1px solid var(--line); }
+  .palette .pfilters .pill { font-size:11px; padding:3px 9px; }
+  .palette ul { list-style:none; margin:0; padding:6px; max-height:52vh; overflow-y:auto; }
+  .palette li { display:grid; grid-template-columns:16px 1fr auto; gap:10px; align-items:baseline; padding:9px 10px; border-radius:6px; cursor:pointer; font-size:13.5px; }
+  .palette li small { font-family:var(--mono); font-size:10.5px; color:var(--faint); }
+  .palette li.on, .palette li:hover { background:var(--panel-2); }
+  .palette .foot { display:flex; gap:14px; padding:8px 14px; border-top:1px solid var(--line); font-family:var(--mono); font-size:10.5px; color:var(--faint); }
+
+  /* ---- feature: first-look viewer ---- */
+  .feature .viewer { border:1px solid var(--line); border-radius:10px; background:var(--panel); overflow:hidden; margin-bottom:16px; }
+  .feature .viewer .player { border:none; border-radius:0; }
+  .storyboard { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(150px,1fr); gap:10px; overflow-x:auto; padding:12px; border-top:1px solid var(--line); background:#0F1013; }
+  .storyboard figure { margin:0; cursor:pointer; border-radius:6px; }
+  .storyboard img { width:100%; display:block; border-radius:6px; border:1px solid var(--line); }
+  .storyboard figure.on img { border-color:var(--ink); }
+  .storyboard figcaption { display:flex; justify-content:space-between; gap:8px; margin-top:6px; font-size:12px; }
+  .storyboard figcaption span:last-child { font-family:var(--mono); font-size:10.5px; color:var(--faint); }
+  .feature .two { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:900px){ .feature .two { grid-template-columns:1fr 1fr; align-items:start; } }
+  .feature .hero { margin-bottom:12px; }
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+
+<div class="proto" role="toolbar" aria-label="Prototype controls">
+  <span class="lbl">Layout</span>
+  <button class="pb" data-layout="ledger" aria-pressed="true">Ledger</button>
+  <button class="pb" data-layout="inspector" aria-pressed="false">Inspector</button>
+    <span class="sep"></span>
+  <span class="lbl">Run</span>
+  <button class="pb" data-mode="list" aria-pressed="true">QA list · 29 items</button>
+  <button class="pb" data-mode="feature" aria-pressed="false">Single feature</button>
+  <span class="hint">1–2 layout · L/F run · J jump · N/P next/prev attention · / search · player: ←→ checkpoints, space</span>
+</div>
+
+<div class="wrap" id="report"></div>
+<div class="jump-btn" id="jumpbtn" hidden><button type="button" id="jumpopen">Jump to check <kbd>J</kbd></button></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Jump to a check">
+  <div class="box"><input id="pq" placeholder="Type to filter checks…" autocomplete="off"><div class="pfilters" id="pfilters" role="group" aria-label="Palette status filters"></div><ul id="plist"></ul>
+  <div class="foot"><span>↑↓ move</span><span>↵ jump</span><span>esc close</span><span id="pcount"></span></div></div>
+</div>
+
+<script>
+const MEDIA = __MEDIA__;
+const V = "data:video/mp4;base64," + MEDIA.video;
+const CP = t => "data:image/png;base64," + MEDIA["cp"+t];
+
+// ---------- sample data (what the agent would emit) ----------
+const CHECKPOINTS = [
+  { t: 1,  label: "Page loads",            narration: "article.html opens through the local server; no console errors.", screenshot: CP(1) },
+  { t: 4,  label: "Toolbar renders",       narration: "All four key buttons present: comment, thumbs up, quick tags, submit.", screenshot: CP(4) },
+  { t: 10, label: "Comment added",         narration: "Selecting paragraph 2 and commenting produces the highlight and a stored annotation.", screenshot: CP(10) },
+  { t: 16, label: "Quick tag applied",     narration: "needs-work tag attaches to the annotation; the chip renders.", screenshot: CP(16) },
+  { t: 21, label: "Feedback submitted",    narration: "Submit succeeds; the payload contains both the comment and the tag.", screenshot: CP(21) },
+];
+const TOOLBAR_ITEM = {
+  id: "QA-29", title: "Annotate toolbar integrity", check_type: "browser", status: "pass",
+  summary: "All key buttons are present on markdown, HTML, and live-site targets. Recorded on the HTML target; the other two were checked by DOM assertion.",
+  findings: [
+    { severity: "info", text: "Button set is unchanged from v0.17.5: comment, thumbs up, quick tags, submit.", evidence: "apps/annotate/src/Toolbar.tsx:41" },
+    { severity: "low", text: "Quick-tags popover opens 40ms slower on the live-site target than on markdown; within budget.", evidence: "recording 0:16" },
+  ],
+  media: { video: V, checkpoints: CHECKPOINTS,
+    screenshots: [{ path: CP(4), caption: "markdown target — toolbar" }, { path: CP(16), caption: "live site — quick tags" }] },
+  checked_by: "opus · browser",
+};
+const LIST = [
+  ["QA-01","Scrollbar accessibility","browser","pass","Scrollbar remains keyboard-reachable and announced; the tooltip clip at mobile widths is pre-existing.",[["low","Tooltip clips at 360px; pre-existing since v0.16.","apps/ui/src/Scrollbar.tsx:88"]],true],
+  ["QA-02","Idle-session planning tool stripping in Pi","code","pass","Fresh idle sessions strip plannotator_submit_plan when no saved planning state exists.",[["info","Strip path covered by pi-idle.test.ts.","packages/pi/src/tools.ts:112"]]],
+  ["QA-03","Print clipping","browser","pass","Print layout intact; only the known overflow-x-auto table wrapper remains.",[]],
+  ["QA-04","Non-Obsidian user safety","code","pass","Vault detection path unchanged by v0.17.8.",[]],
+  ["QA-05","All annotations captured","browser","flag","Linked-doc annotations captured; annotate mode captured; plan mode captured — but the capture order changed in this release.",[["medium","Plan-mode annotations now serialize after linked-doc annotations; consumers that assumed order may break.","packages/core/src/capture.ts:203"]],true],
+  ["QA-06","Missing settings/config safety","code","pass","Plan and code-review flows run with no config, cookies, or AI settings present.",[]],
+  ["QA-07","No-P4 review safety","code","pass","v0.17.5 try/catch protections intact; setup excludes P4 in review flows.",[]],
+  ["QA-08","Pi parity gate","code","fail","Two imports added this release are not covered by vendor.sh.",[["high","`@plannotator/diff-cache` and `@plannotator/tree` imported in pi/index.ts but absent from vendor.sh.","packages/pi/vendor.sh:14"]]],
+  ["QA-09","Bun 1.3.11","code","flag","Lockfile still pins 1.3.11, but a renovate PR proposing 1.3.12 is open and unlabeled.",[["medium","Renovate #612 would bump Bun to 1.3.12 (signed builds broken); needs a block label.","renovate.json:9"]]],
+  ["QA-10","Code Review diff collection","code","pass","Diff collection paths unchanged.",[]],
+  ["QA-11","Configuration compatibility","code","pass","No configuration keys added, renamed, or re-typed.",[]],
+  ["QA-12","OpenCode regression","mixed","pass","Bundles and builds; plugin setup unchanged; agent switching verified in the OpenCode harness.",[],true],
+  ["QA-13","Doc staleness","code","flag","Two docs pages describe the pre-0.17.8 install flow.",[["low","docs/install.md still shows the single-script install.","docs/install.md:22"],["low","README mentions `plannotator setup` which no longer exists.","README.md:61"]]],
+  ["QA-14","Build runs after building","code","pass","`plannotator help`, `plannotator review`, and `plannotator annotate` all run after a clean build.",[]],
+  ["QA-15","Git diff across servers","code","pass","No regressions in git invocations for server, pi, or opencode.",[]],
+  ["QA-16","annotate: files, urls, folders","browser","pass","Annotate works for all three target kinds on every agent.",[],true],
+  ["QA-17","last: files, urls, folders","browser","pass","`plannotator last` reopens the prior target for all three kinds.",[]],
+  ["QA-18","Annotation system intact","mixed","pass","Feedback creation and annotation UI paths traced end to end; no behavioral change.",[]],
+  ["QA-19","Performance","code","pass","No new synchronous work on the annotate hot path.",[]],
+  ["QA-20","Bundle quality","code","pass","Bundle size +1.2%, within budget; no duplicate dependencies.",[]],
+  ["QA-21","Remote output URLs","mixed","fail","OpenCode users no longer see the produced URL — it is written to a log line the harness suppresses.",[["high","URL emitted via logger.debug instead of stdout in the OpenCode adapter.","packages/opencode/src/emit.ts:47"]]],
+  ["QA-22","Pi install divergence","code","pass","npm install parity holds; only the extra skills are absent, as expected.",[]],
+  ["QA-23","OpenCode install divergence","code","pass","npm install parity holds; only the extra skills are absent, as expected.",[]],
+  ["QA-24","Install scripts integrity","code","pass","install.sh fails fast on unsupported platforms and migrates the old config directory.",[]],
+  ["QA-25","Git diff integrity","browser","pass","Diff contents render for every file in the tree; cache warm and cold both verified.",[],true],
+  ["QA-26","Annotating HTML","browser","pass","Headless annotate of an HTML file verified end to end.",[],true],
+  ["QA-27","Cache hits","code","pass","Pi and OpenCode system prompts are byte-stable across sessions; prompt caching intact.",[]],
+  ["QA-28","Installation complexity","code","skipped","Requires a clean VM to verify runtime component installs; not available in this run.",[["info","Re-run on a clean VM before release.",""]]],
+  ["QA-29","Annotate toolbar integrity","browser","pass","All key buttons present on markdown, HTML, and live-site targets.",[["info","Button set unchanged.","apps/annotate/src/Toolbar.tsx:41"]],true],
+].map(([id,title,ct,status,summary,f,media]) => ({
+  id, title, check_type: ct, status, summary,
+  findings: f.map(([severity,text,evidence]) => ({severity,text,evidence})),
+  media: media ? { video: V, checkpoints: CHECKPOINTS.slice(0, id==="QA-29"?5:3), screenshots: [] } : null,
+  checked_by: ct==="code" ? "sonnet · code" : ct==="browser" ? "opus · browser" : "opus · mixed",
+}));
+
+const RUNS = {
+  list:    { title: "Release QA · v0.17.8", repo: "backnotprop/plannotator", commit: "a91c4e2", ran_at: "2026-08-26 14:02", mode: "list", list_source: ".product/qa-list.md", items: LIST },
+  feature: { title: "Verify · annotate toolbar", repo: "backnotprop/plannotator", commit: "a91c4e2", ran_at: "2026-08-26 14:40", mode: "feature", list_source: null, items: [TOOLBAR_ITEM] },
+};
+
+// ---------- renderer ----------
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;
+const statusLine = it => `<span class="dot"></span><span class="st">${esc(it.status)}</span>`;
+
+function findingsHTML(it) {
+  if (!it.findings?.length) return `<p class="summ" style="color:var(--faint)">No findings.</p>`;
+  return `<ul class="findings">${it.findings.map(f => `<li><span class="sev sev-${esc(f.severity)}">${esc(f.severity)}</span><span>${esc(f.text)}${f.evidence ? `<span class="ev">${esc(f.evidence)}</span>` : ""}</span></li>`).join("")}</ul>`;
+}
+function playerHTML(it, key) {
+  const m = it.media; if (!m?.video) return "";
+  const ticks = m.checkpoints.map((c,i) => `<div class="tick" data-i="${i}" style="left:0%" title="${esc(c.label)}"></div>`).join("");
+  const cps = m.checkpoints.map((c,i) => `<li data-i="${i}"><span class="ct">${fmt(c.t)}</span><span><span class="cl">${esc(c.label)}</span><br><span class="cn">${esc(c.narration)}</span></span></li>`).join("");
+  return `<div class="player" data-player="${key}">
+    <video preload="metadata" playsinline src="${m.video}"></video>
+    <div class="ctl">
+      <button class="pp" aria-label="Play or pause">▶</button>
+      <span class="t"><span class="cur">0:00</span> / <span class="dur">–:––</span></span>
+      <div class="bar" role="slider" aria-label="Recording progress" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track"></div><div class="fill"></div>${ticks}
+        <div class="tip"><img alt=""><div class="tl"><b></b><span></span></div></div>
+      </div>
+    </div>
+    <ul class="cps">${cps}</ul>
+  </div>`;
+}
+function shotsHTML(it) {
+  const s = it.media?.screenshots; if (!s?.length) return "";
+  return `<h4>Screenshots</h4><div class="shots">${s.map(x => `<figure><img src="${x.path}" alt="${esc(x.caption)}"><figcaption>${esc(x.caption)}</figcaption></figure>`).join("")}</div>`;
+}
+function detailHTML(it, key) {
+  const media = it.media?.video ? `<h4>Recording</h4>${playerHTML(it, key)}` : "";
+  return `<div class="detail"><p class="summ">${esc(it.summary)}</p><h4>Findings</h4>${findingsHTML(it)}${media}${shotsHTML(it)}<p class="by" style="margin-top:14px">checked by ${esc(it.checked_by||"—")}</p></div>`;
+}
+function summaryHTML(run) {
+  const n = s => run.items.filter(i => i.status===s).length;
+  const attention = run.items.filter(i => i.status==="fail" || i.status==="flag");
+  const isList = run.mode === "list";
+  const p = (s, cls="") => isList
+    ? `<button class="pill ${cls}" data-f="status" data-v="${s}" aria-pressed="${state.status.has(s)}"><b>${n(s)}</b> ${s}</button>`
+    : `<span class="pill ${cls}"><b>${n(s)}</b> ${s}</span>`;
+  const pills = `<div class="summary" role="group" aria-label="Status filters">
+    ${isList ? `<button class="pill" data-clear aria-pressed="${!state.status.size}"><b>${run.items.length}</b> all</button>` : `<span class="pill"><b>${run.items.length}</b> checks</span>`}
+    ${p("fail","s-fail")}${p("flag","s-flag")}${p("pass","s-pass")}${p("skipped","s-skipped")}</div>`;
+  const att = attention.length ? `<div class="attention"><h2>Needs attention</h2><ul>${attention.map(i => `<li class="s-${i.status}"><span class="dot"></span><a href="#${i.id}" data-jump="${i.id}">${esc(i.title)}</a><span class="type">${esc(i.findings[0]?.text||"")}</span></li>`).join("")}</ul></div>` : "";
+  return `<header class="run"><div><h1>${esc(run.title)}</h1><div class="meta">${esc(run.repo)} @ ${esc(run.commit)} · ${esc(run.ran_at)}${run.list_source ? " · " + esc(run.list_source) : ""}</div></div>${pills}</header>${att}`;
+}
+
+// layouts
+function renderLedger(run) {
+  const items = visible(run);
+  return summaryHTML(run) + filtersHTML(run) + (items.length ? `<div class="ledger">${items.map(it => `
+    <div class="row s-${it.status}" id="${it.id}">
+      <div class="head" role="button" tabindex="0" aria-expanded="false"><span class="dot"></span><span class="st">${esc(it.status)}</span><span class="title">${esc(it.title)}</span><span class="type">${esc(it.check_type)}</span><span class="chev">▶</span></div>
+      ${detailHTML(it, it.id)}
+    </div>`).join("")}</div>` : `<div class="empty">no checks match these filters</div>`);
+}
+function renderInspector(run) {
+  const items = visible(run);
+  const nav = items.map((it,i) => `<div class="n s-${it.status} ${i===0?"on":""}" data-id="${it.id}" role="button" tabindex="0"><span class="dot"></span><span>${esc(it.title)}<small>${esc(it.check_type)} · ${esc(it.status)}</small></span></div>`).join("");
+  return summaryHTML(run) + filtersHTML(run) + (items.length ? `<div class="inspector"><nav aria-label="Checks">${nav}</nav><div class="pane" id="pane"></div></div>` : `<div class="empty">no checks match these filters</div>`);
+}
+function renderDossier(run) {
+  const items = visible(run);
+  const toc = `<ul class="toc">${items.map(it => `<li class="s-${it.status}"><span class="dot"></span><a href="#${it.id}">${esc(it.title)}</a></li>`).join("")}</ul>`;
+  return summaryHTML(run) + filtersHTML(run) + (items.length ? `<div class="dossier">${toc}${items.map(it => `
+    <section id="${it.id}" class="s-${it.status} ${it.media?.video?"has-media":""}"><h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)}</span></div>
+      <div class="body"><div><p class="summ">${esc(it.summary)}</p><h4 style="margin:12px 0 8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:500">Findings</h4>${findingsHTML(it)}<p class="by" style="margin-top:12px">checked by ${esc(it.checked_by||"—")}</p></div>
+      ${it.media?.video ? `<div>${playerHTML(it, it.id)}${shotsHTML(it)}</div>` : ""}</div></section>`).join("")}</div>` : `<div class="empty">no checks match these filters</div>`);
+}
+function renderFeature(run, layout) {
+  const it = run.items[0]; const C = it.media?.checkpoints || [];
+  const board = C.length ? `<div class="storyboard" role="list" aria-label="Checkpoints">${C.map((c,i) => `<figure role="listitem" data-i="${i}"><img src="${c.screenshot}" alt="${esc(c.label)}"><figcaption><span>${esc(c.label)}</span><span>${fmt(c.t)}</span></figcaption></figure>`).join("")}</div>` : "";
+  return summaryHTML(run) + `<div class="feature"><div class="hero"><h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)} · checked by ${esc(it.checked_by)}</span></div><p class="summ" style="margin:0">${esc(it.summary)}</p></div>
+    <div class="viewer">${playerHTML(it, it.id)}${board}</div>
+    <div class="two"><div class="card"><h4>Findings</h4>${findingsHTML(it)}</div><div class="card"><h4>Screenshots</h4><div class="shots">${(it.media?.screenshots||[]).map(x => `<figure><img src="${x.path}" alt="${esc(x.caption)}"><figcaption>${esc(x.caption)}</figcaption></figure>`).join("")}</div></div></div></div>`;
+}
+
+// ---------- behavior ----------
+function wirePlayers(root) {
+  root.querySelectorAll(".player").forEach(p => {
+    const v = p.querySelector("video"), bar = p.querySelector(".bar"), fill = p.querySelector(".fill"), tip = p.querySelector(".tip");
+    const cur = p.querySelector(".cur"), dur = p.querySelector(".dur"), pp = p.querySelector(".pp");
+    const ticks = [...p.querySelectorAll(".tick")], cps = [...p.querySelectorAll(".cps li")];
+    const key = p.dataset.player; const item = currentRun().items.find(i => i.id===key); const C = item.media.checkpoints;
+    const place = () => { if (!v.duration) return; ticks.forEach((t,i) => t.style.left = (C[i].t / v.duration * 100) + "%"); dur.textContent = fmt(v.duration); };
+    v.addEventListener("loadedmetadata", place); if (v.readyState >= 1) place();
+    pp.addEventListener("click", () => v.paused ? v.play() : v.pause());
+    v.addEventListener("play", () => pp.textContent = "❚❚"); v.addEventListener("pause", () => pp.textContent = "▶");
+    v.addEventListener("timeupdate", () => {
+      if (!v.duration) return; const pct = v.currentTime / v.duration * 100; fill.style.width = pct + "%"; cur.textContent = fmt(v.currentTime); bar.setAttribute("aria-valuenow", Math.round(pct));
+      let active = -1; C.forEach((c,i) => { if (v.currentTime >= c.t - 0.05) active = i; });
+      cps.forEach((li,i) => li.classList.toggle("on", i===active)); ticks.forEach((t,i) => t.classList.toggle("on", i===active));
+      document.querySelectorAll(".storyboard figure").forEach((f,i) => f.classList.toggle("on", i===active));
+    });
+    document.querySelectorAll(".storyboard figure").forEach((f,i) => f.addEventListener("click", () => { v.currentTime = C[i].t; if (v.paused) v.play(); }));
+    const seek = t => { v.currentTime = t; if (v.paused) v.play(); };
+    bar.addEventListener("click", e => { const r = bar.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * v.duration); });
+    bar.addEventListener("mousemove", e => {
+      const r = bar.getBoundingClientRect(); const x = e.clientX - r.left; const t = x / r.width * v.duration;
+      let best = null, bd = Infinity; C.forEach(c => { const d = Math.abs(c.t / v.duration * r.width - x); if (d < bd) { bd = d; best = c; } });
+      const near = best && bd < 28;
+      tip.querySelector("img").src = near ? best.screenshot : ""; tip.querySelector("img").style.display = near ? "block" : "none";
+      tip.querySelector("b").textContent = near ? best.label : "";
+      tip.querySelector("span").textContent = fmt(near ? best.t : t);
+      tip.style.left = Math.max(100, Math.min(r.width - 100, near ? best.t / v.duration * r.width : x)) + "px";
+      tip.classList.add("show");
+    });
+    bar.addEventListener("mouseleave", () => tip.classList.remove("show"));
+    cps.forEach((li,i) => li.addEventListener("click", () => seek(C[i].t)));
+    ticks.forEach((t,i) => t.addEventListener("click", e => { e.stopPropagation(); seek(C[i].t); }));
+    bar.addEventListener("keydown", e => {
+      const cur = C.findIndex((c,i) => v.currentTime < c.t - 0.05);
+      if (e.key === "ArrowRight") { const n = C.find(c => c.t > v.currentTime + 0.1); if (n) seek(n.t); e.preventDefault(); }
+      if (e.key === "ArrowLeft") { const prev = [...C].reverse().find(c => c.t < v.currentTime - 0.6); seek(prev ? prev.t : 0); e.preventDefault(); }
+      if (e.key === " ") { v.paused ? v.play() : v.pause(); e.preventDefault(); }
+    });
+  });
+}
+let state = { layout: "ledger", mode: "list", status: new Set(), type: new Set(), q: "" };
+const matches = it => (!state.status.size || state.status.has(it.status)) && (!state.type.size || state.type.has(it.check_type)) &&
+  (!state.q || (it.title + " " + it.summary + " " + it.findings.map(f=>f.text).join(" ")).toLowerCase().includes(state.q.toLowerCase()));
+const visible = run => run.items.filter(matches);
+function filtersHTML(run) {
+  const n = s => run.items.filter(i => i.status===s).length, nt = s => run.items.filter(i => i.check_type===s).length;
+  const chip = (k, v, label, cls="") => `<button class="fchip ${cls}" data-f="${k}" data-v="${v}" aria-pressed="${state[k].has(v)}">${label}</button>`;
+  const shown = visible(run).length;
+  return `<div class="filters" role="group" aria-label="Filters">
+    <span class="showing" style="margin:0">${shown === run.items.length ? `all ${run.items.length} checks` : `showing ${shown} of ${run.items.length}`}${state.status.size||state.type.size||state.q ? ' · <a href="#" data-clear style="color:var(--mut)">clear</a>' : ""}</span>
+    <span class="gap"></span>
+    ${chip("type","browser",`browser ${nt("browser")}`)}${chip("type","code",`code ${nt("code")}`)}${chip("type","mixed",`mixed ${nt("mixed")}`)}
+    <label class="search"><input id="q" type="search" placeholder="Search checks" value="${esc(state.q)}"><kbd>/</kbd></label></div>`;
+}
+const currentRun = () => RUNS[state.mode];
+let render = function() {
+  const run = currentRun(); const root = document.getElementById("report");
+  if (state.mode === "feature") root.innerHTML = renderFeature(run, state.layout);
+  else root.innerHTML = state.layout === "ledger" ? renderLedger(run) : renderInspector(run);
+  wireFilters(root);
+  if (state.mode === "list" && state.layout === "inspector") {
+    const items = visible(run); if (!items.length) return;
+    const show = id => { const it = run.items.find(x => x.id===id); if (!it) return; state.sel = id;
+      document.getElementById("pane").innerHTML = `<h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)}</span></div>${detailHTML(it, it.id)}`;
+      root.querySelectorAll("nav .n").forEach(n => n.classList.toggle("on", n.dataset.id===id)); wirePlayers(document.getElementById("pane")); };
+    root.querySelectorAll("nav .n").forEach(n => { n.addEventListener("click", () => show(n.dataset.id)); n.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { show(n.dataset.id); e.preventDefault(); } }); });
+    root.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); show(a.dataset.jump); }));
+    const first = (state.sel && items.find(i => i.id===state.sel)) ? state.sel : (items.find(i => i.status==="fail") || items[0]).id;
+    show(first); return;
+  }
+  if (state.mode === "list" && state.layout === "ledger") {
+    root.querySelectorAll(".ledger .head").forEach(h => {
+      const toggle = () => { const row = h.parentElement; const open = row.classList.toggle("open"); h.setAttribute("aria-expanded", String(open)); };
+      h.addEventListener("click", toggle); h.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { toggle(); e.preventDefault(); } });
+    });
+    root.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); const row = document.getElementById(a.dataset.jump); row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); row.scrollIntoView({behavior:"smooth",block:"start"}); }));
+    run.items.filter(i => i.status==="fail").forEach(i => { const row = document.getElementById(i.id); row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); });
+  }
+  wirePlayers(root);
+}
+function wireFilters(root) {
+  root.querySelectorAll(".fchip, button.pill[data-f]").forEach(b => b.addEventListener("click", () => { const s = state[b.dataset.f]; s.has(b.dataset.v) ? s.delete(b.dataset.v) : s.add(b.dataset.v); render(); }));
+  root.querySelectorAll("button.pill[data-clear]").forEach(b => b.addEventListener("click", () => { state.status.clear(); render(); }));
+  const q = root.querySelector("#q"); if (q) { q.addEventListener("input", () => { state.q = q.value; const pos = q.selectionStart; render(); const nq = document.getElementById("q"); if (nq) { nq.focus(); nq.setSelectionRange(pos,pos); } }); }
+  root.querySelectorAll("[data-clear]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); state.status.clear(); state.type.clear(); state.q = ""; render(); }));
+}
+function jumpTo(id) {
+  const run = currentRun();
+  if (state.layout === "inspector" && state.mode === "list") { const n = document.querySelector(`nav .n[data-id="${id}"]`); if (n) n.click(); else { state.status.clear(); state.type.clear(); state.q=""; render(); document.querySelector(`nav .n[data-id="${id}"]`)?.click(); } return; }
+  let el = document.getElementById(id);
+  if (!el) { state.status.clear(); state.type.clear(); state.q = ""; render(); el = document.getElementById(id); }
+  if (!el) return;
+  if (el.classList.contains("row")) { el.classList.add("open"); el.querySelector(".head").setAttribute("aria-expanded","true"); }
+  el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+}
+// palette
+const pal = document.getElementById("palette"), pq = document.getElementById("pq"), plist = document.getElementById("plist"), pcount = document.getElementById("pcount");
+let pIdx = 0; let pStatus = new Set();
+function paletteRender() {
+  const run = currentRun(); const q = pq.value.toLowerCase();
+  const items = run.items.filter(i => (!pStatus.size || pStatus.has(i.status)) && (!q || (i.title + " " + i.status + " " + i.check_type).toLowerCase().includes(q)));
+  const n = s => run.items.filter(i => i.status===s).length;
+  document.getElementById("pfilters").innerHTML = `<button class="pill" data-pv="" aria-pressed="${!pStatus.size}"><b>${run.items.length}</b> all</button>` +
+    ["fail","flag","pass","skipped"].map(s => `<button class="pill s-${s}" data-pv="${s}" aria-pressed="${pStatus.has(s)}"><b>${n(s)}</b> ${s}</button>`).join("");
+  document.querySelectorAll("#pfilters .pill").forEach(b => b.addEventListener("click", () => { const v = b.dataset.pv; if (!v) pStatus.clear(); else pStatus.has(v) ? pStatus.delete(v) : pStatus.add(v); pIdx = 0; paletteRender(); pq.focus(); }));
+  pIdx = Math.min(pIdx, Math.max(0, items.length-1));
+  plist.innerHTML = items.map((it,i) => `<li class="s-${it.status} ${i===pIdx?"on":""}" data-id="${it.id}"><span class="dot"></span><span>${esc(it.title)}</span><small>${esc(it.check_type)} · ${esc(it.status)}</small></li>`).join("") || `<li><span></span><span style="color:var(--faint)">no matches</span></li>`;
+  pcount.textContent = `${items.length} of ${run.items.length}`;
+  plist.querySelectorAll("li[data-id]").forEach((li,i) => { li.addEventListener("mouseenter", () => { pIdx = i; plist.querySelectorAll("li").forEach((x,j)=>x.classList.toggle("on", j===i)); }); li.addEventListener("click", () => paletteGo(li.dataset.id)); });
+}
+function paletteOpen() { if (state.mode !== "list") return; pal.classList.add("open"); pq.value = ""; pIdx = 0; pStatus = new Set(state.status); paletteRender(); pq.focus(); }
+function paletteClose() { pal.classList.remove("open"); }
+function paletteGo(id) { paletteClose(); jumpTo(id); }
+pq.addEventListener("input", paletteRender);
+pq.addEventListener("keydown", e => {
+  const lis = [...plist.querySelectorAll("li[data-id]")];
+  if (e.key === "ArrowDown") { pIdx = Math.min(pIdx+1, lis.length-1); paletteRender(); e.preventDefault(); }
+  if (e.key === "ArrowUp") { pIdx = Math.max(pIdx-1, 0); paletteRender(); e.preventDefault(); }
+  if (e.key === "Enter") { const li = lis[pIdx]; if (li) paletteGo(li.dataset.id); e.preventDefault(); }
+  if (e.key === "Escape") paletteClose();
+});
+pal.addEventListener("click", e => { if (e.target === pal) paletteClose(); });
+document.getElementById("jumpopen").addEventListener("click", paletteOpen);
+function attentionStep(dir) {
+  const run = currentRun(); const att = run.items.filter(i => i.status==="fail" || i.status==="flag"); if (!att.length) return;
+  let cur = att.findIndex(i => i.id === state.sel); if (cur < 0) { const y = window.scrollY + 80; cur = att.findIndex(i => { const el = document.getElementById(i.id); return el && el.offsetTop > y; }); if (dir > 0) cur -= 1; }
+  const next = att[(cur + dir + att.length) % att.length]; state.sel = next.id; jumpTo(next.id);
+}
+document.querySelectorAll("[data-layout]").forEach(b => b.addEventListener("click", () => { state.layout = b.dataset.layout; document.querySelectorAll("[data-layout]").forEach(x => x.setAttribute("aria-pressed", String(x===b))); render(); }));
+document.querySelectorAll("[data-mode]").forEach(b => b.addEventListener("click", () => { state.mode = b.dataset.mode; state.sel = null; document.querySelectorAll("[data-mode]").forEach(x => x.setAttribute("aria-pressed", String(x===b))); render(); }));
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") { paletteClose(); return; }
+  if (e.target.closest(".bar") || e.target.tagName === "INPUT") return;
+  if (e.key === "j" || e.key === "J") { paletteOpen(); e.preventDefault(); return; }
+  if (e.key === "/") { const q = document.getElementById("q"); if (q) { q.focus(); e.preventDefault(); } return; }
+  if (e.key === "n" || e.key === "N") { attentionStep(1); return; }
+  if (e.key === "p" || e.key === "P") { attentionStep(-1); return; }
+  const L = {"1":"ledger","2":"inspector"}[e.key]; if (L) document.querySelector(`[data-layout="${L}"]`).click();
+  if (e.key === "l" || e.key === "L") document.querySelector('[data-mode="list"]').click();
+  if (e.key === "f" || e.key === "F") document.querySelector('[data-mode="feature"]').click();
+});
+const _render = render;
+render = function() { _render(); document.getElementById("jumpbtn").hidden = state.mode !== "list"; };
+render();
+</script>
