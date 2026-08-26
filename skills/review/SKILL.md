@@ -31,7 +31,8 @@ reference files, which are preserved from their authors — load only what the m
 | **plans** | "Audit this and give me a roadmap" — findings become self-contained plans another agent executes. Explicit invocation only. | `audit-method.md`, `plan-template.md` |
 | **guidelines** | "Check against best practices / the guidelines"; terse file:line lint of UI code. | `web-interface-guidelines.md` |
 | **stress** | "Does this component survive?" — render one component in every hostile state. Explicit invocation only. | `stress.md`, `stress-scenarios.md` |
-| **motion** | "Review the animations / motion." | `motion-review.md`, `motion-standards.md` |
+| **motion** | "Review the animations / motion." For a whole-codebase motion audit with plans, add `motion-audit.md` + `motion-audit-signals.md` + `plan-template.md`. | `motion-review.md`, `motion-standards.md` |
+| **opportunities** | "What could be animated here?" — read-only; proposes motion with exact values, never implements. Explicit invocation only. | `motion-opportunities.md` |
 | **a11y** | "Is this accessible?" — audit, not implementation. | `a11y-audit.md` (+ engine triggers) |
 
 Disambiguation: **verb beats noun** — "review the animation" is motion mode here;
