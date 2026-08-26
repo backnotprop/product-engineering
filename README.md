@@ -1,3 +1,5 @@
+<img src="brand/hero.svg" alt="product engineering — five agent skills for product design and engineering" width="100%">
+
 # product-engineering
 
 Five agent skills covering the end-to-end product design process, converged from the
@@ -96,6 +98,8 @@ goes to pe-build. Hardening verifies through pe-review. Enter the loop at any st
 The animations.dev course pack is **not** in this repo — purchasers layer it locally
 via `foundry/scripts/course-dropin.sh` into gitignored folders, and the build skill
 prefers it when present.
+
+<img src="brand/credits.svg" alt="Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, Steve Ruiz, Impeccable — preserved byte-for-byte, hash-verified" width="100%">
 
 ## License
 

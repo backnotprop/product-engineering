@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="t">
+  <title id="t">product engineering</title>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F1F1EF"/></linearGradient></defs>
+  <g id="ground"><rect width="1200" height="220" fill="url(#g)"/><rect x="0.5" y="0.5" width="1199" height="219" fill="none" stroke="#E8E8E6"/></g>
+  <g id="type">
+    <text x="80" y="108" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="36" letter-spacing="-1" fill="#1A1B1E">product engineering</text>
+    <text x="82" y="152" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#9A9CA1">design &#183; build &#183; review &#183; describe &#183; brand</text>
+  </g>
+</svg>
