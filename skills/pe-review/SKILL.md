@@ -59,5 +59,7 @@ mapping silently:
 ## Handoffs
 
 Fixes → **pe-build** (findings include exact file:line and the named change).
+Proof that behavior works end to end, with recordings → **pe-verify**; this skill judges
+quality, that one runs the checks.
 Documenting the system a review revealed → **pe-design**, understand mode.
 Never resolve a finding by editing anything yourself.

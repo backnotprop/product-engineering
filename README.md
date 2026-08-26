@@ -1,8 +1,8 @@
-<img src="brand/hero.svg" alt="product engineering — five agent skills for product design and engineering" width="100%">
+<img src="brand/hero.svg?v=2" alt="product engineering — six agent skills for product design and engineering" width="100%">
 
 # product-engineering
 
-Five agent skills covering the end-to-end product design process. Converged from
+Six agent skills covering the end-to-end product design process. Converged from
 the [best published design-engineering skills](#provenance-and-integrity), with the
 source prose preserved.
 
@@ -18,11 +18,14 @@ npx skills add backnotprop/product-engineering
 </p>
 <p>
   <a href="skills/pe-review"><img src="brand/cards/pe-review.svg?v=3" width="49%" alt="pe-review — Judge it. Prioritized findings on any screen, diff, or PR. Modes: change, screen, improve, guidelines, stress, motion, a11y, fidelity."></a>
-  <a href="skills/pe-product-description"><img src="brand/cards/pe-product-description.svg" width="49%" alt="pe-product-description — Describe it. A verified spec of how your product behaves."></a>
+  <a href="skills/pe-verify"><img src="brand/cards/pe-verify.svg" width="49%" alt="pe-verify — Verify it. Pass or fail on every check, with recordings. Modes: feature, list."></a>
 </p>
 <p>
+  <a href="skills/pe-product-description"><img src="brand/cards/pe-product-description.svg" width="49%" alt="pe-product-description — Describe it. A verified spec of how your product behaves."></a>
   <a href="skills/pe-brand-assets"><img src="brand/cards/pe-brand-assets.svg" width="49%" alt="pe-brand-assets — Brand it. Illustrations, social images, and logos in your brand."></a>
-  <a href="skills/product-engineering"><img src="brand/cards/product-engineering.svg?v=2" width="49%" alt="product-engineering — Lazy mode. Any request in, the right skill takes over. Routes to design, build, review, describe, brand."></a>
+</p>
+<p>
+  <a href="skills/product-engineering"><img src="brand/cards/product-engineering.svg?v=3" width="49%" alt="product-engineering — Lazy mode. Any request in, the right skill takes over. Routes to design, build, review, verify, describe, brand."></a>
 </p>
 
 <details>
@@ -43,6 +46,8 @@ npx skills add backnotprop/product-engineering
 | "Audit the app, give me a roadmap" | `pe-review` emits plans another agent can execute |
 | "Did we stay true to the mock?" | `pe-review`, fidelity mode: every deviation from the approved record, with severity |
 | "This is it — ship it" | `pe-design` stamps the artifact under `.product/approved/<slug>/` for build and review to hold to |
+| "Verify this" · "prove the toolbar works" | `pe-verify` drives the feature in Playwright and opens a report with the recording, checkpoint stills, and a verdict |
+| "Run the QA list" · "release check" | `pe-verify` re-runs your `.product/` list, one pass/fail/flag per entry, with evidence |
 | "Write a product description for the editor" | `pe-product-description` builds a verified behavior spec |
 | "Make an SVG header image for this post" | `pe-brand-assets` authors it from your recorded brand values |
 
@@ -54,6 +59,7 @@ npx skills add backnotprop/product-engineering
 | [`pe-design`](skills/pe-design) | Product and design-system context (`PRODUCT.md`, `DESIGN.md`), creative direction, HTML wireframes and prototypes, UI variants, onboarding flows, approved-artifact records |
 | [`pe-build`](skills/pe-build) | Production UI code: component craft, animation and gestures, accessibility, production hardening |
 | [`pe-review`](skills/pe-review) | Read-only UI review: PR/diff review, screen critique, audits with executable plans, guidelines checks, stress tests, fidelity checks against approved records |
+| [`pe-verify`](skills/pe-verify) | Verification runs: feature checks after a build, the project's QA list before a release; Playwright recordings with checkpoints, rendered into an HTML report |
 | [`pe-product-description`](skills/pe-product-description) | Behavior specs: documents what users see and do, verified against the running product |
 | [`pe-brand-assets`](skills/pe-brand-assets) | On-brand SVG assets: illustrations, social/OG images, logo work, from recorded brand values |
 

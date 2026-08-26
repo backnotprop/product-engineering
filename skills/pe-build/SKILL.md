@@ -82,5 +82,5 @@ skill.
 
 ## Handoffs
 
-Verdicts and audits → **pe-review**. Direction, mockups, variations → **pe-design**. Standalone brand assets → **pe-brand-assets**. Documenting the
+Verdicts and audits → **pe-review**. Proof that the built feature works, with recordings → **pe-verify** (the natural last step after harden). Direction, mockups, variations → **pe-design**. Standalone brand assets → **pe-brand-assets**. Documenting the
 system you built → **pe-design**, understand mode.

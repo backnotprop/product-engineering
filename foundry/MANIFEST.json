@@ -1288,6 +1288,16 @@
       "class": "authored",
       "skill": "pe-verify",
       "note": "the JSON contract for agents (issue #37); ours"
+    },
+    "skills/pe-verify/references/qa-list.md": {
+      "class": "authored",
+      "skill": "pe-verify",
+      "note": "QA-list discovery, the memories file, reading and seeding (issue #37); ours"
+    },
+    "skills/pe-verify/references/evidence.md": {
+      "class": "authored",
+      "skill": "pe-verify",
+      "note": "Playwright evidence capture (issue #37); ours"
     }
   }
 }
