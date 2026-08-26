@@ -4,10 +4,11 @@
  * a full-screen lightbox and an open-in-new-tab link. The iframe is lazy; the
  * lightbox is a native <dialog> that loads the same URL.
  */
-interface Props { src: string; title: string; height?: number }
-const { src, title, height = 560 } = Astro.props;
+interface Props { src: string; title: string; height?: number; wide?: boolean }
+const { src, title, height = 560, wide = false } = Astro.props;
 const id = "embed-" + src.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "");
 ---
+{wide && <style is:inline set:html={":root{--nb-content-max:78rem}"}></style>}
 <figure class="pe-embed not-prose my-6" data-embed>
   <div class="pe-embed-bar">
     <span class="font-mono text-[0.75rem] text-faint truncate">{title}</span>

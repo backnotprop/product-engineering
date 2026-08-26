@@ -36,7 +36,8 @@
   .attention { margin:0 0 26px; border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:14px 18px; }
   .attention h2 { margin:0 0 8px; font-size:12px; font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
   .attention ul { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
-  .attention li { display:flex; gap:10px; align-items:baseline; font-size:14px; }
+  .attention li { display:grid; grid-template-columns:8px minmax(0,1fr); column-gap:10px; align-items:baseline; font-size:14px; }
+  .attention li .type { grid-column:2; margin-top:1px; line-height:1.5; }
   .attention li a { text-decoration:none; color:var(--ink); }
   .attention li a:hover { text-decoration:underline; }
 
@@ -316,7 +317,6 @@ let render = function() {
       h.addEventListener("click", toggle); h.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { toggle(); e.preventDefault(); } });
     });
     root.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); const row = document.getElementById(a.dataset.jump); row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); row.scrollIntoView({behavior:"smooth",block:"start"}); }));
-    run.items.filter(i => i.status==="fail").forEach(i => { const row = document.getElementById(i.id); if (!row) return; row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); });
   }
   wirePlayers(root);
 }
