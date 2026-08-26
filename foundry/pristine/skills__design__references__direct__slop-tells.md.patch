@@ -1,6 +1,14 @@
 --- /Users/ramos/oss/backnotprop/product-engineering/foundry/pristine/skills__design__references__direct__slop-tells.md	2026-08-25 17:23:40
-+++ /Users/ramos/oss/backnotprop/product-engineering/skills/design/references/direct/slop-tells.md	2026-08-25 17:24:53
-@@ -10,75 +10,6 @@
++++ /Users/ramos/oss/backnotprop/product-engineering/skills/design/references/direct/slop-tells.md	2026-08-25 17:34:14
+@@ -1,7 +1,3 @@
+----
+-name: design-taste-frontend
+-description: Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design systems when applicable, audit-first on redesigns, strict pre-flight check.
+----
+ 
+ # tasteskill: Anti-Slop Frontend Skill
+ 
+@@ -10,78 +6,9 @@
  
  ---
  
@@ -75,8 +83,12 @@
 -
  ## 2. BRIEF → DESIGN SYSTEM MAP
  
- Once you have the design read (Section 0) and dials (Section 1), pick the right foundation. Do not invent CSS for things that have an official package. Do not pretend an aesthetic trend is an official system.
-@@ -119,69 +50,6 @@
+-Once you have the design read (Section 0) and dials (Section 1), pick the right foundation. Do not invent CSS for things that have an official package. Do not pretend an aesthetic trend is an official system.
++Do not invent CSS for things that have an official package. Do not pretend an aesthetic trend is an official system.
+ 
+ ### 2.A When to reach for a real design system (use official packages)
+ | Brief reads as… | Reach for | Why |
+@@ -119,69 +46,6 @@
  
  ---
  
@@ -146,7 +158,7 @@
  ### 4.2 Color Calibration
  * Max 1 accent color. Saturation < 80% by default.
  * **THE LILA RULE:** The "AI Purple / Blue glow" aesthetic is discouraged as a default. No automatic purple button glows, no random neon gradients. Use neutral bases (Zinc / Slate / Stone) with high-contrast singular accents (Emerald, Electric Blue, Deep Rose, Burnt Orange, etc.).
-@@ -206,31 +74,6 @@
+@@ -206,31 +70,6 @@
    * **Palette-rotation rule:** if the previous premium-consumer project you generated used the beige+brass family, this one MUST use a different family. Do not ship the same warm-craft palette twice in a row.
    * **Override:** the beige+brass+espresso palette is acceptable ONLY when the brand brief explicitly names those colors, or when the brand identity is genuinely vintage / artisan / warm-craft AND you can articulate why this specific palette fits this specific brand. Default-reaching for it because "this is a cookware brief" is banned.
  
@@ -178,7 +190,18 @@
  ### 4.7 Layout Discipline (Hard Rules. Failing any of these is shipping broken work)
  
  * **Hero MUST fit in the initial viewport.** Headline max 2 lines on desktop, subtext max **20 words** AND max 3-4 lines, CTAs visible without scroll. If the copy is too long: reduce font scale OR cut copy. If you cannot describe the value-prop in 20 words of subtext, the value-prop is unclear, not the rule too tight. Never let the hero overflow and force scroll to find the CTA.
-@@ -258,340 +101,7 @@
+@@ -249,349 +88,16 @@
+ * **Bento grids MUST have rhythm, not one-sided repetition.** Do not stack 6 left-image / right-text rows. Vary the composition: alternate full-width feature rows, asymmetric tile sizes, vertical breaks.
+ * **BENTO CELL COUNT RULE (mandatory):** A bento grid has EXACTLY as many cells as you have content for. 3 items → 3 cells (1+2 split, or 2+1, or asymmetric trio). 5 items → 5 cells (2+3, 3+2, hero+4, etc.). If your grid has an empty cell in the middle or at the end, you planned wrong. Re-shape the grid; do not paste a blank tile.
+ * **Section-Layout-Repetition Ban.** Once you use a layout family for a section (e.g., 3-column-image-cards, full-width-quote, split-text-image), that family can appear at most ONCE on the page. "Selected commissions" must not look like "What we do." A landing page with 8 sections must use at least 4 different layout families.
+-* **ZIGZAG ALTERNATION CAP (mandatory).** Alternating "left-image + right-text" then "left-text + right-image" zigzag layout = banal. Max 2 sections in a row with this image+text-split pattern. The 3rd consecutive image+text split is a Pre-Flight Fail. Break the pattern with a full-width section, a vertical-stack section, a bento grid, a marquee, or a different layout family.
++* **ZIGZAG ALTERNATION CAP (mandatory).** Alternating "left-image + right-text" then "left-text + right-image" zigzag layout = banal. Max 2 sections in a row with this image+text-split pattern. Break the pattern with a full-width section, a vertical-stack section, a bento grid, a marquee, or a different layout family.
+ * **EYEBROW RESTRAINT (mandatory, the #1 violated rule in production tests).** An "eyebrow" is the small uppercase wide-tracking label sitting above a section headline (e.g. `FOUR COLORWAYS`, `SELECTED WORK`, `THE HARDWARE`, `Git-native task management`). Typical CSS signature: `text-[11px] uppercase tracking-[0.18em]`, `font-mono text-[10.5px] uppercase tracking-[0.22em]`. Every AI-built site puts an eyebrow above EVERY section header, producing the same templated rhythm. Hard rule:
+   - **Maximum 1 eyebrow per 3 sections.** Hero counts as 1. So a page with 9 sections may use at most 3 eyebrows total.
+   - If section A has an eyebrow, the next 2 sections cannot have one.
+-  - **Pre-Flight Check is mechanical:** count instances of `uppercase tracking` (or similar small-caps mono labels above headlines) across all section components. If count > ceil(sectionCount / 3), the output fails.
++  - **Check is mechanical:** count instances of `uppercase tracking` (or similar small-caps mono labels above headlines) across all section components. If count > ceil(sectionCount / 3), the output fails.
+   - **What to do instead of an eyebrow:** drop it entirely. The headline alone is enough. If you need to categorize a section, the section's location on the page already categorizes it; no label needed.
  * **SPLIT-HEADER BAN (mandatory).** The pattern "left big headline + right small explainer paragraph" as a section header (left col-span-7/8, right col-span-4/5 with a small body paragraph floating in the right column) is **banned as default**. Sections should have ONE focused message. If you genuinely need both a headline and an explainer paragraph, stack them vertically (headline on top, body below, max-width 65ch). Reach for the split-header pattern only when there is a real compositional reason (e.g., the right column carries a visual or interactive element, not just filler text).
  * **Bento Background Diversity (mandatory).** Bento and feature-grid sections cannot be 6 white-on-white cards with text inside. At least 2-3 cells in any multi-cell grid need real visual variation: a real image, a brand-appropriate gradient (not AI-purple), a pattern, a tinted background. A cream-on-cream bento with only typography inside reads as boring AI default, even when the rest of the page is good.
  * **Mobile collapse must be explicit per section.** For every multi-column layout, declare the `< 768px` fallback in the same component. No "it'll work, Tailwind handles it" assumptions.
@@ -270,11 +293,11 @@
 -* The exception: if the brief explicitly calls for a "Color Block Story" or "Theme Switch on Scroll" device AND that is a deliberate composition (one full theme switch with a strong transition, not random alternation), it is allowed once per page.
 -* Default behaviour: pick light, dark, or auto (`prefers-color-scheme`) at the page level and lock it. Section-level background tints within the same theme family are fine (`bg-zinc-950` next to `bg-zinc-900`); flipping to `bg-amber-50` in the middle of a `bg-zinc-950` page is broken.
 -* When using a design system with built-in theming (Radix Themes, shadcn/ui with `<Theme>`), set the theme ONCE in `layout.tsx` or the page root. Do not let individual sections override.
--
+ 
 ----
 -
 -## 5. CONTEXT-AWARE PROACTIVITY
- 
+-
 -These are tools, not defaults. Use them when the design read calls for them. **None of these fire automatically.**
 -
 -* **Liquid Glass / Glassmorphism:** Appropriate for premium consumer, Apple-adjacent, luxury brand, or media-overlay vibes. Inappropriate for dashboards, public-sector, or "boring B2B." When used, go beyond `backdrop-blur`: add a 1px inner border (`border-white/10`) and a subtle inner shadow (`shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]`) for physical edge refraction. Provide a solid-fill fallback under `prefers-reduced-transparency`.
@@ -519,8 +542,39 @@
  ## 9. AI TELLS (Forbidden Patterns)
  
  Avoid these signatures unless the brief explicitly asks for them.
-@@ -699,508 +209,6 @@
- If your output contains a single `—` or `–` anywhere visible to the user, the output fails the Pre-Flight Check and must be rewritten.
+@@ -604,7 +110,7 @@
+ * **NO custom mouse cursors.** Outdated, accessibility-hostile, perf-hostile.
+ 
+ ### 9.B Typography
+-* **AVOID Inter as default.** See Section 4.1. Override path exists.
++* **AVOID Inter as default.** Override path exists.
+ * **NO oversized H1s** that just scream. Control hierarchy with weight + color, not raw scale.
+ * **Serif constraints:** Serif for editorial / luxury / publication. Not for dashboards.
+ 
+@@ -621,7 +127,7 @@
+ 
+ ### 9.E External Resources & Components
+ * **NO hand-rolled SVG icons.** Use Phosphor / HugeIcons / Radix / Tabler. Lucide on explicit request only.
+-* **Hand-rolled decorative SVGs strongly discouraged** as default (see Section 4.8).
++* **Hand-rolled decorative SVGs strongly discouraged** as default.
+ * **NO div-based fake screenshots.** Never build a fake product UI out of `<div>` rectangles to simulate a screenshot. Use real images, generated images, or skip the preview.
+ * **NO broken Unsplash links.** Use `https://picsum.photos/seed/{descriptive-string}/{w}/{h}`, or generated photo placeholders, or actual assets.
+ * **shadcn/ui customization:** Allowed, but NEVER in default state. Customize radii, colors, shadows, typography to the project aesthetic.
+@@ -674,7 +180,7 @@
+ * **NO floating top-right sub-text in section headings.** Pattern: section has a giant left-aligned headline; in the top-right corner of the same section header there is a small explainer paragraph floating with no clear alignment to anything else. That floater is the Tell. Either put the sub-text directly under the headline, or build a clean 2-column header (left: headline, right: aligned body), but not a tiny corner paragraph.
+ 
+ **Lists, dividers and scoring**
+-* **NO `border-t` + `border-b` on every row of a long list / spec table.** Pick one (bottom-border between rows OR top-border above the group) and use it sparsely. A 10-row spec table with hairlines under each row is the laziest layout - see Section 4.9 for alternative UI components.
++* **NO `border-t` + `border-b` on every row of a long list / spec table.** Pick one (bottom-border between rows OR top-border above the group) and use it sparsely. A 10-row spec table with hairlines under each row is the laziest layout.
+ * **NO scoring/progress bars with filled background tracks** as comparison visuals. If you need to show "X out of Y" comparisons, prefer a number + small icon, or a tiny inline bar WITHOUT a background track. Big filled `bg-zinc-200` tracks with a partial fill on top are dashboard-UI clutter on a landing page.
+ 
+ **Locale, time, scroll cues**
+@@ -696,511 +202,9 @@
+ * Regular hyphen `-` (for compound words, ranges, line dividers in markup)
+ * Minus sign in math (`-5°C`)
+ 
+-If your output contains a single `—` or `–` anywhere visible to the user, the output fails the Pre-Flight Check and must be rewritten.
++If your output contains a single `—` or `–` anywhere visible to the user, the output fails and must be rewritten.
  
  This rule is non-negotiable. The agent has historically ignored em-dash limits when phrased as "use sparingly." The phrasing here is binary: zero em-dashes.
 -
@@ -537,7 +591,7 @@
 -* **Kinetic-Type Hero** - Animated typography as the primary visual.
 -* **Curtain-Reveal Hero** - Hero parts on scroll like a curtain.
 -* **Scroll-Pinned Hero** - Hero stays pinned while content scrolls behind.
- 
+-
 -### Navigation & Menus
 -* **Mac OS Dock Magnification** - Edge nav, icons scale fluidly on hover.
 -* **Magnetic Button** - Pulls toward cursor.
@@ -602,8 +656,8 @@
 -* **Three.js / WebGL** - for canvas backgrounds and 3D scenes. Same isolation rule.
 -* **NEVER mix GSAP / Three.js with Motion in the same component tree.** They fight over the same frames.
 -
- ---
- 
+----
+-
 -## 11. REDESIGN PROTOCOL
 -
 -This skill handles **greenfield builds AND redesigns**. Misclassifying the mode is the single biggest source of bad redesign output.
@@ -799,11 +853,11 @@
 -- [ ] **No AI Tells** from Section 9 (Inter as default, AI-purple, three-equal cards, Jane Doe, Acme, "Quietly in use at")?
 -- [ ] **Core Web Vitals** plausibly hit (LCP < 2.5s, INP < 200ms, CLS < 0.1)?
 -- [ ] **One design system** per project (no Material + shadcn mixed)?
--
+ 
 -If a single checkbox cannot be honestly ticked, the page is not done. Fix it before delivering.
 -
-----
--
+ ---
+ 
 -# APPENDICES - Real Source-Backed Reference Material
 -
 -The sections below are vendored reference content. They give the agent real install commands, real canonical doc links, and real working starter snippets for each design system named in Section 2. Use them to ground decisions in production reality, not training-data fiction.

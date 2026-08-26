@@ -39,13 +39,15 @@ diff/branch/PR is never this skill (review).
 
 ## Name mapping for lifted texts
 
-`mock/index.md` routes to its sibling skills by name (html-wireframe, html-prototype,
-html-diagram, html-plan, design-artifact): resolve to this skill's `mock/wireframe.md`,
-`mock/prototype.md`, `mock/diagram.md`, `mock/plan.md`, and `direct/index.md`
-respectively. Its reference to a bundled `creative-direction.md` fallback resolves to
-`direct/index.md` (the fallback was deliberately not carried — one owner). Mentions of
-jakub's `better-*` skills resolve per the build skill's mapping; `better-interface`
-checks are the review skill.
+The mock files route to their sibling skills by name (html-wireframe, html-prototype,
+html-diagram, html-plan, design-artifact — including `../design-artifact/SKILL.md`
+links): resolve to this skill's `mock/wireframe.md`, `mock/prototype.md`,
+`mock/diagram.md`, `mock/plan.md`, and `direct/index.md` respectively. Their relative
+`references/*.md` links resolve to the same `mock/` folder. The `creative-direction.md`
+fallback resolves to `direct/index.md` (deliberately not carried — one owner).
+Internal section numbers cited inside `direct/slop-tells.md` refer to its pristine
+source; the cut sections' jobs live in the motion family (build) and the mock/direct
+files here — see its patch.
 
 ## Rulings applied here
 
@@ -58,5 +60,5 @@ checks are the review skill.
 
 Implementing a chosen direction, mock, or winning variant → **build** (with the
 DESIGN.md and any chosen preset named). Judging existing UI → **review**. Behavior
-specs beyond PRODUCT.md's scope → **product-description**. On-brand standalone assets
-→ **brand-assets** (once present).
+specs beyond PRODUCT.md's scope → **product-description** (once present). On-brand
+standalone assets → **brand-assets** (once present).

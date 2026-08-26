@@ -21,7 +21,7 @@ Determine:
 
 Infer what the product and existing evidence make clear. If the value moment or user experience level is genuinely unknown, ask before designing the flow.
 
-Read `references/onboarding-patterns.md` before choosing a pattern.
+Read `patterns.md` before choosing a pattern.
 
 ## Map the shortest path
 

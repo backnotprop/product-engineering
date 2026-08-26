@@ -17,14 +17,21 @@ with the build are updated, not defended.
 
 ## The taste dials (record in the Overview)
 
-State the chosen position on each spectrum so the direction is explicit and revisable:
+State the chosen position on each of the four spectrums so the direction is explicit
+and revisable:
 
-- **Density:** "Art Gallery Airy" (1–3) → "Daily App Balanced" (4–7) → "Cockpit Dense" (8–10)
-- **Variance:** "Predictable Symmetric" (1–3) → "Offset Asymmetric" (4–7) → "Artsy Chaotic" (8–10)
-- **Motion:** "Static Restrained" (1–3) → "Fluid CSS" (4–7) → "Cinematic Choreography" (8–10)
+- **Creativity:** 1 = ultra-minimal, Swiss, silent, monochrome → 5 = balanced, clean
+  with personality → 10 = expressive, editorial, bold typography experiments, strong
+  asymmetry
+- **Density:** 1 = gallery-airy, massive whitespace → 5 = balanced sections → 10 =
+  cockpit-dense, data-heavy
+- **Variance:** 1 = predictable, symmetric grids → 5 = subtle offsets → 10 = artsy
+  chaotic, no two sections alike
+- **Motion Intent:** 1 = static, no animation noted → 5 = subtle hover/entrance cues
+  → 10 = cinematic orchestration noted per component
 
-Derive the positions from the brief (the direct mode's design read), not from a
-default; write one line of rationale per dial.
+Derive the positions from the brief, not from a default; write one line of rationale
+per dial.
 
 ## Ban list for generated values
 
@@ -33,7 +40,7 @@ A generated system must not encode the AI-default look. Do not write into DESIGN
 - pure black (`#000000`) grounds, neon/outer-glow shadows, oversaturated accents
 - generic default serifs (Times New Roman, Georgia, Garamond) as system faces
 - three-equal-column card layouts as the canonical grid
-- fake round numbers in example content (`99.99%`, `50%`) — use organic data (`47.2%`)
+- fake round numbers in example content (`99.99%`, `50%`)
 - AI copywriting clichés ("Elevate", "Seamless", "Unleash", "Next-Gen") in voice rules
 - filler UI text patterns ("Scroll to explore", bouncing chevrons) as sanctioned components
 - `h-screen` for full-height sections — specify `min-h-[100dvh]` (iOS Safari jump)

@@ -21,7 +21,7 @@ Create durable context without making other skills depend on it.
 6. Write the smallest accurate document. Mark unresolved decisions instead of inventing answers.
 7. Report what was created or changed, what evidence supported it, and what remains unknown.
 
-Read `references/templates.md` before writing either file. When writing `DESIGN.md`, also read `references/design-format.md`; it contains the portable token schema, extraction order, and canonical headings.
+Read `templates.md` before writing either file. When writing `DESIGN.md`, also read `design-format.md`; it contains the portable token schema, extraction order, and canonical headings.
 
 ## PRODUCT.md
 
@@ -64,7 +64,7 @@ Prefer the project's canonical token values and names. If multiple conflicting i
 
 Scan in this order: token files and CSS custom properties, framework theme configuration, shared components, global styles, then representative rendered output. Code identifies values and patterns; the rendered interface verifies how they behave.
 
-Use the canonical `DESIGN.md` section names and order from `references/design-format.md`. Machine-readable frontmatter is normative when included. Prose explains where and why to use the tokens without creating a second source of truth.
+Use the canonical `DESIGN.md` section names and order from `design-format.md`. Machine-readable frontmatter is normative when included. Prose explains where and why to use the tokens without creating a second source of truth.
 
 Ask for qualitative language only when it adds durable guidance that code cannot provide, such as the system's creative north star, atmosphere, or a confirmed anti-reference. Do not disguise an agent's interpretation as user-confirmed brand language.
 

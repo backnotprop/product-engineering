@@ -62,5 +62,5 @@ In this kit those names resolve as follows — apply the mapping silently:
 ## Handoffs
 
 Fixes → **build** (findings include exact file:line and the named change).
-Documenting the system a review revealed → **design**, understand mode (once present).
+Documenting the system a review revealed → **design**, understand mode.
 Never resolve a finding by editing anything yourself.

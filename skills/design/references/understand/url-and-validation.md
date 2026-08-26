@@ -29,7 +29,8 @@ Missing any proof → omit the claim. Never turn a visual impression into a toke
 single occurrence into a site-wide rule, or a guessed value into YAML. Exact values
 require computed styles or loaded CSS; otherwise describe the role without a value.
 A component section requires the same treatment to recur across at least two sampled
-pages. URL-mode YAML is intentionally sparse, never padded to look complete.
+pages. URL-mode YAML is intentionally sparse — but not empty when measured evidence
+exists; add a category when at least one supported value survives the gate.
 
 ## Frontmatter shape (hard gate, stated once)
 
@@ -46,10 +47,10 @@ Identify the export target first — `css-tailwind` (Tailwind v4), `json-tailwin
 (v3), `dtcg` otherwise — then:
 
 ```bash
-npx @google/design.md spec     # check the installed schema before encoding themes
-npx @google/design.md lint     # shape validation
-npx @google/design.md export   # must succeed for the chosen target
-npx @google/design.md diff     # against the previous version, on refresh
+npx @google/design.md spec                      # check the installed schema first
+npx @google/design.md lint DESIGN.md            # shape validation
+npx @google/design.md export --format <format>  # must succeed for the chosen target
+npx @google/design.md diff <previous-file>      # against the prior version, on refresh
 ```
 
 The document is private until validation passes — never show a draft that hasn't

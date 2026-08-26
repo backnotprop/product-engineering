@@ -1079,7 +1079,7 @@
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/soft-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
-      "sha256": "15d70618fe1c7ee762cf45d9ecbbe07cfa4a19715676bffebcb693937759932c",
+      "sha256": "b1ac05a171eb6505e33ca9ff3211bf44a6dc1c3490c588adb78abfabc887dc1c",
       "lifted": "2026-08-25",
       "skill": "design",
       "rulings": [],
@@ -1091,7 +1091,7 @@
       "upstream": "Leonxlnx/taste-skill",
       "upstream_path": "skills/taste-skill/SKILL.md",
       "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
-      "sha256": "c54072bc9112f643c00b75fe9c4a727a1793888a2130455ef81099f1d3647b53",
+      "sha256": "472536696e1422d7d4f9072d417117ea9737a61b26e5e3f27f0438e1d02cf2cd",
       "lifted": "2026-08-25",
       "skill": "design",
       "rulings": [],
@@ -1107,7 +1107,7 @@
       "skill": "design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "efb458ce007442a7312deb13c9364f7cdc1d3366d33d07c208ba5911ab62b7c7",
+      "sha256": "e9660f14740050707062cf9194b6e9c9b701081c77a57b46c44d60f31069e4ab",
       "updated": "2026-08-25"
     },
     "skills/design/references/understand/generated-mode.md": {
@@ -1119,7 +1119,7 @@
       "skill": "design",
       "rulings": [],
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
-      "sha256": "fcf6149da2c7f8f8e444916e5914c8244838a5396324902145eecc5740002e59",
+      "sha256": "5dbb34de0c3c80dc917eacbba82e8dcca82e39cb80c07607f4c09a6e5042b7d7",
       "updated": "2026-08-25"
     },
     "skills/design/references/vary/axes.md": {
