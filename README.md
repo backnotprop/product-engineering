@@ -21,8 +21,9 @@ npx skills add backnotprop/product-engineering
   <a href="skills/pe-review"><img src="brand/cards/pe-review.svg" width="49%" alt="pe-review — Judge it. Prioritized findings on any screen, diff, or PR. Modes: change, screen, plans, guidelines, stress, motion, a11y."></a>
   <a href="skills/pe-product-description"><img src="brand/cards/pe-product-description.svg" width="49%" alt="pe-product-description — Describe it. A verified spec of how your product behaves."></a>
 </p>
-<p align="center">
+<p>
   <a href="skills/pe-brand-assets"><img src="brand/cards/pe-brand-assets.svg" width="49%" alt="pe-brand-assets — Brand it. Illustrations, social images, and logos in your brand."></a>
+  <a href="skills/product-engineering"><img src="brand/cards/product-engineering.svg" width="49%" alt="product-engineering — Say it. Any request in, the right skill takes over. Routes to design, build, review, describe, brand."></a>
 </p>
 
 Say what you need — the right skill triggers on your words and routes itself to the
