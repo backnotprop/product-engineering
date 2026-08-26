@@ -80,7 +80,7 @@ Refresh context only when durable truth changed:
 - Do not require either file before another skill can run.
 - Do not replace factual copy or brand commitments without confirmation.
 - Do not turn a descriptive document into a redesign proposal.
-- Do not create a design brief; this skill records durable context, not a temporary implementation plan.
+- Do not create a design brief here; brief mode owns single-feature briefs. This mode records durable context, not a temporary implementation plan.
 - Do not create sidecar or config files. The portable output is `PRODUCT.md`, `DESIGN.md`, or both.
 
 ## Completion
