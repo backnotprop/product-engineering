@@ -50,7 +50,7 @@ loop at any stage.
 
 </details>
 
-## How it stays honest
+## Provenance and integrity
 
 Most of this kit is other authors' work, carried byte-for-byte: every vendored file
 is pinned to an upstream commit and hash-locked in `foundry/MANIFEST.json`, and CI

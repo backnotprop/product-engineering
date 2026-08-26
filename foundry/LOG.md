@@ -150,3 +150,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · brand · claude · redundancy pass: Describe it./Documents… verb repetition removed from the pe-product-description card; headline+sentence pairs verified non-overlapping across all five
 - 2026-08-26 · brand · claude+ramos · Plannotator added to the credits card (was in NOTICE and MANIFEST but omitted from the card; card now matches the record)
 - 2026-08-26 · docs · claude+ramos · README redesigned: skill cards as the linked index (paired 49% grid), say/get examples folded into a collapsible, machinery detail moved to foundry/README.md, prose cut to the SEO-and-comprehension minimum
+- 2026-08-26 · docs · claude+ramos · virtue-framing removed: 'How it stays honest' → 'Provenance and integrity'; foundry README's promise/prove line replaced with a factual description
