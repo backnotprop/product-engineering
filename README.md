@@ -50,6 +50,14 @@ loop at any stage.
 
 </details>
 
+| Skill | What it does |
+| --- | --- |
+| [`pe-design`](skills/pe-design) | Product and design-system context (`PRODUCT.md`, `DESIGN.md`), creative direction, HTML wireframes and prototypes, UI variants, onboarding flows |
+| [`pe-build`](skills/pe-build) | Production UI code: component craft, animation and gestures, accessibility, production hardening |
+| [`pe-review`](skills/pe-review) | Read-only UI review: PR/diff review, screen critique, audits with executable plans, guidelines checks, stress tests |
+| [`pe-product-description`](skills/pe-product-description) | Behavior specs: documents what users see and do, verified against the running product |
+| [`pe-brand-assets`](skills/pe-brand-assets) | On-brand SVG assets: illustrations, social/OG images, logo work, from recorded brand values |
+
 ## Provenance and integrity
 
 Most of this kit is other authors' work, carried byte-for-byte: every vendored file
