@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220" role="img" aria-labelledby="t">
+  <title id="t">Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, Steve Ruiz, Impeccable</title>
+  <defs><radialGradient id="g" cx="18%" cy="0%" r="120%"><stop offset="0%" stop-color="#23252B"/><stop offset="55%" stop-color="#17181C"/><stop offset="100%" stop-color="#101114"/></radialGradient></defs>
+  <g id="ground"><rect width="1200" height="220" fill="url(#g)"/></g>
+  <g id="type">
+    <text x="80" y="84" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="20" letter-spacing="-0.3" fill="#F5F5F4">Built from the work of</text>
+    <text x="82" y="130" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="16" fill="#8B8D94">Emil Kowalski, Jakub Krehel, Julien Thibeaut, Vercel, Leon, Steve Ruiz, Impeccable</text>
+    <text x="82" y="178" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="12.5" fill="#5C5E66">preserved byte-for-byte &#183; hash-verified</text>
+  </g>
+</svg>

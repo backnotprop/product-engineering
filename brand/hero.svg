@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t">
+  <title id="t">product engineering</title>
+  <defs><radialGradient id="g" cx="18%" cy="0%" r="120%"><stop offset="0%" stop-color="#23252B"/><stop offset="55%" stop-color="#17181C"/><stop offset="100%" stop-color="#101114"/></radialGradient></defs>
+  <g id="ground"><rect width="1200" height="300" fill="url(#g)"/></g>
+  <g id="type">
+    <text x="80" y="148" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="44" letter-spacing="-1.2" fill="#F5F5F4">product engineering</text>
+    <text x="82" y="192" font-family="Geist, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="17" fill="#8B8D94">Five agent skills for product design and engineering.</text>
+    <text x="82" y="246" font-family="Geist Mono, ui-monospace, SF Mono, Menlo, Consolas, monospace" font-size="13" fill="#5C5E66">design &#183; build &#183; review &#183; describe &#183; brand</text>
+  </g>
+</svg>

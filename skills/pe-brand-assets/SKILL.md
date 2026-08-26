@@ -23,7 +23,16 @@ raster where the destination requires it.
    token names). Type in the asset is the brand's faces. Shapes follow the recorded
    shape language. The metaphor comes from the identity method
    (`references/identity-method.md`).
+   **Restraint is the default register**: the strongest brand asset is often type set
+   well on a quiet ground. Marks, shapes, and illustration must earn their way in —
+   propose the typographic answer first, and add a drawn element only when the user
+   asks for one or the typographic answer demonstrably fails the job.
 3. **Author the SVG — rules split by how it will be consumed.**
+   If a mark was commissioned: a letterform inside a container is not a mark — the
+   geometry itself must carry the meaning, and the result must clear the pe-design
+   skill's `references/direct/slop-tells.md` bans. Never ship a first render: author,
+   then critique against those tells and the brand rules, reject, and redo — the
+   reject-and-redo pass is part of authoring, not optional review.
    Always: a real `viewBox`; named `<g>` groups for logical parts; no editor cruft
    (empty groups, default ids).
    *Inline in a page's DOM* (site illustrations, in-app art): `currentColor` or
@@ -33,8 +42,10 @@ raster where the destination requires it.
    decorative → `aria-hidden="true"`, informative → `role="img"` + `<title>` wired
    via `aria-labelledby` — say which applies in the report.
    *Consumed as a file* (`<img>` src, README, anywhere external): `currentColor` and
-   CSS variables do not resolve and webfonts do not load — use hard-coded brand hexes,
-   convert text to paths, and set root width/height for intrinsic sizing.
+   CSS variables do not resolve and webfonts do not load — use hard-coded brand hexes
+   and set root width/height for intrinsic sizing. Convert text to paths for
+   logo-grade marks; for text-led assets, declare a full system fallback stack and
+   design the composition to hold up in the fallback faces.
    Static by default: animate only on explicit request, with the craft from
    pe-build·motion.
 4. **Export where SVG can't go.** OG/social endpoints and GitHub's social preview
