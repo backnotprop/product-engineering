@@ -24,6 +24,9 @@ jobs:
       - name: Install
         working-directory: docs
         run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        working-directory: docs
+        run: pnpm typecheck
       - name: Build
         working-directory: docs
         run: pnpm build

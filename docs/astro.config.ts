@@ -4,9 +4,8 @@ import nimbus, { defineConfig as defineNimbusConfig } from "@cloudflare/nimbus-d
 import { tableScroll } from "@cloudflare/nimbus-docs/markdown";
 
 const nimbusConfig = defineNimbusConfig({
-  // Placeholder until a domain is chosen: canonical URLs, OG image URLs,
-  // robots.txt, sitemap, and /llms.txt links all derive from it.
-  site: "https://product-engineering.pages.dev",
+  // Canonical origin: OG image URLs, robots.txt, the sitemap, and /llms.txt links derive from it.
+  site: "https://peskills.dev",
   title: "product engineering",
   description: "Six agent skills for product design and engineering.",
   locale: "en",
