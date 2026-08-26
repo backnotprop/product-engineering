@@ -55,8 +55,15 @@ up top, failures and flags first. Each browser item has a player with a checkpoi
 narration per checkpoint, and hover previews on the progress bar; filters by status and
 type, a search box, and a jump palette (`J`). Nothing is written to the repo.
 
-A real report: <a href="/examples/verify-report/report.html">the sample feature run</a>, rendered
-from the skill's own sample. The JSON contract is in
+A list run, rendered from a QA list of thirteen entries against one change set. Two fails
+open on load; the pills filter by status, the chips by check type; `J` opens the jump
+palette; the failed browser check has the recording with hover previews on the bar.
+
+<ReportEmbed src="/examples/verify-report-list/report.html" title="Release check · v0.27.6 · a selective list run" height={640} />
+
+The same renderer on a feature run:
+<a href="/examples/verify-report/report.html">the sample feature run</a>, one item with a
+recording and five checkpoints. The JSON contract is in
 [the report contract](/reference/report-contract).
 
 ## Handoffs
