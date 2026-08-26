@@ -1,0 +1,30 @@
+---
+title: An example report
+description: Two pe-verify reports at full width, rendered by the skill's own renderer.
+sidebar:
+  order: 5
+tableOfContents: false
+---
+
+The renderer is the same for every run; only the JSON changes. Both reports below are
+built from committed fixtures each time the site builds. Full screen opens the report
+on its own; Esc returns.
+
+## A selective list run
+
+Thirteen entries from a QA list, run against one change set. Two fails open on load. The
+status pills and type chips filter the ledger, `/` focuses search, `J` opens the jump
+palette, `N` and `P` step through the fails and flags. Four entries show as not run,
+each with the reason the change set gave no cause to run them.
+
+<ReportEmbed wide src="/examples/verify-report-list/report.html" title="Release check · v0.27.6 · a selective list run" height={900} />
+
+## A feature run
+
+One item, one verdict. The recording plays with checkpoint ticks on the bar; hovering
+near a tick shows its still, clicking seeks to it, and the storyboard under the player
+does the same.
+
+<ReportEmbed wide src="/examples/verify-report/report.html" title="Verify · annotate toolbar · a feature run" height={900} />
+
+The JSON behind each is in [the report contract](/reference/report-contract).
