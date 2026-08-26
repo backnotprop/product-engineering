@@ -13,7 +13,7 @@ npx skills add backnotprop/product-engineering
 ## The skills
 
 <p>
-  <a href="skills/pe-design"><img src="brand/cards/pe-design.svg" width="49%" alt="pe-design — Design it. Context docs, creative direction, mockups, prototypes. Modes: understand, direct, mock, vary, onboard."></a>
+  <a href="skills/pe-design"><img src="brand/cards/pe-design.svg?v=2" width="49%" alt="pe-design — Design it. Context docs, creative direction, mockups, prototypes. Modes: understand, brief, direct, mock, vary, onboard."></a>
   <a href="skills/pe-build"><img src="brand/cards/pe-build.svg" width="49%" alt="pe-build — Build it. Polished, accessible, production-ready code. Modes: craft, motion, a11y, harden."></a>
 </p>
 <p>
