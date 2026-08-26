@@ -1,0 +1,105 @@
+---
+title: Review a PR
+description: A read-only change review with ranked findings, and how the findings reach pe-build.
+sidebar:
+  order: 2
+---
+
+A named diff, branch, or PR always routes to [pe-review](/skills/pe-review), change
+mode. The review judges interface quality: accessibility, layout, writing,
+typography, color, visual polish, motion, and performance. Correctness, tests, and security are
+named once and left to your code review.
+
+## 1. Ask for the review
+
+> "Review my PR."
+
+pe-review resolves the scope before forming an opinion. With a target named
+("review pr 482", a branch, a range) it reviews that. With none:
+
+1. `HEAD` ahead of the merge base with the default branch: that range plus any
+   uncommitted changes, both counts stated.
+2. A dirty working tree: the uncommitted changes.
+3. Neither: the skill stops and asks. It checks for an open PR on the current branch
+   and offers it first, then the last commit by SHA and subject, or a whole-repository
+   audit. It never picks `HEAD~1..HEAD` on its own.
+
+Lockfiles, snapshots, generated output, vendored code, and binaries are excluded and
+named. A changed file is evidence; the review subject is the surfaces it renders in.
+The skill expands one hop to importers and callers, two hops for tokens and shared
+primitives, reviews at most five consumers, and says how many it did not expand.
+
+It reads the PR title, body, linked issue, and commit messages, and holds the change
+to what they claim: a variant applied to some states and not others, a new string
+missing from the translation catalogue, a component with no empty or error state.
+It reads the removed side of every hunk for accessibility, focus, motion, and text
+signals that nothing in the change replaces.
+
+The review never mutates your checkout. It fetches PR refs and reviews them in
+place; `checkout`, `switch`, and `stash` are never used. Rendered claims are marked
+"Not verified" unless the project exposes a cheap preview or you ask for a rendered
+review, which runs in a separate worktree.
+
+## 2. Read what comes back
+
+The report opens with a scope block: target, base ref and head ref with SHAs,
+commit and uncommitted counts, files in scope after exclusions, what was excluded,
+and which surfaces were expanded. A coverage table follows, one row per domain,
+each marked with the evidence inspected, `Clear`, or `Not reviewed` with the reason.
+
+Then the findings, ordered by severity and reach:
+
+| Severity | Domain | Status | Location | Before | After | Why |
+| --- | --- | --- | --- | --- | --- | --- |
+| HIGH | Accessibility | Regression | `src/Dialog.tsx:42` | `aria-label="Close"` removed in this change | Restore `aria-label="Close"` on the icon-only control | The close control had an accessible name before this change and no longer does |
+| MEDIUM | Layout | Introduced | `src/FilterPanel.tsx:88` | Panel body `overflow: hidden` | Scroll the list region; keep the header fixed | Filters past the ninth are unreachable at 800px height |
+
+The scale is shared across every mode. HIGH blocks a task, misleads the user, hides
+content or controls, risks data loss, or repeats systemically. MEDIUM harms
+comprehension, efficiency, adaptability, or consistency. LOW is isolated polish.
+A confirmed escalation trigger (a control with no accessible name, no visible focus,
+a keyboard-unreachable path, motion that ignores `prefers-reduced-motion`, content
+clipped at 320px or 200% zoom, a failing contrast pair, meaning by color alone, a
+destructive action with no confirmation) is HIGH on sight. Accessibility findings
+are never discarded.
+
+Every finding has a status. `Introduced` means the change created it. `Regression`
+means the change weakened something that worked; a regression against a trigger
+is HIGH even where the same symptom would be MEDIUM as pre-existing. `Pre-existing`
+findings sit in their own section, at most three, highest severity first, and count
+toward neither the cap of 15 nor the verdict.
+
+Each row is one root cause; a systemic issue lists every location in one row. The
+proposed fix takes the cheapest rung that works: delete, use the platform, reuse a
+project token, correct the value, add. A Verification section lists the checks run
+with their commands and results, and the checks marked "Not verified".
+
+The last line is the verdict. `Block` when any HIGH remains among Introduced and
+Regression findings. `Approve` otherwise, with MEDIUM and LOW left in the table as
+work to do. With no Introduced or Regression findings the table is omitted and the
+report says "No actionable interface findings in this change."
+
+## 3. Hand the findings to pe-build
+
+> "Fix the HIGH findings."
+
+pe-review edits nothing, not even a one-character fix; its contract is read-only in
+every mode. [pe-build](/skills/pe-build) implements findings received from pe-review
+at their stated file:line, in the project's stack and idiom, and reports what
+changed and what was preserved. Ask for a subset ("the accessibility rows") or the
+whole table.
+
+> "Review my changes again."
+
+pe-review re-resolves the scope, which now includes the fixes, and issues a fresh
+verdict. A previous `Regression` that was restored no longer appears.
+
+## Neighbors
+
+- "Review the animations" is pe-review, motion mode. "Fix the animation" is
+  pe-build.
+- A request that mixes modes runs one review and consolidates; never two reports.
+- When the reviewed surface has a record under `.product/approved/`, fidelity
+  findings are included; see [The approved record](/reference/approved-record).
+- Proof that the change works end to end, with recordings, is
+  [pe-verify](/skills/pe-verify). pe-review judges quality; pe-verify runs the checks.

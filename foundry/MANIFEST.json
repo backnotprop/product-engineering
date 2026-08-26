@@ -559,7 +559,7 @@
       "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
       "sha256": "828282879dcbb24dc4bf29ac6a99aa9c1f458e4c48ac2ab927e73e17d4a15a0f",
       "lifted": "2026-08-25",
-      "skill": "build",
+      "skill": "foundry",
       "rulings": []
     },
     "skills/pe-build/references/craft/emil-craft.md": {

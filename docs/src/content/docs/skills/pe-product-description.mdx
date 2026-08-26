@@ -1,0 +1,65 @@
+---
+title: Describe it.
+description: A verified spec of how your product behaves.
+sidebar:
+  order: 5
+  label: pe-product-description
+---
+
+A product description treats the product as a state chart the user moves through. The
+skill writes it feature by feature, from the user's point of view, on the same skeleton
+every time, drafted from the code and tests and then verified by hand against the
+running product.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Write a product description for the editor" | A repo of documents: one per feature, plus the files that steer them |
+| "Describe the user experience of the CLI" | The same, mapped onto a command-line product |
+| "Add the export dialog to the product description" | A new feature document on the existing skeleton, and the coverage table updated |
+
+## Modes
+
+{/* sync:modes */}
+This skill has no modes: one workflow, run in phases.
+{/* /sync:modes */}
+
+## Setup
+
+| | |
+| --- | --- |
+| `required` | the source repo path and its commit, read-only |
+| `required` | a way to bring up the surface: a command and URL, a binary, or an account |
+| `optional` | python3, for the link and anchor checker |
+| `convention` | the output is its own repo, one surface per repo |
+
+## What it produces
+
+```
+README.md            purpose, conventions, document template, method, coverage table
+goal.md              standing instructions for whoever drafts next
+glossary.md          the vocabulary; the source of truth for every term
+AGENTS.md            "Read README.md, then goal.md."
+CLAUDE.md            "Read @AGENTS.md."
+{area}/{feature}.md  one document per feature, all on the same eight-section skeleton
+verification/        the protocol and one checklist per cluster of documents
+bug-triage.md        every suspected defect, deduplicated, with repro and severity
+```
+
+Scope comes first: which product and surface, the source repo and commit, how to run
+it, what is out of scope. Then the steering files, a pilot document, the rest on the
+coverage table, verification against the running product, and triage. The
+[Document a product](/workflows/document-a-product) workflow walks the whole run.
+
+## Handoffs
+
+Fixing a triaged defect: [pe-build](/skills/pe-build). Product-level context that stays
+in the product repo: [pe-design](/skills/pe-design), understand mode.
+
+## Provenance
+
+{/* sync:provenance */}
+Carries 9 files from [Steve Ruiz](/people/steve-ruiz) (9). Every vendored file is hash-locked to a pinned upstream commit.  
+vendored with the author's permission · [skills/pe-product-description](https://github.com/backnotprop/product-engineering/tree/main/skills/pe-product-description)
+{/* /sync:provenance */}

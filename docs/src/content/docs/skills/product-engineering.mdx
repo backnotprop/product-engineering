@@ -1,0 +1,60 @@
+---
+title: Lazy mode
+description: Any request in, the right skill takes over.
+sidebar:
+  order: 7
+  label: product-engineering
+---
+
+The front door to the kit. Start a request with "product engineering," and the router
+decides which skill owns it by asking what should exist when the work is done, loads
+that skill, and follows it completely.
+
+## Say this, get this
+
+| You say | Routed to |
+| --- | --- |
+| "product engineering, wireframe the settings flow" | pe-design, mock mode |
+| "product engineering, this drawer feels janky" | pe-build, motion mode |
+| "product engineering, review this branch" | pe-review, change mode |
+| "product engineering, does the export still work?" | pe-verify, feature run |
+| "product engineering, describe how the editor behaves" | pe-product-description |
+| "product engineering, an OG image for the launch post" | pe-brand-assets |
+
+## Route by the deliverable
+
+{/* sync:modes */}
+| You want | Routed to |
+| --- | --- |
+| `A document or design artifact — context docs, a design brief for one feature, a direction, wireframes, mockups, prototypes, variants, an onboarding flow` | `pe-design` |
+| `Working production code — a component built, polished, animated, made accessible, or hardened; a UI bug fixed` | `pe-build` |
+| `A judgment on what exists — a review, critique, audit, or stress test of a screen, diff, or PR; fidelity to an approved design` | `pe-review` |
+| `Proof that something works — a verification run with recordings and screenshots, or the project's QA list re-checked before a release` | `pe-verify` |
+| `A behavior spec — documentation of what users see and do, verified against the product` | `pe-product-description` |
+| `A standalone asset — an illustration, social/OG image, or logo in the project's brand` | `pe-brand-assets` |
+{/* /sync:modes */}
+
+Verb beats noun: "review the animation" is pe-review; "fix the animation" is pe-build.
+A named diff, branch, or PR is always pe-review. A spec for something new is pe-design,
+brief mode; a spec of how the existing product behaves is pe-product-description.
+"Does it work?" is pe-verify; "is it good?" is pe-review. When it is still ambiguous, the
+router asks one short question naming the two candidates.
+
+## Setup
+
+| | |
+| --- | --- |
+| `required` | nothing beyond the install |
+| `convention` | say "product engineering," then the request |
+
+## What it produces
+
+One line stating the choice ("Routing to pe-build, motion mode"), then whatever that
+skill produces.
+
+## Provenance
+
+{/* sync:provenance */}
+Authored in this repository: 0 references, 0 vendored files.  
+Apache-2.0 · [skills/product-engineering](https://github.com/backnotprop/product-engineering/tree/main/skills/product-engineering)
+{/* /sync:provenance */}

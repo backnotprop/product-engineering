@@ -1,0 +1,344 @@
+{
+  "product-engineering": {
+    "slug": "product-engineering",
+    "name": "product-engineering",
+    "description": "The front door to the product-engineering kit. Use when the user says \"product engineering\" followed by any product, design, UI, review, or asset request; when they ask which pe-* skill fits a task; or when a product task doesn't clearly match one skill. Routes to pe-design, pe-build, pe-review, pe-verify, pe-product-description, or pe-brand-assets and then follows that skill. If a request already names or clearly matches a specific pe-* skill, that skill takes it directly — this router yields.",
+    "license": "Apache-2.0",
+    "verb": "Lazy mode",
+    "sentence": "Any request in, the right skill takes over.",
+    "modeline": "design · build · review · verify · describe · brand",
+    "modes": [
+      {
+        "mode": "A document or design artifact — context docs, a design brief for one feature, a direction, wireframes, mockups, prototypes, variants, an onboarding flow",
+        "when": "`pe-design`",
+        "load": ""
+      },
+      {
+        "mode": "Working production code — a component built, polished, animated, made accessible, or hardened; a UI bug fixed",
+        "when": "`pe-build`",
+        "load": ""
+      },
+      {
+        "mode": "A judgment on what exists — a review, critique, audit, or stress test of a screen, diff, or PR; fidelity to an approved design",
+        "when": "`pe-review`",
+        "load": ""
+      },
+      {
+        "mode": "Proof that something works — a verification run with recordings and screenshots, or the project's QA list re-checked before a release",
+        "when": "`pe-verify`",
+        "load": ""
+      },
+      {
+        "mode": "A behavior spec — documentation of what users see and do, verified against the product",
+        "when": "`pe-product-description`",
+        "load": ""
+      },
+      {
+        "mode": "A standalone asset — an illustration, social/OG image, or logo in the project's brand",
+        "when": "`pe-brand-assets`",
+        "load": ""
+      }
+    ],
+    "provenance": {
+      "authored": 0,
+      "vendored": [],
+      "private": 0,
+      "total": 0
+    }
+  },
+  "pe-design": {
+    "slug": "pe-design",
+    "name": "pe-design",
+    "description": "Design-process work before production code. Use to capture product and design-system context (PRODUCT.md / DESIGN.md), write a design brief for one feature or flow, set creative direction and taste, build wireframes / mockups / prototypes / diagrams / plans as self-contained HTML, render competing variations of a UI piece behind a picker, design onboarding and first-run flows, or record an approved artifact under .product/approved/. Triggers on design, design brief, \"write a brief\", \"spec this feature\", \"shape this flow\", direction, \"how should this look/feel\", wireframe, mockup, prototype, mock this up, diagram, \"document our design system\", DESIGN.md, \"show me versions/variations\", onboarding, empty states, first-run. The deliverable is a document or artifact — not production code (pe-build) and not a verdict on existing UI (pe-review).",
+    "license": "Apache-2.0",
+    "verb": "Design it.",
+    "sentence": "Context docs, creative direction, mockups, prototypes.",
+    "modeline": "understand · brief · direct · mock · vary · onboard",
+    "modes": [
+      {
+        "mode": "understand",
+        "when": "\"Document our product / design system\", DESIGN.md work",
+        "load": "`understand/index.md`; `understand/design-format.md` + `understand/templates.md` for the schema; `understand/url-and-validation.md` for public-URL extraction and the lint/export gates; `understand/generated-mode.md` for greenfield systems"
+      },
+      {
+        "mode": "brief",
+        "when": "\"Write a brief for X\", \"spec this feature\" — planning one feature, surface, or flow before code",
+        "load": "`brief/index.md` (runs direct mode mid-flow when visual direction is materially unresolved)"
+      },
+      {
+        "mode": "direct",
+        "when": "\"How should this look / feel\", creative direction, a register or palette decision",
+        "load": "`direct/index.md`; check every visual choice against `direct/slop-tells.md`; `direct/presets/` only on explicit match"
+      },
+      {
+        "mode": "mock",
+        "when": "Wireframe, mockup, prototype, diagram, or plan as an HTML artifact",
+        "load": "`mock/index.md` (the router), then the level file it names: `wireframe.md`, `prototype.md`, `diagram.md`, `plan.md`; shared craft in `charts-and-data.md`, `diagrams.md`, `documents-and-presentations.md`, `interfaces.md`"
+      },
+      {
+        "mode": "vary",
+        "when": "\"Show me N versions\", compare directions in the real page",
+        "load": "`vary/index.md` + `vary/picker.md` (the engineered picker), governed by `vary/axes.md` (one primary axis; the accessibility floor; `?variant=name` URLs)"
+      },
+      {
+        "mode": "onboard",
+        "when": "First-run, activation, setup, empty states, tours",
+        "load": "`onboard/index.md` + `onboard/patterns.md`"
+      }
+    ],
+    "provenance": {
+      "authored": 5,
+      "vendored": [
+        {
+          "person": "Plannotator",
+          "slug": "plannotator",
+          "count": 10
+        },
+        {
+          "person": "Leon",
+          "slug": "leon",
+          "count": 5
+        },
+        {
+          "person": "Emil Kowalski",
+          "slug": "emil-kowalski",
+          "count": 2
+        },
+        {
+          "person": "Jakub Krehel",
+          "slug": "jakub-krehel",
+          "count": 1
+        },
+        {
+          "person": "Julien Thibeaut",
+          "slug": "julien-thibeaut",
+          "count": 1
+        },
+        {
+          "person": "Paul Bakaus",
+          "slug": "paul-bakaus",
+          "count": 1
+        }
+      ],
+      "private": 0,
+      "total": 25
+    }
+  },
+  "pe-build": {
+    "slug": "pe-build",
+    "name": "pe-build",
+    "description": "Write and refine production UI code to a high craft bar. Use for building components, polish and detail work (spacing, typography, color, copy, icons, shadows, interaction states), implementing animation and gestures, implementing accessibility (keyboard, screen readers, focus, forms), and hardening for production (real data, failure states, devices, languages, offline, shipping metadata). Triggers on build, implement, polish, refine, tighten, \"feels off\", animate, transition, gesture, drawer, make accessible, keyboard navigation, production-ready, edge cases, empty states. The deliverable is code. Not for read-only critique (review) or pre-code design work (design).",
+    "license": "Apache-2.0",
+    "verb": "Build it.",
+    "sentence": "Polished, accessible, production-ready code.",
+    "modeline": "craft · motion · a11y · harden",
+    "modes": [
+      {
+        "mode": "craft (default)",
+        "when": "Components, polish, detail work, \"feels off\"",
+        "load": "`craft/emil-craft.md` for the canon; the domain folders as the work touches them: `craft/ui/` (details: surfaces, icons, enter/exit), `craft/layout/`, `craft/typography/`, `craft/colors/`, `craft/writing/` (each has `index.md`); `craft/polish-lenses.md` for trade-offs; `craft/library-choices.md` before adding a dependency"
+      },
+      {
+        "mode": "motion",
+        "when": "Animate, transition, gesture, \"feels janky\"",
+        "load": "`motion/build.md` + `motion/recipes.md`; `motion/apple-design.md` for gesture physics and fluid interfaces; `motion/view-transitions/` for React's View Transition API; `motion/perf-additions.md`; `motion/vocabulary.md` to name an effect"
+      },
+      {
+        "mode": "a11y",
+        "when": "Make accessible, keyboard, screen reader, focus, forms",
+        "load": "`a11y/index.md`, then its files per subtopic"
+      },
+      {
+        "mode": "harden",
+        "when": "Production-ready, edge cases, real data, offline, metadata",
+        "load": "`harden/index.md`, `harden/resilience-matrix.md`, `harden/adaptation-patterns.md`, `harden/performance-diagnostics.md`, `harden/metadata.md`"
+      }
+    ],
+    "provenance": {
+      "authored": 5,
+      "vendored": [
+        {
+          "person": "Jakub Krehel",
+          "slug": "jakub-krehel",
+          "count": 32
+        },
+        {
+          "person": "Emil Kowalski",
+          "slug": "emil-kowalski",
+          "count": 6
+        },
+        {
+          "person": "Vercel",
+          "slug": "vercel",
+          "count": 5
+        },
+        {
+          "person": "Julien Thibeaut",
+          "slug": "julien-thibeaut",
+          "count": 3
+        },
+        {
+          "person": "Leon",
+          "slug": "leon",
+          "count": 1
+        }
+      ],
+      "private": 20,
+      "total": 52
+    }
+  },
+  "pe-review": {
+    "slug": "pe-review",
+    "name": "pe-review",
+    "description": "Read-only review of existing UI with verdicts. Use to critique a screen, site, or screenshot; review a diff, branch, or PR for interface quality; produce a prioritized audit with implementation plans for another agent; check code against the Web Interface Guidelines; stress-test a component in hostile states; review animation and motion craft; audit accessibility; or check an implementation against the approved design record. Triggers on review, critique, audit, UX review, design review, interface review, \"review my PR\", \"check accessibility\", \"will this survive\", \"review the animations\", \"did we match the mock\". Produces findings and verdicts only — never edits code.",
+    "license": "Apache-2.0",
+    "verb": "Judge it.",
+    "sentence": "Prioritized findings on any screen, diff, or PR.",
+    "modeline": "change · screen · improve · guidelines · stress · motion · a11y · fidelity",
+    "modes": [
+      {
+        "mode": "change",
+        "when": "A diff, branch, PR, or \"review my changes\" is named. Always wins over screen when both could apply.",
+        "load": "`change-review.md`, `scope-resolution.md`, `removed-signals.md`"
+      },
+      {
+        "mode": "screen",
+        "when": "A screen, page, site, or screenshot; \"review this UI.\"",
+        "load": "`screen-review.md`, `experience-rubric.md`, `technical-rubric.md`"
+      },
+      {
+        "mode": "improve",
+        "when": "\"Audit this and give me a roadmap\", \"improve the app\" — whole-surface improvement, delivered as self-contained plans another agent executes. Explicit invocation only.",
+        "load": "`audit-method.md`, `plan-template.md`"
+      },
+      {
+        "mode": "guidelines",
+        "when": "\"Check against best practices / the guidelines\"; terse file:line lint of UI code.",
+        "load": "`web-interface-guidelines.md`"
+      },
+      {
+        "mode": "stress",
+        "when": "\"Does this component survive?\" — render one component in every hostile state. Explicit invocation only.",
+        "load": "`stress.md`, `stress-scenarios.md`"
+      },
+      {
+        "mode": "motion",
+        "when": "\"Review the animations / motion.\" For a whole-codebase motion audit with plans, add `motion-audit.md` + `motion-audit-signals.md` + `plan-template.md`.",
+        "load": "`motion-review.md`, `motion-standards.md`"
+      },
+      {
+        "mode": "opportunities",
+        "when": "\"What could be animated here?\" — read-only; proposes motion with exact values, never implements. Explicit invocation only.",
+        "load": "`motion-opportunities.md`"
+      },
+      {
+        "mode": "a11y",
+        "when": "\"Is this accessible?\" — audit, not implementation.",
+        "load": "`a11y-audit.md` (+ engine triggers)"
+      },
+      {
+        "mode": "fidelity",
+        "when": "\"Did we stay true to the mock / design?\" — the implementation against the approved artifact in `.product/approved/`; every deviation is a finding with severity. Implied whenever a reviewed surface has an approved record.",
+        "load": "`fidelity.md`"
+      }
+    ],
+    "provenance": {
+      "authored": 4,
+      "vendored": [
+        {
+          "person": "Jakub Krehel",
+          "slug": "jakub-krehel",
+          "count": 7
+        },
+        {
+          "person": "Emil Kowalski",
+          "slug": "emil-kowalski",
+          "count": 6
+        },
+        {
+          "person": "Julien Thibeaut",
+          "slug": "julien-thibeaut",
+          "count": 2
+        },
+        {
+          "person": "Vercel",
+          "slug": "vercel",
+          "count": 1
+        }
+      ],
+      "private": 0,
+      "total": 20
+    }
+  },
+  "pe-verify": {
+    "slug": "pe-verify",
+    "name": "pe-verify",
+    "description": "Prove that behavior works, with evidence. Use after a feature is built (\"verify this\", \"create a verification for the toolbar\") or to re-run the project's QA list before a release (\"run the QA list\", \"release check\"). Classifies each check as code, browser, or mixed; drives the product with Playwright, recording video and checkpoint screenshots; writes one report.json and renders it into a branded HTML report with a checkpoint video player. Triggers on verify, verification, \"does it work\", \"prove it works\", QA, QA list, release check, smoke test, regression check. Read-only toward product code — reports pass, fail, flag, skipped, or not-run; fixes go to pe-build, and judgment of design quality is pe-review.",
+    "license": "Apache-2.0",
+    "verb": "Verify it.",
+    "sentence": "Pass or fail on every check, with recordings.",
+    "modeline": "feature · list",
+    "modes": [
+      {
+        "mode": "feature",
+        "when": "\"Verify this\", \"create a verification for X\", or the last step after a build. The checks come from the change and the conversation: what was built, what the user said it must do, what it must not break.",
+        "load": "`report-schema.md`, `evidence.md`"
+      },
+      {
+        "mode": "list",
+        "when": "\"Run the QA list\", \"release check\", \"QA\". The user's own markdown list, found under `.product/`; one report item per list entry, every entry present.",
+        "load": "`qa-list.md`, `report-schema.md`, `evidence.md`"
+      }
+    ],
+    "provenance": {
+      "authored": 3,
+      "vendored": [],
+      "private": 0,
+      "total": 3
+    }
+  },
+  "pe-product-description": {
+    "slug": "pe-product-description",
+    "name": "pe-product-description",
+    "description": "Build a \"product description\" repo for a software product — a set of prose documents describing, from the outside in, what the user sees, what they can do, and exactly what happens when they do it, written from the code and tests, then verified against the running product and triaged into a bug list. Works for any product with a user (canvas editors, web apps, CLIs, chat products, mobile apps). Use when the user asks to \"write a product description for X\", \"describe the user experience of X\", \"document how X behaves for the user\", \"make a behavior-spec repo\", or wants a feature-by-feature, event-by-event account of an app's behavior rather than API docs. Also use to resume or extend an existing product description repo.",
+    "license": "vendored with the author's permission",
+    "verb": "Describe it.",
+    "sentence": "A verified spec of how your product behaves.",
+    "modeline": "behavior specs · verified against the product",
+    "modes": [],
+    "provenance": {
+      "authored": 0,
+      "vendored": [
+        {
+          "person": "Steve Ruiz",
+          "slug": "steve-ruiz",
+          "count": 9
+        }
+      ],
+      "private": 0,
+      "total": 9
+    }
+  },
+  "pe-brand-assets": {
+    "slug": "pe-brand-assets",
+    "name": "pe-brand-assets",
+    "description": "Create standalone visual assets that stay on brand — SVG illustrations for articles and blog posts, repo and social/OG images, logo and identity work, on-brand concept images for features. Authors SVG in code. Reads the project's brand truth (DESIGN.md, style guides, a brand/ folder) first and refuses to invent brand values. Triggers on brand asset, on-brand, SVG illustration, article image, header image, og image, social card, repo image, logo, brand kit, identity, tagline panel. Not for UI mockups (pe-design), production components (pe-build), or judging existing assets (pe-review).",
+    "license": "Apache-2.0",
+    "verb": "Brand it.",
+    "sentence": "Illustrations, social images, and logos in your brand.",
+    "modeline": "svg · og images · logos · concepts",
+    "modes": [],
+    "provenance": {
+      "authored": 0,
+      "vendored": [
+        {
+          "person": "Leon",
+          "slug": "leon",
+          "count": 1
+        }
+      ],
+      "private": 0,
+      "total": 1
+    }
+  }
+}

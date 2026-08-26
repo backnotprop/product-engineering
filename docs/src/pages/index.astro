@@ -1,0 +1,40 @@
+---
+/**
+ * The home page: the `index` content entry rendered inside DocsLayout so it has the
+ * rail, the search, and the theme toggle like every other page. Its markdown twin is
+ * emitted at /index.md by [...slug]/index.md.ts.
+ */
+import { getEntry, render } from "astro:content";
+import DocsLayout from "../layouts/DocsLayout.astro";
+import { getSidebar, getPrevNext, getLastUpdated } from "@cloudflare/nimbus-docs";
+import { components } from "../components";
+import { config } from "virtual:nimbus/config";
+
+const entry = await getEntry("docs", "index");
+if (!entry) throw new Error("src/content/docs/index.mdx is the home page and must exist");
+const { Content } = await render(entry);
+const sidebar = await getSidebar("/", { collection: "docs" });
+const prevNext = await getPrevNext("/", { sidebarTree: sidebar, overrides: { prev: false, next: false } });
+const lastUpdated = entry.data.lastUpdated ?? await getLastUpdated(entry);
+const markdownUrl = Astro.site ? new URL("/index.md", Astro.site).href : "/index.md";
+---
+
+<DocsLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  sidebar={sidebar}
+  headings={false}
+  breadcrumbs={[]}
+  prevNext={prevNext}
+  markdownUrl={markdownUrl}
+  socialImage="/og.png"
+  lastUpdated={lastUpdated}
+  collection="docs"
+  entryId="index"
+>
+  <Fragment slot="page-title">
+    <h1 class="text-foreground mb-0 leading-none mt-8 text-[2.5rem] font-semibold tracking-[-0.03em]">{config.title}</h1>
+    <p class="text-[1.0625rem] text-muted-foreground leading-relaxed mt-3 mb-8 max-w-[56ch] [text-wrap:pretty]">{entry.data.description}</p>
+  </Fragment>
+  <Content components={components} />
+</DocsLayout>

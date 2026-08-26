@@ -1,0 +1,20 @@
+---
+/** The seven brand cards as links. Same words as brand/cards/*.svg, read at build time. */
+import skills from "@/data/skills.json";
+const order = ["pe-design", "pe-build", "pe-review", "pe-verify", "pe-product-description", "pe-brand-assets", "product-engineering"] as const;
+---
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 not-prose">
+  {order.map((k) => {
+    const s = skills[k];
+    return (
+      <a href={`/skills/${k}`} class="pe-card block no-underline p-5 min-h-[128px] flex flex-col justify-between transition-opacity hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2">
+        <div>
+          <div class="pe-card-name font-mono text-[0.75rem]">{s.name}</div>
+          <div class="text-[1.25rem] font-semibold tracking-[-0.02em] mt-2 mb-1">{s.verb}</div>
+          <div class="pe-card-sentence text-[0.875rem] leading-snug">{s.sentence}</div>
+        </div>
+        <div class="pe-card-modes font-mono text-[0.6875rem] mt-4">{s.modeline}</div>
+      </a>
+    );
+  })}
+</div>

@@ -16,6 +16,9 @@ Never vendor on vibes. The pipeline that built the kit applies to every addition
    that enumerates the kit agrees: the product-engineering router's deliverable
    table (and a disambiguation when the new deliverable collides with an existing
    one), the skill's brand card mode line (with a camo cache-bust on its README
-   URL), the README examples and index table, and skills.sh.json. Check each,
-   change only what disagrees.
+   URL), the README examples and index table, skills.sh.json, and the docs site:
+   a page under `docs/src/content/docs/skills/` in the same anatomy as its
+   neighbors, then `python3 docs/scripts/sync-data.py` so the data and generated
+   pages agree (CI fails when they are stale). Check each, change only what
+   disagrees.
 7. Register the upstream in the watcher matrix once it exists.

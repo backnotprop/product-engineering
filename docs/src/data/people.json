@@ -1,0 +1,1479 @@
+[
+  {
+    "slug": "emil-kowalski",
+    "name": "Emil Kowalski",
+    "sources": [
+      {
+        "key": "emilkowalski/skills",
+        "url": "https://github.com/emilkowalski/skills",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "motion build, review standards, audits, the craft canon, the variant picker"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-build/references/craft/emil-craft.md",
+        "short": "craft/emil-craft.md",
+        "class": "verbatim-minus",
+        "skill": "pe-build",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/emil-design-eng/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/emil-design-eng/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/emil-craft.md",
+        "patched": true
+      },
+      {
+        "path": "skills/pe-build/references/craft/library-choices.md",
+        "short": "craft/library-choices.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/pick-ui-library/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/pick-ui-library/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/library-choices.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/apple-design.md",
+        "short": "motion/apple-design.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/apple-design/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/apple-design/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/apple-design.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/build.md",
+        "short": "motion/build.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/animate/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/animate/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/build.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/recipes.md",
+        "short": "motion/recipes.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/animate/RECIPES.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/animate/RECIPES.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/recipes.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/vocabulary.md",
+        "short": "motion/vocabulary.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/animation-vocabulary/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/animation-vocabulary/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/vocabulary.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/vary/index.md",
+        "short": "vary/index.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/prototype/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/prototype/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/vary/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/vary/picker.md",
+        "short": "vary/picker.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/prototype/PICKER.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/prototype/PICKER.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/vary/picker.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/motion-audit-signals.md",
+        "short": "motion-audit-signals.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/improve-animations/AUDIT.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/improve-animations/AUDIT.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/motion-audit-signals.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/motion-audit.md",
+        "short": "motion-audit.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/improve-animations/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/improve-animations/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/motion-audit.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/motion-opportunities.md",
+        "short": "motion-opportunities.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/find-animation-opportunities/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/find-animation-opportunities/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/motion-opportunities.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/motion-review.md",
+        "short": "motion-review.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/review-animations/SKILL.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/review-animations/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/motion-review.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/motion-standards.md",
+        "short": "motion-standards.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/review-animations/STANDARDS.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/review-animations/STANDARDS.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/motion-standards.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/plan-template.md",
+        "short": "plan-template.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "emilkowalski/skills",
+        "upstream_path": "skills/improve-animations/PLAN-TEMPLATE.md",
+        "sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+        "upstream_url": "https://github.com/emilkowalski/skills/blob/d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7/skills/improve-animations/PLAN-TEMPLATE.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/plan-template.md",
+        "patched": false
+      }
+    ],
+    "by_class": {
+      "verbatim-minus": 1,
+      "verbatim": 13
+    },
+    "by_skill": {
+      "pe-build": 6,
+      "pe-design": 2,
+      "pe-review": 6
+    },
+    "private_files": 20,
+    "rulings": [
+      {
+        "id": "L-01",
+        "topic": "Press scale",
+        "positions": "jakubkrehel: exactly `0.96` vs emilkowalski: `0.95–0.98` range.",
+        "ruling": "0.96 exact. An exact value is enforceable; a range invites drift. Emil's range noted as tolerance."
+      },
+      {
+        "id": "L-02",
+        "topic": "Spring bounce",
+        "positions": "jakubkrehel: always `0` vs emilkowalski: subtle `0.1–0.3` when used.",
+        "ruling": "bounce 0 by default; nonzero only when the design direction's register explicitly calls for playful."
+      },
+      {
+        "id": "L-03",
+        "topic": "Reduced motion",
+        "positions": "emil monolith: gentler-not-zero, keep opacity/color vs animationsdev refs: disable all, no exceptions.",
+        "ruling": "gentler-not-zero. Matches the two-variant doctrine; blanket disable is the lazier reading."
+      },
+      {
+        "id": "L-04",
+        "topic": "Exit easing",
+        "positions": "jakubkrehel + emil monolith: ease-out both directions vs emil design-rules: accelerate away (ease-in).",
+        "ruling": "ease-out for exits by default. Two of three sources, including Emil against himself. Accelerate-away allowed as a deliberate, stated choice."
+      },
+      {
+        "id": "L-05",
+        "topic": "will-change",
+        "positions": "animationsdev: apply proactively vs jakubkrehel: only on observed first-frame stutter vs ibelick baseline: never outside an active animation.",
+        "ruling": "reactive (jakub) — evidence-driven application only. Baseline's phrasing survives as the generation guardrail."
+      },
+      {
+        "id": "L-06",
+        "topic": "Custom easing curves",
+        "positions": "emilkowalski: \"built-ins are too weak\" vs ibelick baseline: \"never introduce custom curves.\"",
+        "ruling": "split by intent. Custom curves from the kit's named set: yes. Inventing novel curves ad hoc: no."
+      },
+      {
+        "id": "L-07",
+        "topic": "Stagger",
+        "positions": "emilkowalski: 30–80ms per item vs jakubkrehel: ~100ms per group.",
+        "ruling": "both — the units differ (list items vs semantic chunks). Reconciled in one paragraph; not a conflict."
+      }
+    ],
+    "total": 14
+  },
+  {
+    "slug": "jakub-krehel",
+    "name": "Jakub Krehel",
+    "sources": [
+      {
+        "key": "jakubkrehel/skills",
+        "url": "https://github.com/jakubkrehel/skills",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "the review engine, diff scoping, stress tests, UI/layout/typography/color/writing/a11y references"
+      }
+    ],
+    "files": [
+      {
+        "path": "foundry/ownership-matrix.md",
+        "short": "ownership-matrix.md",
+        "class": "verbatim",
+        "skill": "foundry",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "AGENTS.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/AGENTS.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/foundry/ownership-matrix.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/focus-and-keyboard.md",
+        "short": "a11y/focus-and-keyboard.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/focus-and-keyboard.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/focus-and-keyboard.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/focus-and-keyboard.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/forms.md",
+        "short": "a11y/forms.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/forms.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/forms.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/forms.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/hit-areas.md",
+        "short": "a11y/hit-areas.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/hit-areas.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/hit-areas.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/hit-areas.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/index.md",
+        "short": "a11y/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/motion-and-zoom.md",
+        "short": "a11y/motion-and-zoom.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/motion-and-zoom.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/motion-and-zoom.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/motion-and-zoom.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/screen-readers.md",
+        "short": "a11y/screen-readers.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/screen-readers.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/screen-readers.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/screen-readers.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/a11y/semantics-and-aria.md",
+        "short": "a11y/semantics-and-aria.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-accessibility/semantics-and-aria.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/semantics-and-aria.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/semantics-and-aria.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/color-formats.md",
+        "short": "craft/colors/color-formats.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/color-formats.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/color-formats.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/color-formats.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/color-usage.md",
+        "short": "craft/colors/color-usage.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/color-usage.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/color-usage.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/color-usage.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/contrast.md",
+        "short": "craft/colors/contrast.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/contrast.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/contrast.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/contrast.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/index.md",
+        "short": "craft/colors/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/palette-generation.md",
+        "short": "craft/colors/palette-generation.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/palette-generation.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/palette-generation.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/palette-generation.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/palette-structure.md",
+        "short": "craft/colors/palette-structure.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/palette-structure.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/palette-structure.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/palette-structure.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/colors/token-naming.md",
+        "short": "craft/colors/token-naming.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-colors/token-naming.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/token-naming.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/token-naming.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/layout/grouping-and-alignment.md",
+        "short": "craft/layout/grouping-and-alignment.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-layout/grouping-and-alignment.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-layout/grouping-and-alignment.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/layout/grouping-and-alignment.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/layout/index.md",
+        "short": "craft/layout/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-layout/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-layout/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/layout/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/layout/spacing-and-adaptivity.md",
+        "short": "craft/layout/spacing-and-adaptivity.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-layout/spacing-and-adaptivity.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-layout/spacing-and-adaptivity.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/layout/spacing-and-adaptivity.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/choosing-fonts.md",
+        "short": "craft/typography/choosing-fonts.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/choosing-fonts.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/choosing-fonts.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/choosing-fonts.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/css-cheat-sheet.md",
+        "short": "craft/typography/css-cheat-sheet.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/css-cheat-sheet.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/css-cheat-sheet.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/css-cheat-sheet.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/details-and-accessibility.md",
+        "short": "craft/typography/details-and-accessibility.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/details-and-accessibility.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/details-and-accessibility.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/details-and-accessibility.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/index.md",
+        "short": "craft/typography/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/spacing-and-sizing.md",
+        "short": "craft/typography/spacing-and-sizing.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/spacing-and-sizing.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/spacing-and-sizing.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/spacing-and-sizing.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/variable-fonts-and-opentype.md",
+        "short": "craft/typography/variable-fonts-and-opentype.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/variable-fonts-and-opentype.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/variable-fonts-and-opentype.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/variable-fonts-and-opentype.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/typography/wrapping-and-punctuation.md",
+        "short": "craft/typography/wrapping-and-punctuation.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-typography/wrapping-and-punctuation.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/wrapping-and-punctuation.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/wrapping-and-punctuation.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/animations.md",
+        "short": "craft/ui/animations.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/animations.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/animations.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/animations.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/enter-exit.md",
+        "short": "craft/ui/enter-exit.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/enter-exit.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/enter-exit.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/enter-exit.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/icon-transitions.md",
+        "short": "craft/ui/icon-transitions.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/icon-transitions.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/icon-transitions.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/icon-transitions.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/icons.md",
+        "short": "craft/ui/icons.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/icons.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/icons.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/icons.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/index.md",
+        "short": "craft/ui/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/performance.md",
+        "short": "craft/ui/performance.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/performance.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/performance.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/performance.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/ui/surfaces.md",
+        "short": "craft/ui/surfaces.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-ui/surfaces.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/surfaces.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/surfaces.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/writing/index.md",
+        "short": "craft/writing/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-writing/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-writing/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/writing/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/vary/axes.md",
+        "short": "vary/axes.md",
+        "class": "distilled",
+        "skill": "pe-design",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/variant/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/variant/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/vary/axes.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/change-review.md",
+        "short": "change-review.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/interface-review/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/interface-review/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/change-review.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/engine.md",
+        "short": "engine.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-interface/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-interface/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/engine.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/removed-signals.md",
+        "short": "removed-signals.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/interface-review/removed-signals.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/interface-review/removed-signals.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/removed-signals.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/review-format.md",
+        "short": "review-format.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/better-interface/review-format.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-interface/review-format.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/review-format.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/scope-resolution.md",
+        "short": "scope-resolution.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/interface-review/scope-resolution.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/interface-review/scope-resolution.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/scope-resolution.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/stress-scenarios.md",
+        "short": "stress-scenarios.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/break/scenarios.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/break/scenarios.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/stress-scenarios.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/stress.md",
+        "short": "stress.md",
+        "class": "verbatim",
+        "skill": "pe-review",
+        "upstream": "jakubkrehel/skills",
+        "upstream_path": "skills/break/SKILL.md",
+        "sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+        "upstream_url": "https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/break/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/stress.md",
+        "patched": false
+      }
+    ],
+    "by_class": {
+      "verbatim": 40,
+      "distilled": 1
+    },
+    "by_skill": {
+      "foundry": 1,
+      "pe-build": 32,
+      "pe-design": 1,
+      "pe-review": 7
+    },
+    "private_files": 0,
+    "rulings": [
+      {
+        "id": "L-01",
+        "topic": "Press scale",
+        "positions": "jakubkrehel: exactly `0.96` vs emilkowalski: `0.95–0.98` range.",
+        "ruling": "0.96 exact. An exact value is enforceable; a range invites drift. Emil's range noted as tolerance."
+      },
+      {
+        "id": "L-02",
+        "topic": "Spring bounce",
+        "positions": "jakubkrehel: always `0` vs emilkowalski: subtle `0.1–0.3` when used.",
+        "ruling": "bounce 0 by default; nonzero only when the design direction's register explicitly calls for playful."
+      },
+      {
+        "id": "L-04",
+        "topic": "Exit easing",
+        "positions": "jakubkrehel + emil monolith: ease-out both directions vs emil design-rules: accelerate away (ease-in).",
+        "ruling": "ease-out for exits by default. Two of three sources, including Emil against himself. Accelerate-away allowed as a deliberate, stated choice."
+      },
+      {
+        "id": "L-05",
+        "topic": "will-change",
+        "positions": "animationsdev: apply proactively vs jakubkrehel: only on observed first-frame stutter vs ibelick baseline: never outside an active animation.",
+        "ruling": "reactive (jakub) — evidence-driven application only. Baseline's phrasing survives as the generation guardrail."
+      },
+      {
+        "id": "L-07",
+        "topic": "Stagger",
+        "positions": "emilkowalski: 30–80ms per item vs jakubkrehel: ~100ms per group.",
+        "ruling": "both — the units differ (list items vs semantic chunks). Reconciled in one paragraph; not a conflict."
+      },
+      {
+        "id": "L-08",
+        "topic": "Disabled submit buttons",
+        "positions": "ibelick: explain why disabled vs jakubkrehel: never disable; validate on submit.",
+        "ruling": "never disable. Wins on accessibility evidence — an enabled button that validates is discoverable; a disabled one is a dead end."
+      },
+      {
+        "id": "L-11",
+        "topic": "Guidelines house taste",
+        "positions": "vercel web-interface-guidelines: Title Case headings, \"&\" over \"and\", autocomplete stated both ways vs jakubkrehel: \"evidence, not taste.\"",
+        "ruling": "the evidence bar. House-taste rows are cut from the vendored copy (via its patch); the autocomplete tension resolves to: autocomplete on purposeful fields, off only for non-auth-sensitive cases."
+      }
+    ],
+    "total": 41
+  },
+  {
+    "slug": "julien-thibeaut",
+    "name": "Julien Thibeaut",
+    "sources": [
+      {
+        "key": "ibelick/ui-skills",
+        "url": "https://github.com/ibelick/ui-skills",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "audit method, a11y ordering, metadata checklist, generation guardrails"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-build/references/craft/generation-guardrails.md",
+        "short": "craft/generation-guardrails.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "ibelick/ui-skills",
+        "upstream_path": "skills/baseline-ui/SKILL.md",
+        "sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+        "upstream_url": "https://github.com/ibelick/ui-skills/blob/ff7ca0a475e0dbb26a2db458beb03081b3dfd892/skills/baseline-ui/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/generation-guardrails.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/harden/metadata.md",
+        "short": "harden/metadata.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "ibelick/ui-skills",
+        "upstream_path": "skills/fixing-metadata/SKILL.md",
+        "sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+        "upstream_url": "https://github.com/ibelick/ui-skills/blob/ff7ca0a475e0dbb26a2db458beb03081b3dfd892/skills/fixing-metadata/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/harden/metadata.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/perf-additions.md",
+        "short": "motion/perf-additions.md",
+        "class": "distilled",
+        "skill": "pe-build",
+        "upstream": "ibelick/ui-skills",
+        "upstream_path": "skills/fixing-motion-performance/SKILL.md",
+        "sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+        "upstream_url": "https://github.com/ibelick/ui-skills/blob/ff7ca0a475e0dbb26a2db458beb03081b3dfd892/skills/fixing-motion-performance/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/perf-additions.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/understand/url-and-validation.md",
+        "short": "understand/url-and-validation.md",
+        "class": "distilled",
+        "skill": "pe-design",
+        "upstream": "ibelick/ui-skills",
+        "upstream_path": "skills/create-design-md/SKILL.md",
+        "sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+        "upstream_url": "https://github.com/ibelick/ui-skills/blob/ff7ca0a475e0dbb26a2db458beb03081b3dfd892/skills/create-design-md/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/understand/url-and-validation.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/a11y-audit.md",
+        "short": "a11y-audit.md",
+        "class": "distilled",
+        "skill": "pe-review",
+        "upstream": "ibelick/ui-skills",
+        "upstream_path": "skills/fixing-accessibility/SKILL.md",
+        "sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+        "upstream_url": "https://github.com/ibelick/ui-skills/blob/ff7ca0a475e0dbb26a2db458beb03081b3dfd892/skills/fixing-accessibility/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/a11y-audit.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/audit-method.md",
+        "short": "audit-method.md",
+        "class": "verbatim-minus",
+        "skill": "pe-review",
+        "upstream": "ibelick/ui-skills",
+        "upstream_path": "skills/improve-ui/SKILL.md",
+        "sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+        "upstream_url": "https://github.com/ibelick/ui-skills/blob/ff7ca0a475e0dbb26a2db458beb03081b3dfd892/skills/improve-ui/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/audit-method.md",
+        "patched": true
+      }
+    ],
+    "by_class": {
+      "verbatim": 2,
+      "distilled": 3,
+      "verbatim-minus": 1
+    },
+    "by_skill": {
+      "pe-build": 3,
+      "pe-design": 1,
+      "pe-review": 2
+    },
+    "private_files": 0,
+    "rulings": [
+      {
+        "id": "L-05",
+        "topic": "will-change",
+        "positions": "animationsdev: apply proactively vs jakubkrehel: only on observed first-frame stutter vs ibelick baseline: never outside an active animation.",
+        "ruling": "reactive (jakub) — evidence-driven application only. Baseline's phrasing survives as the generation guardrail."
+      },
+      {
+        "id": "L-06",
+        "topic": "Custom easing curves",
+        "positions": "emilkowalski: \"built-ins are too weak\" vs ibelick baseline: \"never introduce custom curves.\"",
+        "ruling": "split by intent. Custom curves from the kit's named set: yes. Inventing novel curves ad hoc: no."
+      },
+      {
+        "id": "L-08",
+        "topic": "Disabled submit buttons",
+        "positions": "ibelick: explain why disabled vs jakubkrehel: never disable; validate on submit.",
+        "ruling": "never disable. Wins on accessibility evidence — an enabled button that validates is discoverable; a disabled one is a dead end."
+      },
+      {
+        "id": "L-09",
+        "topic": "Accessibility findings in audits",
+        "positions": "ibelick improve-ui: \"discard a11y findings unless requested\" vs every other source.",
+        "ruling": "a11y findings are never discarded. improve-ui's falsification pass survives without its discard rule."
+      }
+    ],
+    "total": 6
+  },
+  {
+    "slug": "plannotator",
+    "name": "Plannotator",
+    "sources": [
+      {
+        "key": "plannotator/effective-html",
+        "url": "https://github.com/plannotator/effective-html",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "creative direction, HTML wireframes, prototypes, diagrams, plans"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-design/references/direct/index.md",
+        "short": "direct/index.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/design-artifact/SKILL.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/design-artifact/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/direct/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/charts-and-data.md",
+        "short": "mock/charts-and-data.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html/references/charts-and-data.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html/references/charts-and-data.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/charts-and-data.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/diagram.md",
+        "short": "mock/diagram.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html-diagram/SKILL.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html-diagram/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/diagram.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/diagrams.md",
+        "short": "mock/diagrams.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html/references/diagrams.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html/references/diagrams.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/diagrams.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/documents-and-presentations.md",
+        "short": "mock/documents-and-presentations.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html/references/documents-and-presentations.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html/references/documents-and-presentations.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/documents-and-presentations.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/index.md",
+        "short": "mock/index.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html/SKILL.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/interfaces.md",
+        "short": "mock/interfaces.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html/references/interfaces.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html/references/interfaces.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/interfaces.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/plan.md",
+        "short": "mock/plan.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html-plan/SKILL.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html-plan/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/plan.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/prototype.md",
+        "short": "mock/prototype.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html-prototype/SKILL.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html-prototype/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/prototype.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/mock/wireframe.md",
+        "short": "mock/wireframe.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "plannotator/effective-html",
+        "upstream_path": "skills/html-wireframe/SKILL.md",
+        "sha": "d95debbaef15af1d201fc6c10c77cf92b524a0d6",
+        "upstream_url": "https://github.com/plannotator/effective-html/blob/d95debbaef15af1d201fc6c10c77cf92b524a0d6/skills/html-wireframe/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/mock/wireframe.md",
+        "patched": false
+      }
+    ],
+    "by_class": {
+      "verbatim": 10
+    },
+    "by_skill": {
+      "pe-design": 10
+    },
+    "private_files": 0,
+    "rulings": [
+      {
+        "id": "L-10",
+        "topic": "Motion by default",
+        "positions": "leonxlnx gpt-taste/soft-skill: \"static is forbidden\" vs design-artifact + taste v2: motion must be motivated.",
+        "ruling": "motivated motion. \"If you cannot articulate the reason in one sentence, drop the animation.\" Mandated-motion texts were cut or stripped."
+      }
+    ],
+    "total": 10
+  },
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "sources": [
+      {
+        "key": "vercel-labs/web-interface-guidelines",
+        "url": "https://github.com/vercel-labs/web-interface-guidelines",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "the guidelines checklist, pinned"
+      },
+      {
+        "key": "vercel-labs/agent-skills",
+        "url": "https://github.com/vercel-labs/agent-skills",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "React View Transitions references"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-build/references/motion/view-transitions/css-recipes.md",
+        "short": "motion/view-transitions/css-recipes.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "vercel-labs/agent-skills",
+        "upstream_path": "skills/react-view-transitions/references/css-recipes.md",
+        "sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+        "upstream_url": "https://github.com/vercel-labs/agent-skills/blob/dd089a8c752c966dee8bf0f27cb625ba193ffd9e/skills/react-view-transitions/references/css-recipes.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/view-transitions/css-recipes.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/view-transitions/implementation.md",
+        "short": "motion/view-transitions/implementation.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "vercel-labs/agent-skills",
+        "upstream_path": "skills/react-view-transitions/references/implementation.md",
+        "sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+        "upstream_url": "https://github.com/vercel-labs/agent-skills/blob/dd089a8c752c966dee8bf0f27cb625ba193ffd9e/skills/react-view-transitions/references/implementation.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/view-transitions/implementation.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/view-transitions/index.md",
+        "short": "motion/view-transitions/index.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "vercel-labs/agent-skills",
+        "upstream_path": "skills/react-view-transitions/SKILL.md",
+        "sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+        "upstream_url": "https://github.com/vercel-labs/agent-skills/blob/dd089a8c752c966dee8bf0f27cb625ba193ffd9e/skills/react-view-transitions/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/view-transitions/index.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/view-transitions/nextjs.md",
+        "short": "motion/view-transitions/nextjs.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "vercel-labs/agent-skills",
+        "upstream_path": "skills/react-view-transitions/references/nextjs.md",
+        "sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+        "upstream_url": "https://github.com/vercel-labs/agent-skills/blob/dd089a8c752c966dee8bf0f27cb625ba193ffd9e/skills/react-view-transitions/references/nextjs.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/view-transitions/nextjs.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/motion/view-transitions/patterns.md",
+        "short": "motion/view-transitions/patterns.md",
+        "class": "verbatim",
+        "skill": "pe-build",
+        "upstream": "vercel-labs/agent-skills",
+        "upstream_path": "skills/react-view-transitions/references/patterns.md",
+        "sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+        "upstream_url": "https://github.com/vercel-labs/agent-skills/blob/dd089a8c752c966dee8bf0f27cb625ba193ffd9e/skills/react-view-transitions/references/patterns.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/motion/view-transitions/patterns.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-review/references/web-interface-guidelines.md",
+        "short": "web-interface-guidelines.md",
+        "class": "verbatim-minus",
+        "skill": "pe-review",
+        "upstream": "vercel-labs/web-interface-guidelines",
+        "upstream_path": "command.md",
+        "sha": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+        "upstream_url": "https://github.com/vercel-labs/web-interface-guidelines/blob/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/command.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/web-interface-guidelines.md",
+        "patched": true
+      }
+    ],
+    "by_class": {
+      "verbatim": 5,
+      "verbatim-minus": 1
+    },
+    "by_skill": {
+      "pe-build": 5,
+      "pe-review": 1
+    },
+    "private_files": 0,
+    "rulings": [
+      {
+        "id": "L-11",
+        "topic": "Guidelines house taste",
+        "positions": "vercel web-interface-guidelines: Title Case headings, \"&\" over \"and\", autocomplete stated both ways vs jakubkrehel: \"evidence, not taste.\"",
+        "ruling": "the evidence bar. House-taste rows are cut from the vendored copy (via its patch); the autocomplete tension resolves to: autocomplete on purposeful fields, off only for non-auth-sensitive cases."
+      }
+    ],
+    "total": 6
+  },
+  {
+    "slug": "leon",
+    "name": "Leon",
+    "sources": [
+      {
+        "key": "Leonxlnx/taste-skill",
+        "url": "https://github.com/Leonxlnx/taste-skill",
+        "license": "MIT",
+        "license_note": "",
+        "carry": "anti-generic taste rules, style presets, the identity method"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-brand-assets/references/identity-method.md",
+        "short": "identity-method.md",
+        "class": "distilled",
+        "skill": "pe-brand-assets",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/brandkit/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/brandkit/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-brand-assets/references/identity-method.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-build/references/craft/deslop-audit.md",
+        "short": "craft/deslop-audit.md",
+        "class": "verbatim-minus",
+        "skill": "pe-build",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/redesign-skill/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/redesign-skill/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/deslop-audit.md",
+        "patched": true
+      },
+      {
+        "path": "skills/pe-design/references/direct/presets/brutalist.md",
+        "short": "direct/presets/brutalist.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/brutalist-skill/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/brutalist-skill/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/direct/presets/brutalist.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/direct/presets/minimalist.md",
+        "short": "direct/presets/minimalist.md",
+        "class": "verbatim",
+        "skill": "pe-design",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/minimalist-skill/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/minimalist-skill/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/direct/presets/minimalist.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-design/references/direct/presets/premium-dark-glass.md",
+        "short": "direct/presets/premium-dark-glass.md",
+        "class": "verbatim-minus",
+        "skill": "pe-design",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/soft-skill/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/soft-skill/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/direct/presets/premium-dark-glass.md",
+        "patched": true
+      },
+      {
+        "path": "skills/pe-design/references/direct/slop-tells.md",
+        "short": "direct/slop-tells.md",
+        "class": "verbatim-minus",
+        "skill": "pe-design",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/taste-skill/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/taste-skill/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/direct/slop-tells.md",
+        "patched": true
+      },
+      {
+        "path": "skills/pe-design/references/understand/generated-mode.md",
+        "short": "understand/generated-mode.md",
+        "class": "distilled",
+        "skill": "pe-design",
+        "upstream": "Leonxlnx/taste-skill",
+        "upstream_path": "skills/stitch-skill/SKILL.md",
+        "sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+        "upstream_url": "https://github.com/Leonxlnx/taste-skill/blob/ccbc15639c97057cbfcf32ecebc38ef716e4bb37/skills/stitch-skill/SKILL.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/understand/generated-mode.md",
+        "patched": false
+      }
+    ],
+    "by_class": {
+      "distilled": 2,
+      "verbatim-minus": 3,
+      "verbatim": 2
+    },
+    "by_skill": {
+      "pe-brand-assets": 1,
+      "pe-build": 1,
+      "pe-design": 5
+    },
+    "private_files": 0,
+    "rulings": [
+      {
+        "id": "L-10",
+        "topic": "Motion by default",
+        "positions": "leonxlnx gpt-taste/soft-skill: \"static is forbidden\" vs design-artifact + taste v2: motion must be motivated.",
+        "ruling": "motivated motion. \"If you cannot articulate the reason in one sentence, drop the animation.\" Mandated-motion texts were cut or stripped."
+      }
+    ],
+    "total": 7
+  },
+  {
+    "slug": "steve-ruiz",
+    "name": "Steve Ruiz",
+    "sources": [
+      {
+        "key": "steveruizok/product-description",
+        "url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f",
+        "license": "permission-granted",
+        "license_note": "No license file; author granted reuse permission via Twitter — see NOTICE.",
+        "carry": "the entire `pe-product-description` skill — a gist, not a repo; vendored with the author's permission"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-product-description/SKILL.md",
+        "short": "SKILL.md",
+        "class": "verbatim-minus",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "SKILL.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-skill-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/SKILL.md",
+        "patched": true
+      },
+      {
+        "path": "skills/pe-product-description/references/README-template.md",
+        "short": "README-template.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "README-template.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-readme-template-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/README-template.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/bug-triage-template.md",
+        "short": "bug-triage-template.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "bug-triage-template.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-bug-triage-template-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/bug-triage-template.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/check-links.py",
+        "short": "check-links.py",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "check-links.py",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-check-links-py",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/check-links.py",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/document-template.md",
+        "short": "document-template.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "document-template.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-document-template-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/document-template.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/glossary-guide.md",
+        "short": "glossary-guide.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "glossary-guide.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-glossary-guide-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/glossary-guide.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/goal-template.md",
+        "short": "goal-template.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "goal-template.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-goal-template-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/goal-template.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/product-kinds.md",
+        "short": "product-kinds.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "product-kinds.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-product-kinds-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/product-kinds.md",
+        "patched": false
+      },
+      {
+        "path": "skills/pe-product-description/references/verification-template.md",
+        "short": "verification-template.md",
+        "class": "verbatim",
+        "skill": "pe-product-description",
+        "upstream": "steveruizok/product-description",
+        "upstream_path": "verification-template.md",
+        "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-verification-template-md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/verification-template.md",
+        "patched": false
+      }
+    ],
+    "by_class": {
+      "verbatim-minus": 1,
+      "verbatim": 8
+    },
+    "by_skill": {
+      "pe-product-description": 9
+    },
+    "private_files": 0,
+    "rulings": [],
+    "total": 9
+  },
+  {
+    "slug": "paul-bakaus",
+    "name": "Paul Bakaus",
+    "sources": [
+      {
+        "key": "pbakaus/impeccable",
+        "url": "https://github.com/pbakaus/impeccable",
+        "license": "Apache-2.0",
+        "license_note": "",
+        "carry": "the derived workflow texts carried over from this repo's ui-skills era"
+      }
+    ],
+    "files": [
+      {
+        "path": "skills/pe-design/references/brief/index.md",
+        "short": "brief/index.md",
+        "class": "distilled",
+        "skill": "pe-design",
+        "upstream": "pbakaus/impeccable",
+        "upstream_path": "skill/reference/shape.md",
+        "sha": "fcd7622cd2d8e2b09344ba8ede9fcac82cec4e70",
+        "upstream_url": "https://github.com/pbakaus/impeccable/blob/fcd7622cd2d8e2b09344ba8ede9fcac82cec4e70/skill/reference/shape.md",
+        "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/brief/index.md",
+        "patched": false
+      }
+    ],
+    "by_class": {
+      "distilled": 1
+    },
+    "by_skill": {
+      "pe-design": 1
+    },
+    "private_files": 0,
+    "rulings": [],
+    "total": 1
+  }
+]

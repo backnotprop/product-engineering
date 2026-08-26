@@ -1,0 +1,45 @@
+---
+title: Install
+description: One command, for any agent that reads skills.
+sidebar:
+  order: 1
+---
+
+```sh
+npx skills add backnotprop/product-engineering
+```
+
+The [skills.sh](https://skills.sh) CLI copies the seven skills into the folder your agent
+reads. For Claude Code that is `.claude/skills/` in the project; other agents use their
+own path, and the CLI knows them.
+
+## What lands
+
+```
+.claude/skills/
+  product-engineering/    the router
+  pe-design/
+  pe-build/
+  pe-review/
+  pe-verify/
+  pe-product-description/
+  pe-brand-assets/
+```
+
+Each folder holds a `SKILL.md`; most add a `references/` directory, and pe-verify adds
+`assets/` and `scripts/` for its report. The agent reads `SKILL.md` first and loads
+references as a mode needs them, so installing all seven costs nothing until one is used.
+
+## Using a skill
+
+Name the skill, or describe the work and let the description match:
+
+> "Verify the toolbar", "Review my PR", "Write a brief for the checkout flow"
+
+Or start any request with "product engineering," and the router picks the skill and
+mode. Each skill's page shows what to say and what comes back.
+
+## Updating
+
+Run the install command again. The skills are files in your repo; a diff shows exactly
+what changed between versions.

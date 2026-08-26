@@ -1,0 +1,382 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  /* Brand: DESIGN.md — dark radial ground read as light, Geist, no accent; status colors in their own lane. */
+  :root {
+    --g0:#101114; --g1:#23252B; --panel:#1B1D22; --panel-2:#22252B; --line:#2A2D34;
+    --ink:#F5F5F4; --mut:#8B8D94; --faint:#5C5E66;
+    --pass:#3FB950; --fail:#F0616B; --flag:#E2B53E; --skip:#6B7078;
+    --sans:"Geist",-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { background:var(--g0); }
+  body { margin:0; color:var(--ink); font-family:var(--sans); font-size:14.5px; line-height:1.55;
+    background:radial-gradient(120% 120% at 18% 0%, var(--g1) 0%, #17181C 55%, var(--g0) 100%) fixed; min-height:100vh; }
+  a { color:inherit; }
+  .mono { font-family:var(--mono); }
+
+  /* ---- report ---- */
+  .wrap { max-width:1120px; margin:0 auto; padding:40px 24px 100px; }
+  header.run { display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:22px; }
+  header.run h1 { margin:0 0 4px; font-size:22px; font-weight:600; letter-spacing:-.02em; }
+  header.run .meta { font-family:var(--mono); font-size:12px; color:var(--faint); }
+  .summary { display:flex; gap:8px; flex-wrap:wrap; }
+  .pill { font-family:var(--mono); font-size:12px; padding:5px 11px; border-radius:6px; border:1px solid var(--line); color:var(--mut); font-variant-numeric:tabular-nums; background:transparent; font:inherit; font-family:var(--mono); font-size:12px; }
+  button.pill { cursor:pointer; }
+  button.pill:hover { border-color:#3A3E47; }
+  button.pill[aria-pressed="true"] { background:var(--panel-2); color:var(--ink); border-color:#3A3E47; }
+  button.pill:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .pill b { color:var(--ink); font-weight:500; }
+  .pill.s-fail b { color:var(--fail); } .pill.s-flag b { color:var(--flag); } .pill.s-pass b { color:var(--pass); }
+
+  .attention { margin:0 0 26px; border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:14px 18px; }
+  .attention h2 { margin:0 0 8px; font-size:12px; font-family:var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
+  .attention ul { margin:0; padding:0; list-style:none; display:grid; gap:6px; }
+  .attention li { display:flex; gap:10px; align-items:baseline; font-size:14px; }
+  .attention li a { text-decoration:none; color:var(--ink); }
+  .attention li a:hover { text-decoration:underline; }
+
+  .dot { display:inline-block; width:8px; height:8px; border-radius:50%; flex:none; margin-top:1px; }
+  .st { font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+  .s-pass .dot{background:var(--pass);} .s-fail .dot{background:var(--fail);} .s-flag .dot{background:var(--flag);} .s-skipped .dot{background:var(--skip);} .s-not-run .dot{background:transparent; box-shadow:inset 0 0 0 1px var(--faint);}
+  .s-pass .st{color:var(--pass);} .s-fail .st{color:var(--fail);} .s-flag .st{color:var(--flag);} .s-skipped .st{color:var(--skip);} .s-not-run .st{color:var(--faint);}
+  .row.s-not-run .title { color:var(--mut); }
+  .type { font-family:var(--mono); font-size:11px; color:var(--faint); }
+
+  /* findings */
+  .findings { margin:0; padding:0; list-style:none; display:grid; gap:8px; }
+  .findings li { display:grid; grid-template-columns:auto 1fr; gap:10px; font-size:13.5px; color:#C9CBD0; }
+  .findings .sev { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding-top:3px; }
+  .sev-high{color:var(--fail);} .sev-medium{color:var(--flag);} .sev-low{color:var(--mut);} .sev-info{color:var(--faint);}
+  .findings .ev { display:block; font-family:var(--mono); font-size:12px; color:var(--faint); margin-top:2px; }
+  .detail .summ { color:var(--mut); margin:0 0 12px; max-width:70ch; }
+  .detail h4 { margin:16px 0 8px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
+  .by { font-family:var(--mono); font-size:11px; color:var(--faint); }
+
+  /* ---- player ---- */
+  .player { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#0C0D10; }
+  .player video { display:block; width:100%; height:auto; background:#000; }
+  .ctl { display:flex; align-items:center; gap:12px; padding:10px 12px; background:var(--panel); }
+  .ctl button { appearance:none; border:1px solid var(--line); background:transparent; color:var(--ink); width:34px; height:30px; border-radius:6px; cursor:pointer; font-size:12px; }
+  .ctl button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .ctl .t { font-family:var(--mono); font-size:11.5px; color:var(--mut); font-variant-numeric:tabular-nums; min-width:86px; }
+  .bar { position:relative; flex:1; height:30px; cursor:pointer; }
+  .bar .track { position:absolute; left:0; right:0; top:13px; height:4px; background:#2E3139; border-radius:2px; }
+  .bar .fill { position:absolute; left:0; top:13px; height:4px; background:var(--ink); border-radius:2px; width:0; }
+  .bar .tick { position:absolute; top:8px; width:2px; height:14px; background:var(--mut); border-radius:1px; transform:translateX(-1px); transition:background .12s ease; }
+  .bar .tick.on { background:var(--ink); }
+  .bar .tick.pass { background:var(--pass); }
+  .tip { position:absolute; bottom:38px; transform:translateX(-50%); width:200px; background:#0C0D10; border:1px solid var(--line); border-radius:8px;
+    padding:6px; opacity:0; visibility:hidden; transition:opacity .12s ease; pointer-events:none; z-index:5; }
+  .tip.show { opacity:1; visibility:visible; }
+  .tip img { display:block; width:100%; height:auto; border-radius:4px; }
+  .tip .tl { display:flex; justify-content:space-between; gap:8px; margin-top:6px; font-family:var(--mono); font-size:10.5px; color:var(--mut); }
+  .tip .tl b { color:var(--ink); font-weight:500; font-family:var(--sans); font-size:12px; }
+  .cps { margin:0; padding:0; list-style:none; border-top:1px solid var(--line); }
+  .cps li { display:grid; grid-template-columns:52px 1fr; gap:12px; padding:9px 12px; border-bottom:1px solid var(--line); cursor:pointer; }
+  .cps li:last-child { border-bottom:none; }
+  .cps li:hover { background:var(--panel-2); }
+  .cps li.on { background:var(--panel-2); box-shadow:inset 2px 0 0 var(--ink); }
+  .cps .ct { font-family:var(--mono); font-size:11.5px; color:var(--faint); padding-top:2px; font-variant-numeric:tabular-nums; }
+  .cps .cl { font-weight:500; font-size:13.5px; }
+  .cps .cn { color:var(--mut); font-size:12.5px; }
+  .narr { padding:12px 14px; color:var(--mut); font-size:13.5px; border-top:1px solid var(--line); background:var(--panel); }
+  .shots { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:8px; margin-top:10px; }
+  .shots figure { margin:0; } .shots img { width:100%; border-radius:6px; border:1px solid var(--line); display:block; }
+  .shots figcaption { font-family:var(--mono); font-size:11px; color:var(--faint); margin-top:4px; }
+
+  /* ---- layout: ledger ---- */
+  .ledger .row { border-top:1px solid var(--line); }
+  .ledger .row:last-child { border-bottom:1px solid var(--line); }
+  .ledger .head { display:grid; grid-template-columns:20px 60px 1fr 70px 24px; gap:12px; align-items:center; padding:11px 8px; cursor:pointer; }
+  .ledger .head:hover { background:rgba(255,255,255,.025); }
+  .ledger .head .title { font-weight:500; }
+  .ledger .head .chev { color:var(--faint); font-size:12px; text-align:right; transition:transform .15s ease; }
+  .ledger .row.open .chev { transform:rotate(90deg); }
+  .ledger .detail { display:none; padding:6px 8px 22px 100px; }
+  .ledger .row.open .detail { display:block; }
+  @media (max-width:700px){ .ledger .head{grid-template-columns:16px 1fr 24px;} .ledger .head .st,.ledger .head .type{display:none;} .ledger .detail{padding-left:8px;} }
+
+  /* feature mode: single item */
+  .feature .hero { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:22px 24px; margin-bottom:16px; }
+  .feature .hero h3 { margin:0 0 4px; font-size:22px; font-weight:600; letter-spacing:-.02em; }
+  .feature .hero .stl { display:flex; gap:10px; align-items:center; margin-bottom:10px; }
+  .feature .grid { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:900px){ .feature .grid { grid-template-columns:1.25fr 1fr; align-items:start; } }
+  .card { border:1px solid var(--line); border-radius:10px; background:var(--panel); padding:16px 18px; }
+  .card h4 { margin:0 0 10px; font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); font-weight:500; }
+
+  /* ---- filter bar ---- */
+  .filters { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:0 0 18px; }
+  .fchip { appearance:none; border:1px solid var(--line); background:transparent; color:var(--mut); font:inherit; font-family:var(--mono); font-size:11.5px;
+    padding:5px 10px; border-radius:6px; cursor:pointer; display:inline-flex; gap:7px; align-items:center; font-variant-numeric:tabular-nums; }
+  .fchip .dot { width:7px; height:7px; margin:0; }
+  .fchip[aria-pressed="true"] { background:var(--panel-2); color:var(--ink); border-color:#3A3E47; }
+  .fchip:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .filters .gap { width:1px; height:18px; background:var(--line); margin:0 4px; }
+  .search { margin-left:auto; display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:6px; padding:0 10px; background:var(--panel); }
+  .search input { background:transparent; border:none; color:var(--ink); font:inherit; font-size:13px; padding:6px 0; width:200px; outline:none; }
+  .search input::placeholder { color:var(--faint); }
+  .search kbd { font-family:var(--mono); font-size:10px; color:var(--faint); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+  .showing { font-family:var(--mono); font-size:11.5px; color:var(--faint); margin:-8px 0 14px; }
+  .empty { padding:40px 0; text-align:center; color:var(--faint); font-family:var(--mono); font-size:12.5px; }
+
+  .keys { max-width:1120px; margin:-60px auto 0; padding:0 24px 40px; font-size:11px; color:var(--faint); }
+  /* ---- jump palette + next/prev ---- */
+  .jump-btn { position:fixed; right:22px; bottom:22px; z-index:30; display:flex; gap:8px; }
+  [hidden] { display:none !important; }
+  .jump-btn button { appearance:none; border:1px solid var(--line); background:rgba(27,29,34,.92); backdrop-filter:blur(8px); color:var(--ink); font:inherit; font-size:12.5px;
+    font-weight:500; padding:8px 12px; border-radius:8px; cursor:pointer; display:inline-flex; gap:8px; align-items:center; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+  .jump-btn button kbd { font-family:var(--mono); font-size:10px; color:var(--faint); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
+  .jump-btn button:hover { border-color:#3A3E47; }
+  .jump-btn button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .palette { position:fixed; inset:0; z-index:40; background:rgba(16,17,20,.55); display:none; align-items:flex-start; justify-content:center; padding:10vh 16px 0; }
+  .palette.open { display:flex; }
+  .palette .box { width:min(680px,100%); background:var(--panel); border:1px solid #3A3E47; border-radius:12px; box-shadow:0 30px 80px rgba(0,0,0,.5); overflow:hidden; }
+  .palette input { width:100%; background:transparent; border:none; border-bottom:1px solid var(--line); color:var(--ink); font:inherit; font-size:15px; padding:14px 16px; outline:none; }
+  .palette input::placeholder { color:var(--faint); }
+  .palette .pfilters { display:flex; gap:6px; padding:8px 10px; border-bottom:1px solid var(--line); }
+  .palette .pfilters .pill { font-size:11px; padding:3px 9px; }
+  .palette ul { list-style:none; margin:0; padding:6px; max-height:52vh; overflow-y:auto; }
+  .palette li { display:grid; grid-template-columns:16px 1fr auto; gap:10px; align-items:baseline; padding:9px 10px; border-radius:6px; cursor:pointer; font-size:13.5px; }
+  .palette li small { font-family:var(--mono); font-size:10.5px; color:var(--faint); }
+  .palette li.on, .palette li:hover { background:var(--panel-2); }
+  .palette .foot { display:flex; gap:14px; padding:8px 14px; border-top:1px solid var(--line); font-family:var(--mono); font-size:10.5px; color:var(--faint); }
+
+  /* ---- feature: first-look viewer ---- */
+  .feature .viewer { border:1px solid var(--line); border-radius:10px; background:var(--panel); overflow:hidden; margin-bottom:16px; }
+  .feature .viewer .player { border:none; border-radius:0; }
+  .storyboard { display:grid; grid-auto-flow:column; grid-auto-columns:minmax(150px,1fr); gap:10px; overflow-x:auto; padding:12px; border-top:1px solid var(--line); background:#0F1013; }
+  .storyboard figure { margin:0; cursor:pointer; border-radius:6px; }
+  .storyboard img { width:100%; display:block; border-radius:6px; border:1px solid var(--line); }
+  .storyboard figure.on img { border-color:var(--ink); }
+  .storyboard figcaption { display:flex; justify-content:space-between; gap:8px; margin-top:6px; font-size:12px; }
+  .storyboard figcaption span:last-child { font-family:var(--mono); font-size:10.5px; color:var(--faint); }
+  .feature .two { display:grid; grid-template-columns:1fr; gap:16px; }
+  @media (min-width:900px){ .feature .two { grid-template-columns:1fr 1fr; align-items:start; } }
+  .feature .hero { margin-bottom:12px; }
+  @media (prefers-reduced-motion: reduce){ *{transition:none !important;} }
+</style>
+
+
+<div class="wrap" id="report"></div>
+<p class="keys mono" id="keys">J jump to check · N / P next and previous issue · / search · in the player: ← → checkpoints, space plays</p>
+<div class="jump-btn" id="jumpbtn" hidden><button type="button" id="jumpopen">Jump to check <kbd>J</kbd></button></div>
+<div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Jump to a check">
+  <div class="box"><input id="pq" placeholder="Type to filter checks…" autocomplete="off"><div class="pfilters" id="pfilters" role="group" aria-label="Palette status filters"></div><ul id="plist"></ul>
+  <div class="foot"><span>↑↓ move</span><span>↵ jump</span><span>esc close</span><span id="pcount"></span></div></div>
+</div>
+
+<script id="report-data">window.__REPORT__ = {"schema_version": 1, "title": "Verify \u00b7 annotate toolbar", "repo": "backnotprop/plannotator", "commit": "a91c4e2", "ran_at": "2026-08-26T14:40:00Z", "mode": "feature", "list_source": null, "items": [{"id": "toolbar-integrity", "title": "Annotate toolbar integrity", "check_type": "browser", "status": "pass", "summary": "All key buttons are present on markdown, HTML, and live-site targets. Recorded on the HTML target; the other two were checked by DOM assertion.", "findings": [{"severity": "info", "text": "Button set is unchanged from v0.17.5: comment, thumbs up, quick tags, submit.", "evidence": "apps/annotate/src/Toolbar.tsx:41"}, {"severity": "low", "text": "Quick-tags popover opens 40ms slower on the live-site target than on markdown; within budget.", "evidence": "recording 0:16"}], "media": {"video": "recording.mp4", "checkpoints": [{"t": 1, "label": "Page loads", "narration": "article.html opens through the local server; no console errors.", "screenshot": "cp-1.png"}, {"t": 4, "label": "Toolbar renders", "narration": "All four key buttons present: comment, thumbs up, quick tags, submit.", "screenshot": "cp-4.png"}, {"t": 10, "label": "Comment added", "narration": "Selecting paragraph 2 and commenting produces the highlight and a stored annotation.", "screenshot": "cp-10.png"}, {"t": 16, "label": "Quick tag applied", "narration": "needs-work tag attaches to the annotation; the chip renders.", "screenshot": "cp-16.png"}, {"t": 21, "label": "Feedback submitted", "narration": "Submit succeeds; the payload contains both the comment and the tag.", "screenshot": "cp-21.png"}], "screenshots": [{"path": "cp-4.png", "caption": "markdown target \u2014 toolbar"}, {"path": "cp-16.png", "caption": "live site \u2014 quick tags"}]}, "checked_by": "opus \u00b7 browser"}]};</script>
+<script>
+const REPORT = window.__REPORT__ || { __errors: [{ path: "$", message: "no report data was injected" }] };
+
+// ---------- renderer ----------
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const fmt = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;
+const sname = s => s === "not-run" ? "not run" : s;
+const when = s => { const d = new Date(s); return isNaN(d) ? (s||"") : d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }); };
+const statusLine = it => `<span class="dot"></span><span class="st">${esc(it.status)}</span>`;
+
+function findingsHTML(it) {
+  if (!it.findings?.length) return `<p class="summ" style="color:var(--faint)">No findings.</p>`;
+  return `<ul class="findings">${it.findings.map(f => `<li><span class="sev sev-${esc(f.severity)}">${esc(f.severity)}</span><span>${esc(f.text)}${f.evidence ? `<span class="ev">${esc(f.evidence)}</span>` : ""}</span></li>`).join("")}</ul>`;
+}
+function playerHTML(it, key) {
+  const m = it.media; if (!m?.video) return "";
+  const CPs = m.checkpoints || [];
+  const ticks = CPs.map((c,i) => `<div class="tick" data-i="${i}" style="left:0%" title="${esc(c.label)}"></div>`).join("");
+  const cps = CPs.map((c,i) => `<li data-i="${i}"><span class="ct">${fmt(c.t)}</span><span><span class="cl">${esc(c.label)}</span><br><span class="cn">${esc(c.narration)}</span></span></li>`).join("");
+  return `<div class="player" data-player="${key}">
+    <video preload="metadata" playsinline src="${esc(m.video)}"></video>
+    <div class="ctl">
+      <button class="pp" aria-label="Play or pause">▶</button>
+      <span class="t"><span class="cur">0:00</span> / <span class="dur">–:––</span></span>
+      <div class="bar" role="slider" aria-label="Recording progress" tabindex="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="track"></div><div class="fill"></div>${ticks}
+        <div class="tip"><img alt=""><div class="tl"><b></b><span></span></div></div>
+      </div>
+    </div>
+    <ul class="cps">${cps}</ul>
+  </div>`;
+}
+function shotsHTML(it) {
+  const s = it.media?.screenshots; if (!s?.length) return "";
+  return `<h4>Screenshots</h4><div class="shots">${s.map(x => `<figure><img src="${esc(x.path)}" alt="${esc(x.caption||"")}"><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("")}</div>`;
+}
+function detailHTML(it, key) {
+  const media = it.media?.video ? `<h4>Recording</h4>${playerHTML(it, key)}` : "";
+  return `<div class="detail"><p class="summ">${esc(it.summary)}</p><h4>Findings</h4>${findingsHTML(it)}${media}${shotsHTML(it)}<p class="by" style="margin-top:14px">checked by ${esc(it.checked_by||"—")}</p></div>`;
+}
+function summaryHTML(run) {
+  const n = s => run.items.filter(i => i.status===s).length;
+  const attention = run.items.filter(i => i.status==="fail" || i.status==="flag");
+  const isList = run.mode === "list";
+  const p = (s, cls="") => isList
+    ? `<button class="pill ${cls}" data-f="status" data-v="${s}" aria-pressed="${state.status.has(s)}"><b>${n(s)}</b> ${sname(s)}</button>`
+    : `<span class="pill ${cls}"><b>${n(s)}</b> ${sname(s)}</span>`;
+  const pills = `<div class="summary" role="group" aria-label="Status filters">
+    ${isList ? `<button class="pill" data-clear aria-pressed="${!state.status.size}"><b>${run.items.length}</b> all</button>` : `<span class="pill"><b>${run.items.length}</b> checks</span>`}
+    ${p("fail","s-fail")}${p("flag","s-flag")}${p("pass","s-pass")}${p("skipped","s-skipped")}${run.selection === "selective" ? p("not-run","s-not-run") : ""}</div>`;
+  const att = attention.length ? `<div class="attention"><h2>Needs attention</h2><ul>${attention.map(i => `<li class="s-${i.status}"><span class="dot"></span><a href="#${i.id}" data-jump="${i.id}">${esc(i.title)}</a><span class="type">${esc((i.findings||[])[0]?.text||"")}</span></li>`).join("")}</ul></div>` : "";
+  return `<header class="run"><div><h1>${esc(run.title)}</h1><div class="meta">${[run.repo && run.commit ? `${esc(run.repo)} @ ${esc(run.commit)}` : esc(run.repo||run.commit||""), esc(when(run.ran_at)), run.list_source ? esc(run.list_source) : "", run.selection === "selective" ? "selective run" + (run.selection_basis ? " · " + esc(run.selection_basis) : "") : run.selection === "all" ? "every entry selected" : ""].filter(Boolean).join(" · ")}</div></div>${pills}</header>${att}`;
+}
+
+// layouts
+function renderLedger(run) {
+  const items = visible(run);
+  return summaryHTML(run) + filtersHTML(run) + (items.length ? `<div class="ledger">${items.map(it => `
+    <div class="row s-${it.status}" id="${it.id}">
+      <div class="head" role="button" tabindex="0" aria-expanded="false"><span class="dot"></span><span class="st">${sname(it.status)}</span><span class="title">${esc(it.title)}</span><span class="type">${esc(it.check_type)}</span><span class="chev">▶</span></div>
+      ${detailHTML(it, it.id)}
+    </div>`).join("")}</div>` : `<div class="empty">no checks match these filters</div>`);
+}
+function renderFeature(run) {
+  const it = run.items[0]; const C = it.media?.checkpoints || [];
+  const board = C.length ? `<div class="storyboard" role="list" aria-label="Checkpoints">${C.map((c,i) => `<figure role="listitem" data-i="${i}"><img src="${esc(c.screenshot)}" alt="${esc(c.label)}"><figcaption><span>${esc(c.label)}</span><span>${fmt(c.t)}</span></figcaption></figure>`).join("")}</div>` : "";
+  return summaryHTML(run) + `<div class="feature"><div class="hero"><h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)}${it.checked_by ? " · checked by " + esc(it.checked_by) : ""}</span></div><p class="summ" style="margin:0">${esc(it.summary)}</p></div>
+    <div class="viewer">${playerHTML(it, it.id)}${board}</div>
+    <div class="two"><div class="card"><h4>Findings</h4>${findingsHTML(it)}</div><div class="card"><h4>Screenshots</h4><div class="shots">${(it.media?.screenshots||[]).map(x => `<figure><img src="${esc(x.path)}" alt="${esc(x.caption||"")}"><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("")}</div></div></div></div>`;
+}
+
+// ---------- behavior ----------
+function wirePlayers(root) {
+  root.querySelectorAll(".player").forEach(p => {
+    const v = p.querySelector("video"), bar = p.querySelector(".bar"), fill = p.querySelector(".fill"), tip = p.querySelector(".tip");
+    const cur = p.querySelector(".cur"), dur = p.querySelector(".dur"), pp = p.querySelector(".pp");
+    const ticks = [...p.querySelectorAll(".tick")], cps = [...p.querySelectorAll(".cps li")];
+    const key = p.dataset.player; const item = currentRun().items.find(i => i.id===key); const C = (item.media && item.media.checkpoints) || [];
+    const place = () => { if (!v.duration) return; ticks.forEach((t,i) => t.style.left = (C[i].t / v.duration * 100) + "%"); dur.textContent = fmt(v.duration); };
+    v.addEventListener("loadedmetadata", place); if (v.readyState >= 1) place();
+    pp.addEventListener("click", () => v.paused ? v.play() : v.pause());
+    v.addEventListener("play", () => pp.textContent = "❚❚"); v.addEventListener("pause", () => pp.textContent = "▶");
+    v.addEventListener("timeupdate", () => {
+      if (!v.duration) return; const pct = v.currentTime / v.duration * 100; fill.style.width = pct + "%"; cur.textContent = fmt(v.currentTime); bar.setAttribute("aria-valuenow", Math.round(pct));
+      let active = -1; C.forEach((c,i) => { if (v.currentTime >= c.t - 0.05) active = i; });
+      cps.forEach((li,i) => li.classList.toggle("on", i===active)); ticks.forEach((t,i) => t.classList.toggle("on", i===active));
+      document.querySelectorAll(".storyboard figure").forEach((f,i) => f.classList.toggle("on", i===active));
+    });
+    document.querySelectorAll(".storyboard figure").forEach((f,i) => f.addEventListener("click", () => { v.currentTime = C[i].t; if (v.paused) v.play(); }));
+    const seek = t => { v.currentTime = t; if (v.paused) v.play(); };
+    bar.addEventListener("click", e => { const r = bar.getBoundingClientRect(); seek((e.clientX - r.left) / r.width * v.duration); });
+    bar.addEventListener("mousemove", e => {
+      const r = bar.getBoundingClientRect(); const x = e.clientX - r.left; const t = x / r.width * v.duration;
+      let best = null, bd = Infinity; C.forEach(c => { const d = Math.abs(c.t / v.duration * r.width - x); if (d < bd) { bd = d; best = c; } });
+      const near = best && bd < 28;
+      tip.querySelector("img").src = near ? best.screenshot : ""; tip.querySelector("img").style.display = near ? "block" : "none";
+      tip.querySelector("b").textContent = near ? best.label : "";
+      tip.querySelector("span").textContent = fmt(near ? best.t : t);
+      tip.style.left = Math.max(100, Math.min(r.width - 100, near ? best.t / v.duration * r.width : x)) + "px";
+      tip.classList.add("show");
+    });
+    bar.addEventListener("mouseleave", () => tip.classList.remove("show"));
+    cps.forEach((li,i) => li.addEventListener("click", () => seek(C[i].t)));
+    ticks.forEach((t,i) => t.addEventListener("click", e => { e.stopPropagation(); seek(C[i].t); }));
+    bar.addEventListener("keydown", e => {
+      const cur = C.findIndex((c,i) => v.currentTime < c.t - 0.05);
+      if (e.key === "ArrowRight") { const n = C.find(c => c.t > v.currentTime + 0.1); if (n) seek(n.t); e.preventDefault(); }
+      if (e.key === "ArrowLeft") { const prev = [...C].reverse().find(c => c.t < v.currentTime - 0.6); seek(prev ? prev.t : 0); e.preventDefault(); }
+      if (e.key === " ") { v.paused ? v.play() : v.pause(); e.preventDefault(); }
+    });
+  });
+}
+let state = { mode: (REPORT.mode === "feature" && (REPORT.items||[]).length === 1) ? "feature" : "list", status: new Set(), type: new Set(), q: "" };
+const matches = it => (!state.status.size || state.status.has(it.status)) && (!state.type.size || state.type.has(it.check_type)) &&
+  (!state.q || (it.title + " " + it.summary + " " + (it.findings||[]).map(f=>f.text).join(" ")).toLowerCase().includes(state.q.toLowerCase()));
+const visible = run => run.items.filter(matches);
+function filtersHTML(run) {
+  const n = s => run.items.filter(i => i.status===s).length, nt = s => run.items.filter(i => i.check_type===s).length;
+  const chip = (k, v, label, cls="") => `<button class="fchip ${cls}" data-f="${k}" data-v="${v}" aria-pressed="${state[k].has(v)}">${label}</button>`;
+  const shown = visible(run).length;
+  return `<div class="filters" role="group" aria-label="Filters">
+    <span class="showing" style="margin:0">${shown === run.items.length ? `all ${run.items.length} checks` : `showing ${shown} of ${run.items.length}`}${state.status.size||state.type.size||state.q ? ' · <a href="#" data-clear style="color:var(--mut)">clear</a>' : ""}</span>
+    <span class="gap"></span>
+    ${chip("type","browser",`browser ${nt("browser")}`)}${chip("type","code",`code ${nt("code")}`)}${chip("type","mixed",`mixed ${nt("mixed")}`)}
+    <label class="search"><input id="q" type="search" placeholder="Search checks" value="${esc(state.q)}"><kbd>/</kbd></label></div>`;
+}
+const currentRun = () => REPORT;
+function renderErrors(errs) {
+  return `<header class="run"><div><h1>Report could not be rendered</h1><div class="meta">the report JSON failed validation — hand these to the agent that produced it</div></div></header>
+    <div class="attention"><h2>${errs.length} problem${errs.length===1?"":"s"}</h2><ul>${errs.map(e => `<li class="s-fail"><span class="dot"></span><span class="mono" style="color:var(--ink)">${esc(e.path)}</span><span class="type" style="color:var(--mut);font-family:var(--sans);font-size:13.5px">${esc(e.message)}</span></li>`).join("")}</ul></div>
+    <p class="by">validate before rendering: <code>validate-report.py report.json</code></p>`;
+}
+let render = function() {
+  const run = currentRun(); const root = document.getElementById("report");
+  if (run.__errors) { root.innerHTML = renderErrors(run.__errors); document.getElementById("jumpbtn").hidden = true; return; }
+  if (state.mode === "feature") root.innerHTML = renderFeature(run);
+  else root.innerHTML = renderLedger(run);
+  wireFilters(root);
+  if (state.mode === "list") {
+    root.querySelectorAll(".ledger .head").forEach(h => {
+      const toggle = () => { const row = h.parentElement; const open = row.classList.toggle("open"); h.setAttribute("aria-expanded", String(open)); };
+      h.addEventListener("click", toggle); h.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { toggle(); e.preventDefault(); } });
+    });
+    root.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); const row = document.getElementById(a.dataset.jump); row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); row.scrollIntoView({behavior:"smooth",block:"start"}); }));
+    run.items.filter(i => i.status==="fail").forEach(i => { const row = document.getElementById(i.id); if (!row) return; row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); });
+  }
+  wirePlayers(root);
+}
+function wireFilters(root) {
+  root.querySelectorAll(".fchip, button.pill[data-f]").forEach(b => b.addEventListener("click", () => { const s = state[b.dataset.f]; s.has(b.dataset.v) ? s.delete(b.dataset.v) : s.add(b.dataset.v); render(); }));
+  root.querySelectorAll("button.pill[data-clear]").forEach(b => b.addEventListener("click", () => { state.status.clear(); render(); }));
+  const q = root.querySelector("#q"); if (q) { q.addEventListener("input", () => { state.q = q.value; const pos = q.selectionStart; render(); const nq = document.getElementById("q"); if (nq) { nq.focus(); nq.setSelectionRange(pos,pos); } }); }
+  root.querySelectorAll("[data-clear]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); state.status.clear(); state.type.clear(); state.q = ""; render(); }));
+}
+function jumpTo(id) {
+  const run = currentRun();
+  let el = document.getElementById(id);
+  if (!el) { state.status.clear(); state.type.clear(); state.q = ""; render(); el = document.getElementById(id); }
+  if (!el) return;
+  if (el.classList.contains("row")) { el.classList.add("open"); el.querySelector(".head").setAttribute("aria-expanded","true"); }
+  el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+}
+// palette
+const pal = document.getElementById("palette"), pq = document.getElementById("pq"), plist = document.getElementById("plist"), pcount = document.getElementById("pcount");
+let pIdx = 0; let pStatus = new Set();
+function paletteRender() {
+  const run = currentRun(); const q = pq.value.toLowerCase();
+  const items = run.items.filter(i => (!pStatus.size || pStatus.has(i.status)) && (!q || (i.title + " " + sname(i.status) + " " + i.check_type).toLowerCase().includes(q)));
+  const n = s => run.items.filter(i => i.status===s).length;
+  document.getElementById("pfilters").innerHTML = `<button class="pill" data-pv="" aria-pressed="${!pStatus.size}"><b>${run.items.length}</b> all</button>` +
+    ["fail","flag","pass","skipped"].concat(run.selection === "selective" ? ["not-run"] : []).map(s => `<button class="pill s-${s}" data-pv="${s}" aria-pressed="${pStatus.has(s)}"><b>${n(s)}</b> ${sname(s)}</button>`).join("");
+  document.querySelectorAll("#pfilters .pill").forEach(b => b.addEventListener("click", () => { const v = b.dataset.pv; if (!v) pStatus.clear(); else pStatus.has(v) ? pStatus.delete(v) : pStatus.add(v); pIdx = 0; paletteRender(); pq.focus(); }));
+  pIdx = Math.min(pIdx, Math.max(0, items.length-1));
+  plist.innerHTML = items.map((it,i) => `<li class="s-${it.status} ${i===pIdx?"on":""}" data-id="${it.id}"><span class="dot"></span><span>${esc(it.title)}</span><small>${esc(it.check_type)} · ${sname(it.status)}</small></li>`).join("") || `<li><span></span><span style="color:var(--faint)">no matches</span></li>`;
+  pcount.textContent = `${items.length} of ${run.items.length}`;
+  plist.querySelectorAll("li[data-id]").forEach((li,i) => { li.addEventListener("mouseenter", () => { pIdx = i; plist.querySelectorAll("li").forEach((x,j)=>x.classList.toggle("on", j===i)); }); li.addEventListener("click", () => paletteGo(li.dataset.id)); });
+}
+function paletteOpen() { if (REPORT.__errors || state.mode !== "list" || !(REPORT.items||[]).length) return; pal.classList.add("open"); pq.value = ""; pIdx = 0; pStatus = new Set(state.status); paletteRender(); pq.focus(); }
+function paletteClose() { pal.classList.remove("open"); }
+function paletteGo(id) { paletteClose(); jumpTo(id); }
+pq.addEventListener("input", paletteRender);
+pq.addEventListener("keydown", e => {
+  const lis = [...plist.querySelectorAll("li[data-id]")];
+  if (e.key === "ArrowDown") { pIdx = Math.min(pIdx+1, lis.length-1); paletteRender(); e.preventDefault(); }
+  if (e.key === "ArrowUp") { pIdx = Math.max(pIdx-1, 0); paletteRender(); e.preventDefault(); }
+  if (e.key === "Enter") { const li = lis[pIdx]; if (li) paletteGo(li.dataset.id); e.preventDefault(); }
+  if (e.key === "Escape") paletteClose();
+});
+pal.addEventListener("click", e => { if (e.target === pal) paletteClose(); });
+document.getElementById("jumpopen").addEventListener("click", paletteOpen);
+function attentionStep(dir) {
+  const run = currentRun(); if (run.__errors) return; const att = run.items.filter(i => i.status==="fail" || i.status==="flag"); if (!att.length) return;
+  let cur = att.findIndex(i => i.id === state.sel); if (cur < 0) { const y = window.scrollY + 80; cur = att.findIndex(i => { const el = document.getElementById(i.id); return el && el.offsetTop > y; }); if (dir > 0) cur -= 1; }
+  const next = att[(cur + dir + att.length) % att.length]; state.sel = next.id; jumpTo(next.id);
+}
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") { paletteClose(); return; }
+  if (e.target.closest(".bar") || e.target.tagName === "INPUT") return;
+  if (e.key === "j" || e.key === "J") { paletteOpen(); e.preventDefault(); return; }
+  if (e.key === "/") { const q = document.getElementById("q"); if (q) { q.focus(); e.preventDefault(); } return; }
+  if (e.key === "n" || e.key === "N") { attentionStep(1); return; }
+  if (e.key === "p" || e.key === "P") { attentionStep(-1); return; }
+});
+const _render = render;
+render = function() { _render(); document.getElementById("jumpbtn").hidden = !!REPORT.__errors || state.mode !== "list"; document.getElementById("keys").hidden = !!REPORT.__errors; };
+render();
+document.title = (REPORT.title ? REPORT.title + " · " : "") + "pe-verify";
+</script>

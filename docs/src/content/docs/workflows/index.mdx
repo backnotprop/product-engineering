@@ -1,0 +1,22 @@
+---
+title: Workflows
+description: Jobs that run across several skills, shown as the conversation they take.
+sidebar:
+  order: 0
+  label: Overview
+  group:
+    label: Workflows
+---
+
+A workflow page follows one job through the kit from the first thing you say to the
+last thing you get back. Each step shows the line you say, the skill that takes it, and
+what comes back: a document, a record on disk, code, or a report. Every skill triggers
+on the phrases shown; when a request could fit two skills, start it with "product
+engineering, ..." and the [router](/skills/product-engineering) picks one and follows it.
+
+| Workflow | What it covers |
+| --- | --- |
+| [Design, approve, build, verify](/workflows/design-approve-build-verify) | Brief a feature, set direction, approve a mock, build to the record, check fidelity, prove it works |
+| [Review a PR](/workflows/review-a-pr) | A read-only change review with ranked findings, and how the findings reach pe-build |
+| [Release check](/workflows/release-check) | Seed a QA list under `.product/`, run it against a change set or in full, read the report |
+| [Document a product](/workflows/document-a-product) | Build a behavior spec from the code, verify it against the running product, triage what looks wrong |

@@ -1,0 +1,71 @@
+---
+title: Build it.
+description: Polished, accessible, production-ready code.
+sidebar:
+  order: 2
+  label: pe-build
+---
+
+Production UI to a craft bar. Every mode runs the same loop: name the boundary, read
+the real code and the rendered result, fix in triage order, implement completely, walk
+the whole path, report what changed and what was preserved.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Build the pricing card" | A component in the project's stack and idiom, at the craft bar |
+| "Polish this" | Refinement of the existing identity, with the redesign gate closed |
+| "Animate the drawer" | Motion with the house values: press scale 0.96, bounce 0, ease-out exits |
+| "Make this accessible" | Keyboard, screen reader, focus, and form semantics implemented |
+| "Get this ready for production" | Data extremes, failure states, devices, languages, offline, metadata |
+| "Build the approved mock" | Implementation against the record in `.product/approved/`, with every deviation stated first |
+
+## Modes
+
+{/* sync:modes */}
+| Mode | When |
+| --- | --- |
+| `craft (default)` | Components, polish, detail work, "feels off" |
+| `motion` | Animate, transition, gesture, "feels janky" |
+| `a11y` | Make accessible, keyboard, screen reader, focus, forms |
+| `harden` | Production-ready, edge cases, real data, offline, metadata |
+{/* /sync:modes */}
+
+Writing new UI from scratch in any mode also loads the generation guardrails. Changing
+the visual identity requires that you asked for a redesign.
+
+## Setup
+
+| | |
+| --- | --- |
+| `required` | the project's code, in its own stack |
+| `optional` | the dev server, so the rendered result can be checked |
+| `optional` | the animations.dev course pack, installed locally by owners with `foundry/scripts/course-dropin.sh`; it is never committed |
+| `convention` | reads `DESIGN.md` for tokens and components |
+| `convention` | reads `.product/approved/` for a record matching the target and implements to it |
+
+## What it produces
+
+Code in your stack, plus a report: what changed, what was preserved, what remains, and
+the approved record built against with each stated deviation.
+
+House rules in every mode: press scale exactly `0.96`; spring bounce `0` unless the
+direction is explicitly playful; reduced motion keeps opacity and color transitions;
+exits ease out; `will-change` only on observed stutter; easing from the named curves;
+stagger 30 to 80 ms between list items and about 100 ms between groups; submit buttons
+stay enabled and validate on submit.
+
+## Handoffs
+
+Verdicts and audits: [pe-review](/skills/pe-review). Proof that the built feature works,
+with recordings: [pe-verify](/skills/pe-verify), the natural last step after harden.
+Direction, mockups, variations: [pe-design](/skills/pe-design). Standalone assets:
+[pe-brand-assets](/skills/pe-brand-assets).
+
+## Provenance
+
+{/* sync:provenance */}
+Carries 47 files from [Jakub Krehel](/people/jakub-krehel) (32), [Emil Kowalski](/people/emil-kowalski) (6), [Vercel](/people/vercel) (5), [Julien Thibeaut](/people/julien-thibeaut) (3), [Leon](/people/leon) (1), and 5 authored here. 20 files from the animations.dev course pack are mapped for owners to install locally and are never distributed. Every vendored file is hash-locked to a pinned upstream commit.  
+Apache-2.0 · [skills/pe-build](https://github.com/backnotprop/product-engineering/tree/main/skills/pe-build)
+{/* /sync:provenance */}

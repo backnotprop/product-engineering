@@ -1,0 +1,46 @@
+---
+title: The .product folder
+description: Product-level records in the repo, human-readable and diffable, owned by you.
+sidebar:
+  order: 3
+---
+
+A `.product/` folder at the repo root holds the records the skills read and write across
+sessions. It is yours: plain files, committed, reviewed in pull requests like anything
+else. The skills create it the first time they need it and tell you so.
+
+```
+.product/
+  approved/
+    checkout-brief/          an approved artifact, byte-for-byte, plus approval.md
+    report-viewer--2026-08-20/   a superseded approval, kept, dated
+  qa-list.md                 the checks pe-verify re-runs
+  runs/                      pe-verify reports you asked to keep (never automatic)
+```
+
+## Approved records
+
+When you approve a brief, direction, mock, or variant ("this is it", "ship this"),
+pe-design writes `.product/approved/<slug>/`: the artifact exactly as approved, its
+source when it was rendered from one, and `approval.md` with the date, who approved,
+the exact state approved, the decisions on the way, and what is out of scope.
+
+pe-build reads the record before building and implements to it, stating any deviation
+before making it. pe-review's fidelity mode checks the implementation against it, and
+every deviation is a finding with a severity.
+
+A newer approval supersedes: the old folder is renamed `<slug>--YYYY-MM-DD` and kept.
+Records are never edited except to mark them superseded. The full rules are in
+[the approved record](/reference/approved-record).
+
+## The QA list
+
+`qa-list.md` is a plain markdown list of the things you want checked before a release.
+Any format; each item or heading is one check. pe-verify looks here first, and remembers
+another location in `~/.product-engineering/memories.md` if you keep it elsewhere. See
+[the QA list](/reference/qa-list).
+
+## What never goes here
+
+Verification runs. pe-verify writes its JSON, HTML, recordings, and screenshots to a
+temp folder, and copies a report into `runs/` only when you ask.

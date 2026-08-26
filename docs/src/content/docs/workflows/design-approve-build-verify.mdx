@@ -1,0 +1,120 @@
+---
+title: Design, approve, build, verify
+description: One feature from brief to proof, with an approved record that build and review both hold to.
+sidebar:
+  order: 1
+---
+
+The feature below is a saved-filters panel; replace the name with yours.
+
+## 1. Brief the feature
+
+> "Write a brief for the saved-filters panel."
+
+[pe-design](/skills/pe-design), brief mode. It reads `PRODUCT.md` and `DESIGN.md`
+first when they exist and skips whatever they settle. Then it asks two or three
+questions in one round: what the panel is for, who reaches it, what they must do,
+and what success looks like. A second round runs only when the answers expose a gap.
+
+What comes back is a brief in chat: job and audience, outcome and proof, selected
+direction, scope and boundaries, states and ranges, interaction and layout,
+constraints and open decisions. Settled work gets three to five bullets. The skill
+takes one correction round, then stops; it writes to a file only when you name one.
+
+## 2. Set the direction
+
+> "How should this look and feel?"
+
+pe-design, direct mode. Brief mode runs this itself when visual direction is
+unresolved. A coherent identity in code or in `DESIGN.md` is inherited as settled;
+otherwise the direction is derived from the subject and brief, and a named preset is
+used only when your words match it. What comes back is a design plan: four to six
+named colors, typefaces for at least two roles, and the layout idea in a sentence.
+
+## 3. Mock it
+
+> "Mock it up."
+
+pe-design, mock mode. Structure still open means a wireframe, kept visibly low
+fidelity; a settled structure means a mockup or a working prototype. What comes back
+is one `.html` file with its CSS and JavaScript inline and real content throughout,
+working when opened directly with no build step, plus its absolute path.
+
+## 4. Approve it
+
+> "This is it."
+
+pe-design, the Approval step. It runs only on explicit approval: "this is it", "ship
+this", "approved". Praise alone does not trigger it; ambiguous words get a one-line
+question before anything is written. In the same turn it confirms a slug and writes:
+
+```text
+.product/approved/saved-filters/
+  saved-filters.html   the artifact, byte for byte as approved
+  source/              present only when the artifact was rendered from source
+  approval.md          approved date, by whom, from which conversation or variant,
+                       the exact state approved (layout, toggles, filters as chosen),
+                       what was rejected on the way and why, what is out of scope
+```
+
+A later approval of the same slug renames the old folder `saved-filters--YYYY-MM-DD`
+(`-2`, `-3` on a same-day collision). Records are never deleted and never edited
+except to mark one superseded. When `.product/` does not exist, the skill creates it
+and tells you the convention: product-level records live there, human-readable and
+diffable, owned by you. See [The approved record](/reference/approved-record).
+
+## 5. Build to the record
+
+> "Build the saved-filters panel."
+
+[pe-build](/skills/pe-build), craft mode. Its loop starts with Boundary: name the
+target, what must stay unchanged, and the surface's job; read `DESIGN.md`; read
+`.product/approved/` for a record matching the target. The record ranks above the
+skill's judgment and below your words. Any deviation (a platform constraint, an
+accessibility requirement) is stated before it is made, never applied silently.
+Then Evidence (the real code and the rendered result), Triage (blocked tasks first,
+missing states next, then flow, then visual and copy consistency), Implement, and
+Verify (the whole path, states, viewports, zoom, focus, console, two visual rounds
+at most). What comes back is code in your stack plus a report: what changed, what
+was preserved, what remains, and the record built against with each deviation.
+"Animate the panel" and "make it accessible" run the same loop in motion and a11y
+modes; "get it ready for production" runs harden mode and then hands to pe-verify.
+
+## 6. Check fidelity
+
+> "Did we stay true to the mock?"
+
+[pe-review](/skills/pe-review), fidelity mode. It runs whenever a reviewed surface
+has a record. It reads the undated folder under `.product/approved/`, puts the
+artifact into the state `approval.md` names, and compares structure, hierarchy,
+states, copy, spacing, and behavior, in that order, at every viewport shown.
+
+What comes back is one finding per deviation: file:line, the artifact region, what
+the artifact shows, what the build shows, a severity, and the change that restores
+fidelity. HIGH is a region, state, or behavior missing or doing something else, or
+copy whose meaning changed. MEDIUM is hierarchy inverted or a state visibly
+different. LOW is spacing off the artifact's value or a casing difference.
+Deviations the build report declared are listed separately with no severity. Zero
+deviations is a valid result. pe-review edits nothing.
+
+> "Fix the HIGH findings."
+
+pe-build implements each at its stated file:line. When you prefer the build's
+version, say so: pe-design approves a new version, which supersedes the record.
+
+## 7. Verify the behavior
+
+> "Verify this."
+
+[pe-verify](/skills/pe-verify), feature mode. The checks come from the change and
+the conversation: what was built, what you said it must do, what it must not break.
+Scope names the target, the commit, and how the product is reached, and checks for a
+Playwright browser, offering `npx playwright install chromium` in one line if absent.
+
+Browser checks run at 1280x800 with a recording and three to six checkpoint stills;
+code checks capture the command or the trace. Everything lands in a temp folder,
+`pe-verify/<repo>/<YYYY-MM-DD-HHMM>/`, never in the repo. The skill validates
+`report.json`, renders `report.html` beside it, and opens it: the recording, the
+checkpoints, and one verdict. In chat you get the path, counts by status, and one
+line per fail or flag with its file:line, recording timestamp, or command. Fails go
+to pe-build with their evidence. See [The report contract](/reference/report-contract).
