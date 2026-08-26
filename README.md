@@ -26,7 +26,8 @@ npx skills add backnotprop/product-engineering
 </p>
 
 Say what you need — the right skill triggers on your words and routes itself to the
-right mode. The skills hand off to each other by name: a finding from `pe-review`
+right mode. Or use the lazy entry: start any request with "product engineering" and
+the `product-engineering` router picks the skill for you. The skills hand off to each other by name: a finding from `pe-review`
 goes to `pe-build`; a winning variant from `pe-design` goes to `pe-build`. Enter the
 loop at any stage.
 
@@ -52,6 +53,7 @@ loop at any stage.
 
 | Skill | What it does |
 | --- | --- |
+| [`product-engineering`](skills/product-engineering) | The router: say "product engineering, ..." and it dispatches to the right skill below |
 | [`pe-design`](skills/pe-design) | Product and design-system context (`PRODUCT.md`, `DESIGN.md`), creative direction, HTML wireframes and prototypes, UI variants, onboarding flows |
 | [`pe-build`](skills/pe-build) | Production UI code: component craft, animation and gestures, accessibility, production hardening |
 | [`pe-review`](skills/pe-review) | Read-only UI review: PR/diff review, screen critique, audits with executable plans, guidelines checks, stress tests |

@@ -153,3 +153,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · docs · claude+ramos · virtue-framing removed: 'How it stays honest' → 'Provenance and integrity'; foundry README's promise/prove line replaced with a factual description
 - 2026-08-26 · docs · claude+ramos · crawlable skill index added under the examples: linked names + one-line keyword-bearing definitions (SVG cards are weak search signal; the table is the indexable record)
 - 2026-08-26 · brand · claude+ramos · card sentences rewritten as positive deliverable statements (every sentence had been a caveat or negative definition); DESIGN.md rule updated: boundaries live in the skills, never in the copy
+- 2026-08-26 · build-skill · claude+ramos · skills/product-engineering created: the lazy-entry router (authored only, no lifts) — routes by deliverable, defers to the owning skill; skills.sh.json and README updated
