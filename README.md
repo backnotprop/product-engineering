@@ -17,7 +17,7 @@ npx skills add backnotprop/product-engineering
   <a href="skills/pe-build"><img src="brand/cards/pe-build.svg" width="49%" alt="pe-build — Build it. Polished, accessible, production-ready code. Modes: craft, motion, a11y, harden."></a>
 </p>
 <p>
-  <a href="skills/pe-review"><img src="brand/cards/pe-review.svg?v=2" width="49%" alt="pe-review — Judge it. Prioritized findings on any screen, diff, or PR. Modes: change, screen, improve, guidelines, stress, motion, a11y."></a>
+  <a href="skills/pe-review"><img src="brand/cards/pe-review.svg?v=3" width="49%" alt="pe-review — Judge it. Prioritized findings on any screen, diff, or PR. Modes: change, screen, improve, guidelines, stress, motion, a11y, fidelity."></a>
   <a href="skills/pe-product-description"><img src="brand/cards/pe-product-description.svg" width="49%" alt="pe-product-description — Describe it. A verified spec of how your product behaves."></a>
 </p>
 <p>
@@ -41,6 +41,8 @@ npx skills add backnotprop/product-engineering
 | "Get this ready for production" | `pe-build` hardens: data extremes, failure states, devices, metadata |
 | "Review my PR" | `pe-review`, diff-scoped and read-only |
 | "Audit the app, give me a roadmap" | `pe-review` emits plans another agent can execute |
+| "Did we stay true to the mock?" | `pe-review`, fidelity mode: every deviation from the approved record, with severity |
+| "This is it — ship it" | `pe-design` stamps the artifact under `.product/approved/<slug>/` for build and review to hold to |
 | "Write a product description for the editor" | `pe-product-description` builds a verified behavior spec |
 | "Make an SVG header image for this post" | `pe-brand-assets` authors it from your recorded brand values |
 
@@ -49,9 +51,9 @@ npx skills add backnotprop/product-engineering
 | Skill | What it does |
 | --- | --- |
 | [`product-engineering`](skills/product-engineering) | The router: say "product engineering, ..." and it dispatches to the right skill below |
-| [`pe-design`](skills/pe-design) | Product and design-system context (`PRODUCT.md`, `DESIGN.md`), creative direction, HTML wireframes and prototypes, UI variants, onboarding flows |
+| [`pe-design`](skills/pe-design) | Product and design-system context (`PRODUCT.md`, `DESIGN.md`), creative direction, HTML wireframes and prototypes, UI variants, onboarding flows, approved-artifact records |
 | [`pe-build`](skills/pe-build) | Production UI code: component craft, animation and gestures, accessibility, production hardening |
-| [`pe-review`](skills/pe-review) | Read-only UI review: PR/diff review, screen critique, audits with executable plans, guidelines checks, stress tests |
+| [`pe-review`](skills/pe-review) | Read-only UI review: PR/diff review, screen critique, audits with executable plans, guidelines checks, stress tests, fidelity checks against approved records |
 | [`pe-product-description`](skills/pe-product-description) | Behavior specs: documents what users see and do, verified against the running product |
 | [`pe-brand-assets`](skills/pe-brand-assets) | On-brand SVG assets: illustrations, social/OG images, logo work, from recorded brand values |
 
