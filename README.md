@@ -2,10 +2,9 @@
 
 # product-engineering
 
-Five agent skills covering the end-to-end product design process — for Claude Code
-and any agent that supports the [Agent Skills](https://agentskills.io) format.
-Converged from the best published design-engineering skill work, with the source
-prose preserved byte-for-byte and verified by hashes.
+Five agent skills covering the end-to-end product design process. Converged from
+the [best published design-engineering skills](#provenance-and-integrity), with the
+source prose preserved.
 
 ```bash
 npx skills add backnotprop/product-engineering
