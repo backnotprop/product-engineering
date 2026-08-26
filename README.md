@@ -67,6 +67,26 @@ The machinery, runbooks, and per-skill receipts live in [`foundry/`](foundry/).
 Attribution is in [`NOTICE`](NOTICE). The animations.dev course pack is not
 distributed here — owners layer it in locally via `foundry/scripts/course-dropin.sh`.
 
+<details>
+<summary><b>Sources</b></summary>
+<br>
+
+| Source | Author | What's vendored |
+| --- | --- | --- |
+| [emilkowalski/skills](https://github.com/emilkowalski/skills) | Emil Kowalski | motion build, review standards, audits, the craft canon, the variant picker |
+| [jakubkrehel/skills](https://github.com/jakubkrehel/skills) | Jakub Krehel | the review engine, diff scoping, stress tests, UI/layout/typography/color/writing/a11y references |
+| [ibelick/ui-skills](https://github.com/ibelick/ui-skills) | Julien Thibeaut | audit method, a11y ordering, metadata checklist, generation guardrails |
+| [plannotator/effective-html](https://github.com/plannotator/effective-html) | Plannotator | creative direction, HTML wireframes, prototypes, diagrams, plans |
+| [vercel-labs/web-interface-guidelines](https://github.com/vercel-labs/web-interface-guidelines) | Vercel | the guidelines checklist, pinned |
+| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Vercel | React View Transitions references |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Leon | anti-generic taste rules, style presets, the identity method |
+| [product-description gist](https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f) | Steve Ruiz | the entire `pe-product-description` skill — a gist, not a repo; vendored with the author's permission |
+| [pbakaus/impeccable](https://github.com/pbakaus/impeccable) | Paul Bakaus | the derived workflow texts carried over from this repo's ui-skills era |
+
+Exact per-file pins and hashes: `foundry/MANIFEST.json`.
+
+</details>
+
 <img src="brand/credits.svg" alt="Built from the work of Emil Kowalski, Jakub Krehel, Julien Thibeaut, Plannotator, Vercel, Leon, Steve Ruiz, Impeccable — preserved byte-for-byte, hash-verified" width="100%">
 
 ## License
