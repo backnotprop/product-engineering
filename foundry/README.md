@@ -1,7 +1,7 @@
 # The foundry
 
-The machinery that builds and maintains the kit. The main README states the promise;
-this directory proves it.
+The machinery that builds and maintains the kit: per-file provenance, hash
+verification, and the runbooks for changing anything.
 
 ## Provenance model
 
