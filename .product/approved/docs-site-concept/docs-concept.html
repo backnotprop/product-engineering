@@ -1,0 +1,310 @@
+<title>product-engineering docs</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --g0: #FFFFFF; --g1: #F1F1EF; --panel: #FFFFFF; --panel-2: #F6F6F4;
+    --ink: #1A1B1E; --mut: #71737A; --faint: #9A9CA1; --line: #E8E8E6; --line-2: #DDDDDA;
+    --sans: "Geist", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    /* the mock frames always show the dark identity */
+    --m0: #101114; --m1: #23252B; --m-panel: #17181C; --m-panel-2: #1D1F24; --m-ink: #F5F5F4; --m-mut: #8B8D94; --m-faint: #5C5E66; --m-line: #26282E;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --g0: #101114; --g1: #23252B; --panel: #17181C; --panel-2: #1D1F24;
+      --ink: #F5F5F4; --mut: #8B8D94; --faint: #5C5E66; --line: #26282E; --line-2: #2F3138;
+    }
+  }
+  :root[data-theme="dark"] {
+    --g0: #101114; --g1: #23252B; --panel: #17181C; --panel-2: #1D1F24;
+    --ink: #F5F5F4; --mut: #8B8D94; --faint: #5C5E66; --line: #26282E; --line-2: #2F3138;
+  }
+  html { background: var(--g0); }
+  body { margin: 0; color: var(--ink); font-family: var(--sans); font-size: 15.5px; line-height: 1.6;
+    background: radial-gradient(120% 120% at 18% 0%, var(--g1) 0%, var(--g0) 70%) fixed; min-height: 100vh; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 56px 24px 120px; }
+  h1 { font-size: 40px; font-weight: 600; letter-spacing: -0.03em; margin: 0 0 8px; line-height: 1.1; text-wrap: balance; }
+  h2 { font-size: 24px; font-weight: 600; letter-spacing: -0.02em; margin: 72px 0 14px; text-wrap: balance; }
+  h3 { font-size: 16px; font-weight: 600; margin: 28px 0 8px; }
+  p { max-width: 68ch; margin: 0 0 14px; }
+  .lede { color: var(--mut); font-size: 17px; max-width: 60ch; }
+  .mono { font-family: var(--mono); }
+  .meta { font-family: var(--mono); font-size: 12.5px; color: var(--faint); }
+  a { color: inherit; }
+  code { font-family: var(--mono); font-size: 0.9em; background: var(--panel-2); padding: 1px 5px; border-radius: 4px; }
+  ul, ol { max-width: 70ch; padding-left: 22px; }
+  li { margin: 0 0 6px; }
+  li::marker { color: var(--faint); }
+  table { border-collapse: collapse; width: 100%; font-size: 14px; }
+  th { text-align: left; font-family: var(--mono); font-weight: 500; font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); padding: 0 14px 10px 0; border-bottom: 1px solid var(--line); }
+  td { padding: 10px 14px 10px 0; vertical-align: top; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: 0; }
+  td.k { font-family: var(--mono); font-size: 13px; white-space: nowrap; }
+  .scroll { overflow-x: auto; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  @media (max-width: 760px) { .two { grid-template-columns: 1fr; } h1 { font-size: 32px; } }
+  .note { color: var(--mut); }
+  .req { color: var(--ink); } .opt { color: var(--mut); }
+
+  /* ---- mock switcher ---- */
+  .tabs { display: flex; gap: 6px; margin: 18px 0 12px; flex-wrap: wrap; }
+  .tabs button { font: inherit; font-family: var(--mono); font-size: 12.5px; padding: 7px 12px; border-radius: 6px; border: 1px solid var(--line); background: transparent; color: var(--mut); cursor: pointer; }
+  .tabs button[aria-selected="true"] { color: var(--ink); background: var(--panel-2); border-color: var(--line-2); }
+  .tabs button:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .frame { border: 1px solid var(--line-2); border-radius: 10px; overflow: hidden; background: var(--m0); color: var(--m-ink); }
+  .frame[hidden] { display: none; }
+  .bar { display: flex; align-items: center; gap: 10px; padding: 9px 14px; border-bottom: 1px solid var(--m-line); background: var(--m-panel); font-family: var(--mono); font-size: 11.5px; color: var(--m-faint); }
+  .bar .url { flex: 1; text-align: center; }
+  .site { display: grid; grid-template-columns: 220px 1fr; min-height: 560px; background: radial-gradient(120% 120% at 18% 0%, var(--m1) 0%, var(--m0) 70%); }
+  @media (max-width: 760px) { .site { grid-template-columns: 1fr; } .rail { display: none; } }
+  .rail { border-right: 1px solid var(--m-line); padding: 18px 16px; font-size: 12.5px; }
+  .rail .brand { font-weight: 600; letter-spacing: -0.02em; font-size: 14px; margin-bottom: 18px; color: var(--m-ink); }
+  .rail .grp { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--m-faint); margin: 16px 0 6px; }
+  .rail div.item { color: var(--m-mut); padding: 3px 0 3px 8px; border-left: 1px solid transparent; }
+  .rail div.item.on { color: var(--m-ink); border-left-color: var(--m-ink); }
+  .page { padding: 34px 40px 40px; max-width: 640px; }
+  .page .name { font-family: var(--mono); font-size: 12px; color: var(--m-faint); margin-bottom: 10px; }
+  .page h4 { margin: 0 0 8px; font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; }
+  .page .sent { color: var(--m-mut); font-size: 15px; margin: 0 0 24px; max-width: 52ch; }
+  .page h5 { font-size: 13.5px; font-weight: 600; margin: 26px 0 8px; color: var(--m-ink); }
+  .page p { color: var(--m-mut); font-size: 13.5px; margin: 0 0 10px; max-width: 58ch; }
+  .page table { font-size: 12.5px; }
+  .page th { color: var(--m-faint); border-color: var(--m-line); font-size: 10.5px; padding-bottom: 6px; }
+  .page td { border-color: var(--m-line); padding: 7px 12px 7px 0; color: var(--m-mut); }
+  .page td.k { color: var(--m-ink); font-size: 12px; }
+  .page .cmd { font-family: var(--mono); font-size: 12.5px; background: var(--m-panel); border: 1px solid var(--m-line); border-radius: 6px; padding: 10px 12px; color: var(--m-ink); margin: 12px 0; }
+  .page .cmd span { color: var(--m-faint); }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+  @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: linear-gradient(#1D1F24, #121316); border-radius: 8px; padding: 18px 18px 16px; min-height: 96px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card .n { font-family: var(--mono); font-size: 10.5px; color: var(--m-faint); }
+  .card .v { font-weight: 600; font-size: 18px; letter-spacing: -0.02em; margin: 10px 0 4px; color: var(--m-ink); }
+  .card .s { font-size: 12px; color: var(--m-mut); }
+  .card .m { font-family: var(--mono); font-size: 10px; color: var(--m-faint); margin-top: 12px; }
+  .strip { margin-top: 30px; padding-top: 14px; border-top: 1px solid var(--m-line); font-family: var(--mono); font-size: 11.5px; color: var(--m-faint); line-height: 1.7; }
+  .strip b { color: var(--m-mut); font-weight: 500; }
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-size: 12.5px; margin: 6px 0 18px; }
+  .facts .l { font-family: var(--mono); font-size: 11.5px; color: var(--m-faint); padding-top: 2px; }
+  .facts .r { color: var(--m-mut); }
+  .facts .r b { color: var(--m-ink); font-weight: 500; }
+  .pill { display: inline-block; font-family: var(--mono); font-size: 10.5px; padding: 2px 7px; border-radius: 4px; border: 1px solid var(--m-line); color: var(--m-mut); }
+  @media (prefers-reduced-motion: no-preference) { .frame { transition: opacity 120ms ease; } }
+</style>
+
+<div class="wrap">
+  <div class="meta">concept · docs site · built on nimbus · approved 2026-08-26</div>
+  <h1>product-engineering docs</h1>
+  <p class="lede">A site that teaches each skill by showing what to say and what comes back, states exactly what each one needs installed, and credits every author with a receipt instead of a thank-you.</p>
+
+  <h2>The idea</h2>
+  <p>The README already works as a front door. The docs site is where a person goes when they have installed the kit and want to use one skill well: what it does, what to type, what it returns, what it needs from the machine, and where it hands off. One page per skill, written in the same voice as the cards, with the skill's own SKILL.md as the source so the docs can never say something the skill doesn't.</p>
+  <p>The tribute pages are the repo's provenance made readable. Each author gets a page generated from <code>foundry/MANIFEST.json</code>: which files are theirs, which skill carries each one, the class it entered as, the ledger rulings that touched their work, and the watcher that checks their upstream weekly. Nothing on those pages is written by hand, so they stay true the same way the kit does.</p>
+  <p>Nimbus fits because it gives every page a <code>.md</code> twin and an <code>llms.txt</code> index. A coding agent installing the kit can read the setup page for pe-verify as cleanly as a person can, which is the audience half the time.</p>
+
+  <h2>The map</h2>
+  <div class="scroll"><table>
+    <tr><th>Section</th><th>Pages</th><th>Where the content comes from</th></tr>
+    <tr><td class="k">Start</td><td>Install · Setup by skill · The <code>.product/</code> folder · Lazy mode</td><td>Authored. The setup matrix below is the spine of this section.</td></tr>
+    <tr><td class="k">Skills</td><td>pe-design · pe-build · pe-review · pe-verify · pe-product-description · pe-brand-assets · product-engineering</td><td>Frontmatter and modes pulled from each SKILL.md at build time; the teaching prose (say this, you get) is authored per page.</td></tr>
+    <tr><td class="k">Workflows</td><td>Design, approve, build, verify · Review a PR · Release check with the QA list · Document a product</td><td>Authored. Each is a real sequence across skills, shown as the conversation it takes.</td></tr>
+    <tr><td class="k">People</td><td>Emil Kowalski · Jakub Krehel · Julien Thibeaut · Plannotator · Vercel · Leon · Steve Ruiz · Paul Bakaus</td><td>Generated from MANIFEST.json and NOTICE. The People index carries the provenance summary (byte-for-byte, hash-verified, weekly watcher) and links to <code>foundry/</code> on GitHub. No bios unless the author supplies one.</td></tr>
+    <tr><td class="k">Reference</td><td>The report contract · DESIGN.md format · The approved record · The memories file</td><td>The skills' own reference files, rendered as-is with their provenance line.</td></tr>
+  </table></div>
+
+  <h2>Three pages, mocked</h2>
+  <p class="note">The site in its dark identity. Light is the other theme, from the same tokens as the light hero.</p>
+  <div class="tabs" role="tablist" aria-label="Mockups">
+    <button role="tab" aria-selected="true" aria-controls="m-home" id="t-home">Home</button>
+    <button role="tab" aria-selected="false" aria-controls="m-skill" id="t-skill">Skill page · pe-verify</button>
+    <button role="tab" aria-selected="false" aria-controls="m-person" id="t-person">Tribute · Jakub Krehel</button>
+  </div>
+
+  <div class="frame" id="m-home" role="tabpanel" aria-labelledby="t-home">
+    <div class="bar"><span>●&nbsp;●&nbsp;●</span><span class="url">product-engineering.dev</span><span>⌘K</span></div>
+    <div class="site">
+      <div class="rail">
+        <div class="brand">product engineering</div>
+        <div class="grp">Start</div><div class="item on">Install</div><div class="item">Setup by skill</div><div class="item">The .product folder</div>
+        <div class="grp">Skills</div><div class="item">pe-design</div><div class="item">pe-build</div><div class="item">pe-review</div><div class="item">pe-verify</div><div class="item">pe-product-description</div><div class="item">pe-brand-assets</div><div class="item">product-engineering</div>
+        <div class="grp">Workflows</div><div class="item">Design, approve, build, verify</div><div class="item">Release check</div>
+        <div class="grp">People</div><div class="item">Eight authors</div>
+      </div>
+      <div class="page">
+        <h4>product engineering</h4>
+        <p class="sent">Six agent skills for product design and engineering. Converged from the best published design-engineering skills, with the source prose preserved.</p>
+        <div class="cmd"><span>$</span> npx skills add backnotprop/product-engineering</div>
+        <div class="cards">
+          <div class="card"><div><div class="n">pe-design</div><div class="v">Design it.</div><div class="s">Context docs, creative direction, mockups, prototypes.</div></div><div class="m">understand · brief · direct · mock · vary · onboard</div></div>
+          <div class="card"><div><div class="n">pe-build</div><div class="v">Build it.</div><div class="s">Polished, accessible, production-ready code.</div></div><div class="m">craft · motion · a11y · harden</div></div>
+          <div class="card"><div><div class="n">pe-review</div><div class="v">Judge it.</div><div class="s">Prioritized findings on any screen, diff, or PR.</div></div><div class="m">change · screen · improve · guidelines · stress · motion · a11y · fidelity</div></div>
+          <div class="card"><div><div class="n">pe-verify</div><div class="v">Verify it.</div><div class="s">Pass or fail on every check, with recordings.</div></div><div class="m">feature · list</div></div>
+        </div>
+        <div class="strip">Most of this kit is other authors' work, carried byte-for-byte. <b>131 files · 8 authors · hash-verified in CI.</b> Read the receipts under People.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frame" id="m-skill" role="tabpanel" aria-labelledby="t-skill" hidden>
+    <div class="bar"><span>●&nbsp;●&nbsp;●</span><span class="url">product-engineering.dev/skills/pe-verify</span><span>⌘K</span></div>
+    <div class="site">
+      <div class="rail">
+        <div class="brand">product engineering</div>
+        <div class="grp">Skills</div><div class="item">pe-design</div><div class="item">pe-build</div><div class="item">pe-review</div><div class="item on">pe-verify</div><div class="item">pe-product-description</div><div class="item">pe-brand-assets</div><div class="item">product-engineering</div>
+        <div class="grp">On this page</div><div class="item">Say this, get this</div><div class="item">Modes</div><div class="item">Setup</div><div class="item">The report</div><div class="item">Handoffs</div><div class="item">Provenance</div>
+      </div>
+      <div class="page">
+        <div class="name">pe-verify</div>
+        <h4>Verify it.</h4>
+        <p class="sent">Pass or fail on every check, with recordings. Drives the product in Playwright, captures a recording and checkpoint stills, and opens a report.</p>
+        <h5>Say this, get this</h5>
+        <div class="scroll"><table>
+          <tr><th>You say</th><th>You get</th></tr>
+          <tr><td class="k">"Verify the toolbar"</td><td>A feature run: one item, a recording with 3 to 6 checkpoints, a verdict, and a report that opens in your browser.</td></tr>
+          <tr><td class="k">"Run the QA list against this PR"</td><td>A selective list run: the entries the change set can affect, the rest shown as not run with a reason.</td></tr>
+          <tr><td class="k">"Release check, everything"</td><td>Every entry in <code>.product/qa-list.md</code>, one pass, fail, flag, or skipped each, with evidence.</td></tr>
+        </table></div>
+        <h5>Setup</h5>
+        <div class="facts">
+          <div class="l">required</div><div class="r"><b>python3</b> for the validator and renderer (no packages)</div>
+          <div class="l">required</div><div class="r"><b>Playwright with Chromium</b> for browser checks; without it they report skipped, code checks still run</div>
+          <div class="l">optional</div><div class="r"><b>ffmpeg</b> converts recordings to mp4; otherwise the report plays webm</div>
+          <div class="l">convention</div><div class="r">a QA list in <b>.product/</b>; the skill remembers other locations in <b>~/.product-engineering/memories.md</b></div>
+        </div>
+        <div class="cmd"><span>$</span> npx playwright install chromium</div>
+        <h5>Handoffs</h5>
+        <p>Fails go to pe-build with their evidence. Whether it looks right is pe-review. Whether it matches the approved mock is pe-review, fidelity mode.</p>
+        <div class="strip">Authored in this repository. <b>3 references, 0 vendored files.</b> Report contract: assets/report.schema.json. <span class="pill">Apache-2.0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="frame" id="m-person" role="tabpanel" aria-labelledby="t-person" hidden>
+    <div class="bar"><span>●&nbsp;●&nbsp;●</span><span class="url">product-engineering.dev/people/jakub-krehel</span><span>⌘K</span></div>
+    <div class="site">
+      <div class="rail">
+        <div class="brand">product engineering</div>
+        <div class="grp">People</div><div class="item">Emil Kowalski</div><div class="item on">Jakub Krehel</div><div class="item">Julien Thibeaut</div><div class="item">Plannotator</div><div class="item">Vercel</div><div class="item">Leon</div><div class="item">Steve Ruiz</div><div class="item">Paul Bakaus</div>
+      </div>
+      <div class="page">
+        <div class="name">jakubkrehel/skills · MIT</div>
+        <h4>Jakub Krehel</h4>
+        <p class="sent">The review engine, diff scoping, stress tests, and the UI, layout, typography, color, writing, and accessibility references. The largest single source in the kit.</p>
+        <div class="facts">
+          <div class="l">carried</div><div class="r"><b>41 files</b>, 40 verbatim and 1 distilled, hash-locked to a pinned upstream commit</div>
+          <div class="l">lives in</div><div class="r"><b>pe-build</b> 32 · <b>pe-review</b> 7 · <b>pe-design</b> 1</div>
+          <div class="l">rulings</div><div class="r">Involved in L-01, L-02, L-04, L-05, L-07, L-08, L-11. The kit's press scale (<b>0.96</b>), spring bounce (<b>0</b>), reactive will-change, never-disabled submit, and the evidence bar are his positions.</div>
+          <div class="l">watcher</div><div class="r">Compared against upstream weekly; when he improves a file we carry, an issue opens here.</div>
+        </div>
+        <h5>Receipts</h5>
+        <div class="scroll"><table>
+          <tr><th>File in the kit</th><th>Class</th><th>Skill</th></tr>
+          <tr><td class="k">references/engine.md</td><td>verbatim</td><td>pe-review</td></tr>
+          <tr><td class="k">references/change-review.md</td><td>verbatim</td><td>pe-review</td></tr>
+          <tr><td class="k">references/stress-scenarios.md</td><td>verbatim</td><td>pe-review</td></tr>
+          <tr><td class="k">references/craft/ui/enter-exit.md</td><td>verbatim</td><td>pe-build</td></tr>
+          <tr><td class="k">references/craft/typography/index.md</td><td>verbatim</td><td>pe-build</td></tr>
+          <tr><td class="k">… 36 more, listed in full</td><td></td><td></td></tr>
+        </table></div>
+        <div class="strip">Every row links to the upstream file at its pinned commit and to the kit's copy. <b>Diff them yourself: they are the same bytes.</b></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Two page anatomies</h2>
+  <div class="two">
+    <div>
+      <h3>A skill page</h3>
+      <ol>
+        <li>The card, as the page header: mono name, verb headline, the one sentence. Same words as the README card, so the site and the repo never disagree.</li>
+        <li>Say this, get this. Three to five real prompts and what comes back. The fastest way to learn a skill is to see the conversation.</li>
+        <li>Modes, from the SKILL.md table, in one line each. Sub-modes (selective or all) appear where they exist.</li>
+        <li>Setup. Required, optional, and convention rows, always in that order, with the install command when there is one.</li>
+        <li>What it produces: the artifact, the record, the report, with one example rendered (a real pe-verify report, a real approved record).</li>
+        <li>Handoffs, by skill name, as the skill states them.</li>
+        <li>The provenance strip: who wrote what this skill carries, with counts, linking to the tribute pages.</li>
+      </ol>
+    </div>
+    <div>
+      <h3>A tribute page</h3>
+      <ol>
+        <li>Name, upstream repo, license. For Steve Ruiz: the gist and the permission record from NOTICE.</li>
+        <li>What we carry, in the author's own terms (the review engine, the craft canon, the identity method).</li>
+        <li>Facts from the manifest: file count by class, which skills carry them, ledger rulings involving the work and which way each went.</li>
+        <li>Receipts: the full file table, each row linking to the upstream blob at the pinned commit and to the kit's copy.</li>
+        <li>For Emil Kowalski, one more row: the animations.dev course pack is not distributed; owners install it locally.</li>
+      </ol>
+      <p class="note">No adjectives, no bios. The page's respect is in its accuracy.</p>
+    </div>
+  </div>
+
+  <h2>Setup, per skill</h2>
+  <p>Everything installs with one command; the skills differ in what they need from the machine and the repo after that. This matrix is the Start section's core page and repeats, per skill, on each skill page.</p>
+  <div class="scroll"><table>
+    <tr><th>Skill</th><th>Required</th><th>Optional</th><th>Convention</th></tr>
+    <tr><td class="k">all</td><td class="req"><code>npx skills add backnotprop/product-engineering</code> (Claude Code installs to <code>.claude/skills/</code>; other agents per skills.sh)</td><td class="opt">a <code>DESIGN.md</code> from pe-design, understand mode</td><td>a <code>.product/</code> folder for approved records, the QA list, and product notes</td></tr>
+    <tr><td class="k">product-engineering</td><td class="req">nothing beyond the install</td><td class="opt"></td><td>say "product engineering, …" and let it route</td></tr>
+    <tr><td class="k">pe-design</td><td class="req">a browser to open the HTML artifacts</td><td class="opt">the app running locally for vary mode's in-page picker; network for understand mode from a public URL</td><td>approvals land in <code>.product/approved/&lt;slug&gt;/</code></td></tr>
+    <tr><td class="k">pe-build</td><td class="req">the project's own dev server</td><td class="opt">the animations.dev course pack, installed locally with <code>foundry/scripts/course-dropin.sh</code> (purchasers only; never committed)</td><td>reads <code>DESIGN.md</code> and <code>.product/approved/</code> before building</td></tr>
+    <tr><td class="k">pe-review</td><td class="req">a diff, a URL, or a screenshot to review</td><td class="opt">a browser for screen and a11y modes</td><td>fidelity mode reads <code>.product/approved/</code></td></tr>
+    <tr><td class="k">pe-verify</td><td class="req">python3; Playwright with Chromium for browser checks</td><td class="opt">ffmpeg for mp4 recordings</td><td><code>.product/qa-list.md</code>; <code>~/.product-engineering/memories.md</code> remembers other locations</td></tr>
+    <tr><td class="k">pe-product-description</td><td class="req">the source repo path and commit; a way to run the product for verification</td><td class="opt">python3 for the link checker</td><td>output is its own repo of documents</td></tr>
+    <tr><td class="k">pe-brand-assets</td><td class="req"><code>DESIGN.md</code> or a <code>brand/</code> folder (it refuses to invent brand values)</td><td class="opt">an SVG-to-PNG renderer for OG and social images</td><td>SVG is the source of truth; PNG only where a destination requires it</td></tr>
+  </table></div>
+
+  <h2>The brand, on Nimbus</h2>
+  <p>Nimbus scaffolds the site as files we own, so the brand goes into <code>src/styles/globals.css</code> once and every component follows. The mapping is small because the brand is small.</p>
+  <div class="scroll"><table>
+    <tr><th>Nimbus token</th><th>Value from DESIGN.md</th><th>Note</th></tr>
+    <tr><td class="k">--nb-background</td><td>dark <code>#101114</code>, light <code>#FFFFFF</code></td><td>the body gets the radial gradient to <code>#23252B</code> (light: vertical to <code>#F1F1EF</code>), fixed, read as lighting</td></tr>
+    <tr><td class="k">--nb-foreground</td><td><code>#F5F5F4</code> / <code>#1A1B1E</code></td><td></td></tr>
+    <tr><td class="k">--nb-muted-foreground</td><td><code>#8B8D94</code> / <code>#71737A</code></td><td>faint step <code>#5C5E66</code> for mono metadata</td></tr>
+    <tr><td class="k">--nb-primary</td><td>= foreground</td><td>there is no accent; buttons and links are ink on ground</td></tr>
+    <tr><td class="k">--nb-card</td><td>linear <code>#1D1F24 → #121316</code></td><td>the one component; the skill cards and LinkCards share it</td></tr>
+    <tr><td class="k">--nb-font-sans / --nb-font-mono</td><td>Geist / Geist Mono, self-hosted via fontsource</td><td>replaces Inter and JetBrains Mono</td></tr>
+    <tr><td class="k">--nb-h1-*</td><td>600, <code>-0.03em</code>, lowercase wordmark; verb headlines keep sentence case</td><td></td></tr>
+    <tr><td class="k">status tokens</td><td>Nimbus defaults, desaturated slightly</td><td>used only inside asides and the setup matrix, never as accent</td></tr>
+  </table></div>
+  <h3>What stays from Nimbus untouched</h3>
+  <p>Search (Pagefind), the sidebar rail and mobile sidebar, breadcrumbs, the <code>.md</code> twins, <code>llms.txt</code> and <code>llms-full.txt</code>, sitemap and JSON-LD, per-page OG images, and the prose linter. The OG template is the only Nimbus asset restyled: it becomes the brand card, so a shared skill page previews as its own card.</p>
+  <h3>What is specific to this site</h3>
+  <ul>
+    <li>Two content collections beyond docs: <code>skills</code> and <code>people</code>, both fed by a build-time script that reads SKILL.md frontmatter and MANIFEST.json. A page cannot drift from the repo.</li>
+    <li>The provenance strip, a small component at the foot of every skill and reference page.</li>
+    <li>Rendered examples: a real pe-verify report and a real approved record, served as static files under <code>/examples/</code>.</li>
+    <li>No hero. The home page is the wordmark, one sentence, the install command, and the cards. The same restraint the brand already committed to.</li>
+  </ul>
+
+  <h2>Building it</h2>
+  <ol>
+    <li>Scaffold with <code>npx @cloudflare/create-nimbus-docs@latest docs</code> inside the repo (or a sibling repo; see the decision below), Cloudflare target, empty content.</li>
+    <li>Write the tokens into <code>globals.css</code> from DESIGN.md; self-host Geist and Geist Mono; restyle the OG route to the card.</li>
+    <li>Add <code>scripts/sync-docs-data.py</code>: reads the six SKILL.md files, MANIFEST.json, NOTICE, LEDGER.md; writes <code>src/data/skills.json</code> and <code>src/data/people.json</code>. Run it in CI next to check-integrity.sh so the site fails the same way the kit does.</li>
+    <li>Author the Start pages and the seven skill pages (say this, get this; setup; handoffs), then the four workflow pages.</li>
+    <li>Generate the People pages from the data; review the wording of each "what we carry" line with the author's own README as the source.</li>
+    <li>Add the site to the foundry RIPPLE step in the repo: a new skill or mode is not done until its docs page and the sync data agree.</li>
+    <li>Deploy to Cloudflare; point the README's skill links at the site once it is live.</li>
+  </ol>
+
+  <h2>Decisions to make</h2>
+  <ul>
+    <li><b>Where it lives.</b> A <code>docs/</code> folder in product-engineering keeps sync trivial and the RIPPLE honest; a separate repo keeps the kit's tree clean for <code>npx skills add</code>. I'd keep it in the repo, excluded from the skill install.</li>
+    <li><b>Domain.</b> Anything works; the wordmark carries the identity, not the URL.</li>
+    <li><b>Tribute pages and the authors.</b> Generated pages with receipts need no permission. A bio, photo, or quote does; I'd ask each author for one line, or leave it out.</li>
+    <li><b>Default theme.</b> The brand is dark-first; Nimbus defaults to light. I'd default to system preference and design both, as the hero SVGs already do.</li>
+  </ul>
+</div>
+
+<script>
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const show = t => {
+    tabs.forEach(b => { const on = b === t; b.setAttribute('aria-selected', on); document.getElementById(b.getAttribute('aria-controls')).hidden = !on; });
+    try { localStorage.setItem('pe-docs-mock', t.id); } catch (e) {}
+  };
+  tabs.forEach(b => b.addEventListener('click', () => show(b)));
+  document.querySelector('.tabs').addEventListener('keydown', e => {
+    const i = tabs.indexOf(document.activeElement); if (i < 0) return;
+    if (e.key === 'ArrowRight') { tabs[(i + 1) % tabs.length].focus(); show(tabs[(i + 1) % tabs.length]); }
+    if (e.key === 'ArrowLeft') { tabs[(i - 1 + tabs.length) % tabs.length].focus(); show(tabs[(i - 1 + tabs.length) % tabs.length]); }
+  });
+  try { const saved = localStorage.getItem('pe-docs-mock'); const t = saved && document.getElementById(saved); if (t) show(t); } catch (e) {}
+</script>
