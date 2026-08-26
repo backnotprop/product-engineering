@@ -343,7 +343,7 @@ function paletteRender() {
     ["fail","flag","pass","skipped"].concat(run.selection === "selective" ? ["not-run"] : []).map(s => `<button class="pill s-${s}" data-pv="${s}" aria-pressed="${pStatus.has(s)}"><b>${n(s)}</b> ${sname(s)}</button>`).join("");
   document.querySelectorAll("#pfilters .pill").forEach(b => b.addEventListener("click", () => { const v = b.dataset.pv; if (!v) pStatus.clear(); else pStatus.has(v) ? pStatus.delete(v) : pStatus.add(v); pIdx = 0; paletteRender(); pq.focus(); }));
   pIdx = Math.min(pIdx, Math.max(0, items.length-1));
-  plist.innerHTML = items.map((it,i) => `<li class="s-${it.status} ${i===pIdx?"on":""}" data-id="${it.id}"><span class="dot"></span><span>${esc(it.title)}</span><small>${esc(it.check_type)} · ${esc(it.status)}</small></li>`).join("") || `<li><span></span><span style="color:var(--faint)">no matches</span></li>`;
+  plist.innerHTML = items.map((it,i) => `<li class="s-${it.status} ${i===pIdx?"on":""}" data-id="${it.id}"><span class="dot"></span><span>${esc(it.title)}</span><small>${esc(it.check_type)} · ${sname(it.status)}</small></li>`).join("") || `<li><span></span><span style="color:var(--faint)">no matches</span></li>`;
   pcount.textContent = `${items.length} of ${run.items.length}`;
   plist.querySelectorAll("li[data-id]").forEach((li,i) => { li.addEventListener("mouseenter", () => { pIdx = i; plist.querySelectorAll("li").forEach((x,j)=>x.classList.toggle("on", j===i)); }); li.addEventListener("click", () => paletteGo(li.dataset.id)); });
 }
