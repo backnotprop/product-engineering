@@ -17,7 +17,7 @@ npx skills add backnotprop/product-engineering
   <a href="skills/pe-build"><img src="brand/cards/pe-build.svg" width="49%" alt="pe-build — Build it. Polished, accessible, production-ready code. Modes: craft, motion, a11y, harden."></a>
 </p>
 <p>
-  <a href="skills/pe-review"><img src="brand/cards/pe-review.svg" width="49%" alt="pe-review — Judge it. Prioritized findings on any screen, diff, or PR. Modes: change, screen, plans, guidelines, stress, motion, a11y."></a>
+  <a href="skills/pe-review"><img src="brand/cards/pe-review.svg?v=2" width="49%" alt="pe-review — Judge it. Prioritized findings on any screen, diff, or PR. Modes: change, screen, improve, guidelines, stress, motion, a11y."></a>
   <a href="skills/pe-product-description"><img src="brand/cards/pe-product-description.svg" width="49%" alt="pe-product-description — Describe it. A verified spec of how your product behaves."></a>
 </p>
 <p>
