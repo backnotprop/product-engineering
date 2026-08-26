@@ -35,6 +35,10 @@
       "url": null,
       "license": "UNLICENSED-PRIVATE",
       "license_note": "Purchased course pack. No remote. Files never enter this repository; private drop-in only (class private)."
+    },
+    "Leonxlnx/taste-skill": {
+      "url": "https://github.com/Leonxlnx/taste-skill.git",
+      "license": "MIT"
     }
   },
   "files": {
@@ -48,29 +52,9 @@
       "skill": "project-context",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
-    "skills/ui-harden/references/adaptation-patterns.md": {
-      "class": "authored",
-      "skill": "ui-harden",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
-    "skills/ui-harden/references/performance-diagnostics.md": {
-      "class": "authored",
-      "skill": "ui-harden",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
-    "skills/ui-harden/references/resilience-matrix.md": {
-      "class": "authored",
-      "skill": "ui-harden",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
     "skills/ui-onboarding/references/onboarding-patterns.md": {
       "class": "authored",
       "skill": "ui-onboarding",
-      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
-    },
-    "skills/ui-polish/references/polish-lenses.md": {
-      "class": "authored",
-      "skill": "ui-polish",
       "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
     },
     "skills/review/references/engine.md": {
@@ -253,6 +237,717 @@
       "lifted": "2026-08-25",
       "skill": "review",
       "rulings": []
+    },
+    "skills/build/references/craft/ui/index.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "21cf641dc53e926eccaf523f2f834e970058bd59af4617d8bdd3393f10641553",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/ui/animations.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/animations.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "5d2d9e4cefab494b6dd0683e7d2d9bc90788df9c536449c0828c241de965e846",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/ui/enter-exit.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/enter-exit.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "8db1b33d6c80a097218a530cb9749dff4b0a2b992236047a2e88661af5e930ea",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/ui/icon-transitions.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/icon-transitions.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "60098242d33133a35a675719c447129b8931aecfbf05d58a6e2aa01e7894694e",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/ui/icons.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/icons.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "74cc78322874df4e2286bb0f5835d68114f74be1c94f993c94f6af692f44733b",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/ui/performance.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/performance.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "e4bc3c90d6e0281d295e2e7e39d545fb9abd8a67667b0c10e589eda8115e5b1e",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/ui/surfaces.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-ui/surfaces.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "5508a7caf07ae8de616e7d83e282d4a08c026dd7a2d3cf54979609e4e0301048",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/layout/index.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-layout/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "658f42ba16a656be37ec7b8e337ba94ae50e123815f264e68319d07943e05737",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/layout/grouping-and-alignment.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-layout/grouping-and-alignment.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "027edd034ab641e8affc2ec02ca97ee0824d86756b14e11de908d62f5d086fb1",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/layout/spacing-and-adaptivity.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-layout/spacing-and-adaptivity.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "bf46b0857efa5022e6918eda026827e9de2747f3f349b5a6787a2322179abe77",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/index.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "a5d9e3560ee84087f65443aad266e62bfd9c9d4143c48424c5046624ac5b631d",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/choosing-fonts.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/choosing-fonts.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "d139ec5d68cd123bc305d920295f7bc95a1e1123674de96d19103c1ebffc85c9",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/css-cheat-sheet.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/css-cheat-sheet.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "45c77f0d1954e12e76c3903361f52703cb4f4287d54c651710f60926247165fb",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/details-and-accessibility.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/details-and-accessibility.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "d74e2719ee793fbf7408883e0e5eb396b67514ce07e02412f33d5408ecb4a02e",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/spacing-and-sizing.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/spacing-and-sizing.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "e28e7899a73a8b17f38418dfd8c1afda116db81a3b68d53dd51eab019b20ab82",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/variable-fonts-and-opentype.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/variable-fonts-and-opentype.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "2bf1317ea5c0af6e36c57d15aacea512e450acbe4b00a8664c4619a959dea0b0",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/typography/wrapping-and-punctuation.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-typography/wrapping-and-punctuation.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "7cfa3463b68cf21f08ab01a184b12c8bf2fe9340c2c7691a8cc99e4569389efe",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/index.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "765d1dc6ff9bdd82b130c81c77095df21150f2c3fc8467ae429638a52e995f6d",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/color-formats.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/color-formats.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "e68fffec8f7b8e1036c295fce8d65785764f33aead5d292389c47451e79d7129",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/color-usage.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/color-usage.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "dbaa4a4cb10b8118165fca4531b3c35b409c79185f15a2812a34f118293dba9f",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/contrast.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/contrast.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "f9a2f8ca2fd7966ea0002a9dd58b9d392fbb14fc6f4365534c488046337e5971",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/palette-generation.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/palette-generation.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "f3e3f9fc84fd834cfffd9e0c951f28c3f24c3c4a4492d86b697d3258f500fb85",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/palette-structure.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/palette-structure.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "82b22d74ead2a551a2a505347273025020d84dcde4a0170ea2fd14290dc10387",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/colors/token-naming.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-colors/token-naming.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "198ca90a643d52f446fe423464908e900d31923ee7d13d6454c8b791326d6b2a",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/writing/index.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-writing/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "344a18f178634b5004277f45b7e817f89fb42025cd646d44d71d3ba7a929fd28",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/index.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/SKILL.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "d59f56116485ea09f6c94f86ad2dc0adfa98aefbace52df56c9ee4ac0c3ddf17",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/focus-and-keyboard.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/focus-and-keyboard.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "9ba63027fa8f1b53e4947ee3341e0580347121f3ccb7698f2936d33563ffa4ba",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/forms.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/forms.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "b08451ee17861cae49553ba71a122be80c21197087efcc43137862a1db2c5c34",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/hit-areas.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/hit-areas.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "8c0982229cc01aee419e9c80a4085d5c59a0e7b2b16a4f616a12e9fa0fa094f5",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/motion-and-zoom.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/motion-and-zoom.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "3efc88394bc958a6e88ecbc8c8e37999df7de0e19730e5784d0e9e5efda696ee",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/screen-readers.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/screen-readers.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "a35b69db4568e74351a28606328505773f9a1e9ec370e92fbfb2117543c3637a",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/a11y/semantics-and-aria.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "skills/better-accessibility/semantics-and-aria.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "e663b6708ac7f4d4d88e884c604cc3e99c1b424ae78209cf4e2430f4966d39b6",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "foundry/ownership-matrix.md": {
+      "class": "verbatim",
+      "upstream": "jakubkrehel/skills",
+      "upstream_path": "AGENTS.md",
+      "pinned_sha": "ca483852de23d48ab4f4ea71da37dad12bd70a95",
+      "sha256": "828282879dcbb24dc4bf29ac6a99aa9c1f458e4c48ac2ab927e73e17d4a15a0f",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/emil-craft.md": {
+      "class": "verbatim-minus",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/emil-design-eng/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "c1218fab384f3798952e7f7846e9681573b2bb36d9fbca48496b66ccb57d3f5d",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__build__references__craft__emil-craft.md",
+      "patch": "foundry/pristine/skills__build__references__craft__emil-craft.md.patch"
+    },
+    "skills/build/references/craft/library-choices.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/pick-ui-library/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "4b889bd6c08358499ac4a7202b8af71ffbd3485d2468f7b09d0613bbe7b24bf4",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/build.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/animate/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "f6317335da2662e92270dc0a6128bea95d7216cd751f86628e3ac6b72804e805",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/recipes.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/animate/RECIPES.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "21ff63d84391db8d96ecdf9170095f55a42c836ccc36fd3269c4772bab031ba2",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/apple-design.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/apple-design/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "11840b24a11d7f94f39c6aaab074750ae4e4de4ef54ee4b1dd97e16ebd485e61",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/vocabulary.md": {
+      "class": "verbatim",
+      "upstream": "emilkowalski/skills",
+      "upstream_path": "skills/animation-vocabulary/SKILL.md",
+      "pinned_sha": "d23d7f88a2e21c9e4b1418c7abe420f5c1052ba7",
+      "sha256": "d718b48fe3c7898804d588f050a2e266d82c9f5ef51da256c8cb8b5951527757",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/generation-guardrails.md": {
+      "class": "verbatim",
+      "upstream": "ibelick/ui-skills",
+      "upstream_path": "skills/baseline-ui/SKILL.md",
+      "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+      "sha256": "fea3322f36d58fdafafce2aef56e4556dd2ac7b20876b7dff7d8be7f25fa597f",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/harden/metadata.md": {
+      "class": "verbatim",
+      "upstream": "ibelick/ui-skills",
+      "upstream_path": "skills/fixing-metadata/SKILL.md",
+      "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+      "sha256": "b8315ff95a92dcfa48c33e2b4838a31d9448bd46252aab45726549ce865d6547",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/perf-additions.md": {
+      "class": "distilled",
+      "upstream": "ibelick/ui-skills",
+      "upstream_path": "skills/fixing-motion-performance/SKILL.md",
+      "pinned_sha": "ff7ca0a475e0dbb26a2db458beb03081b3dfd892",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": [],
+      "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
+      "sha256": "b266d753567b3889128786ee9074daa68a6fa3b54c432cd994bc27b941fe0858",
+      "updated": "2026-08-25"
+    },
+    "skills/build/references/motion/view-transitions/index.md": {
+      "class": "verbatim",
+      "upstream": "vercel-labs/agent-skills",
+      "upstream_path": "skills/react-view-transitions/SKILL.md",
+      "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+      "sha256": "d596c05e53b96a3475a9ab303a7a23f13f1153cb169c1d1b3b882094f58570bc",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/view-transitions/css-recipes.md": {
+      "class": "verbatim",
+      "upstream": "vercel-labs/agent-skills",
+      "upstream_path": "skills/react-view-transitions/references/css-recipes.md",
+      "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+      "sha256": "41f880f3a62b53b46f1ccc540401e4bc19522dfbd1ecd65d18d0b72fec44e829",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/view-transitions/implementation.md": {
+      "class": "verbatim",
+      "upstream": "vercel-labs/agent-skills",
+      "upstream_path": "skills/react-view-transitions/references/implementation.md",
+      "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+      "sha256": "f36958ff58ed3b8b7da008df5a59e99a67f46b3a6f590274fdc44b89f017f05d",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/view-transitions/nextjs.md": {
+      "class": "verbatim",
+      "upstream": "vercel-labs/agent-skills",
+      "upstream_path": "skills/react-view-transitions/references/nextjs.md",
+      "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+      "sha256": "1d595c3a9d5270d958db9f2924013ac0602d024d0473582b68c61363b06f7856",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/motion/view-transitions/patterns.md": {
+      "class": "verbatim",
+      "upstream": "vercel-labs/agent-skills",
+      "upstream_path": "skills/react-view-transitions/references/patterns.md",
+      "pinned_sha": "dd089a8c752c966dee8bf0f27cb625ba193ffd9e",
+      "sha256": "970f94c2afb086b8b3ffafd05d223ba71595f20ecd6db671b458db88b247e627",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": []
+    },
+    "skills/build/references/craft/deslop-audit.md": {
+      "class": "verbatim-minus",
+      "upstream": "Leonxlnx/taste-skill",
+      "upstream_path": "skills/redesign-skill/SKILL.md",
+      "pinned_sha": "ccbc15639c97057cbfcf32ecebc38ef716e4bb37",
+      "sha256": "82c6cd959e0869fb1de92e806b7e8eea622fea988d8cdfaf048fb72a489846e8",
+      "lifted": "2026-08-25",
+      "skill": "build",
+      "rulings": [],
+      "pristine": "foundry/pristine/skills__build__references__craft__deslop-audit.md",
+      "patch": "foundry/pristine/skills__build__references__craft__deslop-audit.md.patch"
+    },
+    "skills/build/references/craft/polish-lenses.md": {
+      "class": "authored",
+      "skill": "build",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/build/references/harden/adaptation-patterns.md": {
+      "class": "authored",
+      "skill": "build",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/build/references/harden/performance-diagnostics.md": {
+      "class": "authored",
+      "skill": "build",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/build/references/harden/resilience-matrix.md": {
+      "class": "authored",
+      "skill": "build",
+      "note": "legacy ui-skills reference (Impeccable-derived, ours) \u2014 carries into the new five"
+    },
+    "skills/build/references/harden/index.md": {
+      "class": "authored",
+      "skill": "build",
+      "note": "legacy ui-harden SKILL.md converted to the harden-mode reference; ours (Impeccable-derived)"
+    },
+    "skills/build/references/course/craft-design-rules.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/emil-design-engineering/design-rules.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "f42e43fa9ab241a37b059d86c4e2839a642109403a34f1906b2ae3a33b09ffa0",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/craft-forms-controls.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/emil-design-engineering/forms-controls.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "cd82c766de1fa711038c46e7ea0825aae7cc1785dd4754d5ae73198c6df1f4a5",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/craft-touch-accessibility.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/emil-design-engineering/touch-accessibility.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "30e6d400548efe749d7e0006eae8a6844652b1219bdc23ec06a0559fcdb42b12",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/craft-ui-polish.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/emil-design-engineering/ui-polish.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "90db587c855176092bbd9e05c386d8fb93da1946c8f3ab3f691dfccdc96ff9da",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/craft-marketing.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/emil-design-engineering/marketing.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "5a794932dd386c9587768f292ff7ba54f3ac595c468865ad90c951f51ef001bb",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-animate.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animate/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "8f195581404211b3fdfecf66780f029c55ff910682e701705c2657189f82da0e",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-css-techniques.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animate/css-techniques.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "e162d662c680f5cac4b989297901f27b695f2f3f3aa055d425f298aea845992f",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-framer-motion.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animate/framer-motion.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "ae4bedfbac45c5ca3b2cd5f0cee135a7fbb4031912773a69187b32fa7114ec11",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-svg-animation.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animate/svg-animation.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "708ef19f84b3ce1dd2eefd59dee4dd1398cfaf3d9141ac37bb2ca88eb1adbede",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-css-animations.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/css-animations/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "4b9e550e8ee83f86dab1c21e21f37fb97d9cfdf3d985169be38a8764f6e8b184",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-css-recipes.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/css-animations/RECIPES.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "9becfc9cdbe99f54c5baada1ac8ab8095206a179e1cec5a8358fe8fc25c73ff1",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-react.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/motion-react/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "fc6653fb0e4c02a76f0c55b9fe3cc17da589278fad724aa050bd37760ad7d6af",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-react-recipes.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/motion-react/RECIPES.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "aba7c94caca02d939e42a3c8b720fd62c9c72f49b4adfca899225e27c4104cdd",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-gesture-ui.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/gesture-ui/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "4329c609a6f9ba4372d52fe6887d0bf865e80835e2cd095ecfb0b613a14124da",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-scroll-animations.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/scroll-animations/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "746d7a66cb8349e0d02d6f4f065a63ed1caea89d81a58e017bf0499f70aab157",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-debug.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/debug-animation/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "a7dbe0d2e809b6fc2013777fb977829c803cd4ea0e053c6d6609a17594adbd46",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-performance.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animation-performance/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "a52de3775834ab6e88210d29586cac7534c3511d34e709ec21cd800c1ec62e09",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-accessibility.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animation-accessibility/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "584f0f40783d91f7bd36702676d10633a2b9bf4d5a8f90b711101dc3b282157e",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-a11y-snippets.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/animation-accessibility/SNIPPETS.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "f9e41fa56f5593cbfb0da72c3f43bbdee410e81ffe627f98564aa12f6e4e69f1",
+      "lifted": "2026-08-25"
+    },
+    "skills/build/references/course/motion-brief.md": {
+      "class": "verbatim",
+      "private": true,
+      "upstream": "animationsdev",
+      "upstream_path": ".claude/skills/motion-brief/SKILL.md",
+      "skill": "build",
+      "note": "purchased course content \u2014 local drop-in only, never committed",
+      "sha256": "a44ab9201a7f26d6df9476625d3636c07fe6c65fa14184e93f89aca5ccd039b0",
+      "lifted": "2026-08-25"
     }
   }
 }
