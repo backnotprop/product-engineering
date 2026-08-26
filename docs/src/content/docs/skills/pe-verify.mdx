@@ -4,13 +4,14 @@ description: Pass or fail on every check, with recordings.
 sidebar:
   order: 4
   label: pe-verify
+# the example links point at static files under public/, which the link rule cannot see
+nimbusDisableRules:
+  - nimbus/internal-link
 ---
 
-<SkillLine skill="pe-verify" />
-
-Proof that behavior works. The skill drives the product in Playwright, records what
-happens, captures a still at each checkpoint, and writes one JSON file; a script in the
-skill renders it into a report that opens in your browser.
+The skill drives the product in Playwright, records what happens, captures a still at
+each checkpoint, and writes one JSON file; a script in the skill renders it into a report
+that opens in your browser.
 
 ## Say this, get this
 
@@ -23,28 +24,40 @@ skill renders it into a report that opens in your browser.
 
 ## Modes
 
-<Modes skill="pe-verify" />
+{/* sync:modes */}
+| Mode | When |
+| --- | --- |
+| `feature` | "Verify this", "create a verification for X", or the last step after a build. The checks come from the change and the conversation: what was built, what the user said it must do, what it must not break. |
+| `list` | "Run the QA list", "release check", "QA". The user's own markdown list, found under `.product/`; one report item per list entry, every entry present. |
+{/* /sync:modes */}
 
 A list run is selective or all, and the report says which. Selective when you name a
 change set; all when you say "everything" or name none. Every entry from your list
 appears in the report either way.
 
-## The report
-
-Counts by status up top, failures and flags first. Each browser item has a player with
-a checkpoint list, narration per checkpoint, and hover previews on the progress bar.
-Filters by status and type, a search box, and a jump palette (`J`). Everything a run
-produces lands in a temp folder, never in the repo. The JSON contract is in
-[the report contract](/reference/report-contract).
-
 ## Setup
 
-<Setup
-  required={["python3, for the validator and renderer (no packages)", "Playwright with Chromium, for browser checks; without it they report skipped and code checks still run"]}
-  optional={["ffmpeg, to convert recordings to mp4; otherwise the report plays webm"]}
-  convention={["a QA list in `.product/`; other locations are remembered in `~/.product-engineering/memories.md`"]}
-  command="npx playwright install chromium"
-/>
+| | |
+| --- | --- |
+| `required` | python3, for the validator and renderer (no packages) |
+| `required` | Playwright with Chromium, for browser checks; without it they report skipped and code checks still run |
+| `optional` | ffmpeg, to convert recordings to mp4; otherwise the report plays webm |
+| `convention` | a QA list in `.product/`; other locations are remembered in `~/.product-engineering/memories.md` |
+
+```sh
+npx playwright install chromium
+```
+
+## What it produces
+
+One `report.json` in a temp folder, rendered to `report.html` beside it. Counts by status
+up top, failures and flags first. Each browser item has a player with a checkpoint list,
+narration per checkpoint, and hover previews on the progress bar; filters by status and
+type, a search box, and a jump palette (`J`). Nothing is written to the repo.
+
+A real report: <a href="/examples/verify-report/report.html">the sample feature run</a>, rendered
+from the skill's own sample. The JSON contract is in
+[the report contract](/reference/report-contract).
 
 ## Handoffs
 
@@ -53,4 +66,9 @@ Fails: [pe-build](/skills/pe-build), with their evidence. Whether it looks right
 fidelity mode. Documenting the behavior verified:
 [pe-product-description](/skills/pe-product-description).
 
-<Provenance skill="pe-verify" />
+## Provenance
+
+{/* sync:provenance */}
+Authored in this repository: 3 references, 0 vendored files.  
+Apache-2.0 · [skills/pe-verify](https://github.com/backnotprop/product-engineering/tree/main/skills/pe-verify)
+{/* /sync:provenance */}

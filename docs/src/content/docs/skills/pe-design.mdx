@@ -4,13 +4,14 @@ description: Context docs, creative direction, mockups, prototypes.
 sidebar:
   order: 1
   label: pe-design
+# the example links point at static files under public/, which the link rule cannot see
+nimbusDisableRules:
+  - nimbus/internal-link
 ---
 
-<SkillLine skill="pe-design" />
-
-Everything before production code. The deliverable is a document or an artifact, never
-code, and the authority runs in one direction: your words, then the project's design
-system, then the subject, then the skill's judgment.
+Everything before production code. The deliverable is a document or an artifact, and
+the authority runs in one direction: your words, then the project's design system, then
+the subject, then the skill's judgment.
 
 ## Say this, get this
 
@@ -26,26 +27,43 @@ system, then the subject, then the skill's judgment.
 
 ## Modes
 
-<Modes skill="pe-design" />
+{/* sync:modes */}
+| Mode | When |
+| --- | --- |
+| `understand` | "Document our product / design system", DESIGN.md work |
+| `brief` | "Write a brief for X", "spec this feature" — planning one feature, surface, or flow before code |
+| `direct` | "How should this look / feel", creative direction, a register or palette decision |
+| `mock` | Wireframe, mockup, prototype, diagram, or plan as an HTML artifact |
+| `vary` | "Show me N versions", compare directions in the real page |
+| `onboard` | First-run, activation, setup, empty states, tours |
+{/* /sync:modes */}
 
 Understand documents the whole product durably; brief plans one feature. A mockup of
 something new is mock; several takes on one existing piece is vary.
 
-## Approval
-
-The skill writes a record only on your explicit approval: "this is it", "ship this",
-"approved". Praise is not approval; if the words could mean either, it asks one line
-first. The record holds the artifact byte-for-byte, its source, and `approval.md`:
-date, who, the exact state approved, the decisions on the way, what is out of scope.
-[The approved record](/reference/approved-record) has the full rules.
-
 ## Setup
 
-<Setup
-  required={["a browser to open the HTML artifacts"]}
-  optional={["the app running locally, for vary mode's picker in the real page", "network access, for understand mode from a public URL"]}
-  convention={["`DESIGN.md` at the repo root, which the other skills read", "approvals land in `.product/approved/<slug>/`"]}
-/>
+| | |
+| --- | --- |
+| `required` | a browser to open the HTML artifacts |
+| `optional` | the app running locally, for vary mode's picker in the real page |
+| `optional` | network access, for understand mode from a public URL |
+| `convention` | `DESIGN.md` at the repo root, which the other skills read |
+| `convention` | approvals land in `.product/approved/<slug>/` |
+
+## What it produces
+
+Documents (`PRODUCT.md`, `DESIGN.md`, a brief) and single-file HTML artifacts that open
+without a build step. On your explicit approval ("this is it", "ship this", "approved")
+the skill writes `.product/approved/<slug>/`: the artifact byte-for-byte, its source, and
+`approval.md` with the date, who approved, the exact state approved, the decisions on
+the way, and what is out of scope. A compliment is not read as approval; when the words
+could mean either, it asks one line first.
+
+A real record: <a href="/examples/approved-record/docs-concept.html">docs-site-concept</a>, the
+approved concept for this site, with its
+[approval.md](https://github.com/backnotprop/product-engineering/blob/main/.product/approved/docs-site-concept/approval.md).
+The rules are in [the approved record](/reference/approved-record).
 
 ## Handoffs
 
@@ -54,4 +72,9 @@ with the record named. Judging existing UI: [pe-review](/skills/pe-review). Beha
 specs beyond `PRODUCT.md`: [pe-product-description](/skills/pe-product-description).
 Standalone on-brand assets: [pe-brand-assets](/skills/pe-brand-assets).
 
-<Provenance skill="pe-design" />
+## Provenance
+
+{/* sync:provenance */}
+Carries 20 files from [Plannotator](/people/plannotator) (10), [Leon](/people/leon) (5), [Emil Kowalski](/people/emil-kowalski) (2), [Jakub Krehel](/people/jakub-krehel) (1), [Julien Thibeaut](/people/julien-thibeaut) (1), [Paul Bakaus](/people/paul-bakaus) (1), and 5 authored here. Every vendored file is hash-locked to a pinned upstream commit.  
+Apache-2.0 · [skills/pe-design](https://github.com/backnotprop/product-engineering/tree/main/skills/pe-design)
+{/* /sync:provenance */}

@@ -72,12 +72,11 @@ target, what must stay unchanged, and the surface's job; read `DESIGN.md`; read
 `.product/approved/` for a record matching the target. The record ranks above the
 skill's judgment and below your words. Any deviation (a platform constraint, an
 accessibility requirement) is stated before it is made, never applied silently.
-
 Then Evidence (the real code and the rendered result), Triage (blocked tasks first,
 missing states next, then flow, then visual and copy consistency), Implement, and
-Verify (the whole path, states, viewports, zoom, focus, console, at most two visual
-rounds). What comes back is code in your stack plus a report: what changed, what was
-preserved, what remains, and the record built against with each stated deviation.
+Verify (the whole path, states, viewports, zoom, focus, console, two visual rounds
+at most). What comes back is code in your stack plus a report: what changed, what
+was preserved, what remains, and the record built against with each deviation.
 "Animate the panel" and "make it accessible" run the same loop in motion and a11y
 modes; "get it ready for production" runs harden mode and then hands to pe-verify.
 
@@ -88,8 +87,7 @@ modes; "get it ready for production" runs harden mode and then hands to pe-verif
 [pe-review](/skills/pe-review), fidelity mode. It runs whenever a reviewed surface
 has a record. It reads the undated folder under `.product/approved/`, puts the
 artifact into the state `approval.md` names, and compares structure, hierarchy,
-states, copy, spacing, and behavior, in that order, at every viewport the artifact
-demonstrates.
+states, copy, spacing, and behavior, in that order, at every viewport shown.
 
 What comes back is one finding per deviation: file:line, the artifact region, what
 the artifact shows, what the build shows, a severity, and the change that restores
@@ -110,9 +108,8 @@ version, say so: pe-design approves a new version, which supersedes the record.
 
 [pe-verify](/skills/pe-verify), feature mode. The checks come from the change and
 the conversation: what was built, what you said it must do, what it must not break.
-Scope names the target, the commit, and how the product is reached, and checks that
-Playwright has a browser; when it does not, the skill offers
-`npx playwright install chromium` in one line and continues either way.
+Scope names the target, the commit, and how the product is reached, and checks for a
+Playwright browser, offering `npx playwright install chromium` in one line if absent.
 
 Browser checks run at 1280x800 with a recording and three to six checkpoint stills;
 code checks capture the command or the trace. Everything lands in a temp folder,

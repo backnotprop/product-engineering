@@ -6,9 +6,7 @@ sidebar:
   label: pe-review
 ---
 
-<SkillLine skill="pe-review" />
-
-Read-only judgment of existing UI. It never edits code, even for a one-character fix:
+Read-only judgment of existing UI. It edits nothing, including one-character fixes:
 findings name the change, and applying it is pe-build's job.
 
 ## Say this, get this
@@ -21,29 +19,42 @@ findings name the change, and applying it is pe-build's job.
 | "Check this against the guidelines" | A terse file:line lint against the Web Interface Guidelines |
 | "Will this component survive?" | The component rendered in every hostile state |
 | "Review the animations" | Motion findings against the standards; opportunities on request |
-| "Is this accessible?" | An accessibility audit; its findings are never discarded |
+| "Is this accessible?" | An accessibility audit; its findings are always kept |
 | "Did we stay true to the mock?" | Every deviation from the approved record, with severity |
 
 ## Modes
 
-<Modes skill="pe-review" />
+{/* sync:modes */}
+| Mode | When |
+| --- | --- |
+| `change` | A diff, branch, PR, or "review my changes" is named. Always wins over screen when both could apply. |
+| `screen` | A screen, page, site, or screenshot; "review this UI." |
+| `improve` | "Audit this and give me a roadmap", "improve the app" — whole-surface improvement, delivered as self-contained plans another agent executes. Explicit invocation only. |
+| `guidelines` | "Check against best practices / the guidelines"; terse file:line lint of UI code. |
+| `stress` | "Does this component survive?" — render one component in every hostile state. Explicit invocation only. |
+| `motion` | "Review the animations / motion." For a whole-codebase motion audit with plans, add `motion-audit.md` + `motion-audit-signals.md` + `plan-template.md`. |
+| `opportunities` | "What could be animated here?" — read-only; proposes motion with exact values, never implements. Explicit invocation only. |
+| `a11y` | "Is this accessible?" — audit, not implementation. |
+| `fidelity` | "Did we stay true to the mock / design?" — the implementation against the approved artifact in `.product/approved/`; every deviation is a finding with severity. Implied whenever a reviewed surface has an approved record. |
+{/* /sync:modes */}
 
 Verb beats noun: "review the animation" is motion mode here; "fix the animation" is
 pe-build. A named diff, branch, or PR is always change mode.
 
-## Findings
-
-Severity is HIGH, MEDIUM, or LOW, plus the engine's escalation triggers. Every finding
-carries evidence: a file:line or a screenshot, and the change that resolves it. A
-request that mixes modes runs the engine once and consolidates.
-
 ## Setup
 
-<Setup
-  required={["a diff, branch, or PR; a URL; or a screenshot, depending on the mode"]}
-  optional={["a browser, for screen and a11y modes on a running product"]}
-  convention={["fidelity mode reads `.product/approved/`; unstamped mocks go to pe-design for approval first"]}
-/>
+| | |
+| --- | --- |
+| `required` | a diff, branch, or PR; a URL; or a screenshot, depending on the mode |
+| `optional` | a browser, for screen and a11y modes on a running product |
+| `convention` | fidelity mode reads `.product/approved/`; an unstamped mock goes to pe-design for approval first |
+
+## What it produces
+
+Findings with a severity of HIGH, MEDIUM, or LOW plus the engine's escalation triggers,
+each with evidence (a file:line or a screenshot) and the change that resolves it, ending
+in a verdict. A request that mixes modes runs the engine once and consolidates. The
+[Review a PR](/workflows/review-a-pr) workflow shows a full report.
 
 ## Handoffs
 
@@ -51,4 +62,9 @@ Fixes: [pe-build](/skills/pe-build). Proof that behavior works end to end, with
 recordings: [pe-verify](/skills/pe-verify). Documenting the system a review revealed:
 [pe-design](/skills/pe-design), understand mode.
 
-<Provenance skill="pe-review" />
+## Provenance
+
+{/* sync:provenance */}
+Carries 16 files from [Jakub Krehel](/people/jakub-krehel) (7), [Emil Kowalski](/people/emil-kowalski) (6), [Julien Thibeaut](/people/julien-thibeaut) (2), [Vercel](/people/vercel) (1), and 4 authored here. Every vendored file is hash-locked to a pinned upstream commit.  
+Apache-2.0 · [skills/pe-review](https://github.com/backnotprop/product-engineering/tree/main/skills/pe-review)
+{/* /sync:provenance */}

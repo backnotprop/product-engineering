@@ -6,10 +6,8 @@ sidebar:
   label: pe-brand-assets
 ---
 
-<SkillLine skill="pe-brand-assets" />
-
 Standalone assets that belong to the brand, authored as SVG in code. The skill reads
-your brand truth first and refuses to invent values; restraint is the default register,
+your brand truth first and uses only recorded values; restraint is the default register,
 and the typographic answer comes before any drawn element.
 
 ## Say this, get this
@@ -17,25 +15,30 @@ and the typographic answer comes before any drawn element.
 | You say | You get |
 | --- | --- |
 | "Make an SVG header image for this post" | One atmospheric asset from your recorded brand values |
-| "Make the repo's social image" | SVG as the source, PNG at 1280×640 for GitHub, 1200×630 for OG |
+| "Make the repo's social image" | SVG as the source, PNG at 1280×640 for GitHub and 1200×630 for OG |
 | "Logo concepts" | Two or three genuinely different candidates, each with its method named |
 | "An on-brand image of the new feature" | A concept image; an interactive mock is pe-design |
 
-## How it runs
+## Modes
 
-Locate brand truth (`DESIGN.md`, a style guide, a `brand/` folder) or stop. Derive the
-asset's rules from it. Author the SVG, critique it against the anti-generic tells, redo.
-Export to PNG where SVG cannot go. Verify every color maps to a token and the asset
-reads at its real size on both grounds. Report what was used and what should graduate
-into `DESIGN.md`.
+{/* sync:modes */}
+This skill has no modes: one workflow, run in phases.
+{/* /sync:modes */}
 
 ## Setup
 
-<Setup
-  required={["`DESIGN.md` or a `brand/` folder; without one, the skill offers to run pe-design, understand mode, first"]}
-  optional={["an SVG-to-PNG renderer, for OG and social images"]}
-  convention={["SVG is the source of truth; PNG only where a destination requires it"]}
-/>
+| | |
+| --- | --- |
+| `required` | brand truth: `DESIGN.md`, a style guide, or a `brand/` folder; with none of these, the skill offers pe-design's understand mode or proceeds only on values you supply, labeled provisional |
+| `optional` | an SVG-to-PNG renderer, for OG and social images |
+| `convention` | SVG is the source of truth; PNG only where a destination requires it |
+
+## What it produces
+
+SVG files with a real `viewBox` and named groups, plus PNG exports where a destination
+requires raster, and a report: the tokens and motifs used, the method chosen, placement,
+sizes, and anything provisional that should graduate into `DESIGN.md`. Every asset is
+critiqued against the anti-generic tells and redone before it ships.
 
 ## Handoffs
 
@@ -43,4 +46,9 @@ No brand truth: [pe-design](/skills/pe-design), understand mode. The asset becom
 component: [pe-build](/skills/pe-build). Judging existing assets:
 [pe-review](/skills/pe-review). Animating an asset: pe-build, motion mode.
 
-<Provenance skill="pe-brand-assets" />
+## Provenance
+
+{/* sync:provenance */}
+Carries 1 files from [Leon](/people/leon) (1). Every vendored file is hash-locked to a pinned upstream commit.  
+Apache-2.0 · [skills/pe-brand-assets](https://github.com/backnotprop/product-engineering/tree/main/skills/pe-brand-assets)
+{/* /sync:provenance */}

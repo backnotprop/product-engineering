@@ -32,7 +32,7 @@
 
 	--nb-muted: #F6F6F4;
 	--nb-muted-foreground: #71737A;
-	--nb-faint: #9A9CA1;
+	--nb-faint: #6E7078;
 
 	--nb-accent: #F1F1EF;
 	--nb-accent-foreground: var(--nb-foreground);
@@ -114,7 +114,7 @@
 
 	--nb-muted: #1D1F24;
 	--nb-muted-foreground: #8B8D94;
-	--nb-faint: #5C5E66;
+	--nb-faint: #7C7F87;
 
 	--nb-accent: #23252B;
 	--nb-accent-foreground: var(--nb-foreground);
@@ -228,7 +228,11 @@ body {
 }
 .pe-card .pe-card-name { color: #5C5E66; }
 .pe-card .pe-card-sentence { color: #8B8D94; }
-.pe-card .pe-card-modes { color: #494B52; }
+.pe-card .pe-card-modes { color: #7C7F87; }
+/* the facts block on People pages: a label column in mono, no header band */
+.docs-content table.facts td:first-child { white-space: nowrap; vertical-align: top; }
+.docs-content table.facts code { background: transparent; padding: 0; color: var(--nb-faint); }
+.pe-card .pe-card-name { color: #7C7F87; }
 
 @media (prefers-reduced-motion: no-preference) {
 	html:focus-within {

@@ -11,6 +11,10 @@ export const collections = {
         // Nimbus docs are agent-friendly by default. Set `audience: human`
         // to flag a page that's written primarily for human readers.
         audience: z.literal("human").optional(),
+        // A mono line above the H1: the skill name, or an author's upstream and license.
+        eyebrow: z.string().optional(),
+        // Per-file lint disables, e.g. the link rule on pages that link static examples.
+        nimbusDisableRules: z.array(z.string()).optional(),
       },
     }),
   ),

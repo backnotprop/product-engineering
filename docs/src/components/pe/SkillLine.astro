@@ -1,7 +1,0 @@
----
-/** The card's bottom line, under a skill page's title: mono name and mode list. */
-import skills from "@/data/skills.json";
-interface Props { skill: keyof typeof skills }
-const s = skills[Astro.props.skill];
----
-<p class="font-mono text-[0.8125rem] text-faint my-0">{s.name}{s.modeline ? ` · ${s.modeline}` : ""}</p>

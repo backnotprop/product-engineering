@@ -1328,7 +1328,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "SKILL.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-skill-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/SKILL.md",
         "patched": true
       },
@@ -1340,7 +1340,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "README-template.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-readme-template-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/README-template.md",
         "patched": false
       },
@@ -1352,7 +1352,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "bug-triage-template.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-bug-triage-template-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/bug-triage-template.md",
         "patched": false
       },
@@ -1364,7 +1364,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "check-links.py",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-check-links-py",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/check-links.py",
         "patched": false
       },
@@ -1376,7 +1376,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "document-template.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-document-template-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/document-template.md",
         "patched": false
       },
@@ -1388,7 +1388,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "glossary-guide.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-glossary-guide-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/glossary-guide.md",
         "patched": false
       },
@@ -1400,7 +1400,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "goal-template.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-goal-template-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/goal-template.md",
         "patched": false
       },
@@ -1412,7 +1412,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "product-kinds.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-product-kinds-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/product-kinds.md",
         "patched": false
       },
@@ -1424,7 +1424,7 @@
         "upstream": "steveruizok/product-description",
         "upstream_path": "verification-template.md",
         "sha": "f9435a3c7b022ecadc8441542675a9163cdb6b7f",
-        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f",
+        "upstream_url": "https://gist.github.com/steveruizok/83ae5c53f2784ebf8f5fe0a3fb94480f/f9435a3c7b022ecadc8441542675a9163cdb6b7f#file-verification-template-md",
         "kit_url": "https://github.com/backnotprop/product-engineering/blob/main/skills/pe-product-description/references/verification-template.md",
         "patched": false
       }

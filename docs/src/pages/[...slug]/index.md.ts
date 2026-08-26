@@ -46,7 +46,9 @@ export async function GET({ props }: { props: SlugProps }) {
       ? rawImage
       : config.socialImage;
 
-  const markdown = renderEntryAsMarkdown(entry);
+  // Sync-region markers (`{/* sync:name */}`) are for docs/scripts/sync-data.py;
+  // they carry nothing for a reader of the markdown twin.
+  const markdown = renderEntryAsMarkdown(entry).replace(/^\{\/\* \/?sync:[a-z-]+ \*\/\}\n?/gm, "");
 
   const body = [
     "---",

@@ -49,10 +49,9 @@ verification/        README.md (the protocol) + one checklist file per cluster o
 bug-triage.md        every suspected defect, deduplicated, with repro, cause, severity, decision needed
 ```
 
-**Scaffold.** README first: its structure section lists every document expected,
-grouped by how the user meets the feature, never by package or module, and the
-coverage table marks each `not started`. Then the glossary, then `goal.md`, then
-`AGENTS.md` and `CLAUDE.md`. Commit: `docs: add README, glossary, goal`.
+**Scaffold.** README first: its structure lists every document expected, grouped by
+how the user meets the feature, never by module, each marked `not started`. Then the
+glossary, `goal.md`, `AGENTS.md`, `CLAUDE.md`. Commit: `docs: add README, glossary, goal`.
 
 **Pilot, foundations, the hard part.** The skill does these itself, in sequence.
 The pilot is one small feature with a real interaction, written on the full
@@ -91,8 +90,8 @@ expected result, and a Result column left blank until run.
 
 When the skill can drive the product (browser tools, a console handle, a shell for
 a CLI, a test harness), it runs a first pass on what that can observe, fills in the
-Result columns, and states in `verification/README.md` what the pass did and did not
-cover. No document is marked `verified` on an automated pass alone. A failed row is
+Result columns, and states in `verification/README.md` what the pass did not cover.
+No document is marked `verified` on an automated pass alone. A failed row is
 sometimes a wrong document; the Status line says which.
 
 ## 4. Triage
@@ -101,7 +100,7 @@ sometimes a wrong document; the Status line says which.
 duplicates into one entry with many "Raised by" links, and writes each up with where
 the user meets it, what happens against what was expected, reproduction steps, the
 cause with file and line, a severity, and the decision needed (`fix` or `product
-call`). A summary table at the top is sorted by severity.
+call`), under a summary table sorted by severity.
 
 > "File these as issues."
 
