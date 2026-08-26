@@ -67,7 +67,7 @@ skill cards; heroes are 1200-wide.
 - Do keep gradients subtle enough to read as lighting.
 - Don't add decoration, icons, illustrations, or borders on dark cards.
 - Don't introduce an accent color into assets.
-- The verb headlines ("Design it.") are the chosen voice and stay. Sentences state
+- The verb headlines ("Design it.") are the chosen voice and stay. The router card is the one exception: its headline is "Lazy mode". Sentences state
   what the skill delivers, positively ("Prioritized findings on any screen, diff,
   or PR.") — no caveats, no negative definitions, no contrasts, no stacked
   fragments. Boundaries live in the skills, never in the copy.

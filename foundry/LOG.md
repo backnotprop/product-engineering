@@ -155,3 +155,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · brand · claude+ramos · card sentences rewritten as positive deliverable statements (every sentence had been a caveat or negative definition); DESIGN.md rule updated: boundaries live in the skills, never in the copy
 - 2026-08-26 · build-skill · claude+ramos · skills/product-engineering created: the lazy-entry router (authored only, no lifts) — routes by deliverable, defers to the owning skill; skills.sh.json and README updated
 - 2026-08-26 · brand · claude+ramos · router card added (Say it. / Any request in, the right skill takes over.) — grid becomes three full pairs, brand-assets no longer centered alone
+- 2026-08-26 · brand · ramos · router card headline: Say it. → Lazy mode (user ruling; recorded as the one headline exception in DESIGN.md)
