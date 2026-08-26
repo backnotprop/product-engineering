@@ -1283,6 +1283,11 @@
       "note": "source recorded; file content is authored \u2014 hash set by check-integrity --update-distilled",
       "sha256": "d583774250b9c02dd84d0471ebcab19826e20a1698702ae14cb8b17a5c333529",
       "updated": "2026-08-25"
+    },
+    "skills/pe-verify/references/report-schema.md": {
+      "class": "authored",
+      "skill": "pe-verify",
+      "note": "the JSON contract for agents (issue #37); ours"
     }
   }
 }
