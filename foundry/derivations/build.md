@@ -70,6 +70,15 @@ will-change), L-06 (named curves yes / novel curves no), L-07 (stagger units),
 L-08 (never disable submit — build implements forms) — all stated once in the spine's
 rulings block. L-10 doctrine motivates the deslop-audit cut.
 
+## Approval stamp (#38)
+
+Spine only (authored). Loop step 1 (Boundary) reads `.product/approved/` for a record
+matching the target; an approved artifact ranks above the agent's judgment and below the
+user's words, and any deviation (constraint, platform, accessibility) is stated before
+it is made. Step 6 (Report) names the record built against and each stated deviation —
+the statement is what pe-review's fidelity mode later treats as sanctioned. No new
+section, no reference changes.
+
 ## Retirements
 
 Legacy `skills/ui-polish` and `skills/ui-harden` are superseded and removed; their

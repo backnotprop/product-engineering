@@ -15,8 +15,11 @@ craft itself lives in the reference files — load only what the mode needs.
 
 1. **Boundary** — name the exact target, what must remain unchanged, and the surface's
    job (persuade / operate / read / experience); read `DESIGN.md` when present and
-   verify it against tokens, components, and rendered output. Preserve the incumbent
-   identity: polish is refinement, never a concealed redesign.
+   verify it against tokens, components, and rendered output. Read `.product/approved/`
+   for a record matching the target: an approved artifact ranks above your judgment and
+   below the user's words — implement to it, and state any deviation (constraint,
+   platform, accessibility) before making it, never as a silent improvement. Preserve
+   the incumbent identity: polish is refinement, never a concealed redesign.
 2. **Evidence** — read the real code and, where possible, the rendered result before
    changing anything.
 3. **Triage** — fix in order: blocked tasks and inaccessible paths → missing states
@@ -25,7 +28,8 @@ craft itself lives in the reference files — load only what the mode needs.
 4. **Implement** — complete fixes, in the project's stack and idiom.
 5. **Verify** — walk the whole path; check states, viewports, zoom, focus, semantics,
    console, layout shift. At most two bounded visual rounds — no open-ended loop.
-6. **Report** — what changed, what was preserved, what remains.
+6. **Report** — what changed, what was preserved, what remains, and the approved record
+   built against (with each stated deviation), when one exists.
 
 ## Modes
 

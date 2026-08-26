@@ -197,6 +197,11 @@
       "skill": "pe-review",
       "note": "legacy ui-review SKILL.md converted to the screen-mode reference; ours (Impeccable-derived)"
     },
+    "skills/pe-review/references/fidelity.md": {
+      "class": "authored",
+      "skill": "pe-review",
+      "note": "fidelity mode reference (issue #38); ours"
+    },
     "skills/pe-review/references/motion-audit.md": {
       "class": "verbatim",
       "upstream": "emilkowalski/skills",
