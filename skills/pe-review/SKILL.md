@@ -27,7 +27,7 @@ reference files — load only what the mode needs.
 | --- | --- | --- |
 | **change** | A diff, branch, PR, or "review my changes" is named. Always wins over screen when both could apply. | `change-review.md`, `scope-resolution.md`, `removed-signals.md` |
 | **screen** | A screen, page, site, or screenshot; "review this UI." | `screen-review.md`, `experience-rubric.md`, `technical-rubric.md` |
-| **plans** | "Audit this and give me a roadmap" — findings become self-contained plans another agent executes. Explicit invocation only. | `audit-method.md`, `plan-template.md` |
+| **improve** | "Audit this and give me a roadmap", "improve the app" — whole-surface improvement, delivered as self-contained plans another agent executes. Explicit invocation only. | `audit-method.md`, `plan-template.md` |
 | **guidelines** | "Check against best practices / the guidelines"; terse file:line lint of UI code. | `web-interface-guidelines.md` |
 | **stress** | "Does this component survive?" — render one component in every hostile state. Explicit invocation only. | `stress.md`, `stress-scenarios.md` |
 | **motion** | "Review the animations / motion." For a whole-codebase motion audit with plans, add `motion-audit.md` + `motion-audit-signals.md` + `plan-template.md`. | `motion-review.md`, `motion-standards.md` |

@@ -168,3 +168,4 @@ manual events. Never edit or delete existing lines.
 - 2026-08-26 · brand · ramos · pe-design card mode line updated for brief mode (six modes); camo cache busted
 - 2026-08-26 · docs · ramos · router gains the brief deliverable + the new-vs-existing spec disambiguation (pe-design brief vs pe-product-description); README examples gain a brief row
 - 2026-08-26 · policy · claude+ramos · RIPPLE step added to the new-skill runbook: router deliverables, brand card mode lines (+cache bust), README examples/index, skills.sh.json — the brief-mode rollout missed the card and router twice; the checklist closes the class
+- 2026-08-26 · rename · ramos · pe-review plans mode → improve (matches the source lineage: improve-animations / improve-ui / improve-react); RIPPLE run: spine row, card base line + cache bust, README alt; router and index rows unchanged (they name the plan output, not the mode)
