@@ -122,8 +122,10 @@
   .showing { font-family:var(--mono); font-size:11.5px; color:var(--faint); margin:-8px 0 14px; }
   .empty { padding:40px 0; text-align:center; color:var(--faint); font-family:var(--mono); font-size:12.5px; }
 
+  .keys { max-width:1120px; margin:-60px auto 0; padding:0 24px 40px; font-size:11px; color:var(--faint); }
   /* ---- jump palette + next/prev ---- */
   .jump-btn { position:fixed; right:22px; bottom:22px; z-index:30; display:flex; gap:8px; }
+  [hidden] { display:none !important; }
   .jump-btn button { appearance:none; border:1px solid var(--line); background:rgba(27,29,34,.92); backdrop-filter:blur(8px); color:var(--ink); font:inherit; font-size:12.5px;
     font-weight:500; padding:8px 12px; border-radius:8px; cursor:pointer; display:inline-flex; gap:8px; align-items:center; box-shadow:0 8px 24px rgba(0,0,0,.35); }
   .jump-btn button kbd { font-family:var(--mono); font-size:10px; color:var(--faint); border:1px solid var(--line); border-radius:4px; padding:1px 5px; }
@@ -159,6 +161,7 @@
 
 
 <div class="wrap" id="report"></div>
+<p class="keys mono" id="keys">J jump to check · N / P next and previous issue · / search · in the player: ← → checkpoints, space plays</p>
 <div class="jump-btn" id="jumpbtn" hidden><button type="button" id="jumpopen">Jump to check <kbd>J</kbd></button></div>
 <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Jump to a check">
   <div class="box"><input id="pq" placeholder="Type to filter checks…" autocomplete="off"><div class="pfilters" id="pfilters" role="group" aria-label="Palette status filters"></div><ul id="plist"></ul>
@@ -172,6 +175,7 @@ const REPORT = window.__REPORT__ || { __errors: [{ path: "$", message: "no repor
 // ---------- renderer ----------
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt = t => `${Math.floor(t/60)}:${String(Math.floor(t%60)).padStart(2,"0")}`;
+const when = s => { const d = new Date(s); return isNaN(d) ? (s||"") : d.toLocaleString(undefined, { dateStyle: "medium", timeStyle: "short" }); };
 const statusLine = it => `<span class="dot"></span><span class="st">${esc(it.status)}</span>`;
 
 function findingsHTML(it) {
@@ -180,10 +184,11 @@ function findingsHTML(it) {
 }
 function playerHTML(it, key) {
   const m = it.media; if (!m?.video) return "";
-  const ticks = m.checkpoints.map((c,i) => `<div class="tick" data-i="${i}" style="left:0%" title="${esc(c.label)}"></div>`).join("");
-  const cps = m.checkpoints.map((c,i) => `<li data-i="${i}"><span class="ct">${fmt(c.t)}</span><span><span class="cl">${esc(c.label)}</span><br><span class="cn">${esc(c.narration)}</span></span></li>`).join("");
+  const CPs = m.checkpoints || [];
+  const ticks = CPs.map((c,i) => `<div class="tick" data-i="${i}" style="left:0%" title="${esc(c.label)}"></div>`).join("");
+  const cps = CPs.map((c,i) => `<li data-i="${i}"><span class="ct">${fmt(c.t)}</span><span><span class="cl">${esc(c.label)}</span><br><span class="cn">${esc(c.narration)}</span></span></li>`).join("");
   return `<div class="player" data-player="${key}">
-    <video preload="metadata" playsinline src="${m.video}"></video>
+    <video preload="metadata" playsinline src="${esc(m.video)}"></video>
     <div class="ctl">
       <button class="pp" aria-label="Play or pause">▶</button>
       <span class="t"><span class="cur">0:00</span> / <span class="dur">–:––</span></span>
@@ -197,7 +202,7 @@ function playerHTML(it, key) {
 }
 function shotsHTML(it) {
   const s = it.media?.screenshots; if (!s?.length) return "";
-  return `<h4>Screenshots</h4><div class="shots">${s.map(x => `<figure><img src="${x.path}" alt="${esc(x.caption)}"><figcaption>${esc(x.caption)}</figcaption></figure>`).join("")}</div>`;
+  return `<h4>Screenshots</h4><div class="shots">${s.map(x => `<figure><img src="${esc(x.path)}" alt="${esc(x.caption||"")}"><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("")}</div>`;
 }
 function detailHTML(it, key) {
   const media = it.media?.video ? `<h4>Recording</h4>${playerHTML(it, key)}` : "";
@@ -213,8 +218,8 @@ function summaryHTML(run) {
   const pills = `<div class="summary" role="group" aria-label="Status filters">
     ${isList ? `<button class="pill" data-clear aria-pressed="${!state.status.size}"><b>${run.items.length}</b> all</button>` : `<span class="pill"><b>${run.items.length}</b> checks</span>`}
     ${p("fail","s-fail")}${p("flag","s-flag")}${p("pass","s-pass")}${p("skipped","s-skipped")}</div>`;
-  const att = attention.length ? `<div class="attention"><h2>Needs attention</h2><ul>${attention.map(i => `<li class="s-${i.status}"><span class="dot"></span><a href="#${i.id}" data-jump="${i.id}">${esc(i.title)}</a><span class="type">${esc(i.findings[0]?.text||"")}</span></li>`).join("")}</ul></div>` : "";
-  return `<header class="run"><div><h1>${esc(run.title)}</h1><div class="meta">${esc(run.repo)} @ ${esc(run.commit)} · ${esc(run.ran_at)}${run.list_source ? " · " + esc(run.list_source) : ""}</div></div>${pills}</header>${att}`;
+  const att = attention.length ? `<div class="attention"><h2>Needs attention</h2><ul>${attention.map(i => `<li class="s-${i.status}"><span class="dot"></span><a href="#${i.id}" data-jump="${i.id}">${esc(i.title)}</a><span class="type">${esc((i.findings||[])[0]?.text||"")}</span></li>`).join("")}</ul></div>` : "";
+  return `<header class="run"><div><h1>${esc(run.title)}</h1><div class="meta">${[run.repo && run.commit ? `${esc(run.repo)} @ ${esc(run.commit)}` : esc(run.repo||run.commit||""), esc(when(run.ran_at)), run.list_source ? esc(run.list_source) : ""].filter(Boolean).join(" · ")}</div></div>${pills}</header>${att}`;
 }
 
 // layouts
@@ -226,12 +231,12 @@ function renderLedger(run) {
       ${detailHTML(it, it.id)}
     </div>`).join("")}</div>` : `<div class="empty">no checks match these filters</div>`);
 }
-function renderFeature(run, layout) {
+function renderFeature(run) {
   const it = run.items[0]; const C = it.media?.checkpoints || [];
-  const board = C.length ? `<div class="storyboard" role="list" aria-label="Checkpoints">${C.map((c,i) => `<figure role="listitem" data-i="${i}"><img src="${c.screenshot}" alt="${esc(c.label)}"><figcaption><span>${esc(c.label)}</span><span>${fmt(c.t)}</span></figcaption></figure>`).join("")}</div>` : "";
-  return summaryHTML(run) + `<div class="feature"><div class="hero"><h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)} · checked by ${esc(it.checked_by)}</span></div><p class="summ" style="margin:0">${esc(it.summary)}</p></div>
+  const board = C.length ? `<div class="storyboard" role="list" aria-label="Checkpoints">${C.map((c,i) => `<figure role="listitem" data-i="${i}"><img src="${esc(c.screenshot)}" alt="${esc(c.label)}"><figcaption><span>${esc(c.label)}</span><span>${fmt(c.t)}</span></figcaption></figure>`).join("")}</div>` : "";
+  return summaryHTML(run) + `<div class="feature"><div class="hero"><h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)}${it.checked_by ? " · checked by " + esc(it.checked_by) : ""}</span></div><p class="summ" style="margin:0">${esc(it.summary)}</p></div>
     <div class="viewer">${playerHTML(it, it.id)}${board}</div>
-    <div class="two"><div class="card"><h4>Findings</h4>${findingsHTML(it)}</div><div class="card"><h4>Screenshots</h4><div class="shots">${(it.media?.screenshots||[]).map(x => `<figure><img src="${x.path}" alt="${esc(x.caption)}"><figcaption>${esc(x.caption)}</figcaption></figure>`).join("")}</div></div></div></div>`;
+    <div class="two"><div class="card"><h4>Findings</h4>${findingsHTML(it)}</div><div class="card"><h4>Screenshots</h4><div class="shots">${(it.media?.screenshots||[]).map(x => `<figure><img src="${esc(x.path)}" alt="${esc(x.caption||"")}"><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("")}</div></div></div></div>`;
 }
 
 // ---------- behavior ----------
@@ -240,7 +245,7 @@ function wirePlayers(root) {
     const v = p.querySelector("video"), bar = p.querySelector(".bar"), fill = p.querySelector(".fill"), tip = p.querySelector(".tip");
     const cur = p.querySelector(".cur"), dur = p.querySelector(".dur"), pp = p.querySelector(".pp");
     const ticks = [...p.querySelectorAll(".tick")], cps = [...p.querySelectorAll(".cps li")];
-    const key = p.dataset.player; const item = currentRun().items.find(i => i.id===key); const C = item.media.checkpoints;
+    const key = p.dataset.player; const item = currentRun().items.find(i => i.id===key); const C = (item.media && item.media.checkpoints) || [];
     const place = () => { if (!v.duration) return; ticks.forEach((t,i) => t.style.left = (C[i].t / v.duration * 100) + "%"); dur.textContent = fmt(v.duration); };
     v.addEventListener("loadedmetadata", place); if (v.readyState >= 1) place();
     pp.addEventListener("click", () => v.paused ? v.play() : v.pause());
@@ -275,9 +280,9 @@ function wirePlayers(root) {
     });
   });
 }
-let state = { layout: "ledger", mode: (REPORT.mode === "feature" && (REPORT.items||[]).length === 1) ? "feature" : "list", status: new Set(), type: new Set(), q: "" };
+let state = { mode: (REPORT.mode === "feature" && (REPORT.items||[]).length === 1) ? "feature" : "list", status: new Set(), type: new Set(), q: "" };
 const matches = it => (!state.status.size || state.status.has(it.status)) && (!state.type.size || state.type.has(it.check_type)) &&
-  (!state.q || (it.title + " " + it.summary + " " + it.findings.map(f=>f.text).join(" ")).toLowerCase().includes(state.q.toLowerCase()));
+  (!state.q || (it.title + " " + it.summary + " " + (it.findings||[]).map(f=>f.text).join(" ")).toLowerCase().includes(state.q.toLowerCase()));
 const visible = run => run.items.filter(matches);
 function filtersHTML(run) {
   const n = s => run.items.filter(i => i.status===s).length, nt = s => run.items.filter(i => i.check_type===s).length;
@@ -298,16 +303,16 @@ function renderErrors(errs) {
 let render = function() {
   const run = currentRun(); const root = document.getElementById("report");
   if (run.__errors) { root.innerHTML = renderErrors(run.__errors); document.getElementById("jumpbtn").hidden = true; return; }
-  if (state.mode === "feature") root.innerHTML = renderFeature(run, state.layout);
+  if (state.mode === "feature") root.innerHTML = renderFeature(run);
   else root.innerHTML = renderLedger(run);
   wireFilters(root);
-  if (state.mode === "list" && state.layout === "ledger") {
+  if (state.mode === "list") {
     root.querySelectorAll(".ledger .head").forEach(h => {
       const toggle = () => { const row = h.parentElement; const open = row.classList.toggle("open"); h.setAttribute("aria-expanded", String(open)); };
       h.addEventListener("click", toggle); h.addEventListener("keydown", e => { if (e.key==="Enter"||e.key===" ") { toggle(); e.preventDefault(); } });
     });
     root.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => { e.preventDefault(); const row = document.getElementById(a.dataset.jump); row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); row.scrollIntoView({behavior:"smooth",block:"start"}); }));
-    run.items.filter(i => i.status==="fail").forEach(i => { const row = document.getElementById(i.id); row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); });
+    run.items.filter(i => i.status==="fail").forEach(i => { const row = document.getElementById(i.id); if (!row) return; row.classList.add("open"); row.querySelector(".head").setAttribute("aria-expanded","true"); });
   }
   wirePlayers(root);
 }
@@ -340,7 +345,7 @@ function paletteRender() {
   pcount.textContent = `${items.length} of ${run.items.length}`;
   plist.querySelectorAll("li[data-id]").forEach((li,i) => { li.addEventListener("mouseenter", () => { pIdx = i; plist.querySelectorAll("li").forEach((x,j)=>x.classList.toggle("on", j===i)); }); li.addEventListener("click", () => paletteGo(li.dataset.id)); });
 }
-function paletteOpen() { if (state.mode !== "list") return; pal.classList.add("open"); pq.value = ""; pIdx = 0; pStatus = new Set(state.status); paletteRender(); pq.focus(); }
+function paletteOpen() { if (REPORT.__errors || state.mode !== "list" || !(REPORT.items||[]).length) return; pal.classList.add("open"); pq.value = ""; pIdx = 0; pStatus = new Set(state.status); paletteRender(); pq.focus(); }
 function paletteClose() { pal.classList.remove("open"); }
 function paletteGo(id) { paletteClose(); jumpTo(id); }
 pq.addEventListener("input", paletteRender);
@@ -354,7 +359,7 @@ pq.addEventListener("keydown", e => {
 pal.addEventListener("click", e => { if (e.target === pal) paletteClose(); });
 document.getElementById("jumpopen").addEventListener("click", paletteOpen);
 function attentionStep(dir) {
-  const run = currentRun(); const att = run.items.filter(i => i.status==="fail" || i.status==="flag"); if (!att.length) return;
+  const run = currentRun(); if (run.__errors) return; const att = run.items.filter(i => i.status==="fail" || i.status==="flag"); if (!att.length) return;
   let cur = att.findIndex(i => i.id === state.sel); if (cur < 0) { const y = window.scrollY + 80; cur = att.findIndex(i => { const el = document.getElementById(i.id); return el && el.offsetTop > y; }); if (dir > 0) cur -= 1; }
   const next = att[(cur + dir + att.length) % att.length]; state.sel = next.id; jumpTo(next.id);
 }
@@ -367,7 +372,7 @@ document.addEventListener("keydown", e => {
   if (e.key === "p" || e.key === "P") { attentionStep(-1); return; }
 });
 const _render = render;
-render = function() { _render(); document.getElementById("jumpbtn").hidden = state.mode !== "list"; };
+render = function() { _render(); document.getElementById("jumpbtn").hidden = !!REPORT.__errors || state.mode !== "list"; document.getElementById("keys").hidden = !!REPORT.__errors; };
 render();
 document.title = (REPORT.title ? REPORT.title + " · " : "") + "pe-verify";
 </script>

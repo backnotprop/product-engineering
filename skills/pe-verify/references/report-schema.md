@@ -1,7 +1,7 @@
 # The report contract
 
-A verification run ends with one JSON file. Nothing else the agent writes reaches the
-user's screen — the renderer turns the JSON into the report, so the JSON has to be right.
+A verification run ends with one JSON file. The renderer turns it into the report;
+nothing else the agent writes reaches the user's screen.
 
 ## Where files go
 
@@ -25,8 +25,10 @@ python3 <skill>/scripts/validate-report.py report.json     # fix every listed pr
 python3 <skill>/scripts/render-report.py report.json --open
 ```
 
-`validate-report.py` prints `$.path: message` lines for each problem and exits 1;
-`--json` gives the same as a machine-readable list. Never render a report that fails
+`validate-report.py` prints `$.path: message` lines for each problem and exits 1
+(2 when the file is unreadable); `--json` gives the same as a machine-readable list.
+`render-report.py --out <path>` writes the HTML elsewhere and rewrites media paths
+relative to it; the media files stay in the run folder. Never render a report that fails
 validation: the renderer writes an error page instead of a report, and the user is told
 to hand the problems back to you.
 
@@ -48,8 +50,10 @@ optional `findings`, `media`, `checked_by`.
 `evidence` (`file:line`, a recording timestamp like `recording 0:16`, or a command).
 
 **Media** — `video` (relative path) · `checkpoints` (each: `t` seconds, ascending;
-`label` ≤ 80 chars; `narration`; `screenshot` relative path) · `screenshots` (each:
-`path`, `caption`). Checkpoints require a video. A code-only item has no media.
+`label` ≤ 80 chars; optional `narration`; `screenshot` relative path) · `screenshots`
+(each: `path`, optional `caption`). Checkpoints require a video. A code-only item omits
+the `media` key entirely (not `null`). Paths are relative, stay inside the run folder
+(no `..`), and contain no quotes or angle brackets.
 
 ## Writing the fields
 
@@ -63,8 +67,8 @@ optional `findings`, `media`, `checked_by`.
   at that moment, narrate in one sentence, and capture the still at that exact time.
 - `checked_by` records who ran the item (`opus · browser`, `sonnet · code`) so a
   reader knows how much to trust it.
-- `evidence` on a `fail` or `flag` finding is not optional in practice: a finding
-  without a file:line or a timestamp cannot be acted on.
+- Give every `fail` or `flag` finding an `evidence` value: a file:line, a recording
+  timestamp, or the command that showed it.
 
 A worked example lives in `assets/sample/report.json` (a feature run with a recording
 and five checkpoints); `scripts/test-render.py` exercises every rule.
