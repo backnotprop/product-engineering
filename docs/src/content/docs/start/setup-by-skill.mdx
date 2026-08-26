@@ -1,0 +1,35 @@
+---
+title: Setup by skill
+description: What each skill needs from the machine and the repo, in one table.
+sidebar:
+  order: 2
+---
+
+Everything installs with [one command](/start/install). What differs is what each skill
+needs after that. Required means the skill cannot do its job without it; optional means
+it does more with it; convention means a place the skill reads or writes, owned by you.
+
+| Skill | Required | Optional | Convention |
+| --- | --- | --- | --- |
+| all | the install; an agent that reads skills | a `DESIGN.md` from pe-design, understand mode | a `.product/` folder |
+| [product-engineering](/skills/product-engineering) | nothing beyond the install | | say "product engineering, …" |
+| [pe-design](/skills/pe-design) | a browser to open the HTML artifacts | the app running locally for vary mode; network for understand mode from a public URL | approvals land in `.product/approved/<slug>/` |
+| [pe-build](/skills/pe-build) | the project's own dev server | the animations.dev course pack, installed locally by owners | reads `DESIGN.md` and `.product/approved/` |
+| [pe-review](/skills/pe-review) | a diff, a URL, or a screenshot to review | a browser for screen and a11y modes | fidelity mode reads `.product/approved/` |
+| [pe-verify](/skills/pe-verify) | python3; Playwright with Chromium for browser checks | ffmpeg for mp4 recordings | `.product/qa-list.md`; `~/.product-engineering/memories.md` |
+| [pe-product-description](/skills/pe-product-description) | the source repo and commit; a way to run the product | python3 for the link checker | its output is a repo of documents |
+| [pe-brand-assets](/skills/pe-brand-assets) | `DESIGN.md` or a `brand/` folder | an SVG-to-PNG renderer for OG images | SVG is the source of truth |
+
+## The two installs worth doing now
+
+Playwright with Chromium, for pe-verify's browser checks:
+
+```sh
+npx playwright install chromium
+```
+
+And a `DESIGN.md`, which pe-build, pe-review, and pe-brand-assets all read:
+
+> "Document our design system"
+
+pe-design writes it from the repo's tokens and components, or from a public URL.

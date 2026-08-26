@@ -1,0 +1,54 @@
+---
+title: Judge it.
+description: Prioritized findings on any screen, diff, or PR.
+sidebar:
+  order: 3
+  label: pe-review
+---
+
+<SkillLine skill="pe-review" />
+
+Read-only judgment of existing UI. It never edits code, even for a one-character fix:
+findings name the change, and applying it is pe-build's job.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Review my PR" | Diff-scoped findings with severity, file:line, and the named change |
+| "Review this screen" | A critique against the experience and technical rubrics |
+| "Audit the app, give me a roadmap" | Whole-surface findings delivered as self-contained plans another agent executes |
+| "Check this against the guidelines" | A terse file:line lint against the Web Interface Guidelines |
+| "Will this component survive?" | The component rendered in every hostile state |
+| "Review the animations" | Motion findings against the standards; opportunities on request |
+| "Is this accessible?" | An accessibility audit; its findings are never discarded |
+| "Did we stay true to the mock?" | Every deviation from the approved record, with severity |
+
+## Modes
+
+<Modes skill="pe-review" />
+
+Verb beats noun: "review the animation" is motion mode here; "fix the animation" is
+pe-build. A named diff, branch, or PR is always change mode.
+
+## Findings
+
+Severity is HIGH, MEDIUM, or LOW, plus the engine's escalation triggers. Every finding
+carries evidence: a file:line or a screenshot, and the change that resolves it. A
+request that mixes modes runs the engine once and consolidates.
+
+## Setup
+
+<Setup
+  required={["a diff, branch, or PR; a URL; or a screenshot, depending on the mode"]}
+  optional={["a browser, for screen and a11y modes on a running product"]}
+  convention={["fidelity mode reads `.product/approved/`; unstamped mocks go to pe-design for approval first"]}
+/>
+
+## Handoffs
+
+Fixes: [pe-build](/skills/pe-build). Proof that behavior works end to end, with
+recordings: [pe-verify](/skills/pe-verify). Documenting the system a review revealed:
+[pe-design](/skills/pe-design), understand mode.
+
+<Provenance skill="pe-review" />

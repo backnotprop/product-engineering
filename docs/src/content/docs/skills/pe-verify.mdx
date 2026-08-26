@@ -1,0 +1,56 @@
+---
+title: Verify it.
+description: Pass or fail on every check, with recordings.
+sidebar:
+  order: 4
+  label: pe-verify
+---
+
+<SkillLine skill="pe-verify" />
+
+Proof that behavior works. The skill drives the product in Playwright, records what
+happens, captures a still at each checkpoint, and writes one JSON file; a script in the
+skill renders it into a report that opens in your browser.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Verify the toolbar" | A feature run: one item, a recording with 3 to 6 checkpoints, one verdict |
+| "Run the QA list against this PR" | A selective list run: the entries the change set can affect; the rest shown as not run, with a reason |
+| "Release check, everything" | Every entry in `.product/qa-list.md`: pass, fail, flag, or skipped, each with evidence |
+| "Seed a QA list" | A draft from the repo's routes, scripts, and pins, written to `.product/qa-list.md` for you to prune |
+
+## Modes
+
+<Modes skill="pe-verify" />
+
+A list run is selective or all, and the report says which. Selective when you name a
+change set; all when you say "everything" or name none. Every entry from your list
+appears in the report either way.
+
+## The report
+
+Counts by status up top, failures and flags first. Each browser item has a player with
+a checkpoint list, narration per checkpoint, and hover previews on the progress bar.
+Filters by status and type, a search box, and a jump palette (`J`). Everything a run
+produces lands in a temp folder, never in the repo. The JSON contract is in
+[the report contract](/reference/report-contract).
+
+## Setup
+
+<Setup
+  required={["python3, for the validator and renderer (no packages)", "Playwright with Chromium, for browser checks; without it they report skipped and code checks still run"]}
+  optional={["ffmpeg, to convert recordings to mp4; otherwise the report plays webm"]}
+  convention={["a QA list in `.product/`; other locations are remembered in `~/.product-engineering/memories.md`"]}
+  command="npx playwright install chromium"
+/>
+
+## Handoffs
+
+Fails: [pe-build](/skills/pe-build), with their evidence. Whether it looks right:
+[pe-review](/skills/pe-review). Whether it matches the approved mock: pe-review,
+fidelity mode. Documenting the behavior verified:
+[pe-product-description](/skills/pe-product-description).
+
+<Provenance skill="pe-verify" />

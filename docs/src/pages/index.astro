@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import SkillCards from "../components/pe/SkillCards.astro";
+import people from "@/data/people.json";
+import { config } from "virtual:nimbus/config";
+const vendored = people.reduce((n, p) => n + p.total, 0);
+---
+
+<BaseLayout title={config.title} description={config.description}>
+  <div class="flex flex-col min-h-screen">
+    <Header showSidebar={false} />
+    <main id="main-content" tabindex="-1" class="flex-1 mx-auto max-w-3xl w-full px-6 pt-20 pb-24">
+      <h1 class="text-foreground leading-none text-[2.5rem] sm:text-[2.75rem] font-semibold tracking-[-0.03em]">product engineering</h1>
+      <p class="mt-3 text-[1.0625rem] text-muted-foreground leading-relaxed max-w-[52ch]">
+        Six agent skills for product design and engineering. Converged from the best published
+        design-engineering skills, with the source prose preserved.
+      </p>
+      <pre class="font-mono text-[0.875rem] mt-7 px-4 py-3 rounded-md border border-border bg-card overflow-x-auto"><span class="text-faint">$ </span>npx skills add backnotprop/product-engineering</pre>
+      <div class="mt-9">
+        <SkillCards />
+      </div>
+      <p class="mt-10 pt-4 border-t border-border font-mono text-[0.8125rem] text-faint leading-relaxed">
+        Most of this kit is other authors' work, carried byte-for-byte.
+        <a href="/people" class="text-muted-foreground no-underline hover:text-foreground">{vendored} vendored files from {people.length} authors</a>, hash-verified in CI.
+      </p>
+    </main>
+  </div>
+</BaseLayout>

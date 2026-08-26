@@ -1,0 +1,18 @@
+---
+/** The People index: one row per author, from data/people.json. */
+import people from "@/data/people.json";
+---
+<div class="nb-table-scroll">
+  <table>
+    <thead><tr><th>Author</th><th>Carried</th><th>What</th></tr></thead>
+    <tbody>
+      {people.map((p) => (
+        <tr>
+          <td><a href={`/people/${p.slug}`} class="whitespace-nowrap">{p.name}</a></td>
+          <td><span class="font-mono text-[0.8125rem] whitespace-nowrap tabular-nums">{p.total} files</span></td>
+          <td>{p.sources[0].carry}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

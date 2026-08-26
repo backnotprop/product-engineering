@@ -1,0 +1,56 @@
+---
+title: Build it.
+description: Polished, accessible, production-ready code.
+sidebar:
+  order: 2
+  label: pe-build
+---
+
+<SkillLine skill="pe-build" />
+
+Production UI to a craft bar. Every mode runs the same loop: name the boundary, read
+the real code and the rendered result, fix in triage order, implement completely, walk
+the whole path, report what changed and what was preserved.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Build the pricing card" | A component in the project's stack and idiom, at the craft bar |
+| "Polish this" · "this feels off" | Refinement of the incumbent identity, never a concealed redesign |
+| "Animate the drawer" · "this feels janky" | Motion with the house values: press scale 0.96, bounce 0, ease-out exits, motivated stagger |
+| "Make this accessible" | Keyboard, screen reader, focus, and form semantics implemented |
+| "Get this ready for production" | Data extremes, failure states, devices, languages, offline, metadata |
+| "Build the approved mock" | Implementation against the record in `.product/approved/`, with every deviation stated first |
+
+## Modes
+
+<Modes skill="pe-build" />
+
+Writing new UI from scratch in any mode also loads the generation guardrails. Changing
+the visual identity is forbidden unless you asked for a redesign.
+
+## Setup
+
+<Setup
+  required={["the project's own dev server, so the rendered result can be checked"]}
+  optional={["the animations.dev course pack, installed locally by owners with `foundry/scripts/course-dropin.sh`; it is never committed"]}
+  convention={["reads `DESIGN.md` for tokens and components", "reads `.product/approved/` for a record matching the target and implements to it"]}
+/>
+
+## House rules
+
+Press scale exactly `0.96`. Spring bounce `0` unless the direction is explicitly
+playful. Reduced motion means gentler, never zero. Exits ease out. `will-change` only
+on observed stutter. Easing from the named curves, never invented. Stagger 30 to 80 ms
+between list items, about 100 ms between groups. Submit buttons are never disabled;
+validate on submit.
+
+## Handoffs
+
+Verdicts and audits: [pe-review](/skills/pe-review). Proof that the built feature works,
+with recordings: [pe-verify](/skills/pe-verify), the natural last step after harden.
+Direction, mockups, variations: [pe-design](/skills/pe-design). Standalone assets:
+[pe-brand-assets](/skills/pe-brand-assets).
+
+<Provenance skill="pe-build" />

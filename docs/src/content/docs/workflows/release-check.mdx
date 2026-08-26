@@ -1,0 +1,116 @@
+---
+title: Release check
+description: Keep a QA list under .product/, run it against a change set or in full, and read the report.
+sidebar:
+  order: 3
+---
+
+"Run the QA list" and "release check" always route to [pe-verify](/skills/pe-verify),
+list mode. The list is yours and lives in the repo. Everything a run produces lives
+outside it.
+
+## 1. The list
+
+pe-verify looks in `.product/` for a markdown file named for what it is:
+`qa-list.md`, `qa.md`, `checks.md`, `release-checklist.md`, or `verify.md`. With no
+match it reads `~/.product-engineering/memories.md` for a `## pe-verify` line naming
+this repo. With nothing there it asks one question, where the list is or whether to
+seed one, and records the answer so the question is never asked again for this repo.
+
+The list has no required format. Each list item or heading is one check. A nested
+bullet is detail for its parent. A heading with bullets groups them; a heading with
+no bullets is itself a check. A trailing hint such as `(browser)` or `(always flag)`
+is honored; "always flag" means the item reports `flag` whenever its condition is
+true, whatever else passed.
+
+```markdown
+# QA list
+
+## Install
+- The install script still targets both paths
+- Bun is still pinned to 1.3.x
+
+## Editor
+- Every toolbar button is present (browser)
+- The diff loads on a 2MB file (browser)
+- Annotating HTML works headlessly (browser)
+
+## Release
+- A change touches the config schema (always flag)
+```
+
+Terse items are interpreted from the repo: "Bun is still pinned to 1.3.x" means find
+the pin, confirm it is unchanged since the last tag, and cite the line. Item ids in
+the report are slugs of the titles (`bun-version`, `toolbar-buttons-present`), stable
+across runs so reports line up release to release. The lookup rules and the
+memories file are in [The QA list](/reference/qa-list).
+
+## 2. Seed one
+
+> "Seed a QA list for this repo."
+
+pe-verify drafts the list from repo evidence: routes and pages, install and build
+scripts, the package manager and runtime pins, CI steps, the README's claims. It
+writes a flat list with one line per check to `.product/qa-list.md` and hands it to
+you to prune. This is the only write the skill ever makes inside a repo, and only
+when you ask for it.
+
+## 3. Run it
+
+> "Run the QA list against this PR."
+
+A named change set makes the run **selective**. pe-verify reads the diff (files,
+routes, scripts, dependencies, docs touched) and keeps every entry the change can
+affect. Entries marked "always flag" run in every selective run. When it is unsure
+whether an entry is affected, it runs it. Every other entry is reported `not-run`
+with its reason in one line: "no change under `install/`", "dependencies unchanged
+since v0.17.5". The report's `selection_basis` names what was read, such as
+`diff main...HEAD, 14 files` or `v0.17.5..HEAD`.
+
+> "Release check, everything."
+
+"All", "everything", or "every check" makes the run **all**: every entry runs. With
+no change set named and no such word, the run is also all. The chat report says
+which mode ran, and the skill switches when asked.
+
+The run itself: Scope names the list and its path, the commit, and how the product
+is reached (local server, built artifact, CLI), and checks once that Playwright has a
+browser, offering `npx playwright install chromium` in one line. Each entry is
+classified at run time as `code` (read, trace, run a command), `browser` (Playwright
+drives the product and records it), or `mixed`. Browser items run at 1280x800 with
+a recording and three to six checkpoint stills. A missing browser never blocks:
+browser items report `skipped` with the reason and code items still run.
+
+## 4. Read the report
+
+Every file lands in `<tmp>/pe-verify/<repo>/<YYYY-MM-DD-HHMM>/`: `report.json`,
+the rendered `report.html`, recordings, and stills. Nothing is written to the repo;
+`report.json` is copied into `.product/runs/` only when you ask. The skill validates
+the JSON, renders it, and opens the HTML in your browser.
+
+A list run renders as a ledger with one row per list entry, every entry present.
+Each row carries a status, a one-to-three-sentence summary of what was checked and
+what happened, who ran it (`sonnet · code`), and its evidence:
+
+| Status | Meaning |
+| --- | --- |
+| `pass` | Verified working |
+| `fail` | Verified broken; each finding carries a file:line, a recording timestamp, or the command that showed it |
+| `flag` | Needs a human decision: a suspected regression, a policy question, a risky change |
+| `skipped` | Could not be run (no browser, no fixture, no access); the summary says why |
+| `not-run` | Not chosen in a selective run; the summary gives the one-line reason; no media |
+
+A console error during a browser check is a `low` finding when explained and a
+`flag` when not. The chat report gives the path, the selection and its basis, counts
+by status, and one line per fail or flag. Field by field, the file is specified in
+[The report contract](/reference/report-contract).
+
+## 5. Send fails to pe-build
+
+> "Fix the two fails."
+
+pe-verify is read-only toward product code and never fixes what it finds. Each fail
+goes to [pe-build](/skills/pe-build) with its evidence, and pe-build implements at
+the cited file:line. Run the list again afterward; the stable item ids line the two
+reports up. Whether the result looks right, moves well, or is accessible is a
+judgment for [pe-review](/skills/pe-review); the release check proves behavior only.

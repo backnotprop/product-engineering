@@ -1,0 +1,46 @@
+---
+title: Brand it.
+description: Illustrations, social images, and logos in your brand.
+sidebar:
+  order: 6
+  label: pe-brand-assets
+---
+
+<SkillLine skill="pe-brand-assets" />
+
+Standalone assets that belong to the brand, authored as SVG in code. The skill reads
+your brand truth first and refuses to invent values; restraint is the default register,
+and the typographic answer comes before any drawn element.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Make an SVG header image for this post" | One atmospheric asset from your recorded brand values |
+| "Make the repo's social image" | SVG as the source, PNG at 1280×640 for GitHub, 1200×630 for OG |
+| "Logo concepts" | Two or three genuinely different candidates, each with its method named |
+| "An on-brand image of the new feature" | A concept image; an interactive mock is pe-design |
+
+## How it runs
+
+Locate brand truth (`DESIGN.md`, a style guide, a `brand/` folder) or stop. Derive the
+asset's rules from it. Author the SVG, critique it against the anti-generic tells, redo.
+Export to PNG where SVG cannot go. Verify every color maps to a token and the asset
+reads at its real size on both grounds. Report what was used and what should graduate
+into `DESIGN.md`.
+
+## Setup
+
+<Setup
+  required={["`DESIGN.md` or a `brand/` folder; without one, the skill offers to run pe-design, understand mode, first"]}
+  optional={["an SVG-to-PNG renderer, for OG and social images"]}
+  convention={["SVG is the source of truth; PNG only where a destination requires it"]}
+/>
+
+## Handoffs
+
+No brand truth: [pe-design](/skills/pe-design), understand mode. The asset becomes a UI
+component: [pe-build](/skills/pe-build). Judging existing assets:
+[pe-review](/skills/pe-review). Animating an asset: pe-build, motion mode.
+
+<Provenance skill="pe-brand-assets" />

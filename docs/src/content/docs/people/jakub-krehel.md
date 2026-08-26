@@ -1,0 +1,98 @@
+---
+title: Jakub Krehel
+description: The review engine, diff scoping, stress tests, ui/layout/typography/color/writing/a11y references.
+sidebar:
+  order: 2
+---
+
+[jakubkrehel/skills](https://github.com/jakubkrehel/skills) (MIT)
+
+**Carried:** 41 files, 40 verbatim, 1 distilled, each hash-locked to a pinned upstream commit.  
+**Lives in:** [pe-build](/skills/pe-build) 32 · [pe-review](/skills/pe-review) 7 · foundry 1 · [pe-design](/skills/pe-design) 1  
+**Rulings:** [L-01](#l-01), [L-02](#l-02), [L-04](#l-04), [L-05](#l-05), [L-07](#l-07), [L-08](#l-08), [L-11](#l-11) involve this work; each is below.  
+**Watcher:** compared against upstream weekly; when a carried file changes upstream, an issue opens in the kit.
+
+## Rulings
+
+### L-01 · Press scale
+
+jakubkrehel: exactly `0.96` vs emilkowalski: `0.95–0.98` range.  
+**Ruling:** 0.96 exact. An exact value is enforceable; a range invites drift. Emil's range noted as tolerance.
+
+### L-02 · Spring bounce
+
+jakubkrehel: always `0` vs emilkowalski: subtle `0.1–0.3` when used.  
+**Ruling:** bounce 0 by default; nonzero only when the design direction's register explicitly calls for playful.
+
+### L-04 · Exit easing
+
+jakubkrehel + emil monolith: ease-out both directions vs emil design-rules: accelerate away (ease-in).  
+**Ruling:** ease-out for exits by default. Two of three sources, including Emil against himself. Accelerate-away allowed as a deliberate, stated choice.
+
+### L-05 · will-change
+
+animationsdev: apply proactively vs jakubkrehel: only on observed first-frame stutter vs ibelick baseline: never outside an active animation.  
+**Ruling:** reactive (jakub) — evidence-driven application only. Baseline's phrasing survives as the generation guardrail.
+
+### L-07 · Stagger
+
+emilkowalski: 30–80ms per item vs jakubkrehel: ~100ms per group.  
+**Ruling:** both — the units differ (list items vs semantic chunks). Reconciled in one paragraph; not a conflict.
+
+### L-08 · Disabled submit buttons
+
+ibelick: explain why disabled vs jakubkrehel: never disable; validate on submit.  
+**Ruling:** never disable. Wins on accessibility evidence — an enabled button that validates is discoverable; a disabled one is a dead end.
+
+### L-11 · Guidelines house taste
+
+vercel web-interface-guidelines: Title Case headings, "&" over "and", autocomplete stated both ways vs jakubkrehel: "evidence, not taste."  
+**Ruling:** the evidence bar. House-taste rows are cut from the vendored copy (via its patch); the autocomplete tension resolves to: autocomplete on purposeful fields, off only for non-auth-sensitive cases.
+
+## Receipts
+
+Every row links to the upstream file at its pinned commit and to the kit's copy. Verbatim rows are the same bytes; verbatim-minus rows carry a recorded patch beside a pristine copy; distilled rows are authored from the source and say so.
+
+| File in the kit | Class | Skill | Upstream |
+| --- | --- | --- | --- |
+| [ownership-matrix.md](https://github.com/backnotprop/product-engineering/blob/main/foundry/ownership-matrix.md) | verbatim | foundry | [AGENTS.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/AGENTS.md) |
+| [a11y/focus-and-keyboard.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/focus-and-keyboard.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/focus-and-keyboard.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/focus-and-keyboard.md) |
+| [a11y/forms.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/forms.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/forms.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/forms.md) |
+| [a11y/hit-areas.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/hit-areas.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/hit-areas.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/hit-areas.md) |
+| [a11y/index.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/index.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/SKILL.md) |
+| [a11y/motion-and-zoom.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/motion-and-zoom.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/motion-and-zoom.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/motion-and-zoom.md) |
+| [a11y/screen-readers.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/screen-readers.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/screen-readers.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/screen-readers.md) |
+| [a11y/semantics-and-aria.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/a11y/semantics-and-aria.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-accessibility/semantics-and-aria.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-accessibility/semantics-and-aria.md) |
+| [craft/colors/color-formats.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/color-formats.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/color-formats.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/color-formats.md) |
+| [craft/colors/color-usage.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/color-usage.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/color-usage.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/color-usage.md) |
+| [craft/colors/contrast.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/contrast.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/contrast.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/contrast.md) |
+| [craft/colors/index.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/index.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/SKILL.md) |
+| [craft/colors/palette-generation.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/palette-generation.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/palette-generation.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/palette-generation.md) |
+| [craft/colors/palette-structure.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/palette-structure.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/palette-structure.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/palette-structure.md) |
+| [craft/colors/token-naming.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/colors/token-naming.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-colors/token-naming.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-colors/token-naming.md) |
+| [craft/layout/grouping-and-alignment.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/layout/grouping-and-alignment.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-layout/grouping-and-alignment.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-layout/grouping-and-alignment.md) |
+| [craft/layout/index.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/layout/index.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-layout/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-layout/SKILL.md) |
+| [craft/layout/spacing-and-adaptivity.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/layout/spacing-and-adaptivity.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-layout/spacing-and-adaptivity.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-layout/spacing-and-adaptivity.md) |
+| [craft/typography/choosing-fonts.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/choosing-fonts.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/choosing-fonts.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/choosing-fonts.md) |
+| [craft/typography/css-cheat-sheet.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/css-cheat-sheet.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/css-cheat-sheet.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/css-cheat-sheet.md) |
+| [craft/typography/details-and-accessibility.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/details-and-accessibility.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/details-and-accessibility.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/details-and-accessibility.md) |
+| [craft/typography/index.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/index.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/SKILL.md) |
+| [craft/typography/spacing-and-sizing.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/spacing-and-sizing.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/spacing-and-sizing.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/spacing-and-sizing.md) |
+| [craft/typography/variable-fonts-and-opentype.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/variable-fonts-and-opentype.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/variable-fonts-and-opentype.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/variable-fonts-and-opentype.md) |
+| [craft/typography/wrapping-and-punctuation.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/typography/wrapping-and-punctuation.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-typography/wrapping-and-punctuation.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-typography/wrapping-and-punctuation.md) |
+| [craft/ui/animations.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/animations.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/animations.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/animations.md) |
+| [craft/ui/enter-exit.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/enter-exit.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/enter-exit.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/enter-exit.md) |
+| [craft/ui/icon-transitions.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/icon-transitions.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/icon-transitions.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/icon-transitions.md) |
+| [craft/ui/icons.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/icons.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/icons.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/icons.md) |
+| [craft/ui/index.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/index.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/SKILL.md) |
+| [craft/ui/performance.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/performance.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/performance.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/performance.md) |
+| [craft/ui/surfaces.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/ui/surfaces.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-ui/surfaces.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-ui/surfaces.md) |
+| [craft/writing/index.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-build/references/craft/writing/index.md) | verbatim | [pe-build](/skills/pe-build) | [skills/better-writing/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-writing/SKILL.md) |
+| [vary/axes.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-design/references/vary/axes.md) | distilled | [pe-design](/skills/pe-design) | [skills/variant/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/variant/SKILL.md) |
+| [change-review.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/change-review.md) | verbatim | [pe-review](/skills/pe-review) | [skills/interface-review/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/interface-review/SKILL.md) |
+| [engine.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/engine.md) | verbatim | [pe-review](/skills/pe-review) | [skills/better-interface/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-interface/SKILL.md) |
+| [removed-signals.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/removed-signals.md) | verbatim | [pe-review](/skills/pe-review) | [skills/interface-review/removed-signals.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/interface-review/removed-signals.md) |
+| [review-format.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/review-format.md) | verbatim | [pe-review](/skills/pe-review) | [skills/better-interface/review-format.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/better-interface/review-format.md) |
+| [scope-resolution.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/scope-resolution.md) | verbatim | [pe-review](/skills/pe-review) | [skills/interface-review/scope-resolution.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/interface-review/scope-resolution.md) |
+| [stress-scenarios.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/stress-scenarios.md) | verbatim | [pe-review](/skills/pe-review) | [skills/break/scenarios.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/break/scenarios.md) |
+| [stress.md](https://github.com/backnotprop/product-engineering/blob/main/skills/pe-review/references/stress.md) | verbatim | [pe-review](/skills/pe-review) | [skills/break/SKILL.md](https://github.com/jakubkrehel/skills/blob/ca483852de23d48ab4f4ea71da37dad12bd70a95/skills/break/SKILL.md) |

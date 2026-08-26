@@ -1,0 +1,28 @@
+---
+title: People
+description: The authors whose work this kit carries, with a receipt for every file.
+sidebar:
+  order: 0
+  label: Overview
+  group:
+    label: People
+---
+
+import PeopleList from "@/components/pe/PeopleList.astro";
+
+Most of this kit is other authors' work, carried byte-for-byte: every vendored file is
+pinned to an upstream commit and hash-locked in the repository's manifest, and CI fails if
+a single character drifts. Recorded cuts live as patches beside pristine copies. Where
+sources disagreed, the ruling was written down once in a ledger, and each author's page
+lists the rulings that involve their work. A weekly watcher compares every pin against
+upstream and opens an issue when an author improves something the kit carries.
+
+The pages below are generated from that manifest. They carry receipts, not adjectives.
+
+<PeopleList />
+
+The machinery lives in the repository:
+[foundry/](https://github.com/backnotprop/product-engineering/tree/main/foundry) holds the
+manifest, the ledger, the pristine copies and patches, and the scripts;
+[NOTICE](https://github.com/backnotprop/product-engineering/blob/main/NOTICE) holds the
+attribution and license notes.

@@ -1,0 +1,26 @@
+---
+/** The skill's modes, from its SKILL.md table (synced by scripts/sync-data.py). */
+import skills from "@/data/skills.json";
+interface Props { skill: keyof typeof skills; first?: string; second?: string }
+const { skill, first = "Mode", second = "When" } = Astro.props;
+const rows = skills[skill].modes;
+const md = (t: string) =>
+  t.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+   .replace(/`([^`]+)`/g, "<code>$1</code>")
+   .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+---
+{rows.length > 0 && (
+  <div class="nb-table-scroll">
+    <table>
+      <thead><tr><th>{first}</th><th>{second}</th></tr></thead>
+      <tbody>
+        {rows.map((r) => (
+          <tr>
+            <td><span class="font-mono text-[0.8125rem] whitespace-nowrap">{r.mode}</span></td>
+            <td set:html={md(r.when)} />
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+)}

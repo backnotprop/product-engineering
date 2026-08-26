@@ -1,0 +1,57 @@
+---
+title: Design it.
+description: Context docs, creative direction, mockups, prototypes.
+sidebar:
+  order: 1
+  label: pe-design
+---
+
+<SkillLine skill="pe-design" />
+
+Everything before production code. The deliverable is a document or an artifact, never
+code, and the authority runs in one direction: your words, then the project's design
+system, then the subject, then the skill's judgment.
+
+## Say this, get this
+
+| You say | You get |
+| --- | --- |
+| "Document our design system" | `PRODUCT.md` and `DESIGN.md` written from repo evidence, or from a public URL |
+| "Write a brief for the checkout flow" | An interview, then a confirmed one-feature design brief |
+| "How should this look and feel?" | A creative direction derived from your subject, checked against the anti-generic tells |
+| "Wireframe the settings flow" | A self-contained HTML artifact, wireframe through prototype |
+| "Show me three takes on this card" | Real variants behind a picker in your own page, with `?variant=` URLs |
+| "Design the first-run flow" | Onboarding, activation, and empty states as artifacts |
+| "This is it" | The artifact stamped under `.product/approved/<slug>/` with an approval record |
+
+## Modes
+
+<Modes skill="pe-design" />
+
+Understand documents the whole product durably; brief plans one feature. A mockup of
+something new is mock; several takes on one existing piece is vary.
+
+## Approval
+
+The skill writes a record only on your explicit approval: "this is it", "ship this",
+"approved". Praise is not approval; if the words could mean either, it asks one line
+first. The record holds the artifact byte-for-byte, its source, and `approval.md`:
+date, who, the exact state approved, the decisions on the way, what is out of scope.
+[The approved record](/reference/approved-record) has the full rules.
+
+## Setup
+
+<Setup
+  required={["a browser to open the HTML artifacts"]}
+  optional={["the app running locally, for vary mode's picker in the real page", "network access, for understand mode from a public URL"]}
+  convention={["`DESIGN.md` at the repo root, which the other skills read", "approvals land in `.product/approved/<slug>/`"]}
+/>
+
+## Handoffs
+
+Implementing a confirmed brief, direction, mock, or winning variant: [pe-build](/skills/pe-build),
+with the record named. Judging existing UI: [pe-review](/skills/pe-review). Behavior
+specs beyond `PRODUCT.md`: [pe-product-description](/skills/pe-product-description).
+Standalone on-brand assets: [pe-brand-assets](/skills/pe-brand-assets).
+
+<Provenance skill="pe-design" />

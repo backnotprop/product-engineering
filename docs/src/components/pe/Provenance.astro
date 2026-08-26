@@ -1,0 +1,25 @@
+---
+/** The provenance strip at the foot of a skill page: whose work the skill carries. */
+import skills from "@/data/skills.json";
+interface Props { skill: keyof typeof skills }
+const s = skills[Astro.props.skill];
+const p = s.provenance;
+const vendored = p.vendored.length > 0;
+---
+<div class="mt-10 pt-4 border-t border-border font-mono text-[0.8125rem] leading-relaxed text-faint">
+  {vendored ? (
+    <p class="my-0">
+      Carries <span class="text-muted-foreground">{p.total - p.authored} files</span> from
+      {p.vendored.map((v, i) => (
+        <Fragment>
+          <a href={`/people/${v.slug}`} class="text-muted-foreground no-underline hover:text-foreground">{v.person}</a> ({v.count}){i < p.vendored.length - 1 ? ", " : ""}
+        </Fragment>
+      ))}{p.authored ? <Fragment>, and {p.authored} authored here</Fragment> : null}.
+      {p.private > 0 && <Fragment> {p.private} files from the animations.dev course pack are mapped for owners to install locally and are never distributed.</Fragment>}
+      Every vendored file is hash-locked to a pinned upstream commit.
+    </p>
+  ) : (
+    <p class="my-0">Authored in this repository. <span class="text-muted-foreground">{p.total} references, 0 vendored files.</span></p>
+  )}
+  <p class="my-0 mt-1">{s.license} · <a href={`https://github.com/backnotprop/product-engineering/tree/main/skills/${s.slug}`} class="no-underline hover:text-foreground">skills/{s.slug}</a></p>
+</div>

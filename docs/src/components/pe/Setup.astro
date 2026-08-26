@@ -1,0 +1,21 @@
+---
+/**
+ * A skill's setup block, always in the same order: required, optional, convention.
+ * Each prop is a list of short lines; `code` spans render as code.
+ */
+interface Props { required?: string[]; optional?: string[]; convention?: string[]; command?: string }
+const { required = [], optional = [], convention = [], command } = Astro.props;
+const md = (t: string) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/`([^`]+)`/g, "<code>$1</code>");
+const groups = [["required", required], ["optional", optional], ["convention", convention]] as const;
+---
+<div class="grid grid-cols-[max-content_1fr] gap-x-5 gap-y-2 text-[0.9375rem]">
+  {groups.map(([label, lines]) => lines.map((line) => (
+    <Fragment>
+      <span class="font-mono text-[0.75rem] text-faint pt-[3px]">{label}</span>
+      <span class:list={[label === "required" ? "text-foreground" : "text-muted-foreground"]} set:html={md(line)} />
+    </Fragment>
+  )))}
+</div>
+{command && (
+  <pre class="font-mono text-[0.8125rem] mt-4 px-3 py-2.5 rounded-md border border-border bg-card overflow-x-auto"><span class="text-faint">$ </span>{command}</pre>
+)}

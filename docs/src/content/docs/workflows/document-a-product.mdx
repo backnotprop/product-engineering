@@ -1,0 +1,121 @@
+---
+title: Document a product
+description: Build a behavior spec from the code, verify it against the running product, and triage what looks wrong.
+sidebar:
+  order: 4
+---
+
+[pe-product-description](/skills/pe-product-description) writes a repo of prose
+documents describing, from the outside in, what the user sees, what they can do, and
+what happens when they do it. It drafts from the source and its tests, verifies
+against the running product, and collects every suspected defect into one triage
+file. It covers canvas editors, web apps, CLIs, chat products, and mobile apps. A
+spec for something not yet built is [pe-design](/skills/pe-design), brief mode.
+
+## 1. Scope
+
+> "Write a product description for the editor."
+
+The skill settles six things before writing a file, asking only for what it cannot
+infer from the conversation or the source repo:
+
+1. The product and surface: which app, route, role, or configuration, usually "the
+   defaults, nothing customized". One surface per repo.
+2. The source of truth: the source repo's path and commit; every document footer
+   cites that commit.
+3. Where to run it: the command and URL, binary, or account for verification.
+4. What is out of scope, and why.
+5. Where the new repo goes. It is created with `git init` and an `Initial commit`.
+6. The product's shape: the unit of interaction and its five phase names, the
+   variant axis (modifiers, flags, roles), the fixed interrupt list, and the
+   cross-cutting concerns in order. These do not change after the first document
+   without revisiting every document.
+
+The answers go into the README's "Scope decisions" section. A reconnaissance pass
+then locates interaction state, behavior tests, the UI, and defaults and thresholds.
+
+## 2. What gets written
+
+The phases run in order after scope, with a commit after each document or group.
+
+```text
+README.md            purpose, conventions, document template, method, structure, coverage table
+goal.md              the standing instructions for whoever drafts next
+glossary.md          the vocabulary; the source of truth for every term of art
+AGENTS.md            "Read README.md, then goal.md. The coverage table in README.md is the work list."
+CLAUDE.md            "Read @AGENTS.md."
+{area}/{feature}.md  one document per feature, all on the same eight-section skeleton
+verification/        README.md (the protocol) + one checklist file per cluster of documents
+bug-triage.md        every suspected defect, deduplicated, with repro, cause, severity, decision needed
+```
+
+**Scaffold.** README first: its structure section lists every document expected,
+grouped by how the user meets the feature, never by package or module, and the
+coverage table marks each `not started`. Then the glossary, then `goal.md`, then
+`AGENTS.md` and `CLAUDE.md`. Commit: `docs: add README, glossary, goal`.
+
+**Pilot, foundations, the hard part.** The skill does these itself, in sequence.
+The pilot is one small feature with a real interaction, written on the full
+template and iterated until right; a small feature done properly runs around 150 to
+200 lines, every phase narrated, every variant and interrupt cell filled. The
+foundations follow: the input model, the core object model, the mode or navigation
+model, the viewport or session model. They own the numbers other documents link to,
+and each load-bearing fact is added to `goal.md` as it is established. Then the
+hardest area, read in full before any of its documents is written, with ownership of
+each state recorded in `goal.md`.
+
+**The rest, in parallel.** Once the exemplars exist, subagents draft the remaining
+documents, each told to read `goal.md`, the README, the glossary, the pilot, and the
+foundation it depends on, and to add missing terms to the glossary. The skill reviews
+every result before accepting it and marks the coverage table `drafted`.
+
+**Consistency pass.** Same term for the same thing everywhere; no two documents
+describing one behavior differently; every relative link and anchor resolving
+(`check-links.py` exits 1 with a `file:line` list when one does not); the same
+interrupt rows in the same order in every document; the README matching the files
+on disk. Commit: `docs: revise the set after the consistency review`.
+
+Each document ends with `## Open questions and verification` and a footer citing
+the source commit. Behavior that cannot be determined from code and tests goes
+under open questions; the skill does not guess and does not block.
+
+## 3. Verify against the running product
+
+Drafting reads the code; verification watches the product. `verification/README.md`
+states how to bring the surface up, confirm the commit, run a pass, record results,
+and when a document moves from `drafted` to `verified`. Each checklist file holds one
+table per document and one row per observable claim: a stable ID (`AREA-NN`), a
+priority (P1 an established fact or suspected bug, P2 an ordinary claim, P3 a number,
+color, or timing), what it needs, the claim with a link, setup, numbered steps, the
+expected result, and a Result column left blank until run.
+
+When the skill can drive the product (browser tools, a console handle, a shell for
+a CLI, a test harness), it runs a first pass on what that can observe, fills in the
+Result columns, and states in `verification/README.md` what the pass did and did not
+cover. No document is marked `verified` on an automated pass alone. A failed row is
+sometimes a wrong document; the Status line says which.
+
+## 4. Triage
+
+`bug-triage.md` collects every suspected defect from every document, merges
+duplicates into one entry with many "Raised by" links, and writes each up with where
+the user meets it, what happens against what was expected, reproduction steps, the
+cause with file and line, a severity, and the decision needed (`fix` or `product
+call`). A summary table at the top is sorted by severity.
+
+> "File these as issues."
+
+Filing upstream is offered and never done unasked. The skill confirms the repo and
+the format, files them, adds an Issue line to each entry, and commits
+`docs: revise bug-triage.md with links to the filed issues`.
+
+## 5. Extend it later
+
+> "Add the export dialog to the product description."
+
+A later session reads `AGENTS.md`, the README, `goal.md`, the glossary, and the
+pilot, and confirms the source commit. When the commit has moved, it asks whether new
+documents cite the new one or the repo pins the old; it never mixes silently. The
+new document is added to the README structure and coverage table first, then
+written, then given a checklist table with a new ID prefix and any triage entries
+with the next `B-NN`. IDs are never renumbered once a pass or an issue has used them.

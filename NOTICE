@@ -25,6 +25,12 @@ The animations.dev course pack is NOT distributed in this repository in any form
 Purchasers install it locally via foundry/scripts/course-dropin.sh into gitignored
 folders.
 
+== Docs site fonts ==
+
+Geist and Geist Mono (Vercel, SIL Open Font License 1.1) are bundled under
+docs/public/fonts/ for the documentation site's social images and self-hosted via
+@fontsource-variable packages for the pages.
+
 == Impeccable derivation (retained from this repository's ui-skills era) ==
 
 This project includes modified portions of Impeccable:
