@@ -1,6 +1,6 @@
 ---
 name: foundry
-description: The build-and-maintenance process for this repository's converged skill kit. Use for ANY convergence or maintenance work here — lifting files from upstream sources, building or revising one of the five skills, handling upstream drift or a failed integrity check, adding a contradiction ruling, distilling source material, installing the private course drop-in, or evaluating a new upstream or skill for the kit. Load BEFORE editing anything.
+description: The build-and-maintenance process for this repository's converged skill kit. Use for ANY convergence or maintenance work here — lifting files from upstream sources, building or revising one of the six skills, handling upstream drift or a failed integrity check, adding a contradiction ruling, distilling source material, installing the private course drop-in, or evaluating a new upstream or skill for the kit. Load BEFORE editing anything.
 metadata:
   internal: "true"
 license: Apache-2.0
@@ -8,8 +8,8 @@ license: Apache-2.0
 
 # Foundry
 
-This repo converges 84 upstream design-engineering skills into five
-(`pe-design`, `pe-build`, `pe-review`, `pe-product-description`, `pe-brand-assets`), preserving the
+This repo converges 84 upstream design-engineering skills into six
+(`pe-design`, `pe-build`, `pe-review`, `pe-verify`, `pe-product-description`, `pe-brand-assets`), preserving the
 best source prose **byte-for-byte** and proving it with hashes. You are operating a
 factory with strict rules, not editing a normal repo. AGENTS.md is the fence; this
 skill is the manual.

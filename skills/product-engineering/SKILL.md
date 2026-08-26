@@ -1,6 +1,6 @@
 ---
 name: product-engineering
-description: The front door to the product-engineering kit. Use when the user says "product engineering" followed by any product, design, UI, review, or asset request; when they ask which pe-* skill fits a task; or when a product task doesn't clearly match one skill. Routes to pe-design, pe-build, pe-review, pe-product-description, or pe-brand-assets and then follows that skill. If a request already names or clearly matches a specific pe-* skill, that skill takes it directly — this router yields.
+description: The front door to the product-engineering kit. Use when the user says "product engineering" followed by any product, design, UI, review, or asset request; when they ask which pe-* skill fits a task; or when a product task doesn't clearly match one skill. Routes to pe-design, pe-build, pe-review, pe-verify, pe-product-description, or pe-brand-assets and then follows that skill. If a request already names or clearly matches a specific pe-* skill, that skill takes it directly — this router yields.
 license: Apache-2.0
 metadata:
   provenance: foundry/derivations/product-engineering.md in the source repository
@@ -20,6 +20,7 @@ Ask what should exist when the work is done:
 | A document or design artifact — context docs, a design brief for one feature, a direction, wireframes, mockups, prototypes, variants, an onboarding flow | `pe-design` |
 | Working production code — a component built, polished, animated, made accessible, or hardened; a UI bug fixed | `pe-build` |
 | A judgment on what exists — a review, critique, audit, or stress test of a screen, diff, or PR; fidelity to an approved design | `pe-review` |
+| Proof that something works — a verification run with recordings and screenshots, or the project's QA list re-checked before a release | `pe-verify` |
 | A behavior spec — documentation of what users see and do, verified against the product | `pe-product-description` |
 | A standalone asset — an illustration, social/OG image, or logo in the project's brand | `pe-brand-assets` |
 
@@ -36,6 +37,9 @@ Ask what should exist when the work is done:
   `pe-design`, vary mode.
 - **"Did we match the design / mock?"** → `pe-review`, fidelity mode (checks against
   the record in `.product/approved/`). **"Make it match the mock"** → `pe-build`.
+- **"Does it work?" vs "Is it good?"** Proof of behavior with evidence → `pe-verify`.
+  Judgment of quality — looks, motion, accessibility — → `pe-review`. "Run the QA
+  list" or "release check" is always `pe-verify`, list mode.
 - Still ambiguous after that: ask one short question naming the two candidate
   skills, then proceed.
 

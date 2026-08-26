@@ -5,15 +5,16 @@ nothing else the agent writes reaches the user's screen.
 
 ## Where files go
 
-Create a run folder in the system temp directory, never in the repo:
+Create a run folder in the system temp directory (`$TMPDIR`, else `/tmp`), never in
+the repo:
 
 ```
-$TMPDIR/pe-verify/<repo-name>/<YYYY-MM-DD-HHMM>/
-  report.json          the one file you author
-  report.html          written by render-report.py
-  recording-*.mp4      Playwright recordings (webm is converted when ffmpeg exists)
-  cp-*.png             checkpoint stills
-  shot-*.png           standalone screenshots
+<tmp>/pe-verify/<repo-name>/<YYYY-MM-DD-HHMM>/
+  report.json               the one file you author
+  report.html               written by render-report.py
+  recording-<item>.webm     Playwright recordings (converted to .mp4 when ffmpeg exists)
+  cp-<item>-<n>.png         checkpoint stills
+  shot-<item>-<n>.png       standalone screenshots
 ```
 
 Every media path inside `report.json` is relative to that folder.
@@ -65,6 +66,8 @@ the `media` key entirely (not `null`). Paths are relative, stay inside the run f
 - A checkpoint is a moment worth jumping to: the thing rendered, the action landed,
   the result appeared. Three to six per recording; label each with what is visible
   at that moment, narrate in one sentence, and capture the still at that exact time.
+- For a browser item, `summary` is also the recording's overall narration: what the
+  video shows from start to end.
 - `checked_by` records who ran the item (`opus · browser`, `sonnet · code`) so a
   reader knows how much to trust it.
 - Give every `fail` or `flag` finding an `evidence` value: a file:line, a recording
