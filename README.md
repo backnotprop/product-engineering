@@ -33,6 +33,7 @@ npx skills add backnotprop/product-engineering
 | --- | --- |
 | "Document our design system" | `pe-design` writes `PRODUCT.md` + `DESIGN.md` from repo evidence, or from a public URL |
 | "How should this look and feel?" | `pe-design` derives a creative direction from your subject |
+| "Write a brief for the checkout flow" | `pe-design` interviews you, then returns a confirmed one-feature design brief |
 | "Wireframe the settings flow" | `pe-design` builds self-contained HTML, wireframe through prototype |
 | "Show me three takes on this card" | `pe-design` renders real variants behind a picker in your page |
 | "Build the pricing card" · "polish this" | `pe-build` writes production code at the craft bar |

@@ -17,7 +17,7 @@ Ask what should exist when the work is done:
 
 | The user wants | Route to |
 | --- | --- |
-| A document or design artifact — context docs, a direction, wireframes, mockups, prototypes, variants, an onboarding flow | `pe-design` |
+| A document or design artifact — context docs, a design brief for one feature, a direction, wireframes, mockups, prototypes, variants, an onboarding flow | `pe-design` |
 | Working production code — a component built, polished, animated, made accessible, or hardened; a UI bug fixed | `pe-build` |
 | A judgment on what exists — a review, critique, audit, or stress test of a screen, diff, or PR | `pe-review` |
 | A behavior spec — documentation of what users see and do, verified against the product | `pe-product-description` |
@@ -30,6 +30,8 @@ Ask what should exist when the work is done:
 - **A named diff, branch, or PR** always means `pe-review`, change mode.
 - **A bug in UI behavior** is code to fix → `pe-build`. If the user only wants to
   know what's wrong, not a fix → `pe-review`.
+- **A spec or plan for something new** — a feature not yet built → `pe-design`, brief
+  mode. **A spec of how the existing product behaves** → `pe-product-description`.
 - **A mockup of something new** → `pe-design`. **N takes on one existing piece** →
   `pe-design`, vary mode.
 - Still ambiguous after that: ask one short question naming the two candidate
