@@ -46,7 +46,7 @@ contract (vary is the one sanctioned codebase touch, via a throwaway harness); h
 ### brief/
 | dest | source | grade | class | notes |
 | --- | --- | --- | --- | --- |
-| index.md | pbakaus/impeccable · skill/reference/shape.md (+ new-work.md §1 authority states and §2 surface-job questions) | SOLID | distilled | SALVAGE (the contract = issue #1's lists): the discovery cadence and both question rounds; the surface-job framing; the four visual-authority states; the seven-section brief structure; smallest-useful-brief; confirm-and-stop. EXCLUDED per issue #1's standalone constraints: concept-seed/serve-question scripts, decision pages, comps, config/state, mandatory PRODUCT.md/DESIGN.md, direction selection (one owner — direct mode). Chat by default, file only on request. Upstream is Apache-2.0 and now watcher-tracked — the first pinned Impeccable source |
+| index.md | pbakaus/impeccable · skill/reference/shape.md (+ new-work.md §1 authority states and §2 surface-job questions) | SOLID | distilled | SALVAGE (the contract = issue #1's lists): the discovery cadence and both question rounds; the surface-job framing; the source's four visual-authority states (Redesign with its preservation duties / Established / Incomplete / None) plus the local-addition rule; the seven-section brief structure; smallest-useful-brief; confirm-and-stop. EXCLUDED per issue #1's standalone constraints: concept-seed/serve-question scripts, decision pages, comps, config/state, mandatory PRODUCT.md/DESIGN.md, direction selection (one owner — direct mode). Chat by default, file only on request. Upstream is Apache-2.0 and now watcher-tracked — the first pinned Impeccable source |
 
 ### onboard/
 | dest | source | grade | class | notes |

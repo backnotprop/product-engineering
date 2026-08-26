@@ -30,14 +30,14 @@ reference files — load only what the mode needs.
 | Mode | When | Load from `references/` |
 | --- | --- | --- |
 | **understand** | "Document our product / design system", DESIGN.md work | `understand/index.md`; `understand/design-format.md` + `understand/templates.md` for the schema; `understand/url-and-validation.md` for public-URL extraction and the lint/export gates; `understand/generated-mode.md` for greenfield systems |
-| **brief** | "Write a brief for X", "spec this feature" — planning one feature, surface, or flow before code | `brief/index.md` (runs direct mode first only when visual direction is materially unresolved) |
+| **brief** | "Write a brief for X", "spec this feature" — planning one feature, surface, or flow before code | `brief/index.md` (runs direct mode mid-flow when visual direction is materially unresolved) |
 | **direct** | "How should this look / feel", creative direction, a register or palette decision | `direct/index.md`; check every visual choice against `direct/slop-tells.md`; `direct/presets/` only on explicit match |
 | **mock** | Wireframe, mockup, prototype, diagram, or plan as an HTML artifact | `mock/index.md` (the router), then the fidelity file it names: `wireframe.md`, `prototype.md`, `diagram.md`, `plan.md`; shared craft in `charts-and-data.md`, `diagrams.md`, `documents-and-presentations.md`, `interfaces.md` |
 | **vary** | "Show me N versions", compare directions in the real page | `vary/index.md` + `vary/picker.md` (the engineered picker), governed by `vary/axes.md` (one primary axis; the accessibility floor; `?variant=name` URLs) |
 | **onboard** | First-run, activation, setup, empty states, tours | `onboard/index.md` + `onboard/patterns.md` |
 
-Disambiguation: **understand** documents the whole product durably; **brief** plans one
-feature, for now. A mockup of something new is **mock**; N takes on one existing piece
+Disambiguation: **understand** documents the whole product durably; **brief** plans a
+single feature or flow. A mockup of something new is **mock**; N takes on one existing piece
 is **vary**. "Make it look better" on shipped UI is not this skill (pe-build). A named
 diff/branch/PR is never this skill (pe-review).
 
@@ -52,7 +52,7 @@ fallback resolves to `direct/index.md`.
 
 ## Handoffs
 
-Implementing a chosen direction, mock, or winning variant → **pe-build** (with the
+Implementing a confirmed brief, chosen direction, mock, or winning variant → **pe-build** (with the
 DESIGN.md and any chosen preset named). Judging existing UI → **pe-review**. Behavior
 specs beyond PRODUCT.md's scope → **pe-product-description**. On-brand
 standalone assets → **pe-brand-assets**.

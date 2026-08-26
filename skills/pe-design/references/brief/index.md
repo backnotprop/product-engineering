@@ -29,7 +29,7 @@ change the result:
 Frame by the surface's job where it sharpens the questions: **persuade** (who must
 act, what they should believe, what real proof earns it) · **operate** (the task,
 its states, frequency, constraints) · **read** (the reader's question, the source
-material, wayfinding) · **experience** (what leads, how exploration unfolds).
+material, structure, wayfinding) · **experience** (what leads, how exploration unfolds).
 
 **Round 2 — material, behavior, boundaries.** Run only for material unresolved
 decisions:
@@ -51,15 +51,22 @@ Never ask for CSS values or canned aesthetic lanes.
 
 First decide what is already true:
 
+- **Redesign** — preserve product truth, content, function, constraints, and
+  explicit brand commitments; the old visual world is replaced, not polished. The
+  old look is evidence of what the subject is, not authority over what it becomes.
+  Direction is materially unresolved.
 - **Established world** — a coherent identity exists in code or `DESIGN.md`: inherit
   it; the brief records it as settled.
-- **Local addition** — a section, component, or state inside an established surface
-  inherits that surface; never turn it into an identity exercise.
 - **Incomplete brand** — preserve confirmed assets and recognizable traits; note
   what the brief leaves open.
-- **No visual authority, or a deliberate replacement** — direction is materially
-  unresolved: run direct mode (`../direct/index.md`) to choose it, then return here
-  and record the selection. This file never chooses direction itself.
+- **No visual authority** — direction is materially unresolved.
+
+A section, component, or state inside an established surface inherits that surface —
+never turn a local addition into an identity exercise.
+
+Where direction is materially unresolved, run direct mode (`../direct/index.md`) to
+choose it, then return here and record the selection. This file never chooses
+direction itself.
 
 ## Write the brief
 
@@ -86,6 +93,4 @@ ambiguous, multi-screen, or standalone planning. Do not restate the conversation
 Present the brief in chat for explicit confirmation or one correction round, then
 stop — no implementation, no code. Write the brief to a file only when the user asks,
 wherever they say; there is no required format or storage. When no answer mechanism
-exists, mark assumptions plainly, return the brief, and stop. A confirmed brief hands
-to **pe-build** (implementation), mock mode (an artifact of it), or vary mode
-(competing takes on one piece).
+exists, mark assumptions plainly, return the brief, and stop.
