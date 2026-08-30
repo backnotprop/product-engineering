@@ -29,6 +29,7 @@ reported pass/fail against the user's own list of concerns.
 
 ## Deviations from the approved artifact
 
+- Screenshots open in a lightbox (user direction, 2026-08-26): click or Enter on a still opens it full size in a dialog; arrow keys move within the item's screenshots; Esc closes. The approved prototype showed stills at grid size only.
 - Rows start collapsed in list mode (user direction, 2026-08-26); the approved prototype opened failed rows on load. The needs-attention block stacks each finding under its title instead of beside it.
 - Status `not-run` and the "selective run · basis" meta line (user direction, after
   approval): a list run is `selective` or `all`; unchosen entries stay in the ledger,

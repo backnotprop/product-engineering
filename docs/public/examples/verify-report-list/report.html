@@ -87,7 +87,21 @@
   .cps .cn { color:var(--mut); font-size:12.5px; }
   .narr { padding:12px 14px; color:var(--mut); font-size:13.5px; border-top:1px solid var(--line); background:var(--panel); }
   .shots { display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:8px; margin-top:10px; }
-  .shots figure { margin:0; } .shots img { width:100%; border-radius:6px; border:1px solid var(--line); display:block; }
+  .shots figure { margin:0; }
+  .shots .shot { display:block; width:100%; padding:0; border:0; background:none; cursor:zoom-in; border-radius:6px; }
+  .shots .shot:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .shots img { width:100%; border-radius:6px; border:1px solid var(--line); display:block; }
+  .lightbox { width:100vw; height:100vh; max-width:100vw; max-height:100vh; margin:0; padding:0; border:0; background:rgb(16 17 20 / 0.97); color:var(--ink); }
+  .lightbox[open] { display:flex; flex-direction:column; }
+  .lightbox::backdrop { background:rgb(0 0 0 / 0.6); }
+  .lightbox .lb-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:10px 16px; font-family:var(--mono); font-size:12px; color:var(--mut); }
+  .lightbox .lb-bar button { font:inherit; color:var(--mut); background:none; border:1px solid var(--line); border-radius:6px; padding:4px 10px; cursor:pointer; }
+  .lightbox .lb-bar button:hover { color:var(--ink); }
+  .lightbox .lb-bar button:focus-visible { outline:2px solid var(--ink); outline-offset:2px; }
+  .lightbox .lb-stage { flex:1; display:flex; align-items:center; justify-content:center; min-height:0; padding:0 16px; cursor:zoom-out; }
+  .lightbox .lb-stage img { max-width:100%; max-height:100%; border-radius:6px; border:1px solid var(--line); cursor:default; }
+  .lightbox .lb-cap { padding:10px 16px 16px; text-align:center; font-family:var(--mono); font-size:12px; color:var(--mut); }
+  .lightbox .lb-cap b { color:var(--faint); font-weight:400; margin-left:10px; }
   .shots figcaption { font-family:var(--mono); font-size:11px; color:var(--faint); margin-top:4px; }
 
   /* ---- layout: ledger ---- */
@@ -166,6 +180,11 @@
 
 <div class="wrap" id="report"></div>
 <p class="keys mono" id="keys">J jump to check · N / P next and previous issue · / search · in the player: ← → checkpoints, space plays</p>
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+  <div class="lb-bar"><span id="lb-title"></span><button type="button" id="lb-close">Close <kbd>Esc</kbd></button></div>
+  <div class="lb-stage" id="lb-stage"><img id="lb-img" src="" alt=""></div>
+  <div class="lb-cap"><span id="lb-cap"></span><b id="lb-count"></b></div>
+</dialog>
 <div class="jump-btn" id="jumpbtn" hidden><button type="button" id="jumpopen">Jump to check <kbd>J</kbd></button></div>
 <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Jump to a check">
   <div class="box"><input id="pq" placeholder="Type to filter checks…" autocomplete="off"><div class="pfilters" id="pfilters" role="group" aria-label="Palette status filters"></div><ul id="plist"></ul>
@@ -205,9 +224,12 @@ function playerHTML(it, key) {
     <ul class="cps">${cps}</ul>
   </div>`;
 }
+function shotFigs(list) {
+  return list.map(x => `<figure><button type="button" class="shot" aria-label="View full size${x.caption ? ": " + esc(x.caption) : ""}"><img src="${esc(x.path)}" alt="${esc(x.caption||"")}" data-cap="${esc(x.caption||"")}"></button><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("");
+}
 function shotsHTML(it) {
   const s = it.media?.screenshots; if (!s?.length) return "";
-  return `<h4>Screenshots</h4><div class="shots">${s.map(x => `<figure><img src="${esc(x.path)}" alt="${esc(x.caption||"")}"><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("")}</div>`;
+  return `<h4>Screenshots</h4><div class="shots">${shotFigs(s)}</div>`;
 }
 function detailHTML(it, key) {
   const media = it.media?.video ? `<h4>Recording</h4>${playerHTML(it, key)}` : "";
@@ -241,7 +263,7 @@ function renderFeature(run) {
   const board = C.length ? `<div class="storyboard" role="list" aria-label="Checkpoints">${C.map((c,i) => `<figure role="listitem" data-i="${i}"><img src="${esc(c.screenshot)}" alt="${esc(c.label)}"><figcaption><span>${esc(c.label)}</span><span>${fmt(c.t)}</span></figcaption></figure>`).join("")}</div>` : "";
   return summaryHTML(run) + `<div class="feature"><div class="hero"><h3>${esc(it.title)}</h3><div class="stl">${statusLine(it)}<span class="type">${esc(it.check_type)}${it.checked_by ? " · checked by " + esc(it.checked_by) : ""}</span></div><p class="summ" style="margin:0">${esc(it.summary)}</p></div>
     <div class="viewer">${playerHTML(it, it.id)}${board}</div>
-    <div class="two"><div class="card"><h4>Findings</h4>${findingsHTML(it)}</div><div class="card"><h4>Screenshots</h4><div class="shots">${(it.media?.screenshots||[]).map(x => `<figure><img src="${esc(x.path)}" alt="${esc(x.caption||"")}"><figcaption>${esc(x.caption||"")}</figcaption></figure>`).join("")}</div></div></div></div>`;
+    <div class="two"><div class="card"><h4>Findings</h4>${findingsHTML(it)}</div><div class="card"><h4>Screenshots</h4><div class="shots">${shotFigs(it.media?.screenshots||[])}</div></div></div></div>`;
 }
 
 // ---------- behavior ----------
@@ -367,7 +389,36 @@ function attentionStep(dir) {
   let cur = att.findIndex(i => i.id === state.sel); if (cur < 0) { const y = window.scrollY + 80; cur = att.findIndex(i => { const el = document.getElementById(i.id); return el && el.offsetTop > y; }); if (dir > 0) cur -= 1; }
   const next = att[(cur + dir + att.length) % att.length]; state.sel = next.id; jumpTo(next.id);
 }
+/* ---- screenshot lightbox ---- */
+const lb = document.getElementById("lightbox");
+const lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap"), lbCount = document.getElementById("lb-count"), lbTitle = document.getElementById("lb-title");
+let lbGroup = [], lbIdx = 0;
+function lbShow(i) {
+  lbIdx = (i + lbGroup.length) % lbGroup.length;
+  const im = lbGroup[lbIdx];
+  lbImg.src = im.getAttribute("src"); lbImg.alt = im.getAttribute("alt") || "";
+  lbCap.textContent = im.dataset.cap || "";
+  lbCount.textContent = lbGroup.length > 1 ? `${lbIdx + 1} / ${lbGroup.length} · ← →` : "";
+}
+document.getElementById("report").addEventListener("click", e => {
+  const btn = e.target.closest(".shot"); if (!btn) return;
+  const grid = btn.closest(".shots");
+  lbGroup = [...grid.querySelectorAll(".shot img")];
+  const item = btn.closest(".row, .feature");
+  lbTitle.textContent = item?.querySelector(".title, h3")?.textContent || "";
+  lbShow(lbGroup.indexOf(btn.querySelector("img")));
+  lb.showModal();
+});
+document.getElementById("lb-close").addEventListener("click", () => lb.close());
+document.getElementById("lb-stage").addEventListener("click", e => { if (e.target.id === "lb-stage") lb.close(); });
+lb.addEventListener("keydown", e => {
+  if (e.key === "ArrowRight") { lbShow(lbIdx + 1); e.preventDefault(); }
+  if (e.key === "ArrowLeft") { lbShow(lbIdx - 1); e.preventDefault(); }
+});
+lb.addEventListener("close", () => { lbImg.src = ""; });
+
 document.addEventListener("keydown", e => {
+  if (lb.open) return;
   if (e.key === "Escape") { paletteClose(); return; }
   if (e.target.closest(".bar") || e.target.tagName === "INPUT") return;
   if (e.key === "j" || e.key === "J") { paletteOpen(); e.preventDefault(); return; }

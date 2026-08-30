@@ -144,6 +144,16 @@ def browser_checks():
         load("err.html"); results["error page: jump button hidden"] = pg.evaluate("getComputedStyle(document.getElementById('jumpbtn')).display") == "none"
         pg.keyboard.press("j"); pg.wait_for_timeout(50); results["error page: J raises nothing"] = not errors
         load("inj.html"); results["injected title renders as text"] = not errors and "a<!--<script>b</script>c" in pg.inner_text("h1")
+        # screenshot lightbox: click opens, caption + count, arrows navigate, Esc closes
+        run([os.path.join(HERE, "render-report.py"), os.path.join(d, "report.json"), "--no-convert", "--out", os.path.join(d, "feat.html")])
+        load("feat.html")  # a feature run: the screenshots card is already visible
+        pg.click(".shots .shot"); pg.wait_for_timeout(100)
+        results["lightbox: opens on screenshot click"] = not errors and pg.evaluate("document.getElementById('lightbox').open") and pg.get_attribute("#lb-img", "src") != ""
+        first = pg.get_attribute("#lb-img", "src")
+        pg.keyboard.press("ArrowRight"); pg.wait_for_timeout(50)
+        results["lightbox: arrow moves to the next shot"] = pg.get_attribute("#lb-img", "src") != first and "2 / 2" in pg.inner_text("#lb-count")
+        pg.keyboard.press("Escape"); pg.wait_for_timeout(50)
+        results["lightbox: Esc closes"] = not errors and not pg.evaluate("document.getElementById('lightbox').open")
         b.close()
     return results
 bc = browser_checks()
